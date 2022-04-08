@@ -1,0 +1,216 @@
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']">Home</a></li>
+  <li><a href="javascript://">Non-Container Service Order</a></li>
+
+</ol>
+
+
+<div class="dg-wrapper">
+  <div class="clr-row">
+
+    <div class="clr-col-12" style="text-align: right;">
+      <button class="btn btn-outline" (click)="onExport()">
+        <clr-icon shape="export"></clr-icon> xlsx
+      </button>
+      <button id="add" class="btn btn-primary" (click)="goToAdd()">
+        <clr-icon shape="plus"></clr-icon>ADD
+      </button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <clr-datagrid [clrDgLoading]="loading" >
+    <clr-dg-placeholder > <clr-spinner [clrMedium]="true">Loading ...</clr-spinner></clr-dg-placeholder>
+
+    <clr-dg-column [clrDgField]="'orderId'" style="width:10px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Order ID
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'requestDateFormated'" style="width: 200px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Request Date
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'invoiceType'" style="width: 150px;"><ng-container *clrDgHideableColumn="{hidden: false}">
+        Invoice Type
+      </ng-container></clr-dg-column >
+    <clr-dg-column [clrDgField]="'customerCode'" style="width: 60px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Customer Code
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'customerName'" style="width: 180px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Customer Name
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'vesselCode'" style="width: 40px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Vessel Code
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'vesselName'" style="width: 50px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Vessel Name
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'inVoyage'" style="width: 40px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      In Voyage
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'outVoyage'" style="width: 40px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Out Voyage
+    </ng-container></clr-dg-column>
+
+    <clr-dg-column [clrDgField]="'status'" style="width: 60px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Status
+    </ng-container></clr-dg-column>
+
+    <clr-dg-row *clrDgItems="let user of alldata;let i = index" [clrDgItem]="user">
+      <clr-dg-cell class="a">{{user.orderId}}</clr-dg-cell>
+      <clr-dg-cell class="a" >{{user.requestDateFormated}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.invoiceType}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.customerCode}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.customerName}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.vesselCode}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.vesselName}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.inVoyage}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.outVoyage}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.status}}</clr-dg-cell>
+      <clr-dg-action-overflow>
+
+        <button class="action-item" (click)="goToEdit(user.orderId)">View</button>
+
+      </clr-dg-action-overflow>
+
+
+    </clr-dg-row>
+
+    <clr-dg-footer >
+     <!-- <button *ngIf="currentpage!=0"  (click)="setpage(currentpage-1,$event)"> previ</button>
+      <button (click)="setpage(0,$event)">Firstpage</button>
+      <input type="text" value="{{currentpage}}" (click)="setpage(currentpage,$event)">
+      <p>{{currentpage}}/{{totalpageno}}</p>
+      <button *ngIf="currentpage!=totalpageno-1" (click)="setpage(currentpage+1,$event)">next</button>
+      <button (click)="setpage(totalpageno-1,$event)">jumptolastpage</button>
+        <clr-dg-pagination #pagination [clrDgTotalItems]="totalelements" (click)="setpage(currentpage,$event)"></clr-dg-pagination>-->
+
+       <!-- <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <button class="btn btn-icon btn-primary" *ngIf="currentpage!=0"  (click)="setpage(currentpage-1,$event)"><i class="fa fa-angle-double-left"></i></button>
+            <button type="button" class="btn">
+              {{currentpage}}/{{totalpageno}}
+          </button>
+           <button class="btn btn-icon btn-primary" *ngIf="currentpage!=totalpageno-1" (click)="setpage(currentpage+1,$event)"><i class="fa fa-angle-double-right"></i></button>
+          <clr-dg-pagination #pagination [clrDgPageSize]="10">
+              <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Records per page</clr-dg-page-size>
+
+            </clr-dg-pagination>
+            1 - 10 of &nbsp; {{totalelements}}&nbsp; data
+          <i class="fa fa-angle-double-left"  *ngIf="currentpage!=0"  (click)="setpage(currentpage-1,$event)" style="padding-right: 10px;font-size: 20px;"></i>
+            <input type="text"  value="{{currentpage}}" style="height: 20px;
+            width: 30px;">
+              /{{totalpageno}}
+
+            <i class="fa fa-angle-double-right" *ngIf="currentpage!=totalpageno-1" (click)="setpage(currentpage+1,$event)" style="padding-left: 10px;font-size: 20px;"></i>
+
+         </ul>
+        </nav>-->
+        <clr-dg-pagination #pagination [clrDgPageSize]="10">
+          <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Record per page</clr-dg-page-size>
+          {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+          of {{pagination.totalItems}} Records
+        </clr-dg-pagination>
+      </clr-dg-footer>
+  </clr-datagrid>
+
+</div>
+
+
+
+<!-- <ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']">Home</a></li>
+  <li><a href="javascript://">Non-Container Service Order</a></li>
+
+</ol>
+
+
+<div class="dg-wrapper">
+  <div class="clr-row">
+
+    <div class="clr-col-12" style="text-align: right;">
+      <button class="btn btn-outline" (click)="onExport()">
+        <clr-icon shape="export"></clr-icon> xlsx
+      </button>
+      <button id="add" class="btn btn-primary" (click)="goToAdd()">
+        <clr-icon shape="plus"></clr-icon>ADD
+      </button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <clr-datagrid [clrDgLoading]="loading" (clrDgRefresh)="refresh($event)">
+    <clr-dg-placeholder> <clr-spinner>Loading ...</clr-spinner></clr-dg-placeholder>
+
+    <clr-dg-column [clrDgField]="'orderId'" style="width:10px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Order ID
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'requestDateFormated'" style="width: 200px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Request Date
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'invoiceType'" style="width: 150px;"><ng-container *clrDgHideableColumn="{hidden: false}">
+        Invoice Type
+      </ng-container></clr-dg-column >
+    <clr-dg-column [clrDgField]="'customerCode'" style="width: 60px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Customer Code
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'customerName'" style="width: 180px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Customer Name
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'vesselCode'" style="width: 40px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Vessel Code
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'vesselName'" style="width: 50px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Vessel Name
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'inVoyage'" style="width: 40px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      In Voyage
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'outVoyage'" style="width: 40px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Out Voyage
+    </ng-container></clr-dg-column>
+
+    <clr-dg-column [clrDgField]="'status'" style="width: 60px;"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Status
+    </ng-container></clr-dg-column>
+
+    <clr-dg-row *clrDgItems="let user of employees;let i = index">
+      <clr-dg-cell class="a">{{user.orderId}}</clr-dg-cell>
+      <clr-dg-cell class="a" >{{user.requestDateFormated}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.invoiceType}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.customerCode}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.customerName}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.vesselCode}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.vesselName}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.inVoyage}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.outVoyage}}</clr-dg-cell>
+      <clr-dg-cell class="a">{{user.status}}</clr-dg-cell>
+      <clr-dg-action-overflow>
+
+        <button class="action-item" (click)="goToEdit(user.orderId)">View</button>
+
+      </clr-dg-action-overflow>
+
+
+    </clr-dg-row>
+
+    <clr-dg-footer >
+      <clr-dg-pagination #pagination [clrDgPageSize]="10" [clrDgTotalItems]="total" [(clrDgPage)]="currentPage">
+        <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">data per page</clr-dg-page-size>
+        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+        of {{total}} data
+      </clr-dg-pagination>
+      </clr-dg-footer>
+  </clr-datagrid>
+
+</div>
+
+ -->

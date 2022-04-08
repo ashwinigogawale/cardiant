@@ -1,0 +1,124 @@
+<clr-main-container>
+  <clr-header class="header-5">
+    <div class="branding">
+      <a href="javascript://" class="nav-link">
+        <a href="#" class="logo">
+          <img class="img" src="assets/images/icon/sitelogo.png" alt="" height="50" width="50">
+        </a>
+        <div style="width:40px;margin-right:10px;">
+
+      </div>
+        <span class="title">Cns-Portal</span>
+      </a>
+    </div>
+    <div class="header-nav" [clr-nav-level]="1">
+      <a href="javascript://" class="active nav-link nav-icon" routerLink="/">
+        <clr-icon shape="home"></clr-icon>
+      </a>
+      <a href="javascript://" class="nav-link nav-icon">
+        <clr-icon shape="folder"></clr-icon>
+      </a>
+    </div>
+    <form class="search">
+      <label for="search_input">
+        <input id="search_input" type="text" placeholder="Search for keywords...">
+      </label>
+    </form>
+
+
+
+
+
+
+
+
+    <div class="header-actions">
+      <clr-dropdown>
+        <button class="nav-text" clrDropdownTrigger>
+          <clr-icon shape="user"></clr-icon><label style="line-height: 60px; cursor: pointer;"> {{userName}}</label>
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a href="javascript://" clrDropdownItem routerLink="/main/about">About</a>
+          <a routerLink="profile-settings"  clrDropdownItem>Profile Settings</a>
+          <a href="javascript://" clrDropdownItem routerLink="/main/passwordreset">Change Password</a>
+          <a href="javascript://" clrDropdownItem (click)="onLogout()">Log out</a>
+
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+  </clr-header>
+
+  <div class="content-container">
+    <main class="content-area">
+      <router-outlet></router-outlet>
+    </main>
+
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" [clr-nav-level]="2">
+
+      <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="user" clrVerticalNavIcon></clr-icon>
+        Admin
+        <clr-vertical-nav-group-children>
+
+          <a clrVerticalNavLink routerLink="./log" routerLinkActive="active">
+            Log Configuration
+          </a>
+          <a clrVerticalNavLink routerLink="./university" routerLinkActive="active">
+            headerlinesmodal
+          </a>
+          <a clrVerticalNavLink routerLink="./scheduler" routerLinkActive="active">
+            scheduler
+          </a>
+          <a clrVerticalNavLink routerLink="./pipeline" routerLinkActive="active">
+            schedule_pipeline
+          </a>
+          <a clrVerticalNavLink routerLink="./scheduleinfo" routerLinkActive="active">
+            scheduler_Info
+          </a>
+        </clr-vertical-nav-group-children>
+      </clr-vertical-nav-group>
+
+      <clr-vertical-nav-group routerLinkActive="active">
+        <clr-icon shape="bolt" clrVerticalNavIcon></clr-icon>
+        Credit Note
+
+      </clr-vertical-nav-group>
+
+
+
+      <div *ngFor="let menu of menus">
+        <!-- NEED MODIFICATION-->
+        <!-- <div *ngIf="menu.sub_menus.length >=1;then content else other_content"></div> -->
+        <div *ngIf="menu.subMenus !== null && menu.subMenus.length >=1;then content else other_content"></div>
+        <ng-template #content>
+            <!-- if sub munu is present -->
+                <clr-vertical-nav-group routerLinkActive="active">
+                    <clr-icon [attr.shape]="menu.mainMenuIconName" clrVerticalNavIcon></clr-icon>
+                    {{ menu.menuItemDesc }}
+                    <!-- SUB NAV-->
+                    <clr-vertical-nav-group-children *ngFor="let subnav of menu.subMenus">
+                        <a clrVerticalNavLink [routerLink]="'./' + subnav.mainMenuActionName" routerLinkActive="active">
+                           <!-- <clr-icon [attr.shape]="subnav.mainMenuIconName" clrVerticalNavIcon></clr-icon>-->
+                            {{ subnav.menuItemDesc }}
+                        </a>
+                    </clr-vertical-nav-group-children>
+                </clr-vertical-nav-group>
+            <!-- </div> -->
+        </ng-template>
+        <ng-template #other_content>
+           <!-- if sub menu is not present -->
+            <a clrVerticalNavLink routerLinkActive="active" [routerLink]="'./'+ menu.mainMenuActionName">
+               <clr-icon [attr.shape]="menu.mainMenuIconName" clrVerticalNavIcon></clr-icon>
+                {{ menu.menuItemDesc }}
+            </a>
+        </ng-template>
+    </div>
+
+    <a  clrVerticalNavLink routerLinkActive="active"  routerLink="/cns-portal/project1">
+      <clr-icon  clrVerticalNavIcon shape="objects"></clr-icon>
+       Project Setup </a>
+    </clr-vertical-nav>
+  </div>
+
+</clr-main-container>

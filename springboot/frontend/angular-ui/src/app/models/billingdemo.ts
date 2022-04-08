@@ -1,0 +1,41 @@
+export class Billing {
+  public billingId: string;
+  public invoice_no: string;
+  public invoice_date: string;
+  public dispute_id: number;
+ public tos_code:string;
+ public customer_code:String;
+	public special_price: String;
+	public vessel_code:String;
+	public in_voyage:String;
+	public line_code:String;
+	public loa:String;
+	public gt:String;
+	public ata:String;
+	public location:String;
+	public remark:String;
+	public confirmBy:String;
+	public posted :boolean;
+	public walve:String;
+	public invoice_type:String;
+	public invoice_status:String;
+	public credit_note_no:String;
+	public order_id:number;
+	public group_id:number;
+	public service_id:number;
+	public vessel_name:String;
+	public out_voyage:String;
+	public callNo:String;
+	public loa_uom:String;
+	public po_no:String;
+	public atd:String;
+	public organisation_id:String;
+	public confirmDate:String;
+  public confirmStatus:String;
+	public post_date:String;
+
+	public createdBy:String;
+	public created_on:String;
+	public updated_by:String;
+	public updated_on:String;
+}

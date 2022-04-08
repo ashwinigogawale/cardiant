@@ -1,0 +1,162 @@
+<h3  class="title"style="font-weight: 600;display: inline;"> Open Credit Note</h3>
+<div class="main">
+  <h6 style="font-weight: 700;">View  Mode</h6>
+      <hr>
+      <div class="clr-row">
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="tags">CN Id</label>
+          <input  type="text"  class="clr-input"  name="status">
+       </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="tags">Invoice Type<span class="required-field">*</span></label>
+          <select name="" id="">
+            <option ></option>
+          </select>
+       </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="tags">Status</label>
+          <input  type="text"  class="clr-input"  name="status">
+       </div>
+       <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="tags">Currency Code</label>
+        <input  type="text"  class="clr-input"  name="cucode">
+     </div>
+
+     <div class="clr-col-md-3 clr-col-sm-12">
+      <label for="tags">Customer Code<span class="required-field">*</span></label>
+      <input  type="text"  class="clr-input"  name="customerCode">
+   </div>
+   <div class="clr-col-md-1 clr-col-sm-12" style="margin-top: 25px;">
+    <button>V </button>
+  </div>
+   <div class="clr-col-md-4 clr-col-sm-12">
+    <label for="tags">Customer Name</label>
+    <input  type="text"  class="clr-input"  name="customerName">
+ </div>
+ <div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Reason<span class="required-field">*</span></label>
+  <select name="" id="">
+    <option></option>
+  </select>
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Total No Of Days</label>
+  <input  type="text"  class="clr-input"  name="status">
+</div>
+<div class="clr-row">
+<div class="clr-col-md-6 clr-col-sm-12">
+<label for="tags">Comments</label>
+<textarea name="" id="" cols="40" rows="3" style="margin-top: 5px;" name="comment">
+</textarea>
+</div></div>
+      </div>
+<!-- end row -->
+
+<h6> List of attachment(s)</h6>
+<div >
+<table class="table">
+  <thead>
+   <tr>
+   <th>No</th>
+    <th> File Name</th>
+     <th>External</th>
+     <th>Cancle</th>
+      </tr>
+    </thead>
+       <tbody >
+        <tr >
+          <td style="width: 70px;"><input type="text" class="clr-input">  </td>
+          <td><input type="file"  accept=".pdf,.doc,.docx,.jpg,.msg">
+           </td>
+          <td style="width:40px;"> <input type="checkbox"  checked></td>
+          <td>
+            <a >
+              <clr-icon shape="trash" class="is-error"></clr-icon>
+            </a>
+          </td>
+        </tr>
+
+
+    </tbody>
+    <button type="button" class="btn btn-primary button1" style="margin-left: 20px;">
+      <clr-icon shape="plus"></clr-icon>
+    </button>
+
+  </table> </div>
+  <div >
+    <div class="section">
+      <h6> List of item(s)</h6>
+      </div>
+    <table class="table" id="table">
+        <thead>
+         <tr>
+         <th>No</th>
+          <th> Item Code</th>
+           <th>Item Descriptiom</th>
+           <th>Total Unit</th>
+           <th>Unit Price</th>
+           <th>Line Total</th>
+           <th>Cancle</th>
+            </tr>
+          </thead>
+             <tbody >
+              <tr>
+                <td style="width: 70px;"><input type="text" class="clr-input"></td>
+
+                  <td ><input type="text" style="width: 130px;" class="clr-input">
+                     <button style="margin-left: 12px;height: 30px;width: 30px;">V</button>
+
+                  </td>
+                <td><input type="text" class="clr-input"></td>
+                <td style="width: 100px;text-align: right;"><input type="text" class="clr-input"></td>
+                <td style="width: 100px;"><input type="text" class="clr-input"></td>
+                <td style="width: 200px;"><input type="text" class="clr-input" id="ab"  ></td>
+                <td> <a >
+                  <clr-icon shape="trash" class="is-error"></clr-icon>
+                </a></td>
+              </tr>
+              <tr>
+                <td colspan="4"></td>
+                <td colspan="1"><b>Grand Total</b> </td>
+                <td colspan="1"><input type="text" class="clr-input" id="val"> </td>
+              </tr>
+
+          </tbody>
+          <button type="button" class="btn btn-primary button1" style="margin-left: 20px;" >
+            <clr-icon shape="plus"></clr-icon>
+          </button>
+        </table>
+
+      </div>
+
+      <div class="clr-row">
+        <div class="clr-col-md-6 clr-col-sm-12">
+          <label for="tags">CreatedBY</label>
+          <input  type="text"  class="clr-input"  name="by">
+       </div>
+        <div class="clr-col-md-6 clr-col-sm-12">
+          <label for="tags">Creation Date</label>
+          <input  type="text"  class="clr-input"  name="date">
+       </div></div>
+       <div class="clr-row">
+        <div class="clr-col-md-6 clr-col-sm-12">
+          <label for="tags">Last Updated BY</label>
+          <input  type="text"  class="clr-input"  name="by">
+       </div>
+        <div class="clr-col-md-6 clr-col-sm-12">
+          <label for="tags">Last Updation Date</label>
+          <input  type="text"  class="clr-input"  name="date">
+       </div></div>
+
+      <br>
+      <div style="text-align: center;">
+
+        <button class="btn btn-primary">Edit</button>
+        <button class="btn btn-outline">Close</button>
+      </div>
+</div>
+
+
+
+
+

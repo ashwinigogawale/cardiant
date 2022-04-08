@@ -1,0 +1,75 @@
+<h3 class="modal-title">Menu Access Control-Edit Mode</h3>
+<hr>
+<div class="dg-wrapper">
+  <div class="clr-row">
+
+    <div class="clr-col-12" style="text-align: right;">
+      For <select  id="" style="height: 30px;">
+        <option >N/A</option>
+        <option >Admin User1</option>
+        <option >Admin User2</option>
+        <option >ENG User1</option>
+        <option >ENG User2</option>
+        <option >ENG User3</option>
+        <option >ERT User1</option>
+        <option >ERT User2</option>
+        <option >ERT User3</option>
+        <option >Finace Report</option>
+        <option >Fiance User1</option>
+        <option >Fiance User2</option>
+        <option >Fiance User3</option>
+        <option >HSE User1</option>
+        <option >HSE User2</option>
+        <option >ITT User1</option>
+        <option >ITT User2</option>
+        <option>ITT User3</option>
+        <option>Inventory User1</option>
+        <option>Inventory User2</option>
+      </select>
+      <button id="add" class="btn btn-primary" style="margin-left: 20px;">Reload </button>
+    </div>
+  </div>
+
+  <!--<div >
+    <table class="table" >
+        <thead>
+         <tr>
+         <th>No</th>
+          <th>Menu Item Name</th>
+           <th>Create <input type="checkbox"></th>
+           <th>View <input type="checkbox"></th>
+           <th>Edit <input type="checkbox"></th>
+           <th>Query <input type="checkbox" ></th>
+           <th>Delete <input type="checkbox" ></th>
+            </tr>
+          </thead>
+             <tbody >
+              <tr >
+                <td></td>
+                <td ></td>
+                <td>
+                </td>
+              </tr>
+          </tbody>
+        </table> </div>-->
+
+        <clr-datagrid [clrDgLoading]="loading">
+
+          <clr-dg-placeholder> No Result Found</clr-dg-placeholder>
+          <clr-dg-column>No</clr-dg-column>
+          <clr-dg-column>Menu Item Name</clr-dg-column>
+          <clr-dg-column>Create <input type="checkbox"></clr-dg-column>
+          <clr-dg-column>View <input type="checkbox"></clr-dg-column>
+          <clr-dg-column>Edit <input type="checkbox"></clr-dg-column>
+          <clr-dg-column>Query <input type="checkbox"></clr-dg-column>
+          <clr-dg-column>Delete <input type="checkbox"></clr-dg-column>
+
+          <clr-dg-row *clrDgItems="" [clrDgItem]="user" >
+            <clr-dg-cell></clr-dg-cell>
+            <clr-dg-cell></clr-dg-cell>
+            <clr-dg-cell></clr-dg-cell>
+            <clr-dg-cell></clr-dg-cell>
+          </clr-dg-row>
+
+          <clr-dg-footer> users</clr-dg-footer>
+        </clr-datagrid>

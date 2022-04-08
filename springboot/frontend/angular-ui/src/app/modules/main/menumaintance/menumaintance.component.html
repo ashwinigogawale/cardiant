@@ -1,0 +1,379 @@
+
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" >Submenu</a></li>
+  <li><a href="javascript://">Home Menu</a></li>
+</ol>
+<label for=""><h3>Menu Maintenance</h3></label>
+
+  <div class="clr-row">
+    <div class="clr-col-12" style="text-align: right;">
+      <button id="add" class="btn btn-primary" (click)="goToAdd()">
+        <clr-icon shape="plus"></clr-icon>ADD New
+      </button>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>NO.</th>
+        <th>Menu Item Name</th>
+        <th>ID</th>
+        <th >Sequence</th>
+        <th>Module Name</th>
+        <th>Orignal Menu</th>
+        <th>Status</th>
+        <th>Submenu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>1. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="viewmode">
+     Home</A>
+       </TD>
+        <TD class="x1l x4x" align=left>500</TD>
+        <TD class="x1l x4x">0</TD>
+        <TD class="x1l x4x" align=left>main</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=500">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>2. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=2000&caller_menu_item_id=0">
+     Transaction</A>
+       </TD>
+        <TD class="x1l x4x" align=left>2000</TD>
+        <TD class="x1l x4x">1</TD>
+     <TD class="x1l x4x" align=left>-</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=2000">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>3. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=2500&caller_menu_item_id=0">
+     Process</A>
+       </TD>
+        <TD class="x1l x4x" align=left>2500</TD>
+        <TD class="x1l x4x">2</TD>
+     <TD class="x1l x4x" align=left>-</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=2500">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>4. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=3000&caller_menu_item_id=0">
+     Reports</A>
+       </TD>
+        <TD class="x1l x4x" align=left>3000</TD>
+        <TD class="x1l x4x">3</TD>
+     <TD class="x1l x4x" align=left>-</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=3000">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>5. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=5000&caller_menu_item_id=0">
+     Master Setup</A>
+       </TD>
+        <TD class="x1l x4x" align=left>5000</TD>
+        <TD class="x1l x4x">4</TD>
+     <TD class="x1l x4x" align=left>-</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=5000">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>6. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=6000&caller_menu_item_id=0">
+     Price List</A>
+       </TD>
+        <TD class="x1l x4x" align=left>6000</TD>
+        <TD class="x1l x4x">5</TD>
+     <TD class="x1l x4x" align=left>-</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=6000">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>7. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=4000&caller_menu_item_id=0">
+     Lease</A>
+       </TD>
+        <TD class="x1l x4x" align=left>4000</TD>
+        <TD class="x1l x4x">6</TD>
+     <TD class="x1l x4x" align=left>-</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=4000">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>8. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=7000&caller_menu_item_id=0">
+     Credit Note</A>
+       </TD>
+        <TD class="x1l x4x" align=left>7000</TD>
+        <TD class="x1l x4x">7</TD>
+     <TD class="x1l x4x" align=left>-</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=7000">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>9. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=1000&caller_menu_item_id=0">
+     Security</A>
+       </TD>
+        <TD class="x1l x4x" align=left>1000</TD>
+        <TD class="x1l x4x">8</TD>
+     <TD class="x1l x4x" align=left>-</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=1000">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>10. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=1205&caller_menu_item_id=0">
+     Change Password</A>
+       </TD>
+        <TD class="x1l x4x" align=left>1205</TD>
+        <TD class="x1l x4x">9</TD>
+        <TD class="x1l x4x" align=left>ChangePassword</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=1205">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>11. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=1210&caller_menu_item_id=0">
+     BE Scheduler</A>
+       </TD>
+        <TD class="x1l x4x" align=left>1210</TD>
+        <TD class="x1l x4x">10</TD>
+        <TD class="x1l x4x" align=left>/bebfs_scheduler</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">D</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=1210">
+          <clr-icon shape="bullet-list"></clr-icon></A>
+       </TD></TR>
+       <TR align=middle bgColor=#ffffff vAlign=top>
+        <TD class="x1l x4x" align=right>12. </TD>
+        <TD class="x1l x4x" nowrap>
+          <A href="MenuEdit.jsp?action=V&menu_item_id=9999&caller_menu_item_id=0">
+     Logout</A>
+       </TD>
+        <TD class="x1l x4x" align=left>9999</TD>
+        <TD class="x1l x4x">11</TD>
+        <TD class="x1l x4x" align=left>logoutPage</TD>
+        <TD class="x1l x4x">Home Menu</TD>
+        <TD class="x1l x4x">E</TD>
+        <TD class="x1l x4x" nowrap>
+        <A href="MenuList.jsp?menu_item_id=9999">
+          <clr-icon shape="bullet-list"></clr-icon>
+     </A>
+       </TD></TR>
+    </tbody>
+  </table>
+
+
+  <clr-modal [(clrModalOpen)]="modalAdd" [clrModalSize]="'lg'" [clrModalStaticBackdrop]="true">
+    <h3 class="modal-title">Menu Maintance Add Mode</h3>
+    <div class="modal-body">
+          <form>
+        <div class="clr-row">
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="name">ID<span class="required-field">*</span></label>
+           <input type="text" class="clr-input">
+          </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="name">Menu Item Name<span class="required-field">*</span></label>
+           <input type="text" class="clr-input">
+          </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="tags">Sequence</label>
+            <input type="text" class="clr-input">
+            </div>
+            <div class="clr-col-md-4 clr-col-sm-12">
+              <label for="tags">Module Name</label>
+              <input type="text" class="clr-input">
+              </div>
+            <div class="clr-col-md-4 clr-col-sm-12">
+              <label for="tags">Status</label>
+              <select  id="">
+                <option >Enable</option>
+                <option >Disable</option>
+                </select>
+              </div>
+              <div class="clr-col-md-4 clr-col-sm-12">
+                <label for="tags">Orignal Menu</label>
+                <SELECT NAME="menu_id">
+                  <OPTION SELECTED VALUE="0">Home Menu
+                          <OPTION VALUE="500">Home
+      <OPTION VALUE="2000">Transaction
+      <OPTION VALUE="2050">&nbsp;&nbsp;&nbsp;Request new invoice for Credit Note
+      <OPTION VALUE="2080">&nbsp;&nbsp;&nbsp;Non-Container Service Order
+      <OPTION VALUE="2081">&nbsp;&nbsp;&nbsp; NCSO File Upload
+      <OPTION VALUE="2082">&nbsp;&nbsp;&nbsp;NCSO File Upload Logs
+      <OPTION VALUE="2070">&nbsp;&nbsp;&nbsp;Billing - View Details
+      <OPTION VALUE="2071">&nbsp;&nbsp;&nbsp;CN - View Details
+      <OPTION VALUE="2072">&nbsp;&nbsp;&nbsp;Vessel Details Invoice Update
+      <OPTION VALUE="2100">&nbsp;&nbsp;&nbsp;Log Events
+      <OPTION VALUE="2500">Process
+      <OPTION VALUE="2010">&nbsp;&nbsp;&nbsp;NAVIS - Vessel Confirmation
+      <OPTION VALUE="2020">&nbsp;&nbsp;&nbsp;PMOD - Vessel Confirmation
+      <OPTION VALUE="2030">&nbsp;&nbsp;&nbsp;Marine Charges Confirmation
+      <OPTION VALUE="2040">&nbsp;&nbsp;&nbsp;Train Confirmation
+      <OPTION VALUE="2045">&nbsp;&nbsp;&nbsp;Service Order Confirmation
+      <OPTION VALUE="2060">&nbsp;&nbsp;&nbsp;Re-Invoice Confirmation
+      <OPTION VALUE="2090">&nbsp;&nbsp;&nbsp;Non-Container Service Order Approval
+      <OPTION VALUE="2110">&nbsp;&nbsp;&nbsp;Discrepancy
+      <OPTION VALUE="2120">&nbsp;&nbsp;&nbsp;Discrepancy Monitoring
+      <OPTION VALUE="2130">&nbsp;&nbsp;&nbsp;Manual Events Confirmation
+      <OPTION VALUE="3000">Reports
+      <OPTION VALUE="3001">&nbsp;&nbsp;&nbsp;NCSO Report
+      <OPTION VALUE="3002">&nbsp;&nbsp;&nbsp;VGM Invoice Reports
+      <OPTION VALUE="3003">&nbsp;&nbsp;&nbsp;Service Order Summary & Details
+      <OPTION VALUE="3006">&nbsp;&nbsp;&nbsp;Finance Storage Invoice Reports
+      <OPTION VALUE="3011">&nbsp;&nbsp;&nbsp;VGM Billable Unit Report
+      <OPTION VALUE="3012">&nbsp;&nbsp;&nbsp;Dispute Gate ITT Report
+      <OPTION VALUE="3013">&nbsp;&nbsp;&nbsp;Interface Logs
+      <OPTION VALUE="3101">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Customer Master Logs
+      <OPTION VALUE="3102">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Customer Address Logs
+      <OPTION VALUE="3103">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reefer Invoice Logs
+      <OPTION VALUE="3104">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reefer Invoice Attachment Logs
+      <OPTION VALUE="3105">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Receipt Logs
+      <OPTION VALUE="3106">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Receipt Attachment Logs
+      <OPTION VALUE="3107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adjustment Logs
+      <OPTION VALUE="3108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regular Invoice Logs
+      <OPTION VALUE="3109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regular/Open CN Logs
+      <OPTION VALUE="31010">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regular Invoice Attachment Logs
+      <OPTION VALUE="31013">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regular/Open CN Attachment Logs
+      <OPTION VALUE="31011">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Regular Dispute Logs
+      <OPTION VALUE="31012">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reefer Invoice and Receipt Delete Attachment Logs
+      <OPTION VALUE="31014">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Supplier Adjustment API Logs
+      <OPTION VALUE="31015">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ACS logs
+      <OPTION VALUE="31016">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MRMS Marine logs
+      <OPTION VALUE="3014">&nbsp;&nbsp;&nbsp;Audit Trail Reports
+      <OPTION VALUE="3015">&nbsp;&nbsp;&nbsp;Marine Report
+      <OPTION VALUE="5000">Master Setup
+      <OPTION VALUE="5020">&nbsp;&nbsp;&nbsp;TOS
+      <OPTION VALUE="5025">&nbsp;&nbsp;&nbsp;Position
+      <OPTION VALUE="5010">&nbsp;&nbsp;&nbsp;Department
+      <OPTION VALUE="5040">&nbsp;&nbsp;&nbsp;Customer Process
+      <OPTION VALUE="5030">&nbsp;&nbsp;&nbsp;Customer Code Mapping - TOS
+      <OPTION VALUE="5913">&nbsp;&nbsp;&nbsp;Customer Line Code Mapping - Marine
+      <OPTION VALUE="5907">&nbsp;&nbsp;&nbsp;Customer Master View
+      <OPTION VALUE="5090">&nbsp;&nbsp;&nbsp;Customer Billing Exception
+      <OPTION VALUE="5906">&nbsp;&nbsp;&nbsp;Invoice Type
+      <OPTION VALUE="5070">&nbsp;&nbsp;&nbsp;Invoice Type Rules
+      <OPTION VALUE="5050">&nbsp;&nbsp;&nbsp;Invoice Bill To Rules
+      <OPTION VALUE="5080">&nbsp;&nbsp;&nbsp;Invoice Type Accompanied Items
+      <OPTION VALUE="5901">&nbsp;&nbsp;&nbsp;Billing Item Master
+      <OPTION VALUE="5120">&nbsp;&nbsp;&nbsp;Billing Item Characteristics
+      <OPTION VALUE="5060">&nbsp;&nbsp;&nbsp;Pairing Event for Dwell Time
+      <OPTION VALUE="5912">&nbsp;&nbsp;&nbsp;Unit of Measurement
+      <OPTION VALUE="5904">&nbsp;&nbsp;&nbsp;Payment Terms
+      <OPTION VALUE="5905">&nbsp;&nbsp;&nbsp;Tax
+      <OPTION VALUE="5911">&nbsp;&nbsp;&nbsp;Currency
+      <OPTION VALUE="5903">&nbsp;&nbsp;&nbsp;Organization
+      <OPTION VALUE="5908">&nbsp;&nbsp;&nbsp;CN Reasons
+      <OPTION VALUE="5100">&nbsp;&nbsp;&nbsp;Discrepancy Reason
+      <OPTION VALUE="5110">&nbsp;&nbsp;&nbsp;Discrepancy Type
+      <OPTION VALUE="5140">&nbsp;&nbsp;&nbsp;Post Pairing Event Setup
+      <OPTION VALUE="5910">&nbsp;&nbsp;&nbsp;Lookup CN Reason
+      <OPTION VALUE="5900">&nbsp;&nbsp;&nbsp;Reference Code
+      <OPTION VALUE="6000">Price List
+      <OPTION VALUE="6001">&nbsp;&nbsp;&nbsp;BE Price List
+      <OPTION VALUE="6004">&nbsp;&nbsp;&nbsp;Assign Price List to Customer
+      <OPTION VALUE="6005">&nbsp;&nbsp;&nbsp;Price List Attachment
+      <OPTION VALUE="6002">&nbsp;&nbsp;&nbsp;Copy Price List
+      <OPTION VALUE="6006">&nbsp;&nbsp;&nbsp;Price List Lines Upload
+      <OPTION VALUE="6007">&nbsp;&nbsp;&nbsp;Price List APPROVAL
+      <OPTION VALUE="5130">&nbsp;&nbsp;&nbsp;Storage Price Range
+      <OPTION VALUE="5909">&nbsp;&nbsp;&nbsp;Storage Event Free Days
+      <OPTION VALUE="6008">&nbsp;&nbsp;&nbsp;DIT Free Days
+      <OPTION VALUE="6003">&nbsp;&nbsp;&nbsp;Update Price List
+      <OPTION VALUE="4000">Lease
+      <OPTION VALUE="4001">&nbsp;&nbsp;&nbsp;Lease Master
+      <OPTION VALUE="4002">&nbsp;&nbsp;&nbsp;Lease Lookups
+      <OPTION VALUE="4003">&nbsp;&nbsp;&nbsp;Lease Attachment
+      <OPTION VALUE="4004">&nbsp;&nbsp;&nbsp;Lease Schedule
+      <OPTION VALUE="4006">&nbsp;&nbsp;&nbsp;Lease Reports
+      <OPTION VALUE="4061">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Master Lease Reports
+      <OPTION VALUE="4062">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Invoice Issue Reports
+      <OPTION VALUE="4063">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activity Listing Reports
+      <OPTION VALUE="4005">&nbsp;&nbsp;&nbsp;Lease APPROVAL
+      <OPTION VALUE="7000">Credit Note
+      <OPTION VALUE="7001">&nbsp;&nbsp;&nbsp;Regular Credit Note
+      <OPTION VALUE="7004">&nbsp;&nbsp;&nbsp;Open Credit Note
+      <OPTION VALUE="7006">&nbsp;&nbsp;&nbsp;Open CN From Invoice
+      <OPTION VALUE="7002">&nbsp;&nbsp;&nbsp;Credit Note Attachment
+      <OPTION VALUE="7003">&nbsp;&nbsp;&nbsp;Regular Credit Note APPROVAL
+      <OPTION VALUE="7005">&nbsp;&nbsp;&nbsp;Open Credit Note APPROVAL
+      <OPTION VALUE="7007">&nbsp;&nbsp;&nbsp;Open CN From Invoice Approval
+      <OPTION VALUE="1000">Security
+      <OPTION VALUE="1200">&nbsp;&nbsp;&nbsp;System Parameters
+      <OPTION VALUE="1201">&nbsp;&nbsp;&nbsp;Menu Maintenance
+      <OPTION VALUE="1202">&nbsp;&nbsp;&nbsp;User Group Maintenance
+      <OPTION VALUE="1203">&nbsp;&nbsp;&nbsp;User Maintenance
+      <OPTION VALUE="1204">&nbsp;&nbsp;&nbsp;Change User Status
+      <OPTION VALUE="1206">&nbsp;&nbsp;&nbsp;Menu Access Control
+      <OPTION VALUE="1520">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field Access Control
+      <OPTION VALUE="1510">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Field Maintenance
+      <OPTION VALUE="1207">&nbsp;&nbsp;&nbsp;Document Master
+      <OPTION VALUE="1208">&nbsp;&nbsp;&nbsp;Document Structure
+      <OPTION VALUE="1209">&nbsp;&nbsp;&nbsp;Document Reference
+      <OPTION VALUE="1211">&nbsp;&nbsp;&nbsp;Webservice ON/OFF
+      <OPTION VALUE="1500">&nbsp;&nbsp;&nbsp;Reset Password
+      <OPTION VALUE="1205">Change Password
+      <OPTION VALUE="1210">BE Scheduler
+      <OPTION VALUE="9999">Logout
+
+                  </SELECT>
+                </div>
+        </div>
+        <br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" (click)="modalAdd = false">Cancel</button>
+          <button type="submit" class="btn btn-primary" >ADD</button>
+          </div>
+  </form>
+    </div>
+
+  </clr-modal>

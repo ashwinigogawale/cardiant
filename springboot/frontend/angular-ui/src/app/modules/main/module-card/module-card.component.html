@@ -1,0 +1,52 @@
+
+
+<div>
+  <div *ngIf="modules; else showInfo" class="clr-row clr-align-items-start clr-justify-content-start">
+      <div *ngFor="let app of modules; let index = i" class="clr-col-auto" >
+          <a class="card clickable"  routerLinkActive="actice">
+              <div class="card-block">
+                  <h3 class="card-title" (click)="goToAction(app.id)"><a href="">{{app.moduleName}}</a>
+                  </h3>
+                  <span class="description"> {{app.description}}</span>
+              </div>
+              <div class="card-footer">
+
+
+                <span><clr-icon shape="tag" style="color: green;"></clr-icon>v0.21.8</span><br>
+                <span class="label label-purple p7" style="margin-top: .4em;"> {{app.technologyStack}}</span><br>
+
+                </div>
+<div class="footer">
+  <div class="progress-static labeled" >
+    <div class="progress-meter" data-value="50" data-displayval="50%"></div>
+    <span>50%</span>
+  </div>
+  <div class="card-title">
+    <span class="badge badge-success">2</span>
+    <span class="badge badge-danger">3</span>
+    <span class="badge badge-info">12</span>
+  </div>
+
+</div>
+
+          </a>
+      </div>
+  </div>
+
+  <ng-template #showInfo>
+      <div class="alert alert-info" role="alert">
+          <div class="alert-items">
+              <div class="alert-item static">
+                  <div class="alert-icon-wrapper">
+                      <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+                  </div>
+                  <span class="alert-text">
+                      Sorry. No module apps could be found.<clr-spinner>Loading ...</clr-spinner>
+                  </span>
+              </div>
+          </div>
+      </div>
+  </ng-template>
+</div>
+
+

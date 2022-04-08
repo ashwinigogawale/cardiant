@@ -1,0 +1,301 @@
+<h3  class="title"style="font-weight: 600;display: inline;"> Open Credit Note</h3>
+
+  <h6 style="font-weight: 700;">Add  Mode</h6>
+      <hr>
+      <div class="clr-row">
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="tags">Invoice Type<span class="required-field">*</span></label>
+          <select name="" id="">
+            <option ></option>
+          </select>
+       </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="tags">Status</label>
+          <input  type="text"  class="clr-input"  name="status">
+       </div>
+       <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="tags">Currency Code</label>
+        <input  type="text"  class="clr-input"  name="cucode">
+     </div>
+
+     <div class="clr-col-md-3 clr-col-sm-12">
+      <label for="tags">Customer Code<span class="required-field">*</span></label>
+      <input  type="text"  class="clr-input"  name="customerCode" [(ngModel)]="userobjcust.customerCode">
+   </div>
+   <div class="clr-col-md-1 clr-col-sm-12" style="margin-top: 25px;">
+    <button (click)="gotocustomerid()">V </button>
+  </div>
+   <div class="clr-col-md-4 clr-col-sm-12">
+    <label for="tags">Customer Name</label>
+    <input  type="text"  class="clr-input"  name="customerName"  [(ngModel)]="userobjcust.customerName">
+ </div>
+ <div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Reason<span class="required-field">*</span></label>
+  <select name="" id="">
+    <option></option>
+  </select>
+</div>
+<div class="clr-row">
+<div class="clr-col-md-4 clr-col-sm-12">
+<label for="tags">Comments</label>
+<textarea name="" id="" cols="40" rows="3"  name="comment">
+</textarea>
+</div></div>
+      </div>
+
+<!-- end row -->
+
+<h6> List of attachment(s)</h6>
+<div >
+<table class="table">
+  <thead>
+   <tr>
+   <th>No</th>
+    <th> File Name</th>
+     <th>External</th>
+     <th>Cancle</th>
+      </tr>
+    </thead>
+       <tbody >
+        <tr >
+          <td style="width: 70px;"><input type="text" class="clr-input">  </td>
+          <td><input type="file"  accept=".pdf,.doc,.docx,.jpg,.msg">
+           </td>
+          <td style="width:40px;"> <input type="checkbox"  checked></td>
+          <td>
+            <a >
+              <clr-icon shape="trash" class="is-error"></clr-icon>
+            </a>
+          </td>
+        </tr>
+
+
+    </tbody>
+    <button type="button" class="btn btn-primary button1" style="margin-left: 20px;">
+      <clr-icon shape="plus"></clr-icon>
+    </button>
+
+  </table> </div>
+  <div >
+    <div class="section">
+      <h6> List of item(s)</h6>
+      </div>
+    <table class="table" id="table">
+        <thead>
+         <tr>
+         <th>No</th>
+          <th> Item Code</th>
+           <th>Item Descriptiom</th>
+           <th>Total Unit</th>
+           <th>Unit Price</th>
+           <th>Line Total</th>
+           <th>Cancle</th>
+            </tr>
+          </thead>
+             <tbody >
+              <tr>
+                <td style="width: 70px;"><input type="text" class="clr-input"></td>
+
+                  <td ><input type="text" style="width: 130px;" class="clr-input">
+                     <button style="margin-left: 12px;height: 30px;width: 30px;" (click)="gotoitem()">V</button>
+
+                  </td>
+                <td><input type="text" class="clr-input"></td>
+                <td style="width: 100px;text-align: right;"><input type="text" class="clr-input"></td>
+                <td style="width: 100px;"><input type="text" class="clr-input"></td>
+                <td style="width: 200px;"><input type="text" class="clr-input" id="ab"  ></td>
+                <td> <a >
+                  <clr-icon shape="trash" class="is-error"></clr-icon>
+                </a></td>
+              </tr>
+              <tr>
+                <td colspan="4"></td>
+                <td colspan="1"><b>Grand Total</b> </td>
+                <td colspan="1"><input type="text" class="clr-input" id="val"> </td>
+              </tr>
+
+          </tbody>
+          <button type="button" class="btn btn-primary button1" style="margin-left: 20px;" >
+            <clr-icon shape="plus"></clr-icon>
+          </button>
+        </table>
+
+      </div><br>
+      <div style="text-align: center;">
+
+        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-success">Ready for Approval</button>
+        <button class="btn btn-outline">Close</button>
+      </div>
+
+
+
+<!--customer code-->
+<clr-modal [(clrModalOpen)]="customer" [clrModalSize]="'lg'">
+  <h3 class="modal-title"><b>Select From List:</b></h3>
+  <div class="modal-body">
+    <div class="clr-row">
+      <div class="clr-col-md-12 clr-col-sm-12">
+          <input id="data" type="text" placeholder="Enter search Criteria" class="clr-input">
+       </div>
+      </div>
+
+
+     <clr-datagrid [clrDgLoading]="loading">
+      <clr-dg-placeholder><clr-spinner>Loading ...</clr-spinner></clr-dg-placeholder>
+      <clr-dg-column [clrDgField]="'id'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+        No
+      </ng-container></clr-dg-column>
+      <clr-dg-column [clrDgField]="'customerCode'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+        Customer Code
+      </ng-container></clr-dg-column>
+      <clr-dg-column [clrDgField]="'customerId'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+        Customer Id
+      </ng-container></clr-dg-column>
+
+      <clr-dg-column [clrDgField]="'customerName'">
+        <ng-container *clrDgHideableColumn="{hidden: false}">
+          Customer Name
+        </ng-container>
+        </clr-dg-column >
+
+
+
+
+      <clr-dg-row *clrDgItems="let user of custdata;let i = index" [clrDgItem]="user">
+        <clr-dg-cell>{{i+1}}</clr-dg-cell>
+        <clr-dg-cell (click)="getcustID(user.customerId)" style="color: rgb(108, 108, 194);" >{{user.customerCode}}</clr-dg-cell>
+        <clr-dg-cell >{{user.customerId}}</clr-dg-cell>
+        <clr-dg-cell>{{user.customerName}}</clr-dg-cell>
+
+
+
+        <clr-dg-row-detail *clrIfExpanded>
+          <table class="table">
+            <tr>
+              <td class="td-title">NO</td>
+              <td class="td-content">{{user.id}}</td>
+            </tr>
+            <tr>
+              <td class="td-title"> Customer Code</td>
+              <td class="td-content">{{user.customerCode}}</td>
+            </tr>
+            <tr>
+              <td class="td-title">Customer Id</td>
+              <td class="td-content">{{user.customerId}} </td>
+            </tr>
+            <tr>
+              <td class="td-title"> Customer Name<td>
+              <td class="td-content">{{user.customerName}}</td>
+            </tr>
+
+
+          </table>
+        </clr-dg-row-detail>
+      </clr-dg-row>
+
+      <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="10">
+          <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Records per page</clr-dg-page-size>
+          {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+          of {{pagination.totalItems}} Records
+        </clr-dg-pagination>
+      </clr-dg-footer>
+    </clr-datagrid>
+
+
+
+
+  </div>
+</clr-modal>
+
+
+<!--item-->
+<clr-modal [(clrModalOpen)]="item" [clrModalSize]="'lg'">
+  <div class="modal-body">
+  <!--  <div class="clr-row">
+      <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="tags">Item Code:</label>
+          <input id="student_name" type="text"  class="clr-input">
+       </div>
+
+      <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="tags">Item Description:</label>
+        <input id="department" type="text"  class="clr-input">
+      </div>
+      <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="tags">Invoice Type:</label>
+        <select name="" id="">
+          <option value="">water</option>
+        </select>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="dipute = false">Clear</button>
+      <button type="submit"  class="btn btn-outline" >Query</button>
+      <button type="submit"  class="btn btn-primary" >Reset</button>
+      </div>-->
+     <h3> List of Result(s)</h3>
+     <clr-datagrid [clrDgLoading]="loading">
+      <clr-dg-placeholder><clr-spinner>Loading ...</clr-spinner></clr-dg-placeholder>
+      <clr-dg-column [clrDgField]="'id'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+        NO
+      </ng-container></clr-dg-column>
+      <clr-dg-column [clrDgField]="'itemCode'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+        Item Code
+      </ng-container></clr-dg-column>
+      <clr-dg-column [clrDgField]="'itemDesc'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Item Description
+      </ng-container></clr-dg-column>
+      <clr-dg-column [clrDgField]="'uom'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+        UOM
+        </ng-container></clr-dg-column>
+      <clr-dg-column [clrDgField]="'invoiceType'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+        invoiceType
+        </ng-container></clr-dg-column>
+
+
+
+
+      <clr-dg-row *clrDgItems="let user of itemdata;let i = index" [clrDgItem]="user">
+        <clr-dg-cell>{{i+1}}</clr-dg-cell>
+        <clr-dg-cell (click)="getitemid(user.id)" style="color: rgb(108, 108, 194);">{{user.itemCode}}</clr-dg-cell>
+        <clr-dg-cell>{{user.itemDesc}}</clr-dg-cell>
+        <clr-dg-cell>{{user.uom}}</clr-dg-cell>
+        <clr-dg-cell>{{user.invoiceType}}</clr-dg-cell>
+
+            <clr-dg-row-detail *clrIfExpanded>
+          <table class="table">
+            <tr>
+              <td class="td-title">NO</td>
+              <td class="td-content">{{user.id}}</td>
+            </tr>
+            <tr>
+              <td class="td-title"> Item Code</td>
+              <td class="td-content">{{user.itemCode}}</td>
+            </tr>
+            <tr>
+              <td class="td-title">Item Description</td>
+              <td class="td-content">{{user.itemDesc}} </td>
+            </tr>
+
+
+
+          </table>
+        </clr-dg-row-detail>
+      </clr-dg-row>
+
+      <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="10">
+          <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Records per page</clr-dg-page-size>
+          {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+          of {{pagination.totalItems}} Records
+        </clr-dg-pagination>
+      </clr-dg-footer>
+    </clr-datagrid>
+
+
+
+
+  </div>
+</clr-modal>

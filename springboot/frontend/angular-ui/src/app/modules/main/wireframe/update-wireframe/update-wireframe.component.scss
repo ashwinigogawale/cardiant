@@ -1,0 +1,239 @@
+
+// :host {
+
+//     display: block;
+//     box-sizing: border-box;
+//   }
+
+//   mat-card {
+
+//     transition: transform 200ms, opacity 200ms;
+//   }
+
+//   .dndDraggingSource {
+
+//     opacity: .5;
+//     transform: scale(.98);
+//   }
+
+
+// ----------------------------------------------------------------------
+
+
+
+@import"./bootstrap/bootstrap.min.css";
+
+
+
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+.clearfix{clear:both;}
+.pointer{cursor: pointer;}
+.ucfirst{text-transform: capitalize;}
+.min300{min-height:300px}
+.app-box{
+    padding: 10px;
+    margin-bottom:20px;
+    height: 230px;
+    background: #b5e8d4;
+    overflow: hidden;
+    box-shadow: 1px 1px 4px #ccc;
+}
+.app-box:hover{
+    box-shadow: 1px 1px 4px #999;
+}
+.app-box .remove{
+    position: absolute;
+    right: 21px;
+    top: 0px;
+    color: #545454;
+    display:none;
+}
+.app-box:hover .remove{
+    display:block;
+}
+.inline-btn{
+    background: #00b970;
+    padding: 1px 5px;
+    color: white;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.box{
+    padding: 10px;
+    margin-bottom:10px;
+    overflow: auto;
+    box-shadow: 1px 1px 4px #ddd;
+}
+.form-group .form-control{
+    font-size:inherit;
+    background-color: inherit;
+
+}
+
+.dndDropArea{
+    padding-bottom: 15px;
+    // border: dotted #ddd 2px;
+    // border-bottom: none;
+}
+
+.dndDropArea.empty{
+    min-height: 20rem;
+    margin-top: 5px;
+    border: dashed #ddd 2px;
+}
+.fields {
+    background-color: #e4e1e1;
+}
+div{
+    // padding:0px !important;
+    margin-top:1px !important;
+    margin-bottom:1px !important;
+}
+input[type=text],[type=date],[type=email],[type=number],[type=phone],[type=datetime-local], textarea {
+    background-color : rgb(255, 255, 255) !important;
+}
+
+.field{
+    // padding:0.01px !important;
+    // margin-bottom:0.1px !important;
+    position: relative;
+    color: rgb(0, 0, 0);
+    background-color: #e4e1e1;
+}
+.field:hover{
+    box-shadow: 1px 1px 4px #ddd;
+}
+
+.toggle-Wrapper{
+    padding: 15px;
+    background: #d6d6d629;
+}
+.iconpadding {
+    margin-bottom: -12px !important;
+    margin-top: -0.5px !important;
+}
+.dndHandle{
+    cursor: pointer;
+    color: #999;
+}
+.dndDraggingSource{
+    opacity:0.3;
+}
+.dndPlaceholder{
+    background-color: black;
+}
+.field .fa{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 24px;
+    vertical-align: middle;
+
+}
+.w-100 {
+    width: 100% !important;
+}
+.w-50 {
+    width: 49% !important;
+}
+.w-33 {
+    width: 32% !important;
+}
+.w-25 {
+    width: 25% !important;
+}
+.red{color:#d9534f}
+.fa-trash{color:#d9534f}
+.marginT60{
+    margin-top:60px;
+}
+
+.color-red{color:red;}
+.report-block{
+    padding:10px;
+    background:#f8f8f8;
+    margin-bottom:20px;
+}
+.report-block .row:nth-child(even){
+    background:#fff;
+}
+
+.ftheme{
+    width:100%;
+
+}
+
+.dndDropArea .field .fa{
+    opacity:0;
+}
+.dndDropArea .field:hover .fa{
+    opacity:1;
+}
+
+.colorpick{
+    height: 25px;
+    background: white;
+    border: none;
+}
+
+.labelPadding {
+    padding-left: 20px;
+    margin-bottom: -12px !important;
+    margin-top: -6px !important;
+}
+input.form-control {
+    height:33px !important;
+ }
+input[type=email] {
+    margin-top: -7px;
+}
+
+.colPadding {
+    padding-left: 20px !important;
+    padding-bottom: 5px !important;
+}
+.container-fluid {
+    margin: 0% !important;
+    padding: 0% !important;
+}
+
+input[type=radio] {
+    width: 20px;
+    height: 20px;
+}
+
+.flex-container {
+    display: flex;
+    // flex-direction: row;
+    flex-wrap:wrap;
+  }
+  .flex-container > div {
+    margin:4px;
+  }
+  body {
+    filter: grayscale(100%);
+}
+.text {
+   font-weight: 100; font: 1.25em sans-serif; color: hsl(196.2, 100%, 35.7%);
+}
+.icon {
+    color: black; font-weight: 900; filter: grayscale(100%);
+}
+
+.tableData {
+    font-size: large;
+    font: 1.5em sans-serif;
+    padding-top: 0% !important;
+    padding-bottom: 0% !important;
+    text-align: center;
+    color: #000;
+}
+.grid {
+    color: black;
+    font: 1.5em sans-serif;
+    font-size: large;
+    margin-top: 0.2px !important;
+    padding-left: 10px;
+}

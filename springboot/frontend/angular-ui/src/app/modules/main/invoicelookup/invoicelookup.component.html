@@ -1,0 +1,239 @@
+
+
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']">Home</a></li>
+  <li><a href="javascript://">Invoice Type LookUp</a></li>
+
+</ol>
+
+
+<div class="dg-wrapper">
+  <div class="clr-row">
+
+    <div class="clr-col-12" style="text-align: right;">
+      <button class="btn btn-outline" (click)="onExport()">
+        <clr-icon shape="export"></clr-icon> xlsx
+      </button>
+      <button id="add" class="btn btn-primary" (click)="goToAdd()">
+        <clr-icon shape="plus"></clr-icon>ADD
+      </button>
+    </div>
+  </div>
+
+
+  <clr-modal [(clrModalOpen)]="modalAdd" [clrModalSize]="'lg'" [clrModalStaticBackdrop]="true">
+    <h3 class="modal-title">Add Invoice Type Lookup Data</h3>
+    <div class="modal-body" >
+      <form>
+        <div class="clr-row" style="height: fit-content;">
+            <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="name">Code<span class="required-field">*</span></label>
+            <input type="text" class="clr-input" name="customercode">
+          </div>
+            <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="email">Description</label>
+            <input type="text" class="clr-input" name="customerid">
+          </div>
+            <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="subject">Location Code<span class="required-field">*</span></label>
+            <input type="text" class="clr-input" name="freeperiod">
+          </div>
+
+            <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="name">GL Account<span class="required-field">*</span></label>
+            <input type="text" class="clr-input" name="updatedby">
+          </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="name">Type<span class="required-field">*</span></label>
+            <input type="text" class="clr-input" name="updatedby">
+          </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="name">Start Date<span class="required-field">*</span></label>
+            <input type="date" class="clr-input" name="updatedby">
+          </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="name">End Date</label>
+            <input type="date" class="clr-input" name="updatedby">
+          </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-outline" (click)="modalAdd = false">Cancel</button>
+          <button type="submit" class="btn btn-primary" >ADD</button>
+          </div>
+    </form>
+    </div>
+  </clr-modal>
+
+
+
+
+  <clr-datagrid [clrDgLoading]="loading">
+    <clr-dg-placeholder>user not found!</clr-dg-placeholder>
+
+    <clr-dg-column [clrDgField]="'id'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      No
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'code'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+    Code
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'type'">
+      <ng-container *clrDgHideableColumn="{hidden: false}">
+        Type
+      </ng-container>
+      </clr-dg-column >
+    <clr-dg-column [clrDgField]="'description'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Description
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'locationcode'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Location Code
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'glaccount'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      GL Account
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'startdate'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Start Date
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'enddate'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      End Date
+    </ng-container></clr-dg-column>
+
+    <clr-dg-row *clrDgItems="" [clrDgItem]="user">
+      <clr-dg-cell>{{user.id}}</clr-dg-cell>
+      <clr-dg-cell>{{user.code}}</clr-dg-cell>
+      <clr-dg-cell>{{user.type}}</clr-dg-cell>
+      <clr-dg-cell>{{user.description}}</clr-dg-cell>
+      <clr-dg-cell>{{user.locationcode}}</clr-dg-cell>
+      <clr-dg-cell>{{user.glaccount}}</clr-dg-cell>
+      <clr-dg-cell>{{user.startdate}}</clr-dg-cell>
+      <clr-dg-cell>{{user.enddate}}</clr-dg-cell>
+      <clr-dg-action-overflow>
+
+        <button class="action-item" (click)="goToEdit(user)">Edit</button>
+        <button class="action-item" (click)="onDelete(user)">Delete</button>
+      </clr-dg-action-overflow>
+
+      <clr-dg-row-detail *clrIfExpanded>
+        <table class="table">
+          <tr>
+            <td class="td-title">Id</td>
+            <td class="td-content">{{user.id}}</td>
+          </tr>
+          <tr>
+            <td class="td-title"> Code</td>
+            <td class="td-content">{{user.departmentcode}}</td>
+          </tr>
+          <tr>
+            <td class="td-title">Type</td>
+            <td class="td-content">{{user.active}} </td>
+          </tr>
+          <tr>
+            <td class="td-title">Description</td>
+            <td class="td-content">{{user.description}}</td>
+          </tr>
+          <tr>
+            <td class="td-title">Location Code</td>
+            <td class="td-content">{{user.createdby}}</td>
+          </tr>
+          <tr>
+            <td class="td-title">GL Account</td>
+            <td class="td-content">{{user.createdon}}</td>
+          </tr>
+          <tr>
+            <td class="td-title">Start Date</td>
+            <td class="td-content">{{user.updatedby}}</td>
+          </tr>
+          <tr>
+            <td class="td-title">End Date</td>
+            <td class="td-content">{{user.updatedon}}</td>
+          </tr>
+
+        </table>
+      </clr-dg-row-detail>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+      <clr-dg-pagination #pagination [clrDgPageSize]="10">
+        <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Users per page</clr-dg-page-size>
+        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+        of {{pagination.totalItems}} users
+      </clr-dg-pagination>
+    </clr-dg-footer>
+  </clr-datagrid>
+</div>
+
+
+
+<clr-modal [(clrModalOpen)]="modaledit" [clrModalSize]="'lg'" [clrModalStaticBackdrop]="true">
+  <h3 class="modal-title">Edit Department Data</h3>
+  <div class="modal-body" *ngIf="rowSelected.id">
+    <h2 class="heading">{{rowSelected.id}}</h2>
+    <form>
+      <div class="clr-row" style="height: fit-content;">
+          <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">Code<span class="required-field">*</span></label>
+          <input type="text" class="clr-input" name="customercode">
+        </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="email">Description</label>
+          <input type="text" class="clr-input" name="customerid">
+        </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="subject">Location Code<span class="required-field">*</span></label>
+          <input type="text" class="clr-input" name="freeperiod">
+        </div>
+
+          <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">GL Account<span class="required-field">*</span></label>
+          <input type="text" class="clr-input" name="updatedby">
+        </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">Type<span class="required-field">*</span></label>
+          <input type="text" class="clr-input" name="updatedby">
+        </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">Start Date<span class="required-field">*</span></label>
+          <input type="date" class="clr-input" name="updatedby">
+        </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">End Date</label>
+          <input type="date" class="clr-input" name="updatedby">
+        </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">Created By</label>
+          <input type="text" class="clr-input" name="cretedby" [(ngModel)]="rowSelected.createdby">
+        </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="email">Creation Date</label>
+          <input type="text" class="clr-input" name="cretedon" [(ngModel)]="rowSelected.createdon">
+        </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">Last Updated By</label>
+          <input type="text" class="clr-input" name="updatedby" [(ngModel)]="rowSelected.updatedby">
+        </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="email"> Last Updated Date</label>
+          <input type="text" class="clr-input" name="updatedon" [(ngModel)]="rowSelected.updatedon">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+          <button type="button" class="btn btn-outline" (click)="modalAdd = false">Cancel</button>
+        <button type="submit" class="btn btn-primary" >ADD</button>
+        </div>
+  </form>
+
+
+  </div>
+</clr-modal>
+
+<clr-modal [(clrModalOpen)]="modaldelete"  [clrModalStaticBackdrop]="true">
+  <h3 class="modal-title">Are You Sure Want to delete?</h3>
+  <div class="modal-body" >
+    <h2 class="heading"></h2>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline" (click)="modaldelete = false">Cancel</button>
+    <button type="button"  class="btn btn-primary" >Delete</button>
+    </div>
+  </div>
+</clr-modal>

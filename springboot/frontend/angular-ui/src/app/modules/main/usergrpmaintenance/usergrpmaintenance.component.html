@@ -1,0 +1,172 @@
+
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']">Home</a></li>
+  <li><a href="javascript://">USER Group Maintance</a></li>
+
+</ol>
+
+
+<div class="dg-wrapper">
+  <div class="clr-row">
+
+    <div class="clr-col-12" style="text-align: right;">
+      <button class="btn btn-outline" (click)="onExport()">
+        <clr-icon shape="export"></clr-icon> xlsx
+      </button>
+      <button id="add" class="btn btn-primary" (click)="goToAdd()">
+        <clr-icon shape="plus"></clr-icon>ADD
+      </button>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <clr-datagrid [clrDgLoading]="loading">
+    <clr-dg-placeholder> <clr-spinner>Loading ...</clr-spinner></clr-dg-placeholder>
+
+    <clr-dg-column [clrDgField]="'userGrp'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+    NO
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'groupName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      User Group
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'groupDesc'"><ng-container *clrDgHideableColumn="{hidden: false}">
+      Description
+      </ng-container></clr-dg-column >
+    <clr-dg-column [clrDgField]="'groupLevel'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Group Level
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'status'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Status
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'updatedby'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Updated By
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'updateDateFormated'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+    Updated Date
+    </ng-container></clr-dg-column>
+
+
+    <clr-dg-row *clrDgItems="let user of givendata;let i = index" [clrDgItem]="user">
+      <clr-dg-cell>{{i+1}}</clr-dg-cell>
+      <clr-dg-cell>{{user.groupName}}</clr-dg-cell>
+      <clr-dg-cell >{{user.groupDesc}}</clr-dg-cell>
+      <clr-dg-cell>{{user.groupLevel}}</clr-dg-cell>
+      <clr-dg-cell>{{user.status}}</clr-dg-cell>
+      <clr-dg-cell>{{user.updateby}}</clr-dg-cell>
+      <clr-dg-cell>{{user.updateDateFormated}}</clr-dg-cell>
+
+      <clr-dg-action-overflow>
+
+        <button class="action-item" (click)="goToEdit(user)">Edit</button>
+
+      </clr-dg-action-overflow>
+
+      <clr-dg-row-detail *clrIfExpanded>
+        <table class="table">
+          <tr>
+            <td class="td-title">username</td>
+            <td class="td-content">{{user.groupName}}</td>
+          </tr>
+
+
+        </table>
+      </clr-dg-row-detail>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+      <clr-dg-pagination #pagination [clrDgPageSize]="10">
+        <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Record per page</clr-dg-page-size>
+        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+        of {{pagination.totalItems}} Records
+      </clr-dg-pagination>
+    </clr-dg-footer>
+  </clr-datagrid>
+</div>
+
+<clr-modal [(clrModalOpen)]="modalAdd" [clrModalSize]="'lg'" [clrModalStaticBackdrop]="true">
+  <h3 class="modal-title">User Group Maintance Add Mode</h3>
+  <div class="modal-body">
+        <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
+      <div class="clr-row">
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">User Group<span class="required-field">*</span></label>
+         <input type="text" class="clr-input" formControlName="groupName">
+        </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">Description<span class="required-field">*</span></label>
+         <input type="text" class="clr-input" formControlName="groupDesc">
+        </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="tags">Status<span class="required-field">*</span></label>
+          <select  id="" formControlName="status">
+            <option value="E">Enable</option>
+              <option  value="A">Active</option></select>
+          </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="tags">Group Level<span class="required-field">*</span></label>
+            <select  id="" formControlName="groupLevel">
+              <option >10</option>
+              <option >20</option>
+             <option >30</option>
+             <option >40</option>
+             <option>50</option>
+            </select>
+            </div>
+      </div>
+      <br>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="modalAdd = false">Cancel</button>
+        <button type="submit" class="btn btn-primary" >ADD</button>
+        </div>
+</form>
+  </div>
+
+</clr-modal>
+
+<clr-modal [(clrModalOpen)]="modaledit" [clrModalSize]="'lg'" [clrModalStaticBackdrop]="true">
+  <h3 class="modal-title">User Group Maintance Edit Mode</h3>
+
+
+  <div class="modal-body" *ngIf="rowSelected.usrGrp">
+    <h2 class="heading">{{rowSelected.usrGrp}}</h2>
+        <form (ngSubmit)="onUpdate(rowSelected.usrGrp)">
+      <div class="clr-row">
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">User Group<span class="required-field">*</span></label>
+         <input type="text" class="clr-input" [(ngModel)]="rowSelected.groupName" name="groupName">
+        </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="name">Description<span class="required-field">*</span></label>
+         <input type="text" class="clr-input" [(ngModel)]="rowSelected.groupDesc" name="groupDesc">
+        </div>
+        <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="tags">Status<span class="required-field">*</span></label>
+          <select  id="" [(ngModel)]="rowSelected.status" name="status">
+            <option value="E">Enable</option>
+              <option  value="A">Active</option></select>
+          </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="tags">Group Level<span class="required-field">*</span></label>
+            <select  id="" [(ngModel)]="rowSelected.groupLevel" name="groupLevel">
+              <option >10</option>
+              <option >20</option>
+             <option >30</option>
+             <option >40</option>
+             <option>50</option>
+            </select>
+            </div>
+      </div>
+      <br>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="modaledit = false">Cancel</button>
+        <button type="submit" class="btn btn-primary" >Update</button>
+        </div>
+</form>
+  </div>
+
+</clr-modal>

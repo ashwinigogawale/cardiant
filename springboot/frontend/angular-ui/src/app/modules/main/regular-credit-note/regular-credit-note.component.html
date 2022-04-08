@@ -1,0 +1,155 @@
+
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']">Home</a></li>
+  <li><a href="javascript://">Regular Credit Note</a></li>
+
+</ol>
+
+
+<div class="dg-wrapper">
+  <div class="clr-row">
+
+    <div class="clr-col-12" style="text-align: right;">
+      <button class="btn btn-outline" (click)="onExport()">
+        <clr-icon shape="export"></clr-icon> xlsx
+      </button>
+      <button id="add" class="btn btn-primary" (click)="goToAdd()">
+        <clr-icon shape="plus"></clr-icon>ADD
+      </button>
+      <button id="add" class="btn btn-primary"(click)="newrecord()">
+        <clr-icon shape="plus"></clr-icon>New record
+      </button>
+    </div>
+  </div>
+  <div class="clr-row">
+    <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="tags">Credit Note Number</label>
+        <input  type="text"  class="clr-input"  name="invoice">
+     </div>
+     <div class="clr-col-md-4 clr-col-sm-12">
+      <label for=""> Location Code</label>
+    <select name="" id="">
+      <option value=""></option>
+    </select>
+   </div>
+   <div class="clr-col-md-4 clr-col-sm-12">
+    <label for="tags">Invoice number</label>
+    <input  type="text"  class="clr-input"  name="invoice">
+ </div>
+
+
+
+  <clr-modal [(clrModalOpen)]="modalAdd" [clrModalSize]="'lg'" [clrModalStaticBackdrop]="true">
+    <h3  class="modal-title"style="font-weight: 600;display: inline;">Credit Note</h3>
+    <div class="modal-body" >
+      <h6 style="font-weight: 700;">Add  Mode</h6>
+          <hr>
+          <div class="clr-row">
+            <div class="clr-col-md-12 clr-col-sm-12">
+              <label for="tags">Invoice Number<span class="required-field">*</span></label>
+              <input  type="text"  class="clr-input"  name="cnid">
+           </div></div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="modalAdd= false">Validate</button>
+      <button type="button"  class="btn btn-primary" (click)="modalAdd= false" >Close</button>
+      </div>
+    </div>
+  </clr-modal>
+
+
+
+
+  <clr-datagrid [clrDgLoading]="loading">
+    <clr-dg-placeholder>user not found!</clr-dg-placeholder>
+
+    <clr-dg-column [clrDgField]="'id'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      No
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'CNID'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      CN ID
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'cnnum'"><ng-container *clrDgHideableColumn="{hidden: false}">
+        CN NUM
+      </ng-container></clr-dg-column >
+    <clr-dg-column [clrDgField]="'cn type'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      CN TYPE
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'in_customer_name'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Customer Name
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'parentinvnum'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Parent Inv Num
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'curreency code'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Currency Code
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'approved by'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Approved By
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'approveddate'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Approved Date
+    </ng-container></clr-dg-column>
+
+    <clr-dg-column [clrDgField]="'in_status'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Status
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'dispute'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Dispute Refrence
+    </ng-container></clr-dg-column>
+
+    <clr-dg-row *clrDgItems="let user of givendata" [clrDgItem]="user">
+      <clr-dg-cell>{{user.id}}</clr-dg-cell>
+      <clr-dg-cell>{{user.a_request_time}}</clr-dg-cell>
+      <clr-dg-cell>{{user.in_invoice_type}}</clr-dg-cell>
+      <clr-dg-cell>{{user.in_customer_code}}</clr-dg-cell>
+      <clr-dg-cell>{{user.in_customer_name}}</clr-dg-cell>
+      <clr-dg-cell>{{user.in_vessel_code}}</clr-dg-cell>
+      <clr-dg-cell>{{user.in_vessel_name}}</clr-dg-cell>
+      <clr-dg-cell>{{user.in_in_voyage}}</clr-dg-cell>
+      <clr-dg-cell>{{user.in_out_voyage}}</clr-dg-cell>
+      <clr-dg-cell>{{user.in_status}}</clr-dg-cell>
+      <clr-dg-action-overflow>
+
+        <button class="action-item" (click)="goToEdit(user.id)">Edit</button>
+        <button class="action-item" (click)="onDelete()">Delete</button>
+      </clr-dg-action-overflow>
+
+      <clr-dg-row-detail *clrIfExpanded>
+        <table class="table">
+          <tr>
+            <td class="td-title">OrderId</td>
+            <td class="td-content">{{user.id}}</td>
+          </tr>
+          <tr>
+            <td class="td-title">Request Date</td>
+            <td class="td-content">{{user.a_request_time}}</td>
+          </tr>
+          <tr>
+            <td class="td-title">Invoice type</td>
+            <td class="td-content">{{user.in_invoice_type}} </td>
+          </tr>
+          <tr>
+            <td class="td-title">Customer code</td>
+            <td class="td-content">{{user.in_customer_code}}</td>
+          </tr>
+          <tr>
+            <td class="td-title">Customer_name</td>
+            <td class="td-content">{{user.in_customer_name}}</td>
+          </tr>
+
+        </table>
+      </clr-dg-row-detail>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+      <clr-dg-pagination #pagination [clrDgPageSize]="10">
+        <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Users per page</clr-dg-page-size>
+        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+        of {{pagination.totalItems}} users
+      </clr-dg-pagination>
+    </clr-dg-footer>
+  </clr-datagrid>
+</div>
+
+

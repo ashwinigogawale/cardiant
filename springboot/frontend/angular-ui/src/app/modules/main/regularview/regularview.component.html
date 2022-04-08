@@ -1,0 +1,187 @@
+
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']">Home</a></li>
+  <li><a href="javascript://">Regular Credit Note  Approval </a></li>
+
+</ol>
+
+
+<div class="dg-wrapper">
+
+  <h6 style="font-weight: 800;">View Mode</h6>
+<hr>
+  <div class="clr-row">
+    <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="tags">CN ID</label>
+        <input  type="text"  class="clr-input"  name="id">
+     </div>
+     <div class="clr-col-md-4 clr-col-sm-12">
+      <label for="">Invoice Number<span class="required-field">*</span></label>
+      <input  type="text"  class="clr-input"  name="invoice">
+   </div>
+   <div class="clr-col-md-4 clr-col-sm-12">
+    <label for="tags">Invoice Status</label>
+    <input  type="text"  class="clr-input"  name="invoice">
+ </div>
+ <div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Customer Id<span class="required-field">*</span></label>
+  <input  type="text"  class="clr-input"  name="cid">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Interface Status</label>
+  <input  type="text"  class="clr-input"  name="interface">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Location Code<span class="required-field">*</span></label>
+  <input  type="text"  class="clr-input"  name="locationcode">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Currency Code<span class="required-field">*</span></label>
+  <input  type="text"  class="clr-input"  name="ccode">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Billing Id<span class="required-field">*</span></label>
+  <input  type="text"  class="clr-input"  name="bid">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Remarks<span class="required-field">*</span></label>
+  <input  type="text"  class="clr-input"  name="remarks">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Refrence<span class="required-field">*</span></label>
+  <input  type="text"  class="clr-input"  name="Refrence">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Reason<span class="required-field">*</span></label>
+  <select name="" id="">
+    <option value=""></option>
+  </select>
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">CN Status<span class="required-field">*</span></label>
+  <input  type="text"  class="clr-input"  name="cstatus">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Created By</label>
+  <input  type="text"  class="clr-input"  name="createdby">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Creation Date</label>
+  <input  type="text"  class="clr-input"  name="cdate">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Last Updated By</label>
+  <input  type="text"  class="clr-input"  name="updatedby">
+</div>
+<div class="clr-col-md-4 clr-col-sm-12">
+  <label for="tags">Last Updated Date</label>
+  <input  type="text"  class="clr-input"  name="udate">
+</div>
+</div>
+
+
+
+  <clr-modal [(clrModalOpen)]="modalAdd" [clrModalSize]="'lg'" [clrModalStaticBackdrop]="true">
+    <h3 class="modal-title">Add data</h3>
+    <div class="modal-body" >
+=========form
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="modalAdd= false">Cancel</button>
+      <button type="button"  class="btn btn-primary" >Delete</button>
+      </div>
+    </div>
+  </clr-modal>
+
+
+
+
+  <clr-datagrid [clrDgLoading]="loading">
+    <clr-dg-placeholder>user not found!</clr-dg-placeholder>
+
+    <clr-dg-column [clrDgField]="'id'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Line Number
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'itemcode'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Item Code
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'description'"><ng-container *clrDgHideableColumn="{hidden: false}">
+        Description
+      </ng-container></clr-dg-column >
+    <clr-dg-column [clrDgField]="'unitprice'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Unit Price
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'totala'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Total Amount
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'Refrence'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Refrence
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'accountcode'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Account Code
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'costc'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Cost Center
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'console'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Console Ref
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'uom'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      UOM
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'invq'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Inv Quantity
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'quantity'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+       Quantity Credited
+    </ng-container></clr-dg-column>
+    <clr-dg-column [clrDgField]="'amountc'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+      Amount Credited
+    </ng-container></clr-dg-column>
+
+
+
+    <clr-dg-row *clrDgItems="let user of givendata" [clrDgItem]="user">
+      <clr-dg-cell>{{user.id}}</clr-dg-cell>
+      <clr-dg-cell>{{user.itemcode}}</clr-dg-cell>
+      <clr-dg-cell>{{user.description}}</clr-dg-cell>
+      <clr-dg-cell>{{user.unitprice}}</clr-dg-cell>
+      <clr-dg-cell>{{user.totalamount}}</clr-dg-cell>
+      <clr-dg-cell>{{user.Refrence}}</clr-dg-cell>
+      <clr-dg-cell>{{user.accountcode}}</clr-dg-cell>
+      <clr-dg-cell>{{user.costcenter}}</clr-dg-cell>
+      <clr-dg-cell>{{user.consoleref}}</clr-dg-cell>
+      <clr-dg-cell>{{user.uom}}</clr-dg-cell>
+      <clr-dg-cell>{{user.invquantity}}</clr-dg-cell>
+      <clr-dg-cell>{{user.quantityc}}</clr-dg-cell>
+      <clr-dg-cell>{{user.amountcredited}}</clr-dg-cell>
+      <clr-dg-action-overflow>
+
+        <button class="action-item" (click)="goToEdit(user.id)">Edit</button>
+        <button class="action-item" (click)="onDelete()">Delete</button>
+      </clr-dg-action-overflow>
+
+      <clr-dg-row-detail *clrIfExpanded>
+        <table class="table">
+          <tr>
+            <td class="td-title">NO</td>
+            <td class="td-content">{{user.id}}</td>
+          </tr>
+
+
+
+        </table>
+      </clr-dg-row-detail>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+      <clr-dg-pagination #pagination [clrDgPageSize]="10">
+        <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,100]">Users per page</clr-dg-page-size>
+        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+        of {{pagination.totalItems}} users
+      </clr-dg-pagination>
+    </clr-dg-footer>
+  </clr-datagrid>
+</div>
+
+
