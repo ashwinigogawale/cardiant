@@ -71,11 +71,11 @@
     </ng-container></clr-dg-column>
     <clr-dg-row *clrDgItems="let item of alldata;let i = index" [clrDgItem]="user">
       <clr-dg-cell>{{item.id}}</clr-dg-cell>
-      <clr-dg-cell >{{item.createdAtString}}</clr-dg-cell>
+      <clr-dg-cell >{{item.createdAt}}</clr-dg-cell>
       <clr-dg-cell>{{item.job}}</clr-dg-cell>
       <clr-dg-cell>{{item.job_status}}</clr-dg-cell>
       <clr-dg-cell>{{item.parameters}}</clr-dg-cell>
-      <clr-dg-cell>{{item.updatedAtString}}</clr-dg-cell>
+      <clr-dg-cell>{{item.updatedAt}}</clr-dg-cell>
     </clr-dg-row>
 
     <clr-dg-footer>

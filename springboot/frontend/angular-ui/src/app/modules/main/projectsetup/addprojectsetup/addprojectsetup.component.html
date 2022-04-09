@@ -1,41 +1,16 @@
+<h4 style="font-weight: 500;display: inline;"><b>PROJECT SETUP ENTRY FORM</b></h4>
+<span class="label label-light-blue" style="display: inline;margin-left: 100px;">Add Mode</span>
+
+
+
+<hr>
+
+
+
+
 <div class="container">
-  <h3 class="center"><b>PROJECT SETUP ENTRY FORM</b></h3>
-  <br />
-  <!-- COPY PROJECT -->
-  <div class="section">
-    <p> Copy Project</p>
-  </div>
-  <form [formGroup]="copyProjectForm" (ngSubmit)="copyProject()">
-    <!-- copy from -->
-    <div class="clr-row">
-      <div class="clr-col-md-4 clr-col-sm-12">
-        <label for="from_project">From Project</label>
-        <select id="from_project" formControlName="from_projectId" selected="null" class="clr-dropdown">
-          <option value="null">Choose Project</option>
-          <option *ngFor="let project of projects" [value]="project.id">{{ project.name }}</option>
-        </select>
-      </div>
 
-      <div class="clr-col-md-4 clr-col-sm-12">
-        <label for="to_project">Project Name</label>
-        <input id="to_project" type="text" formControlName="to_projectName" placeholder="Enter Project Name"
-          class="clr-input">
-      </div>
 
-      <div class="clr-col-md-4 clr-col-sm-12">
-        <label for="to_tech_stack">Technology Stack</label>
-        <select id="to_tech_stack" formControlName="to_tech_stack" selected="null" class="clr-dropdown">
-          <option value="null">Choose technology stack</option>
-          <option *ngFor="let ts of tech_stacks" [value]="ts">{{ ts }}</option>
-        </select>
-      </div>
-      <div class="clr-col-md-4 clr-col-sm-12">
-        <button id="submit" type="submit" class="btn btn-primary" style="margin-top: 24px" [disabled]="!copyProjectForm.valid">COPY</button>
-      </div>
-    </div>
-  </form>
-  <br>
-  <!-- copy end -->
 
   <div class="section">
     <p> Project Details </p>
@@ -71,6 +46,7 @@
         <div *ngFor="let error of errorFields">
           <span *ngIf="error.field === 'technologyStack'" class="text text-danger">{{ error.message }}</span>
         </div>
+
       </div>
 
 

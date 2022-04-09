@@ -27,30 +27,30 @@
     <clr-dg-placeholder><clr-spinner [clrMedium]="true">Loading ...</clr-spinner></clr-dg-placeholder>
 
     <clr-dg-column [clrDgField]="'projectName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      projectName
+      ProjectName
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'projectPrefix'">
       <ng-container *clrDgHideableColumn="{hidden: false}">
-        projectPrefix
+        ProjectPrefix
       </ng-container>
       </clr-dg-column >
     <clr-dg-column [clrDgField]="'technologyStack'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      technologyStack
+      TechnologyStack
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'description'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      description
+      Description
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'dbName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      dbName
+      DbName
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'dbUserName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      dbUserName
+      DbUserName
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'dbPassword'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      dbPassword
+      DbPassword
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'portNumber'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      portNumber
+      PortNumber
     </ng-container></clr-dg-column>
     <clr-dg-row *clrDgItems="let user of project" [clrDgItem]="user">
       <clr-dg-cell>{{user.projectName}}</clr-dg-cell>

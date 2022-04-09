@@ -1,41 +1,16 @@
+<h4 style="font-weight: 500;display: inline;"><b>MODULE SETUP ENTRY FORM</b></h4>
+<span class="label label-light-blue" style="display: inline;margin-left: 100px;">Add Mode</span>
+
+
+
+<hr>
+
 <div class="container">
-  <h3 class="center"><b>MODULE SETUP ENTRY FORM</b></h3>
-  <br />
+
 
   <!-- COPY MODULE -->
-  <div class="section">
-    <p> Copy Module</p>
-  </div>
-  <form [formGroup]="copyModuleForm" (ngSubmit)="copyModule()">
-    <!-- copy from -->
-    <div class="clr-row">
-      <div class="clr-col-md-4 clr-col-sm-12">
-        <label for="from_project">From Project</label>
-        <select id="from_project" formControlName="from_projectId" selected="null" (change)="changeModule($event.target.value)" class="clr-dropdown">
-          <option value="null">Choose Project</option>
-          <option *ngFor="let project of projects" [value]="project.id">{{ project.name }}</option>
-        </select>
-      </div>
-      <div class="clr-col-md-4 clr-col-sm-12">
-        <label for="from_module">From Module</label>
-        <select id="from_module" formControlName="from_moduleId" selected="null" class="clr-dropdown">
-          <option value="null">Choose Module</option>
-          <option *ngFor="let module of modules" [value]="module.id">{{ module.name }}</option>
-        </select>
-      </div>
-    </div>
 
-    <!-- copy to -->
-    <div class="clr-row">
-      <div class="clr-col-md-4 clr-col-sm-12">
-        <label for="from_module">Module Name</label>
-        <input type="text" formControlName="to_moduleName" placeholder="Enter Module Name" class="clr-input">
-      </div>
-      <div class="clr-col-md-4 clr-col-sm-12">
-        <button id="submit" type="submit" class="btn btn-primary"  style="margin-top: 24px" [disabled]="!copyModuleForm.valid">COPY</button>
-      </div>
-    </div>
-  </form>
+
   <!-- <br> -->
   <div class="section">
     <p> Module Details </p>

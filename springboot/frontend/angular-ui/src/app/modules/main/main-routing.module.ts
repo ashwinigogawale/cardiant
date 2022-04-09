@@ -23,12 +23,10 @@ import { AddMenurComponent } from './menu-register/add-menur/add-menur.component
 import { EditMenurComponent } from './menu-register/edit-menur/edit-menur.component';
 import { ReadonlyMenurComponent } from './menu-register/readonly-menur/readonly-menur.component';
 import { ProfileSettingComponent } from './profile-setting/profile-setting.component';
-import { DepartmentComponent } from './department/department.component';
 import { CustomerprocessComponent } from './customerprocess/customerprocess.component';
 import { InvoicelookupComponent } from './invoicelookup/invoicelookup.component';
 import { InvoicebillComponent } from './invoicebill/invoicebill.component';
 import { InvoiceTyperulesComponent } from './invoice-typerules/invoice-typerules.component';
-import { CustomerLinecodeComponent } from './customer-linecode/customer-linecode.component';
 import { TOSComponent } from './tos/tos.component';
 import { NcsoaddComponent } from './ncsoadd/ncsoadd.component';
 import { RegularCreditNoteComponent } from './regular-credit-note/regular-credit-note.component';
@@ -129,12 +127,10 @@ const routes: Routes = [
      { path: 'passwordreset', component: PasswordResetComponent },
      { path: 'profile-settings', component: ProfileSettingComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'department', component: DepartmentComponent },
       { path: 'customer', component: CustomerprocessComponent },
       { path: 'invoicelookup', component: InvoicelookupComponent },
       { path: 'invoicebill', component: InvoicebillComponent },
       { path: 'invoicetyperule', component: InvoiceTyperulesComponent },
-      { path: 'customerlinecode', component:CustomerLinecodeComponent },
       { path: 'tos', component:TOSComponent },
       {path:'project1',component:Projectsetup1Component},
       {path:'module1',component:ModuleSetup1Component},

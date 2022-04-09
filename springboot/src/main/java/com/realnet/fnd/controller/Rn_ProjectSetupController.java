@@ -75,7 +75,8 @@ public class Rn_ProjectSetupController {
 	public CustomResponse getProjects(@RequestParam(value = "page", defaultValue = "0", required = false) Integer page,
 			@RequestParam(value = "size", defaultValue = "20", required = false) Integer size) {
 		// sorted data
-		Pageable paging = PageRequest.of(page, size, Sort.by(Constant.SORT_BY_CREATION_DATE).descending());
+//		Pageable paging = PageRequest.of(page, size, Sort.by(Constant.SORT_BY_CREATION_DATE).descending());
+		Pageable paging = PageRequest.of(page, size);
 		Page<Rn_Project_Setup> result = projectSetupService.getAll(paging);
 
 		CustomResponse resp = new CustomResponse();

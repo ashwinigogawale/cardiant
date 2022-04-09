@@ -29,12 +29,10 @@ import { EditMenurComponent } from './menu-register/edit-menur/edit-menur.compon
 import { AllMenurComponent } from './menu-register/all-menur/all-menur.component';
 import { ReadonlyMenurComponent } from './menu-register/readonly-menur/readonly-menur.component';
 import { ProfileSettingComponent } from './profile-setting/profile-setting.component';
-import { DepartmentComponent } from './department/department.component';
 import { CustomerprocessComponent } from './customerprocess/customerprocess.component';
 import { InvoicelookupComponent } from './invoicelookup/invoicelookup.component';
 import { InvoicebillComponent } from './invoicebill/invoicebill.component';
 import { InvoiceTyperulesComponent } from './invoice-typerules/invoice-typerules.component';
-import { CustomerLinecodeComponent } from './customer-linecode/customer-linecode.component';
 import { TOSComponent } from './tos/tos.component';
 import { NcsoaddComponent } from './ncsoadd/ncsoadd.component';
 import { RegularCreditNoteComponent } from './regular-credit-note/regular-credit-note.component';
@@ -108,8 +106,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MainPageComponent, PageNotFoundComponent,AboutComponent, LayoutComponent, UserComponent,PasswordResetComponent,UniversityComponent,
      FormbuilderComponent, FormComponent, Form2Component, DashboardComponent, OrderstatComponent,MenuGroupComponent, AllMenuGroupComponent,
      EditMenuGroupComponent, ReadOnlyMenuGroupComponent, MenuRegisterComponent, AddMenurComponent, EditMenurComponent, AllMenurComponent,
-    ReadonlyMenurComponent,ProfileSettingComponent, DepartmentComponent,CustomerprocessComponent,InvoicelookupComponent,InvoicebillComponent,
-    InvoiceTyperulesComponent,CustomerLinecodeComponent,TOSComponent,NcsoaddComponent,RegularCreditNoteComponent, RegularaddComponent, RegularCNApprovalComponent,
+    ReadonlyMenurComponent,ProfileSettingComponent,CustomerprocessComponent,InvoicelookupComponent,InvoicebillComponent,
+    InvoiceTyperulesComponent,TOSComponent,NcsoaddComponent,RegularCreditNoteComponent, RegularaddComponent, RegularCNApprovalComponent,
      RegularviewComponent, RegulareditComponent, UsermaintanceComponent, UsermaintanceaddComponent, UsermaintanceeditComponent, UsergrpmaintenanceComponent,
      MenuaccesscontrolComponent, NcspapprovalreadComponent, NcspapprovaleditComponent, OpencreditnoteComponent, OpencreditnoteaddComponent, OpencreditnoteeditComponent,
       NcsoeditComponent, LogconfigComponent, AuditTrailReportComponent, TwodigitDirective,
