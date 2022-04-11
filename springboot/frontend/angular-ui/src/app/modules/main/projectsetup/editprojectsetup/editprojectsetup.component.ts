@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { ActiveTechnology } from "src/app/models/ActiveTechnology";
 import { ProjectSetup } from "src/app/models/Project_setup";
-import { ValidationError } from "src/app/models/ValidationError";
+import { ValidationError } from 'src/app/models/ValidationError';
 import { DropdownService } from 'src/app/services/api/dropdown.service';
 import { ProjectSetupService } from "src/app/services/api/project-setup.service";
 import { TechnologyStackService } from "src/app/services/api/technology-stack.service";
