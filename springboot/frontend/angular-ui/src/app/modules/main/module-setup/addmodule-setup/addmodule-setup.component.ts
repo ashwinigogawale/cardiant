@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ValidationError} from 'src/app/models/ValidationError';
-import { AlertService } from 'src/app/services/alert.service';
-import { DropDown,DropdownService } from 'src/app/services/api/dropdown.service';
-import { ModulesetupService } from 'src/app/services/api/modulesetup.service';
+import { ValidationError} from '../../../../models/ValidationError';
+import { AlertService } from '../../../../services/alert.service';
+import { DropDown,DropdownService } from '../../../../services/api/dropdown.service';
+import { ModulesetupService } from '../../../../services/api/modulesetup.service';
 @Component({
   selector: 'app-addmodule-setup',
   templateUrl: './addmodule-setup.component.html',

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Rn_Fb_Lines } from 'src/app/models/Rn_Fb_Lines';
+import { Rn_Fb_Lines } from '../../../../models/Rn_Fb_Lines';
 //import { ValidationError } from 'src/app/models/ValidationError';
-import { AlertService } from 'src/app/services/alert.service';
-import { WireframeService } from "src/app/services/api/wireframe.service";
+import { AlertService } from '../../../../services/alert.service';
+import { WireframeService } from "../../../../services/api/wireframe.service";
 @Component({
   selector: 'app-property',
   templateUrl: './property.component.html',

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ActiveTechnology } from "src/app/models/ActiveTechnology";
-import { ValidationError } from 'src/app/models/ValidationError';
-import {DropDown, DropdownService } from "src/app/services/api/dropdown.service";
-import { ProjectSetupService } from "src/app/services/api/project-setup.service";
-import { TechnologyStackService } from "src/app/services/api/technology-stack.service";
+import { ActiveTechnology } from "../../../../models/ActiveTechnology";
+import { ValidationError } from '../../../../models/ValidationError';
+import {DropDown, DropdownService } from "../../../../services/api/dropdown.service";
+import { ProjectSetupService } from "../../../../services/api/project-setup.service";
+import { TechnologyStackService } from "../../../../services/api/technology-stack.service";
 @Component({
   selector: 'app-addprojectsetup',
   templateUrl: './addprojectsetup.component.html',

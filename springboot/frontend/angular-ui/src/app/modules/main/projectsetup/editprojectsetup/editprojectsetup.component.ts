@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import { ActiveTechnology } from "src/app/models/ActiveTechnology";
-import { ProjectSetup } from "src/app/models/Project_setup";
-import { ValidationError } from 'src/app/models/ValidationError';
-import { DropdownService } from 'src/app/services/api/dropdown.service';
-import { ProjectSetupService } from "src/app/services/api/project-setup.service";
-import { TechnologyStackService } from "src/app/services/api/technology-stack.service";
+import { ActiveTechnology } from "../../../../models/ActiveTechnology";
+import { ProjectSetup } from "../../../../models/Project_setup";
+import { ValidationError } from '../../../../models/ValidationError';
+import { DropdownService } from '../../../../services/api/dropdown.service';
+import { ProjectSetupService } from "../../../../services/api/project-setup.service";
+import { TechnologyStackService } from "../../../../services/api/technology-stack.service";
 @Component({
   selector: 'app-editprojectsetup',
   templateUrl: './editprojectsetup.component.html',

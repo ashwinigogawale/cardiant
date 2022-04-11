@@ -46,7 +46,7 @@ import { OpencreditnoteaddComponent } from './opencreditnoteadd/opencreditnotead
 import { NcsoeditComponent } from './ncsoedit/ncsoedit.component';
 import { LogconfigComponent } from './logconfig/logconfig.component';
 import { AuditTrailReportComponent } from './audit-trail-report/audit-trail-report.component';
-import { AuthGuard } from 'src/app/services/auth_guard.service';
+import { AuthGuard } from '../../services/auth_guard.service';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { SchedulepipelineComponent } from './schedulepipeline/schedulepipeline.component';
 import { ScheduleInfoComponent } from './schedule-info/schedule-info.component';

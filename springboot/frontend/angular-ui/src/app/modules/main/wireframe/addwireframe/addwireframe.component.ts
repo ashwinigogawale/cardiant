@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ValidationError } from 'src/app/models/ValidationError';
-import { AlertService } from "src/app/services/alert.service";
-import { DropDown, DropdownService } from "src/app/services/api/dropdown.service";
-import { TechnologyStackService } from "src/app/services/api/technology-stack.service";
-import { WireframeService } from "src/app/services/api/wireframe.service";
+import { ValidationError } from '../../../../models/ValidationError';
+import { AlertService } from "../../../../services/alert.service";
+import { DropDown, DropdownService } from "../../../../services/api/dropdown.service";
+import { TechnologyStackService } from "../../../../services/api/technology-stack.service";
+import { WireframeService } from "../../../../services/api/wireframe.service";
 @Component({
   selector: 'app-addwireframe',
   templateUrl: './addwireframe.component.html',
