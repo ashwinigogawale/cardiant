@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Rn_Fb_Lines } from 'src/app/models/Rn_Fb_Lines';
-import { ValidationError } from '../../../../models/ValidationError';
+import { ValidationError } from 'src/app/models/ValidationError';
 import { AlertService } from 'src/app/services/alert.service';
 import { WireframeService } from "src/app/services/api/wireframe.service";
 @Component({
