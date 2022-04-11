@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Rn_Fb_Lines } from 'src/app/models/Rn_Fb_Lines';
-import { ValidationError } from 'src/app/models/ValidationError';
+//import { ValidationError } from 'src/app/models/ValidationError';
 import { AlertService } from 'src/app/services/alert.service';
 import { WireframeService } from "src/app/services/api/wireframe.service";
 @Component({
@@ -25,7 +25,7 @@ export class PropertyComponent implements OnInit {
   updated: boolean =  false;
   expanded: boolean = true;
 
-  fieldErors: ValidationError[] = [];
+  //fieldErors: ValidationError[] = [];
 
   dataTypes: string[] = ['int', 'varchar', 'longtext', 'double', 'boolean', 'datetime'];
   typeFields: string[] = ['textfield', 'textarea', 'url', 'email', 'dropdown', 'checkbox',
