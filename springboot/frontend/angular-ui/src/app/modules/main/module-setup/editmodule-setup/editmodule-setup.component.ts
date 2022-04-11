@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModuleSetup } from 'src/app/models/Module_Setup';
-import { ValidationError } from 'src/app/models/ValidationError';
+import { ValidationError } from '../../../../models/ValidationError';
 import { ModulesetupService } from 'src/app/services/api/modulesetup.service';
 @Component({
   selector: 'app-editmodule-setup',
