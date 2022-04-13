@@ -1,6 +1,6 @@
 import { HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Rn_Main_Menu } from "src/app/models/Rn_Main_Menu";
+import { Rn_Main_Menu } from "../../models/Rn_Main_Menu";
 import { Observable } from "rxjs";
 import { UserInfoService } from "../user-info.service";
 import { ApiRequestService } from "./api-request.service";

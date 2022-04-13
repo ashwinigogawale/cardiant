@@ -3,7 +3,7 @@ import { ApiRequestService } from "./api-request.service";
 import baseUrl from './helper';
 import { HttpClient, HttpParams,HttpResponse } from '@angular/common/http';
 import { Observable } from "rxjs";
-import { demo } from 'src/app/models/demo';
+import { demo } from '../../models/demo';
 import { UserInfoService } from '../user-info.service';
 @Injectable({
   providedIn: 'root'

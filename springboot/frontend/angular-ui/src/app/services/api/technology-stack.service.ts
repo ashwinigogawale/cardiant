@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ActiveTechnology } from 'src/app/models/ActiveTechnology';
-import { Bcf_TechnologyStack } from 'src/app/models/Bcf_TechnologyStack';
+import { ActiveTechnology } from '../../models/ActiveTechnology';
+import { Bcf_TechnologyStack } from '../../models/Bcf_TechnologyStack';
 import { Observable } from 'rxjs';
 import { ApiRequestService } from './api-request.service';
 import { HttpParams } from '@angular/common/http';

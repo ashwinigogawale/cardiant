@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import baseUrl from './helper';
 import { Observable } from 'rxjs';
 import { ApiRequestService } from './api-request.service';
-import { Usergrpmain } from 'src/app/models/usergrpma';
+import { Usergrpmain } from '../../models/usergrpma';
 @Injectable({
   providedIn: 'root'
 })

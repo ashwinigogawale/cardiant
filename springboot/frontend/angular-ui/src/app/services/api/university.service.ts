@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpParams } from "@angular/common/http";
-import { university } from "src/app/models/university";
+import { university } from "../../models/university";
 import { Observable } from "rxjs";
 import { ApiRequestService } from "./api-request.service";
 import { UserInfoService } from "../user-info.service";

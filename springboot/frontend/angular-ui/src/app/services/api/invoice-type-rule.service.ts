@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Invoicerule } from 'src/app/models/invoicerule';
+import { Invoicerule } from '../../models/invoicerule';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { HttpClient, HttpParams,HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';

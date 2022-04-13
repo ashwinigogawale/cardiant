@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ModuleSetup } from "src/app/models/Module_Setup";
+import { ModuleSetup } from "../../models/Module_Setup";
 import { Observable } from "rxjs";
 import { ApiRequestService } from "./api-request.service";
 import { HttpParams } from "@angular/common/http";

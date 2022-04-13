@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Rn_Fb_Header } from "src/app/models/Rn_Fb_Header";
-import { Rn_Fb_Lines } from "src/app/models/Rn_Fb_Lines";
-import { WireFrame } from "src/app/models/WireFrame";
+import { Rn_Fb_Header } from "../../models/Rn_Fb_Header";
+import { Rn_Fb_Lines } from "../../models/Rn_Fb_Lines";
+import { WireFrame } from "../../models/WireFrame";
 import { Observable } from "rxjs";
 import { ApiRequestService } from "./api-request.service";
 import { HttpParams } from "@angular/common/http";

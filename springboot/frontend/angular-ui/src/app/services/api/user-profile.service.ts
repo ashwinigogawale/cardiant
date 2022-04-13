@@ -1,6 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AppConfig } from 'src/app/app-config';
+import { AppConfig } from '../../app-config';
 import { Observable } from 'rxjs';
 import { UserInfoService } from '../user-info.service';
 import { ApiRequestService } from './api-request.service';
@@ -62,7 +62,7 @@ export class UserProfileService {
             // return this.apiRequest.get('api/instructors');
             // paginated data
             return this.apiRequest.get(this.baseURL, params);
-            
+
         } */
 
     getUserProfile(): Observable<UserProfile> {

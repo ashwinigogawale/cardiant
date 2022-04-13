@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import baseUrl from 'src/app/services/api/helper';
+import baseUrl from '../../services/api/helper';
 import { ApiRequestService } from './api-request.service';
-import { Rn_Main_Menu } from 'src/app/models/Rn_Main_Menu';
+import { Rn_Main_Menu } from '../../models/Rn_Main_Menu';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'

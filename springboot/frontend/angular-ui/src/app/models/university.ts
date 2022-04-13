@@ -1,4 +1,4 @@
-import {book} from 'src/app/models/book';
+import {book} from '../models/book';
 
 export class university  {
   public id: number;

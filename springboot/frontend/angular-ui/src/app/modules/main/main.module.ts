@@ -9,7 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AboutComponent } from './about/about.component';
 import { LayoutComponent } from './layout/layout.component';
 import { UserComponent } from './user/user.component';
-import { HelperModule } from 'src/app/pipes/helpers.module';
+import { HelperModule } from '../../pipes/helpers.module';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { UniversityComponent } from './university/university.component';
 import { FormbuilderComponent } from './formbuilder/formbuilder.component';
