@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { ActiveTechnology } from "../../../../models/ActiveTechnology";
 import { ProjectSetup } from "../../../../models/Project_setup";
-import { ValidationError } from '../../../../models/ValidationError';
+//import { ValidationError } from '../../../../models/ValidationError';
 import { DropdownService } from '../../../../services/api/dropdown.service';
 import { ProjectSetupService } from "../../../../services/api/project-setup.service";
 import { TechnologyStackService } from "../../../../services/api/technology-stack.service";
@@ -16,7 +16,7 @@ export class EditprojectsetupComponent implements OnInit {
   project: ProjectSetup;
   id: number;
   tech_stacks=[];
-  errorFields: ValidationError[] = [];
+  //errorFields: ValidationError[] = [];
   constructor(private router: Router,
     private route: ActivatedRoute,
     private projectSetupService: ProjectSetupService,

@@ -15,18 +15,14 @@
         <label for="moduleName">Module Name</label>
         <input id="moduleName" type="text" name="moduleName" placeholder="Enter Module Name"
           [(ngModel)]="module.moduleName" class="clr-input">
-        <div *ngFor="let error of fieldErors">
-          <span *ngIf="error.field === 'moduleName'" class="text text-danger">{{ error.message }}</span>
-        </div>
+
       </div>
 
       <div class="clr-col-md-4 clr-col-sm-12">
         <label for="modulePrefix">Module Prefix</label>
         <input id="modulePrefix" type="text" name="modulePrefix" placeholder="Enter Module Prefix"
           [(ngModel)]="module.modulePrefix" class="clr-input">
-        <div *ngFor="let error of fieldErors">
-          <span *ngIf="error.field === 'modulePrefix'" class="text text-danger">{{ error.message }}</span>
-        </div>
+
       </div>
 
       <div class="clr-col-md-4 clr-col-sm-12">
@@ -36,9 +32,7 @@
           [(ngModel)]="module.description" class="clr-input">
         <!-- <textarea rows="4" cols="50" type="text" name="description" [(ngModel)]="module.description"
             placeholder="Enter Your Project Description"></textarea> -->
-        <div *ngFor="let error of fieldErors">
-          <span *ngIf="error.field === 'description'" class="text text-danger">{{ error.message }}</span>
-        </div>
+
       </div>
 
       <!-- <div class="clr-col-md-4 clr-col-sm-12">

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ValidationError } from '../../../../models/ValidationError';
+//import { ValidationError } from '../../../../models/ValidationError';
 import { AlertService } from "../../../../services/alert.service";
 import { DropDown, DropdownService } from "../../../../services/api/dropdown.service";
 import { TechnologyStackService } from "../../../../services/api/technology-stack.service";
@@ -30,7 +30,7 @@ export class AddwireframeComponent implements OnInit {
 
   submitted = false;
   basic: boolean = false;
-  fieldErrors: ValidationError[] = []; // backend validation field error message
+  //fieldErrors: ValidationError[] = []; // backend validation field error message
   moduleId: number;
   formType: string;
   constructor(private _fb: FormBuilder,

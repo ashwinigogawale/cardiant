@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ActiveTechnology } from "../../../../models/ActiveTechnology";
-import { ValidationError } from '../../../../models/ValidationError';
+//import { ValidationError } from '../../../../models/ValidationError';
 import {DropDown, DropdownService } from "../../../../services/api/dropdown.service";
 import { ProjectSetupService } from "../../../../services/api/project-setup.service";
 import { TechnologyStackService } from "../../../../services/api/technology-stack.service";
@@ -15,7 +15,7 @@ export class AddprojectsetupComponent implements OnInit {
   public entryForm: FormGroup;
   submitted = false;
   basic: boolean = false;
-  errorFields: ValidationError[] = [];
+  //errorFields: ValidationError[] = [];
   tech_stacks = [];
   constructor(private _fb: FormBuilder,
     private router: Router,
@@ -76,7 +76,7 @@ export class AddprojectsetupComponent implements OnInit {
 // add project temporrary commit
 
   onCreate() {
-    this.errorFields = [];
+    //this.errorFields = [];
     this.projectSetupService.create(this.entryForm.value).subscribe(
       (data) => {
         console.log(data);

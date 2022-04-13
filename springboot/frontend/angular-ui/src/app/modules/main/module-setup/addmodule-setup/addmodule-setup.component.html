@@ -22,25 +22,19 @@
         <label for="moduleName">Module Name</label>
         <input id="moduleName" type="text" formControlName="moduleName" placeholder="Enter Module Name"
           class="clr-input">
-        <div *ngFor="let error of fieldError">
-          <span *ngIf="error.field === 'moduleName'" class="text text-danger">{{ error.message }}</span>
-        </div>
+
       </div>
       <div class="clr-col-md-4 clr-col-sm-12">
         <label for="description">Description</label>
         <input id="description" type="text" formControlName="description" placeholder="Enter Description"
           class="clr-input">
-        <div *ngFor="let error of fieldError">
-          <span *ngIf="error.field === 'description'" class="text text-danger">{{ error.message }}</span>
-        </div>
+
       </div>
       <div class="clr-col-md-4 clr-col-sm-12">
         <label for="modulePrefix">Module Prefix</label>
         <input id="modulePrefix" type="text" formControlName="modulePrefix" placeholder="Enter A Prefix"
           class="clr-input">
-        <div *ngFor="let error of fieldError">
-          <span *ngIf="error.field === 'modulePrefix'" class="text text-danger">{{ error.message }}</span>
-        </div>
+
       </div>
     </div>
     <br>

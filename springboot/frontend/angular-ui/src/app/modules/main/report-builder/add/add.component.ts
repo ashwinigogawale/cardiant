@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ValidationError } from '../../../../models/ValidationError';
+//import { ValidationError } from '../../../../models/ValidationError';
 import { ReportBuilderService } from '../../../../services/api/report-builder.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class AddComponent implements OnInit {
   id:number;
   submitted = false;
   basic: boolean = false;
-  fieldErrors: ValidationError[] = []; // backend validation field error message
+  //fieldErrors: ValidationError[] = []; // backend validation field error message
   moduleId: number;
   formType: string;
   report_id:number;
@@ -46,7 +46,7 @@ export class AddComponent implements OnInit {
 
 
   onCreate() {
-    this.fieldErrors = [];
+    //this.fieldErrors = [];
     console.log("Report name::",this.entryForm.value.report_name);
 
     this.reportBuilderService
@@ -68,9 +68,9 @@ export class AddComponent implements OnInit {
           objectArray.forEach(([k, v]) => {
             console.log(k);
             console.log(v);
-            this.fieldErrors.push({ field: k, message: v });
+            //this.fieldErrors.push({ field: k, message: v });
           });
-          console.log(this.fieldErrors); // this will come from backend
+          //console.log(this.fieldErrors); // this will come from backend
         }
       );
   }

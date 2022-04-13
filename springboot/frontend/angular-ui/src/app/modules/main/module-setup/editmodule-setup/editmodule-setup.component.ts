@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModuleSetup } from '../../../../models/Module_Setup';
-import { ValidationError } from '../../../../models/ValidationError';
+//import { ValidationError } from '../../../../models/ValidationError';
 import { ModulesetupService } from '../../../../services/api/modulesetup.service';
 @Component({
   selector: 'app-editmodule-setup',
@@ -14,7 +14,7 @@ export class EditmoduleSetupComponent implements OnInit {
   id: number;
   projectId: number;
 
-  fieldErors: ValidationError[] = []; // backend validation field error message
+  //fieldErors: ValidationError[] = []; // backend validation field error message
 
   tech_stacks = [];
   constructor( private router: Router,

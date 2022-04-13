@@ -72,9 +72,7 @@
           <option *ngFor="let ts of tech_stacks" [value]="ts">{{ ts }}
           </option>
         </select>
-        <div *ngFor="let item of fieldErrors">
-          <span *ngIf="item.field === 'tech_stack'" class="text text-danger">{{ item.message }}</span>
-        </div>
+
       </div>
 
       <div class="clr-col-md-4 clr-col-sm-12">
@@ -84,9 +82,7 @@
           <option *ngFor="let ot of object_types" [value]="ot">{{ ot | uppercase }}
           </option>
         </select>
-        <div *ngFor="let item of fieldErrors">
-          <span *ngIf="item.field === 'objectType'" class="text text-danger">{{ item.message }}</span>
-        </div>
+
       </div>
 
       <div class="clr-col-md-4 clr-col-sm-12">
@@ -96,17 +92,13 @@
           <option *ngFor="let sot of sub_object_types" [value]="sot">{{ sot | uppercase }}
           </option>
         </select>
-        <div *ngFor="let item of fieldErrors">
-          <span *ngIf="item.field === 'subObjectType'" class="text text-danger">{{ item.message }}</span>
-        </div>
+
       </div>
 
       <div class="clr-col-md-4 clr-col-sm-12">
         <label for="uiName">UI Name</label>
         <input id="uiName" type="text" formControlName="uiName" placeholder="Enter UI Name" class="clr-input">
-        <div *ngFor="let error of fieldErrors">
-          <span *ngIf="error.field === 'uiName'" class="text text-danger">{{ error.message }}</span>
-        </div>
+
       </div>
     </div>
     <br>

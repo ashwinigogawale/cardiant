@@ -15,17 +15,13 @@
                   <label for="fieldName">Field Name</label>
                   <input class="clr-input" colspan="2" type="text" name="fieldName" [(ngModel)]="fbLine.fieldName"
                       placeholder="Enter Field Name">
-                  <div *ngFor="let error of fieldErors">
-                      <span *ngIf="error.field === 'fieldName'" class="text text-danger">{{ error.message }}</span>
-                  </div>
+
               </div>
               <div class="clr-col-xs-12 clr-col-lg-3 clr-col-md-4">
                   <label for="mapping">Mapping</label>
                   <input class="clr-input" colspan="2" type="text" name="mapping" [(ngModel)]="fbLine.mapping"
                       placeholder="Enter Mapping">
-                  <div *ngFor="let error of fieldErors">
-                      <span *ngIf="error.field === 'mapping'" class="text text-danger">{{ error.message }}</span>
-                  </div>
+
               </div>
               <div class="clr-col-xs-12 clr-col-lg-3 clr-col-md-4">
                   <label for="dataType">Data Type</label>
@@ -34,9 +30,7 @@
                       <option *ngFor="let dt of dataTypes" [value]="dt">{{ dt | uppercase }}
                       </option>
                   </select>
-                  <div *ngFor="let error of fieldErors">
-                      <span *ngIf="error.field === 'dataType'" class="text text-danger">{{ error.message }}</span>
-                  </div>
+
               </div>
               <div class="clr-col-xs-12 clr-col-lg-3 clr-col-md-4">
                   <label for="type_field">Type Field</label>
@@ -45,10 +39,7 @@
                       <option *ngFor="let tf of typeFields" [value]="tf">{{ tf | uppercase }}
                       </option>
                   </select>
-                  <div *ngFor="let error of fieldErors">
-                      <span *ngIf="error.field === 'type_field'" class="text text-danger">{{ error.message
-                          }}</span>
-                  </div>
+
               </div>
 
 
@@ -270,9 +261,7 @@
                   <label for="fieldName">Section Field Name</label>
                   <input class="clr-input" colspan="2" type="text" name="fieldName" [(ngModel)]="fbLine.fieldName"
                       placeholder="Enter Field Name">
-                  <div *ngFor="let error of fieldErors">
-                      <span *ngIf="error.field === 'fieldName'" class="text text-danger">{{ error.message }}</span>
-                  </div>
+
               </div>
           </div>
           <br>

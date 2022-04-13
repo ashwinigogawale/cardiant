@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ValidationError} from '../../../../models/ValidationError';
+//import { ValidationError} from '../../../../models/ValidationError';
 import { AlertService } from '../../../../services/alert.service';
 import { DropDown,DropdownService } from '../../../../services/api/dropdown.service';
 import { ModulesetupService } from '../../../../services/api/modulesetup.service';
@@ -14,7 +14,7 @@ export class AddmoduleSetupComponent implements OnInit {
   public entryForm: FormGroup;
   submitted = false;
   basic: boolean = false;
-  fieldError: ValidationError[] = [];
+  //fieldError: ValidationError[] = [];
   projectId: number;
   constructor(private _fb: FormBuilder,
     private router: Router,
@@ -56,7 +56,7 @@ export class AddmoduleSetupComponent implements OnInit {
   }
 
   onCreate() {
-    this.fieldError = [];
+   // this.fieldError = [];
     this.entryForm.value.projectId=this.projectId;
     this.moduleSetupService.create(this.entryForm.value).subscribe(
       (data) => {
@@ -70,9 +70,9 @@ export class AddmoduleSetupComponent implements OnInit {
         objectArray.forEach(([k, v]) => {
           console.log(k);
           console.log(v);
-          this.fieldError.push({ field: k, message: v });
+         // this.fieldError.push({ field: k, message: v });
         });
-        console.log(this.fieldError); // this will come from backend
+        //console.log(this.fieldError); // this will come from backend
       }
     );
   }
