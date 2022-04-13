@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ExcelService } from 'src/app/services/excel.service';
+import { ExcelService } from '../../../services/excel.service';
 import * as moment from 'moment';
-import {AudittrailService} from 'src/app/services/api/audittrail.service';
+import {AudittrailService} from '../../../services/api/audittrail.service';
 @Component({
   selector: 'app-audit-trail-report',
   templateUrl: './audit-trail-report.component.html',

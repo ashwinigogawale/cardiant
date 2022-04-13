@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { demo } from 'src/app/models/demo';
-import { AlertService } from 'src/app/services/alert.service';
-import { DemoService } from 'src/app/services/api/demo.service';
-import { ExcelService } from 'src/app/services/excel.service';
+import { demo } from '../../../models/demo';
+import { AlertService } from '../../../services/alert.service';
+import { DemoService } from '../../../services/api/demo.service';
+import { ExcelService } from '../../../services/excel.service';
 import * as moment from 'moment';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';

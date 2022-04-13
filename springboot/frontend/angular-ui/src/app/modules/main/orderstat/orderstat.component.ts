@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from 'src/app/services/api/order.service';
+import { OrderService } from '../../../services/api/order.service';
 import { Router } from '@angular/router';
 import { NgxChartsModule} from '@swimlane/ngx-charts';
 import { mergeMap } from 'rxjs/operators';
-import { DemoService } from 'src/app/services/api/demo.service';
-import { invoicesubmenu } from 'src/app/models/Invoicesubmemnu';
+import { DemoService } from '../../../services/api/demo.service';
+import { invoicesubmenu } from '../../../models/Invoicesubmemnu';
 
 @Component({
   selector: 'app-orderstat',

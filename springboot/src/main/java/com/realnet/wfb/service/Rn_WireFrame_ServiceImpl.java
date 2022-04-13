@@ -17,7 +17,9 @@ import com.realnet.fnd.entity.DropDownDTO;
 import com.realnet.fnd.entity.Rn_Module_Setup;
 import com.realnet.fnd.service.Rn_ModuleSetup_Service;
 import com.realnet.users.entity.User;
+import com.realnet.users.entity1.AppUser;
 import com.realnet.users.service.UserService;
+import com.realnet.users.service1.AppUserServiceImpl;
 import com.realnet.utils.Constant;
 import com.realnet.utils.WireFrameConstant;
 import com.realnet.wfb.entity.AddSectionButtonDTO;
@@ -49,8 +51,8 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 	@Autowired
 	private Rn_Fb_Line_Repository fbLineRepository;
 
-	@Autowired(required=false)
-	private UserService userService;
+	@Autowired
+	private AppUserServiceImpl userService;
 
 	@Autowired
 	private Rn_ModuleSetup_Service moduleService;
@@ -87,9 +89,9 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 		Rn_Fb_Header oldHeader = fbHeaderRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException(Constant.NOT_FOUND_EXCEPTION + " :" + id));
 		
-		User loggedInUser = userService.getLoggedInUser();
+		AppUser loggedInUser = userService.getLoggedInUser();
 		long userId = loggedInUser.getUserId();
-		long accId = loggedInUser.getSys_account().getId();
+//		long accId = loggedInUser.getSys_account().getId();
 		
 		oldHeader.setUiName(headerRequest.getUiName());
 		oldHeader.setTechStack(headerRequest.getTechStack());
@@ -112,7 +114,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 		oldHeader.setConvertedTableName(headerRequest.getConvertedTableName());
 		oldHeader.setHeaderName(headerRequest.getHeaderName());
 		oldHeader.setUpdatedBy(userId);
-		oldHeader.setAccountId(accId);
+//		oldHeader.setAccountId(accId);
 		final Rn_Fb_Header updatedHeader = fbHeaderRepository.save(oldHeader);
 		return updatedHeader;
 	}
@@ -214,9 +216,9 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 	@Override
 	public boolean saveWireframe(Rn_WireFrameDTO wireframeDTO, String formType, int moduleId) {
 
-		User user = userService.getLoggedInUser();
+		AppUser user = userService.getLoggedInUser();
 		Long userId = user.getUserId();
-		Long accountId = user.getSys_account().getId();
+//		Long accountId = user.getSys_account().getId();
 
 		String uiName = wireframeDTO.getUiName();
 		// String formCode = wireframeDTO.getFormCode();
@@ -292,7 +294,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 		
 		rn_fb_header.setCreatedBy(userId);
 		rn_fb_header.setUpdatedBy(userId);
-		rn_fb_header.setAccountId(accountId);
+//		rn_fb_header.setAccountId(accountId);
 
 		Rn_Fb_Header savedHeader = this.save(rn_fb_header);
 
@@ -348,7 +350,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_section.setCreatedBy(userId);
 			rn_fb_line_section.setUpdatedBy(userId);
-			rn_fb_line_section.setAccountId(accountId);
+//			rn_fb_line_section.setAccountId(accountId);
 
 			// HEADER_ID
 			rn_fb_line_section.setRn_fb_header(savedHeader);
@@ -409,7 +411,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_pk.setCreatedBy(userId);
 			rn_fb_line_pk.setUpdatedBy(userId);
-			rn_fb_line_pk.setAccountId(accountId);
+//			rn_fb_line_pk.setAccountId(accountId);
 			rn_fb_line_pk.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_pk);
 
@@ -477,7 +479,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 				// WHO
 				rn_fb_line_textfield.setCreatedBy(userId);
 				rn_fb_line_textfield.setUpdatedBy(userId);
-				rn_fb_line_textfield.setAccountId(accountId);
+//				rn_fb_line_textfield.setAccountId(accountId);
 
 				rn_fb_line_textfield.setRn_fb_header(savedHeader);
 				this.saveLine(rn_fb_line_textfield);
@@ -549,7 +551,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_button.setCreatedBy(userId);
 			rn_fb_line_button.setUpdatedBy(userId);
-			rn_fb_line_button.setAccountId(accountId);
+//			rn_fb_line_button.setAccountId(accountId);
 
 			rn_fb_line_button.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_button);
@@ -619,7 +621,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_section.setCreatedBy(userId);
 			rn_fb_line_section.setUpdatedBy(userId);
-			rn_fb_line_section.setAccountId(accountId);
+//			rn_fb_line_section.setAccountId(accountId);
 
 			rn_fb_line_section.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_section);
@@ -685,7 +687,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_pk.setCreatedBy(userId);
 			rn_fb_line_pk.setUpdatedBy(userId);
-			rn_fb_line_pk.setAccountId(accountId);
+//			rn_fb_line_pk.setAccountId(accountId);
 			rn_fb_line_pk.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_pk);
 
@@ -749,7 +751,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 				// WHO
 				rn_fb_line_textfield.setCreatedBy(userId);
 				rn_fb_line_textfield.setUpdatedBy(userId);
-				rn_fb_line_textfield.setAccountId(accountId);
+//				rn_fb_line_textfield.setAccountId(accountId);
 				rn_fb_line_textfield.setRn_fb_header(savedHeader);
 				this.saveLine(rn_fb_line_textfield);
 			}
@@ -812,7 +814,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_button.setCreatedBy(userId);
 			rn_fb_line_button.setUpdatedBy(userId);
-			rn_fb_line_button.setAccountId(accountId);
+//			rn_fb_line_button.setAccountId(accountId);
 			rn_fb_line_button.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_button);
 
@@ -878,7 +880,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_section.setCreatedBy(userId);
 			rn_fb_line_section.setUpdatedBy(userId);
-			rn_fb_line_section.setAccountId(accountId);
+//			rn_fb_line_section.setAccountId(accountId);
 			rn_fb_line_section.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_section);
 			/** Header Line Primary Id */
@@ -940,7 +942,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_pk.setCreatedBy(userId);
 			rn_fb_line_pk.setUpdatedBy(userId);
-			rn_fb_line_pk.setAccountId(accountId);
+//			rn_fb_line_pk.setAccountId(accountId);
 
 			rn_fb_line_pk.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_pk);
@@ -1004,7 +1006,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 				// WHO
 				rn_fb_line_textfield.setCreatedBy(userId);
 				rn_fb_line_textfield.setUpdatedBy(userId);
-				rn_fb_line_textfield.setAccountId(accountId);
+//				rn_fb_line_textfield.setAccountId(accountId);
 
 				rn_fb_line_textfield.setRn_fb_header(savedHeader);
 				this.saveLine(rn_fb_line_textfield);
@@ -1069,7 +1071,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_section_l.setCreatedBy(userId);
 			rn_fb_line_section_l.setUpdatedBy(userId);
-			rn_fb_line_section_l.setAccountId(accountId);
+//			rn_fb_line_section_l.setAccountId(accountId);
 			rn_fb_line_section_l.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_section_l);
 
@@ -1131,7 +1133,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_pk_l.setCreatedBy(userId);
 			rn_fb_line_pk_l.setUpdatedBy(userId);
-			rn_fb_line_pk_l.setAccountId(accountId);
+//			rn_fb_line_pk_l.setAccountId(accountId);
 			rn_fb_line_pk_l.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_pk_l);
 
@@ -1194,7 +1196,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_fk.setCreatedBy(userId);
 			rn_fb_line_fk.setUpdatedBy(userId);
-			rn_fb_line_fk.setAccountId(accountId);
+//			rn_fb_line_fk.setAccountId(accountId);
 
 			rn_fb_line_fk.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_fk);
@@ -1257,7 +1259,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 				// WHO
 				rn_fb_line_textfield_l.setCreatedBy(userId);
 				rn_fb_line_textfield_l.setUpdatedBy(userId);
-				rn_fb_line_textfield_l.setAccountId(accountId);
+//				rn_fb_line_textfield_l.setAccountId(accountId);
 				rn_fb_line_textfield_l.setRn_fb_header(savedHeader);
 				this.saveLine(rn_fb_line_textfield_l);
 
@@ -1317,7 +1319,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_button.setCreatedBy(userId);
 			rn_fb_line_button.setUpdatedBy(userId);
-			rn_fb_line_button.setAccountId(accountId);
+//			rn_fb_line_button.setAccountId(accountId);
 			rn_fb_line_button.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_button);
 		} // H-L END
@@ -1380,7 +1382,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_hn.setCreatedBy(userId);
 			rn_fb_line_hn.setUpdatedBy(userId);
-			rn_fb_line_hn.setAccountId(accountId);
+//			rn_fb_line_hn.setAccountId(accountId);
 			rn_fb_line_hn.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_hn);
 
@@ -1438,7 +1440,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_section.setCreatedBy(userId);
 			rn_fb_line_section.setUpdatedBy(userId);
-			rn_fb_line_section.setAccountId(accountId);
+//			rn_fb_line_section.setAccountId(accountId);
 			rn_fb_line_section.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_section);
 
@@ -1498,7 +1500,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_pk.setCreatedBy(userId);
 			rn_fb_line_pk.setUpdatedBy(userId);
-			rn_fb_line_pk.setAccountId(accountId);
+//			rn_fb_line_pk.setAccountId(accountId);
 			rn_fb_line_pk.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_pk);
 
@@ -1559,7 +1561,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 				// WHO
 				rn_fb_line_textfield.setCreatedBy(userId);
 				rn_fb_line_textfield.setUpdatedBy(userId);
-				rn_fb_line_textfield.setAccountId(accountId);
+//				rn_fb_line_textfield.setAccountId(accountId);
 				rn_fb_line_textfield.setRn_fb_header(savedHeader);
 				this.saveLine(rn_fb_line_textfield);
 
@@ -1641,7 +1643,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 			// WHO
 			rn_fb_line_button.setCreatedBy(userId);
 			rn_fb_line_button.setUpdatedBy(userId);
-			rn_fb_line_button.setAccountId(accountId);
+//			rn_fb_line_button.setAccountId(accountId);
 			rn_fb_line_button.setRn_fb_header(savedHeader);
 			this.saveLine(rn_fb_line_button);
 		}
@@ -1655,7 +1657,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 
 	@Override
 	public boolean addNewSectionOrButton(int rn_fb_header_id, AddSectionButtonDTO addSectionButtonDTO) {
-		User user = userService.getLoggedInUser();
+		AppUser user = userService.getLoggedInUser();
 		Long userId = user.getUserId();
 
 		Rn_Fb_Header rn_fb_header = this.getById(rn_fb_header_id);
@@ -1846,7 +1848,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 	// only in header section( used in all kind of form)
 	@Override
 	public boolean addNewFieldInSection(int id, int sectionNum) {
-		User user = userService.getLoggedInUser();
+		AppUser user = userService.getLoggedInUser();
 		Long userId = user.getUserId();
 
 		Rn_Fb_Header rn_fb_header = this.getById(id);
@@ -1920,7 +1922,7 @@ public class Rn_WireFrame_ServiceImpl implements Rn_WireFrame_Service {
 	// used in HL & LO form (FOR ADDING LINE FIELDS)
 	@Override
 	public boolean addNewFieldInOnlyLineSection(int id, int sectionNumber) {
-		User user = userService.getLoggedInUser();
+		AppUser user = userService.getLoggedInUser();
 		Long userId = user.getUserId();
 
 		Rn_Fb_Header rn_fb_header = this.getById(id);

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SurefarmService} from 'src/app/services/api/surefarm.service';
+import {SurefarmService} from '../../../services/api/surefarm.service';
 @Component({
   selector: 'app-surefarm',
   templateUrl: './surefarm.component.html',

@@ -39,10 +39,10 @@ export class ModulesetupService {
     return this.apiRequest.get(_http);
   }
 
-  create(moduleSetup: ModuleSetup, projectId: number): Observable<any> {
+  create(moduleSetup: ModuleSetup): Observable<any> {
     let params: HttpParams = new HttpParams();
-    params = params.append("p_id", projectId.toString());
-    return this.apiRequest.post(this.baseURL, moduleSetup, params);
+   // params = params.append("p_id", projectId.toString());
+    return this.apiRequest.post(this.baseURL, moduleSetup);
   }
 
   update(id: number, moduleSetup: ModuleSetup): Observable<any> {

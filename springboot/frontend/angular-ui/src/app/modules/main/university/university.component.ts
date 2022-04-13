@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { university } from 'src/app/models/university';
-import { AlertService } from 'src/app/services/alert.service';
-import { UniversityService } from 'src/app/services/api/university.service';
-import { ExcelService } from 'src/app/services/excel.service';
+import { university } from '../../../models/university';
+import { AlertService } from '../../../services/alert.service';
+import { UniversityService } from '../../../services/api/university.service';
+import { ExcelService } from '../../../services/excel.service';
 import * as moment from 'moment';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';

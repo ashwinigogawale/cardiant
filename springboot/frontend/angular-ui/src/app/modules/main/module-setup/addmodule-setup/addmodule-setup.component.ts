@@ -35,7 +35,8 @@ export class AddmoduleSetupComponent implements OnInit {
     this.entryForm = this._fb.group({
       moduleName: [null],
       description: [null],
-      modulePrefix: [null]
+      modulePrefix: [null],
+      projectId:[null]
     });
 
     // copy form
@@ -56,7 +57,8 @@ export class AddmoduleSetupComponent implements OnInit {
 
   onCreate() {
     this.fieldError = [];
-    this.moduleSetupService.create(this.entryForm.value, this.projectId).subscribe(
+    this.entryForm.value.projectId=this.projectId;
+    this.moduleSetupService.create(this.entryForm.value).subscribe(
       (data) => {
         console.log(data);
         this.router.navigate(["../../../module1"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });

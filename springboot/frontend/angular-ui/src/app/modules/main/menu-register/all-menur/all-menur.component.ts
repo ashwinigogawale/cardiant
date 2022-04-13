@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { MenuGroupService } from 'src/app/services/api/menu-group.service';
-import { MenuRegisterService } from 'src/app/services/api/menu-register.service';
+import { MenuGroupService } from '../../../../services/api/menu-group.service';
+import { MenuRegisterService } from '../../../../services/api/menu-register.service';
 
 @Component({
   selector: 'app-all-menur',

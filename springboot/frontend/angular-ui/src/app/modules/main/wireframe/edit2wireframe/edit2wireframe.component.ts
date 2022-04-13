@@ -3,18 +3,18 @@ import { NgZone } from '@angular/core';
 import { DndDropEvent, DropEffect } from 'ngx-drag-drop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { field, value } from 'src/app/global.model';
-import { AlertService } from 'src/app/services/alert.service';
+import { field, value } from '../../../../global.model';
+import { AlertService } from '../../../../services/alert.service';
 //import { FormbuilderService } from 'src/app/services/api/formbuilder.service';
 //import { FormdragAttributeService } from 'src/app/services/api/formdrag-attribute.service';
 //import { FormdragValueService } from 'src/app/services/api/formdrag-value.service';
 //import { FormfragModalService } from 'src/app/services/api/formfrag-modal.service';
-import { WireframeLineService } from 'src/app/services/api/wireframe-line.service';
-import { Rn_Fb_Lines } from 'src/app/models/Rn_Fb_Lines';
+import { WireframeLineService } from '../../../../services/api/wireframe-line.service';
+import { Rn_Fb_Lines } from '../../../../models/Rn_Fb_Lines';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Rn_Fb_Header } from 'src/app/models/Rn_Fb_Header';
-import { WireframeService } from 'src/app/services/api/wireframe.service';
-import { WireFrame } from 'src/app/models/WireFrame';
+import { Rn_Fb_Header } from '../../../../models/Rn_Fb_Header';
+import { WireframeService } from '../../../../services/api/wireframe.service';
+import { WireFrame } from '../../../../models/WireFrame';
 declare var $: any;
 @Component({
   selector: 'app-edit2wireframe',
@@ -384,11 +384,11 @@ console.log("update with id = ", this.id);
     setTimeout(() => {
 
 
-      this.ngZone.runOutsideAngular(() => {
-        //$(document.getElementById('fb-editor')).formBuilder();
-        var fbEditor = document.getElementById('fb-editor');
-        this.formBuilder = $(fbEditor).formBuilder();
-      });
+      // this.ngZone.runOutsideAngular(() => {
+      //   //$(document.getElementById('fb-editor')).formBuilder();
+      //   var fbEditor = document.getElementById('fb-editor');
+      //   this.formBuilder = $(fbEditor).formBuilder();
+      // });
 
     }, 2000)
 

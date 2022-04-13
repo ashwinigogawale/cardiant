@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UsermaintanceService } from 'src/app/services/api/usermaintance.service';
-import { Usermain } from 'src/app/models/usermaintaince';
-import { DemoService } from 'src/app/services/api/demo.service';
+import { UsermaintanceService } from '../../../services/api/usermaintance.service';
+//import { Usermain } from 'src/app/models/usermaintaince';
+import { DemoService } from '../../../services/api/demo.service';
 @Component({
   selector: 'app-usermaintanceedit',
   templateUrl: './usermaintanceedit.component.html',

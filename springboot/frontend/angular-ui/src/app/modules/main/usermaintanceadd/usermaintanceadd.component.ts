@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { UsermaintanceService } from 'src/app/services/api/usermaintance.service';
-import { DemoService } from 'src/app/services/api/demo.service';
+import { UsermaintanceService } from '../../../services/api/usermaintance.service';
+import { DemoService } from '../../../services/api/demo.service';
 @Component({
   selector: 'app-usermaintanceadd',
   templateUrl: './usermaintanceadd.component.html',

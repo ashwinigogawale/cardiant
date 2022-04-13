@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { ExcelService } from 'src/app/services/excel.service';
+import { ExcelService } from '../../../services/excel.service';
 import * as moment from 'moment';
 @Component({
   selector: 'app-customerprocess',

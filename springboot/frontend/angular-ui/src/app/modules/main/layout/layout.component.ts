@@ -1,11 +1,11 @@
 
 import { Component,ViewEncapsulation, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
-import { LoginService   } from 'src/app/services/api/login.service';
-import { UserInfoService} from 'src/app/services/user-info.service';
-import { RealnetMenuService } from 'src/app/services/api/realnet-menu.service';
-import { Rn_Main_Menu } from 'src/app/models/Rn_Main_Menu';
-import { MenuGroupService } from 'src/app/services/api/menu-group.service';
+import { LoginService   } from '../../../services/api/login.service';
+import { UserInfoService} from '../../../services/user-info.service';
+import { RealnetMenuService } from '../../../services/api/realnet-menu.service';
+import { Rn_Main_Menu } from '../../../models/Rn_Main_Menu';
+import { MenuGroupService } from '../../../services/api/menu-group.service';
 
 
 @Component({

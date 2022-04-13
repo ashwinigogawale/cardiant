@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ExcelService } from 'src/app/services/excel.service';
+import { ExcelService } from '../../../services/excel.service';
 import * as moment from 'moment';
-import { UsergrpmaintainceService } from 'src/app/services/api/usergrpmaintaince.service';
+import { UsergrpmaintainceService } from '../../../services/api/usergrpmaintaince.service';
 @Component({
   selector: 'app-usergrpmaintenance',
   templateUrl: './usergrpmaintenance.component.html',

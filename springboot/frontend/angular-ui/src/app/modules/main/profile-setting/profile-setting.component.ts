@@ -2,9 +2,9 @@
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserProfile, UserProfileService } from 'src/app/services/api/user-profile.service';
+import { UserProfile, UserProfileService } from '../../../services/api/user-profile.service';
 import { DomSanitizer } from '@angular/platform-browser';
-import { AlertService } from 'src/app/services/alert.service';
+import { AlertService } from '../../../services/alert.service';
 @Component({
   selector: 'app-profile-setting',
   templateUrl: './profile-setting.component.html',

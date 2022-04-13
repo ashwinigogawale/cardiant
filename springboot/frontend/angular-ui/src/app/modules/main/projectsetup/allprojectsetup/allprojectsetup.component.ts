@@ -1,10 +1,10 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { ProjectSetupService } from 'src/app/services/api/project-setup.service';
-import { ExcelService } from 'src/app/services/excel.service';
+import { ProjectSetupService } from '../../../../services/api/project-setup.service';
+import { ExcelService } from '../../../../services/excel.service';
 import * as moment from 'moment';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { ProjectSetup } from 'src/app/models/Project_setup';
+import { ProjectSetup } from '../../../../models/Project_setup';
 @Component({
   selector: 'app-allprojectsetup',
   templateUrl: './allprojectsetup.component.html',

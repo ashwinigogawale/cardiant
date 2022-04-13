@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ExcelService } from 'src/app/services/excel.service';
+import { ExcelService } from '../../../services/excel.service';
 import * as moment from 'moment';
 @Component({
   selector: 'app-opencreditnote',

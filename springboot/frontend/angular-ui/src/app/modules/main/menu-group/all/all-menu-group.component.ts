@@ -1,12 +1,12 @@
 import { Component, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MenuGroupService } from 'src/app/services/api/menu-group.service';
-import { MenuRegisterService } from 'src/app/services/api/menu-register.service';
+import { MenuGroupService } from '../../../../services/api/menu-group.service';
+import { MenuRegisterService } from '../../../../services/api/menu-register.service';
 
 import { ToastrService } from 'ngx-toastr';
-import { university } from 'src/app/models/university';
-import { AlertService } from 'src/app/services/alert.service';
-import { UniversityService } from 'src/app/services/api/university.service';
-import { ExcelService } from 'src/app/services/excel.service';
+import { university } from '../../../../models/university';
+import { AlertService } from '../../../../services/alert.service';
+import { UniversityService } from '../../../../services/api/university.service';
+import { ExcelService } from '../../../../services/excel.service';
 import * as moment from 'moment';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -116,7 +116,7 @@ export class AllMenuGroupComponent implements OnInit {
     onEdit(row) {
         this.rowSelected = row;
         console.log(this.rowSelected);
-        
+
         this.modalEdit = true;
     }
 
@@ -168,11 +168,11 @@ export class AllMenuGroupComponent implements OnInit {
                 console.log('Update Success...');
                 this.modalEdit = false;
                 this.ngOnInit();
-                
+
             },
             (error: any)=>{
                 console.log(error);
-                
+
             }
         );
         if (id) {
@@ -215,7 +215,7 @@ export class AllMenuGroupComponent implements OnInit {
             },
             (error: any)=>{
                 console.log(error);
-                
+
             }
         );
         if (this.entryForm.value) {
@@ -331,7 +331,7 @@ export class AllMenuGroupComponent implements OnInit {
 //         updatedBy: '',
 //     }
 
-//     menu_group_line = 
+//     menu_group_line =
 //             {
 //                 id: '',
 //                 menu_id: '',
@@ -431,7 +431,7 @@ export class AllMenuGroupComponent implements OnInit {
 //                     this.linesData.push(val);
 //                 }
 //                 console.log('New Data of Lines : ');
-//                 console.log(this.lines);   
+//                 console.log(this.lines);
 //             },
 //             (error: any) => {
 //                 console.log(error);

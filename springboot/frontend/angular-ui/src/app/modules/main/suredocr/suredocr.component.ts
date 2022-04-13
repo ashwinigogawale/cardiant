@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import '@cds/core/tag/register.js';
-import {SuredokrService} from 'src/app/services/api/suredokr.service';
+import {SuredokrService} from '../../../services/api/suredokr.service';
 @Component({
   selector: 'app-suredocr',
   templateUrl: './suredocr.component.html',

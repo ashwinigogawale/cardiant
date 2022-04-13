@@ -92,6 +92,18 @@ import { SurefarmComponent } from './surefarm/surefarm.component';
 import { SuregitComponent } from './suregit/suregit.component';
 import { DndModule } from 'ngx-drag-drop';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { Wireframe1Component } from './wireframe1/wireframe1.component';
+import { WireframeCardComponent } from './wireframe-card/wireframe-card.component';
+import { Report2Component } from './report2/report2.component';
+import { ReporttypeComponent } from './report2/reporttype/reporttype.component';
+import { ReportBuilderComponent } from './report-builder/report-builder.component';
+import { AddComponent } from './report-builder/add/add.component';
+import { AllComponent } from './report-builder/all/all.component';
+import { EditComponent } from './report-builder/edit/edit.component';
+import { RbTableSetupComponent } from './rb-table-setup/rb-table-setup.component';
+import { RbColumnSetupComponent } from './rb-column-setup/rb-column-setup.component';
+import { RbWhereColumnSetupComponent } from './rb-where-column-setup/rb-where-column-setup.component';
+import { RbDateParamSetupComponent } from './rb-date-param-setup/rb-date-param-setup.component';
 
 
 
@@ -146,6 +158,18 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
       SuredocrComponent,
       SurefarmComponent,
       SuregitComponent,
+      Wireframe1Component,
+      WireframeCardComponent,
+      Report2Component,
+      ReporttypeComponent,
+      ReportBuilderComponent,
+      AddComponent,
+      AllComponent,
+      EditComponent,
+      RbTableSetupComponent,
+      RbColumnSetupComponent,
+      RbWhereColumnSetupComponent,
+      RbDateParamSetupComponent,
 
 
 

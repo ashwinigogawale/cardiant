@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ProjectSetup } from 'src/app/models/Project_setup';
-import { NotificationType, Notification, NotificationService } from 'src/app/services/notification.service';
+import { ProjectSetup } from '../../../models/Project_setup';
+import { NotificationType, Notification, NotificationService } from '../../../services/notification.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProjectSetupService } from 'src/app/services/api/project-setup.service';
+import { ProjectSetupService } from '../../../services/api/project-setup.service';
 
 @Component({
   selector: 'app-projectcard',

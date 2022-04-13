@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {ModuleSetup} from 'src/app/models/Module_Setup';
-import { ModulesetupService } from 'src/app/services/api/modulesetup.service';
+import {ModuleSetup} from '../../../models/Module_Setup';
+import { ModulesetupService } from '../../../services/api/modulesetup.service';
 import { ToastrService } from 'ngx-toastr';
-import { WireframeService } from 'src/app/services/api/wireframe.service';
+import { WireframeService } from '../../../services/api/wireframe.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NotificationService } from 'src/app/services/notification.service';
+import { NotificationService } from '../../../services/notification.service';
 @Component({
   selector: 'app-module-card',
   templateUrl: './module-card.component.html',

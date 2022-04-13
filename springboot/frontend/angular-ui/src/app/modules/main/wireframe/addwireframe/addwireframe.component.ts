@@ -53,6 +53,8 @@ export class AddwireframeComponent implements OnInit {
       objectType: [null],
       subObjectType: [null],
       uiName: [null],
+      formType:[null],
+      moduleId:[null]
     });
 
     // copy form
@@ -96,8 +98,9 @@ export class AddwireframeComponent implements OnInit {
   onCreate() {
    console.log("in add wireframe  oncreate",this.formType,this.moduleId);
 
-
-    this.wireframeService.create(this.entryForm.value, this.formType, this.moduleId).subscribe(
+this.entryForm.value.formType=this.formType;
+this.entryForm.value.moduleId=this.moduleId;
+    this.wireframeService.create(this.entryForm.value).subscribe(
         (data) => {
           console.log(data);
 

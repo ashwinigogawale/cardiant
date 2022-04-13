@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
-import { ExcelService } from 'src/app/services/excel.service';
-import { NcsoapproService } from 'src/app/services/api/ncsoappro.service';
+import { ExcelService } from '../../../services/excel.service';
+import { NcsoapproService } from '../../../services/api/ncsoappro.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ExcelService } from 'src/app/services/excel.service';
+import { ExcelService } from '../../../services/excel.service';
 import * as moment from 'moment';
-import {LogconfigService} from 'src/app/services/api/logconfig.service';
+import {LogconfigService} from '../../../services/api/logconfig.service';
 @Component({
   selector: 'app-logconfig',
   templateUrl: './logconfig.component.html',

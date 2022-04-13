@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { BillingdemoService } from 'src/app/services/api/billingdemo.service';
-import { CustomerdemoService } from 'src/app/services/api/customerdemo.service';
-import { DemoService } from 'src/app/services/api/demo.service';
-import { DiputesemoService } from 'src/app/services/api/diputesemo.service';
-import { ItemdemoService } from 'src/app/services/api/itemdemo.service';
-import { demo } from 'src/app/models/demo';
-import { invoicesubmenu } from 'src/app/models/Invoicesubmemnu';
+import { BillingdemoService } from '../../../services/api/billingdemo.service';
+import { CustomerdemoService } from '../../../services/api/customerdemo.service';
+import { DemoService } from '../../../services/api/demo.service';
+import { DiputesemoService } from '../../../services/api/diputesemo.service';
+import { ItemdemoService } from '../../../services/api/itemdemo.service';
+import { demo } from '../../../models/demo';
+import { invoicesubmenu } from '../../../models/Invoicesubmemnu';
 @Component({
   selector: 'app-form2',
   templateUrl: './form2.component.html',

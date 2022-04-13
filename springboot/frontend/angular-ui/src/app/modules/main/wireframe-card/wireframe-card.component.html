@@ -1,0 +1,48 @@
+<div class="clr-row">
+
+  <div class="clr-col-12" style="text-align: right;">
+
+    <button id="add" class="btn btn-primary" (click)="goToAdd()">
+      <clr-icon shape="plus"></clr-icon>ADD
+    </button>
+  </div>
+</div>
+
+<div>
+  <div *ngIf="wireFrames; else showInfo" class="clr-row clr-align-items-start clr-justify-content-start">
+      <div *ngFor="let app of wireFrames; let index = i" class="clr-col-auto" style="max-width: min-content;">
+          <a class="card clickable"  routerLinkActive="actice">
+              <div class="card-block">
+                  <h3 class="card-title">{{app.uiName}}</h3>
+
+              </div>
+              <div class="card-footer">
+                  <span class="label label-light-blue p7" style="margin-top: .4em;">formType: {{app.formType}}</span>
+
+
+
+
+
+
+                </div>
+          </a>
+      </div>
+  </div>
+
+  <ng-template #showInfo>
+      <div class="alert alert-info" role="alert">
+          <div class="alert-items">
+              <div class="alert-item static">
+                  <div class="alert-icon-wrapper">
+                      <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+                  </div>
+                  <span class="alert-text">
+                      Sorry. No wireFrames apps could be found.<clr-spinner>Loading ...</clr-spinner>
+                  </span>
+              </div>
+          </div>
+      </div>
+  </ng-template>
+</div>
+
+

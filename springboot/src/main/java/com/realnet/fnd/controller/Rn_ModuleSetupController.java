@@ -3,6 +3,7 @@ package com.realnet.fnd.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,9 @@ import com.realnet.fnd.response.CustomResponse;
 import com.realnet.fnd.service.Rn_ModuleSetup_Service;
 import com.realnet.fnd.service.Rn_ProjectSetup_Service;
 import com.realnet.users.entity.User;
+import com.realnet.users.entity1.AppUser;
 import com.realnet.users.service.UserService;
+import com.realnet.users.service1.AppUserServiceImpl;
 import com.realnet.utils.Constant;
 import com.realnet.wfb.entity.Rn_Fb_Header;
 import com.realnet.wfb.entity.Rn_Fb_Line;
@@ -53,8 +56,8 @@ import lombok.extern.slf4j.Slf4j;
 @Api(tags = { "Module Setup" })
 public class Rn_ModuleSetupController {
 
-	@Autowired(required=false)
-	private UserService userService;
+	@Autowired
+	private AppUserServiceImpl userService;
 
 	@Autowired
 	private Rn_ProjectSetup_Service projectSetupService;
@@ -116,22 +119,26 @@ public class Rn_ModuleSetupController {
 	// === modification needed ===
 	// SAVE
 	@ApiOperation(value = "Add New Module")
+
+	
+
 	@PostMapping(value = "/module-setup")
-	public ResponseEntity<?> saveModule(@RequestParam("p_id") Integer projectId,
-			@Valid @RequestBody Rn_Module_Setup moduleReq) throws IOException {
-		User loggedInUser = userService.getLoggedInUser();
+	public ResponseEntity<?> saveModule(@Valid @RequestBody Rn_Module_Setup moduleReq,HttpSession session1) throws IOException {
+		AppUser loggedInUser = userService.getLoggedInUser();
 		moduleReq.setCreatedBy(loggedInUser.getUserId());
 		moduleReq.setUpdatedBy(loggedInUser.getUserId());
 		moduleReq.setAccountId(loggedInUser.getUserId());
-		Rn_Project_Setup project = projectSetupService.getById(projectId);
-		moduleReq.setTechnologyStack(project.getTechnologyStack());
-		moduleReq.setProject(project);
+			Rn_Project_Setup project = projectSetupService.getById(moduleReq.getProjectId());
+			moduleReq.setTechnologyStack(project.getTechnologyStack());
+			moduleReq.setProject(project);
+
+
 		
 		// Rn_Module_Setup module =
 
 		Rn_Module_Setup savedModule = moduleSetupService.save(moduleReq);
 		System.out.println("save module id"+savedModule);
-
+		
 		if (savedModule == null) {
 			ErrorPojo errorPojo = new ErrorPojo();
 			Error error = new Error();
@@ -140,6 +147,7 @@ public class Rn_ModuleSetupController {
 			errorPojo.setError(error);
 			return new ResponseEntity<ErrorPojo>(errorPojo, HttpStatus.EXPECTATION_FAILED);
 		}
+		session1.setAttribute("moduleId",savedModule.getId());
 		SuccessPojo successPojo = new SuccessPojo();
 		Success success = new Success();
 		success.setTitle(Constant.MODULE_SETUP_API_TITLE);
@@ -154,7 +162,7 @@ public class Rn_ModuleSetupController {
 	public ResponseEntity<?> updateModule(
 			@RequestHeader(value = HttpHeaders.AUTHORIZATION, required = false) String authToken,
 			@PathVariable(value = "id") int id, @Valid @RequestBody Rn_Module_Setup module) {
-		User loggedInUser = userService.getLoggedInUser();
+		AppUser loggedInUser = userService.getLoggedInUser();
 		module.setUpdatedBy(loggedInUser.getUserId());
 		Rn_Module_Setup updatedModule = moduleSetupService.updateById(id, module);
 		log.debug("Updated Module -> {}", updatedModule);
@@ -203,9 +211,9 @@ public class Rn_ModuleSetupController {
 	@ApiOperation(value = "Copy Module", response = Rn_Module_Setup.class)
 	@PostMapping("/module-copy")
 	public ResponseEntity<?> copyModule(@Valid @RequestBody ModuleCopyDTO moduleCopyDTO) {
-		User user = userService.getLoggedInUser();
+		AppUser user = userService.getLoggedInUser();
 		Long userId = user.getUserId();
-		Long accId = user.getSys_account().getId();
+//		Long accId = user.getSys_account().getId();
 
 		// MODULE COPY LOGIC
 		int from_project_id = moduleCopyDTO.getFrom_projectId();
@@ -217,7 +225,7 @@ public class Rn_ModuleSetupController {
 		Rn_Module_Setup newModule = new Rn_Module_Setup();
 		newModule.setCreatedBy(userId);
 		newModule.setUpdatedBy(userId);
-		newModule.setAccountId(accId);
+//		newModule.setAccountId(accId);
 		
 		newModule.setModuleName(toModuleName); // this is only change
 		newModule.setDescription(oldModule.getDescription());
@@ -240,7 +248,7 @@ public class Rn_ModuleSetupController {
 			Rn_Fb_Header newHeader = new Rn_Fb_Header();
 			newHeader.setCreatedBy(userId);
 			newHeader.setUpdatedBy(userId);
-			newHeader.setAccountId(accId);
+//			newHeader.setAccountId(accId);
 			newHeader.setTechStack(oldHeader.getTechStack());
 			newHeader.setObjectType(oldHeader.getObjectType());
 			newHeader.setSubObjectType(oldHeader.getSubObjectType());
@@ -276,7 +284,7 @@ public class Rn_ModuleSetupController {
 			for (Rn_Fb_Line line : oldLines) {
 				Rn_Fb_Line newLine = new Rn_Fb_Line();
 				newLine.setCreatedBy(userId);
-				newLine.setAccountId(accId);
+//				newLine.setAccountId(accId);
 				newLine.setForm_type(line.getForm_type());
 				newLine.setFieldName(line.getFieldName());
 				newLine.setMapping(line.getMapping());

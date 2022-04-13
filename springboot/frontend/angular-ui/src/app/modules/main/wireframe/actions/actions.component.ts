@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
-import { WireframeService } from "src/app/services/api/wireframe.service";
+import { WireframeService } from "../../../../services/api/wireframe.service";
 export interface Tools {
   title: string;
   details: string;
@@ -38,7 +38,7 @@ export class ActionsComponent implements OnInit {
     {
       title: "Report Builder",
       details: "Generate Report for Your Project",
-      action: "../report-builder",
+      action: "../reporttype",
     },
     {
       title: "Api Builder",

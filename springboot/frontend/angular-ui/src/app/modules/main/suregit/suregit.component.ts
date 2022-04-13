@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {SuregitService} from 'src/app/services/api/suregit.service';
-import {Suregit} from 'src/app/models/suregit';
-import { Surestar } from 'src/app/models/surestar';
-import { Surename } from 'src/app/models/surename';
+import {SuregitService} from '../../../services/api/suregit.service';
+import {Suregit} from '../../../models/suregit';
+import { Surestar } from '../../../models/surestar';
+import { Surename } from '../../../models/surename';
 import { ActivatedRoute, Router } from '@angular/router';
 import { anyOrAllPropertiesPass } from '@cds/core/internal';
 import { HttpClient } from '@angular/common/http';

@@ -3,12 +3,12 @@ import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import * as moment from 'moment';
 import { ToastrService } from 'ngx-toastr';
-import { ModuleSetup } from 'src/app/models/Module_Setup';
-import { AlertService } from 'src/app/services/alert.service';
-import { ModulesetupService } from 'src/app/services/api/modulesetup.service';
-import { ProjectSetupService } from 'src/app/services/api/project-setup.service';
-import { WireframeService } from 'src/app/services/api/wireframe.service';
-import { ExcelService } from 'src/app/services/excel.service';
+import { ModuleSetup } from '../../../../models/Module_Setup';
+import { AlertService } from '../../../../services/alert.service';
+import { ModulesetupService } from '../../../../services/api/modulesetup.service';
+import { ProjectSetupService } from '../../../../services/api/project-setup.service';
+import { WireframeService } from '../../../../services/api/wireframe.service';
+import { ExcelService } from '../../../../services/excel.service';
 @Component({
   selector: 'app-allmodule-setup',
   templateUrl: './allmodule-setup.component.html',

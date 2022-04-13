@@ -72,12 +72,12 @@ export class WireframeService {
     return this.apiRequest.get(_http);
   }
 
-  create(fbHeader: Rn_Fb_Header, formType: string, moduleId: number): Observable<Rn_Fb_Header> {
+  create(fbHeader: Rn_Fb_Header): Observable<Rn_Fb_Header> {
     //`${this.baseURL}`
     let params: HttpParams = new HttpParams();
-    params = params.append("moduleId", moduleId.toString());
-    params = params.append("formType", formType);
-    return this.apiRequest.post(this.wireframeBaseURL, fbHeader, params);
+   // params = params.append("moduleId", moduleId.toString());
+    //params = params.append("formType", formType);
+    return this.apiRequest.post(this.wireframeBaseURL, fbHeader);
   }
 
   update(id: number, fbHeader: Rn_Fb_Header): Observable<Rn_Fb_Header> {

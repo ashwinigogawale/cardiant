@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Rn_Fb_Header } from 'src/app/models/Rn_Fb_Header';
-import { WireframeService } from 'src/app/services/api/wireframe.service';
+import { Rn_Fb_Header } from '../../../../models/Rn_Fb_Header';
+import { WireframeService } from '../../../../services/api/wireframe.service';
 @Component({
   selector: 'app-uinameedit',
   templateUrl: './uinameedit.component.html',

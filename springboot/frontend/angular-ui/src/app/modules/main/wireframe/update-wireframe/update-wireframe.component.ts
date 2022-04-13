@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, NgZone, OnInit } from '@angular/core';
-import { field, value } from 'src/app/global.model';
-import { AlertService } from 'src/app/services/alert.service';
-import { WireframeLineService } from 'src/app/services/api/wireframe-line.service';
+import { field, value } from '../../../../global.model';
+import { AlertService } from '../../../../services/alert.service';
+import { WireframeLineService } from '../../../../services/api/wireframe-line.service';
 // import { AfterViewInit, NgZone } from '@angular/core';
 import { DndDropEvent, DropEffect } from 'ngx-drag-drop';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -327,11 +327,11 @@ formBuilder: any;
     setTimeout(() => {
 
 
-      this.ngZone.runOutsideAngular(() => {
-        //$(document.getElementById('fb-editor')).formBuilder();
-        var fbEditor = document.getElementById('fb-editor');
-        this.formBuilder = $(fbEditor).formBuilder();
-      });
+      // this.ngZone.runOutsideAngular(() => {
+      //   //$(document.getElementById('fb-editor')).formBuilder();
+      //   var fbEditor = document.getElementById('fb-editor');
+      //   this.formBuilder = $(fbEditor).formBuilder();
+      // });
 
     }, 2000)
 

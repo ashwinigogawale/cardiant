@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DemoService } from 'src/app/services/api/demo.service';
+import { DemoService } from '../../../services/api/demo.service';
 
 @Component({
   selector: 'app-ncspapprovaledit',

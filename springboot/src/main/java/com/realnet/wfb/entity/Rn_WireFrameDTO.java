@@ -8,6 +8,8 @@ public class Rn_WireFrameDTO {
 	String objectType;
 	String subObjectType;
 	String uiName;
+	String formType;
+	int moduleId;
 //	String menuName;
 //	String tableName;
 //	String formType;

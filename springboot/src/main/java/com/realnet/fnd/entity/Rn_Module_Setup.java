@@ -13,13 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.LazyCollection;
-import org.hibernate.annotations.LazyCollectionOption;
+import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.realnet.bi.entity.Rn_Dashboard_Widgets;
 import com.realnet.rb.entity.Rn_report_builder;
 import com.realnet.wfb.entity.Rn_Fb_Header;
 
@@ -74,6 +71,9 @@ public class Rn_Module_Setup extends Rn_Who_AccId_Column {
 	@JsonManagedReference
 	private List<Rn_report_builder> rn_report_builder;
 
+	@Transient
+	private int projectId;
+	
 	public Rn_Module_Setup() {
 		super();
 	}
@@ -166,6 +166,18 @@ public class Rn_Module_Setup extends Rn_Who_AccId_Column {
 
 	public void setRn_report_builder(List<Rn_report_builder> rn_report_builder) {
 		this.rn_report_builder = rn_report_builder;
+	}
+
+
+
+	public int getProjectId() {
+		return projectId;
+	}
+
+
+
+	public void setProjectId(int projectId) {
+		this.projectId = projectId;
 	}
 
 	

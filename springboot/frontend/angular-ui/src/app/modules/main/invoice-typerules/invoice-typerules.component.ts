@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { ExcelService } from 'src/app/services/excel.service';
+import { ExcelService } from '../../../services/excel.service';
 import * as moment from 'moment';
-import { InvoiceTypeRuleService } from 'src/app/services/api/invoice-type-rule.service';
+import { InvoiceTypeRuleService } from '../../../services/api/invoice-type-rule.service';
 @Component({
   selector: 'app-invoice-typerules',
   templateUrl: './invoice-typerules.component.html',

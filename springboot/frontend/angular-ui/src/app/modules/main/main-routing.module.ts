@@ -75,6 +75,13 @@ import { UpdateWireframeComponent } from './wireframe/update-wireframe/update-wi
 import { PropertyComponent } from './wireframe/property/property.component';
 import { PropertiesComponent } from './wireframe/properties/properties.component';
 import { UinameeditComponent } from './wireframe/uinameedit/uinameedit.component';
+import { ActionsComponent } from './wireframe/actions/actions.component';
+import { Wireframe1Component } from './wireframe1/wireframe1.component';
+import { ReportBuilderComponent } from './report-builder/report-builder.component';
+import { AllComponent } from './report-builder/all/all.component';
+import { AddComponent } from './report-builder/add/add.component';
+import { EditComponent } from './report-builder/edit/edit.component';
+import { ReporttypeComponent } from './report2/reporttype/reporttype.component';
 
 
 
@@ -134,6 +141,11 @@ const routes: Routes = [
       { path: 'tos', component:TOSComponent },
       {path:'project1',component:Projectsetup1Component},
       {path:'module1',component:ModuleSetup1Component},
+      { path: 'actions', component: ActionsComponent },
+      { path: 'wireframe', component: Wireframe1Component },
+      {
+        path: 'reporttype'   , component: ReporttypeComponent
+      },
       {path: 'dashboard', component:DashboardComponent,
       children: [
         { path: '', redirectTo: 'order', pathMatch: 'full' },
@@ -141,6 +153,18 @@ const routes: Routes = [
 
       ]
     },
+    //report builder
+ { path:'report-builder' , component: ReportBuilderComponent,
+ children : [
+   { path: ''        , redirectTo: 'all', pathMatch: 'full'},
+   { path: 'all'   , component:  AllComponent},
+   { path: 'add'   , component: AddComponent },
+   { path: 'edit/:id'   , component: EditComponent },
+
+
+//add_routingreport
+ ]
+},
     {
       path: 'menu-group', component: MenuGroupComponent,
       children: [
@@ -177,6 +201,9 @@ const routes: Routes = [
             { path: 'add', component: AddmoduleSetupComponent },
             { path: 'edit/:id', component: EditmoduleSetupComponent },
 
+            { path: 'actions', component: ActionsComponent },
+
+
  // wireframe start
  {
   path: 'wireframe', component: WireframeComponent,
@@ -198,6 +225,7 @@ const routes: Routes = [
 
   ]
 },
+
 
 
           ]}

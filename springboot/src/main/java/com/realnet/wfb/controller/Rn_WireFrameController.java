@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,8 +34,8 @@ import com.realnet.fnd.entity.SuccessPojo;
 import com.realnet.fnd.entity.WireFrameCopyDTO;
 import com.realnet.fnd.response.CustomResponse;
 import com.realnet.fnd.service.Rn_ModuleSetup_Service;
-import com.realnet.users.entity.User;
-import com.realnet.users.service.UserService;
+import com.realnet.users.entity1.AppUser;
+import com.realnet.users.service1.AppUserServiceImpl;
 import com.realnet.utils.Constant;
 import com.realnet.utils.WireFrameConstant;
 import com.realnet.wfb.entity.AddSectionButtonDTO;
@@ -62,8 +62,8 @@ import lombok.extern.slf4j.Slf4j;
 @Api(tags = { "WireFrame" })
 public class Rn_WireFrameController {
 
-	@Autowired(required=false)
-	private UserService userService;
+	@Autowired
+	private AppUserServiceImpl userService;
 
 	@Autowired
 	private Rn_ModuleSetup_Service moduleService;
@@ -414,12 +414,13 @@ public class Rn_WireFrameController {
 	// SAVE WAREFRAME
 	@ApiOperation(value = "Add new Wireframe")
 	@PostMapping(value = "/wireframe")
-	public ResponseEntity<?> saveWireFrame(@RequestParam(value = "moduleId") Integer moduleId,
-			@RequestParam(value = "formType") String formType, @Valid @RequestBody Rn_WireFrameDTO wireframeDTO)
+	public ResponseEntity<?> saveWireFrame(@Valid @RequestBody Rn_WireFrameDTO wireframeDTO,HttpSession session)
 			throws IOException {
+		
+		
 		System.out.println("Wireframe controller start");
 
-		boolean status = wireframeService.saveWireframe(wireframeDTO, formType, moduleId);
+		boolean status = wireframeService.saveWireframe(wireframeDTO, wireframeDTO.getFormType(), wireframeDTO.getModuleId());
 		log.debug("final status {}", status);
 
 		if (status) {
@@ -710,9 +711,9 @@ public class Rn_WireFrameController {
 	@ApiOperation(value = "Copy WireFrame")
 	@PostMapping("/wireframe-copy")
 	public ResponseEntity<?> copyWireFrame(@Valid @RequestBody WireFrameCopyDTO wireframeCopyDTO) {
-		User user = userService.getLoggedInUser();
+		AppUser user = userService.getLoggedInUser();
 		Long userId = user.getUserId();
-		Long accId = user.getSys_account().getId();
+//		Long accId = user.getSys_account().getId();
 
 		// MODULE COPY LOGIC
 		int from_project_id = wireframeCopyDTO.getFrom_projectId();
@@ -727,7 +728,7 @@ public class Rn_WireFrameController {
 		Rn_Fb_Header newHeader = new Rn_Fb_Header();
 		newHeader.setCreatedBy(userId);
 		newHeader.setUpdatedBy(userId);
-		newHeader.setAccountId(accId);
+//		newHeader.setAccountId(accId);
 		newHeader.setTechStack(oldHeader.getTechStack());
 		newHeader.setObjectType(oldHeader.getObjectType());
 		newHeader.setSubObjectType(oldHeader.getSubObjectType());
@@ -765,7 +766,7 @@ public class Rn_WireFrameController {
 		for (Rn_Fb_Line line : oldLines) {
 			Rn_Fb_Line newLine = new Rn_Fb_Line();
 			newLine.setCreatedBy(userId);
-			newLine.setAccountId(accId);
+//			newLine.setAccountId(accId);
 			newLine.setForm_type(line.getForm_type());
 			newLine.setFieldName(line.getFieldName());
 			newLine.setMapping(line.getMapping());

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertService } from 'src/app/services/alert.service';
+import { AlertService } from '../../../services/alert.service';
 import { ToastrService } from 'ngx-toastr';
 import { ExcelService } from './../../../services/excel.service';
 import { MainService } from './../../../services/main.service';
 import * as moment from 'moment';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UserListService } from 'src/app/services/api/user-list.service';
+import { UserListService } from '../../../services/api/user-list.service';
 import { HttpClient } from '@angular/common/http';
-import { MenuGroupService } from 'src/app/services/api/menu-group.service';
-import { UserInfoService } from 'src/app/services/user-info.service';
-import { User } from 'src/app/models/user';
+import { MenuGroupService } from '../../../services/api/menu-group.service';
+import { UserInfoService } from '../../../services/user-info.service';
+import { User } from '../../../models/user';
 
 @Component({
   selector: 'app-user',

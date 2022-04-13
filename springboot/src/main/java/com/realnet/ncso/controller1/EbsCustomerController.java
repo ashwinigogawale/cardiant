@@ -4,9 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.realnet.ncso.entity1.EbsCustomer;
-import com.realnet.ncso.entity1.OrderDetails;
 import com.realnet.ncso.service.impl1.EbsCustomerServiceImpl;
 
 import io.swagger.annotations.Api;
@@ -32,6 +28,10 @@ public class EbsCustomerController {
 	public EbsCustomerController(EbsCustomerServiceImpl ebsCustomerServiceImpl) {
 		super();
 		this.ebsCustomerServiceImpl = ebsCustomerServiceImpl;
+	}
+	@GetMapping("/temp")
+	public ResponseEntity<?> temp() throws Exception{
+		throw new Exception("aaa");
 	}
 	// with pagination to load data time fast
 	@GetMapping("getAllCustomers")

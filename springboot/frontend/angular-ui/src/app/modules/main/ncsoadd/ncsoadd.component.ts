@@ -3,11 +3,11 @@ import { Component, Input, OnInit,ViewChild, ElementRef, QueryList, ViewChildren
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { DemoService } from 'src/app/services/api/demo.service';
-import { demo } from 'src/app/models/demo';
-import { invoicesubmenu } from 'src/app/models/Invoicesubmemnu';
+import { DemoService } from '../../../services/api/demo.service';
+import { demo } from '../../../models/demo';
+import { invoicesubmenu } from '../../../models/Invoicesubmemnu';
 import { anyOrAllPropertiesPass } from '@cds/core/internal';
-import{customerdemo} from 'src/app/models/custmerdemo';
+import{customerdemo} from '../../../models/custmerdemo';
 import * as $ from 'jquery';
 @Component({
   selector: 'app-ncsoadd',

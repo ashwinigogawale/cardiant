@@ -3,6 +3,7 @@ package com.realnet.fnd.controller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,9 @@ import com.realnet.fnd.response.CustomResponse;
 import com.realnet.fnd.service.Rn_ModuleSetup_Service;
 import com.realnet.fnd.service.Rn_ProjectSetup_Service;
 import com.realnet.users.entity.User;
+import com.realnet.users.entity1.AppUser;
 import com.realnet.users.service.UserService;
+import com.realnet.users.service1.AppUserServiceImpl;
 import com.realnet.utils.Constant;
 import com.realnet.wfb.entity.Rn_Fb_Header;
 import com.realnet.wfb.entity.Rn_Fb_Line;
@@ -53,8 +56,8 @@ import lombok.extern.slf4j.Slf4j;
 @Api(tags = { "Project Setup" })
 public class Rn_ProjectSetupController {
 
-	@Autowired(required=false)
-	private UserService userService;
+	@Autowired
+	private AppUserServiceImpl userService;
 
 	@Autowired
 	private Rn_ProjectSetup_Service projectSetupService;
@@ -102,14 +105,14 @@ public class Rn_ProjectSetupController {
 
 	@ApiOperation(value = "Add new Project")
 	@PostMapping(value = "/project-setup")
-	public ResponseEntity<?> saveProject(@Valid @RequestBody Rn_Project_Setup projectReq) throws IOException {
+	public ResponseEntity<?> saveProject(@Valid @RequestBody Rn_Project_Setup projectReq,HttpSession session1) throws IOException {
 
 		Rn_Project_Setup savedProject = projectSetupService.save(projectReq);
 		System.out.println("Data by  save project name:"+savedProject);
 
 		boolean status = projectSetupService.moveUploadedTechnologyToBaseProjectDir(savedProject);
 		log.debug("final status {}", status);
-
+		session1.setAttribute("projectId", savedProject.getId());
 		if (status) {
 			SuccessPojo successPojo = new SuccessPojo();
 			Success success = new Success();
@@ -133,7 +136,7 @@ public class Rn_ProjectSetupController {
 	public ResponseEntity<?> updateProject(
 			@RequestHeader(value = HttpHeaders.AUTHORIZATION, required = false) String authToken,
 			@PathVariable(value = "id") int id, @Valid @RequestBody Rn_Project_Setup project) {
-		User loggedInUser = userService.getLoggedInUser();
+		AppUser loggedInUser = userService.getLoggedInUser();
 
 		// project.setUpdatedBy(loggedInUser.getUserId());
 
@@ -182,9 +185,9 @@ public class Rn_ProjectSetupController {
 	@ApiOperation(value = "Copy Project", response = Rn_Project_Setup.class)
 	@PostMapping("/project-copy")
 	public ResponseEntity<?> copyProject(@Valid @RequestBody projectCopyDTO projectCopyDTO) {
-		User user = userService.getLoggedInUser();
+		AppUser user = userService.getLoggedInUser();
 		Long userId = user.getUserId();
-		Long accId = user.getSys_account().getId();
+//		Long accId = user.getSys_account().getId();
 
 		// PROJECT COPY LOGIC
 		int from_project_id = projectCopyDTO.getFrom_projectId();
@@ -194,7 +197,7 @@ public class Rn_ProjectSetupController {
 		Rn_Project_Setup oldProject = projectSetupService.getById(from_project_id);
 		Rn_Project_Setup newProject = new Rn_Project_Setup();
 		newProject.setCreatedBy(userId);
-		newProject.setAccountId(accId);
+//		newProject.setAccountId(accId);
 		newProject.setProjectName(toProjectName); // change
 		newProject.setProjectPrefix(oldProject.getProjectPrefix());
 		newProject.setCopyTo(oldProject.getCopyTo());
@@ -221,7 +224,7 @@ public class Rn_ProjectSetupController {
 		for (Rn_Module_Setup oldModule : modules) {
 			Rn_Module_Setup newModule = new Rn_Module_Setup();
 			newModule.setCreatedBy(userId);
-			newModule.setAccountId(accId);
+//			newModule.setAccountId(accId);
 			newModule.setModuleName(oldModule.getModuleName());
 			newModule.setDescription(oldModule.getDescription());
 			newModule.setModulePrefix(oldModule.getModulePrefix());
@@ -242,7 +245,7 @@ public class Rn_ProjectSetupController {
 			for(Rn_Fb_Header oldHeader: rn_fb_header) {
 				Rn_Fb_Header newHeader = new Rn_Fb_Header();
 				newHeader.setCreatedBy(userId);
-				newHeader.setAccountId(accId);
+//				newHeader.setAccountId(accId);
 				newHeader.setTechStack(oldHeader.getTechStack());
 				newHeader.setObjectType(oldHeader.getObjectType());
 				newHeader.setSubObjectType(oldHeader.getSubObjectType());
@@ -279,7 +282,7 @@ public class Rn_ProjectSetupController {
 				for (Rn_Fb_Line line : oldLines) {
 					Rn_Fb_Line newLine = new Rn_Fb_Line();
 					newLine.setCreatedBy(userId);
-					newLine.setAccountId(accId);
+//					newLine.setAccountId(accId);
 					newLine.setForm_type(line.getForm_type());
 					newLine.setFieldName(line.getFieldName());
 					newLine.setMapping(line.getMapping());

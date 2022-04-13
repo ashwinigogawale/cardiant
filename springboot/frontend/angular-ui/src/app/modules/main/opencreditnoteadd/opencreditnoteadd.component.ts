@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DemoService } from 'src/app/services/api/demo.service';
+import { DemoService } from '../../../services/api/demo.service';
 
 @Component({
   selector: 'app-opencreditnoteadd',

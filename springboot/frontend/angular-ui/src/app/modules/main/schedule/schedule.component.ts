@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { SchedulerService } from 'src/app/services/api/scheduler.service';
+import { SchedulerService } from '../../../services/api/scheduler.service';
 
 @Component({
   selector: 'app-schedule',

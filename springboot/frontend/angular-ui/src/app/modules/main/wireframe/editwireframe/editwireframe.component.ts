@@ -1,10 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Rn_Fb_Header } from "src/app/models/Rn_Fb_Header";
-import { Rn_Fb_Lines } from "src/app/models/Rn_Fb_Lines";
-import { WireFrame } from "src/app/models/WireFrame";
-import { WireframeService } from "src/app/services/api/wireframe.service";
+import { Rn_Fb_Header } from "../../../../models/Rn_Fb_Header";
+import { Rn_Fb_Lines } from "../../../../models/Rn_Fb_Lines";
+import { WireFrame } from "../../../../models/WireFrame";
+import { WireframeService } from "../../../../services/api/wireframe.service";
 @Component({
   selector: 'app-editwireframe',
   templateUrl: './editwireframe.component.html',
