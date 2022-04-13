@@ -53,5 +53,24 @@
 .center {
   text-align: center;
 }
+select{
+  width: 100%;
+  padding: 5px 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
+input[type=text],[type=date] {
+  width: 100%;
+  padding: 15px 15px;
+ // margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
 
+.required-field{
+  color: red;
+
+}
