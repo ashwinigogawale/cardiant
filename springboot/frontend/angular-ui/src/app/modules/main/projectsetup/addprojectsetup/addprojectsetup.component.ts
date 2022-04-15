@@ -80,7 +80,7 @@ export class AddprojectsetupComponent implements OnInit {
     this.projectSetupService.create(this.entryForm.value).subscribe(
       (data) => {
         console.log(data);
-       this.router.navigate(["../../project1"], { relativeTo: this.route });
+       this.router.navigate(["../../project/all"], { relativeTo: this.route });
       },
 
     );

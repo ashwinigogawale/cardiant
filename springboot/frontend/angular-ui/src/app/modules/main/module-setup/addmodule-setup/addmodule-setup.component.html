@@ -1,20 +1,18 @@
-<h4 style="font-weight: 500;display: inline;"><b>MODULE SETUP ENTRY FORM</b></h4>
+<h2 style="font-weight: 500;display: inline;"><b>New Repositiry</b></h2>
 <span class="label label-light-blue" style="display: inline;margin-left: 100px;">Add Mode</span>
-
-
-
+<span style="display: inline; float: right;"> <button id="add" class="btn btn-primary" ><clr-icon shape="plus" ></clr-icon>Import</button></span>
 <hr>
-
+<b>A Repository can be Module or a set of microservices with individual configurations. want to copy from another Repository? Try Import a repository</b>
 <div class="container">
 
 
   <!-- COPY MODULE -->
 
 
-  <!-- <br> -->
+  <!--
   <div class="section">
     <p> Module Details </p>
-  </div>
+  </div> -->
   <!-- entry form-->
   <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
     <div class="clr-row">
@@ -44,3 +42,141 @@
     </div>
   </form>
 </div>
+
+
+
+
+<!-- <div class="container">
+
+
+
+  <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
+    <div class="clr-row">
+      <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="moduleName">Repo Name</label>
+        <input id="moduleName" type="text" formControlName="moduleName" placeholder="Enter Module Name"
+          class="clr-input">
+      </div>
+      <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="projectName">Tags</label>
+        <input id="tags" type="text"  placeholder="Enter Tags Name"
+          class="clr-input">
+          <div>
+            <span class="label label-purple p7" style="margin-top: .4em;">Fruit</span>
+            <span class="label label-light-blue p7" style="margin-top: .4em;">Meat</span>
+            <span class="label label-orange p7" style="margin-top: .4em;">Drink</span>
+            <span class="label label-purple p7" style="margin-top: .4em;">Vegetables</span>
+          </div>
+          </div>
+          </div>
+          <div class="clr-row">
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="description">Description <b>(optional)</b></label>
+              <textarea name="" id="" cols="10" rows="2"  name=" remarks" formControlName="description" placeholder="Enter Description">
+              </textarea>
+              </div>
+
+              <div class="clr-col-md-4 clr-col-sm-12" style="margin-top: 15px;">
+              <div>
+                <label for="add"> <b>Add a README file</b>
+                  <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+                    <clr-icon shape="info-standard" size="md"></clr-icon>
+                    <span class="tooltip-content">README file is an exhaustive description of the Repository.</span>
+                  </a>
+                </label>
+                <div><input type="checkbox"></div>
+
+                </div>
+              </div>
+</div>
+
+<div style="margin-top: 40px;">
+  <h4 style="font-weight: 500;display: inline;"><b> Default Configurations</b></h4>
+</div>
+<hr>
+<b> These Configurations defaults From Projectsetup,however you can change as required.</b>
+<div class="clr-row">
+  <div class="clr-col-md-4 clr-col-sm-12">
+    <label for="techStackId">Select Technology</label>
+    <select colspan="2"  selected="null" class="clr-dropdown">
+      <option value="null">Choose Technology</option>
+
+    </select>
+
+  </div>
+  <div class="clr-col-md-4 clr-col-sm-12">
+    <label for="projectPrefix">Repo Prefix</label>
+    <input type="text"  placeholder="Enter A Prefix" class="clr-input">
+
+  </div>
+  <div class="clr-col-md-4 clr-col-sm-12">
+    <label for="projectPrefix">Default Database Name</label>
+    <input type="text"  placeholder="Enter Database Name" class="clr-input">
+
+  </div>
+
+  <div class="clr-col-md-4 clr-col-sm-12">
+    <label for="projectPrefix">Default Database Username</label>
+    <input type="text"  placeholder="Enter Database Username" class="clr-input">
+
+  </div>
+
+  <div class="clr-col-md-4 clr-col-sm-12">
+    <label for="dbPassword">Default Database Password</label>
+    <input type="text"  placeholder="Enter Database Password" class="clr-input">
+
+  </div>
+
+  <div class="clr-col-md-4 clr-col-sm-12">
+    <label for="portNumber">Default Port Number</label>
+    <input colspan="2" type="text"  readonly class="clr-input">
+
+  </div>
+</div>
+<div style="margin-top: 40px;">
+  <h4 style="font-weight: 500;display: inline;"><b> Deployment Configurations</b></h4>
+</div>
+<hr>
+<b> These Configurations defaults From Projectsetup,however you can change as required.</b>
+<div class="clr-row">
+
+      <div class="clr-col-md-4 clr-col-sm-12">
+        <div>
+          <label for="add"> <b>Default Repo</b>
+            <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+              <clr-icon shape="info-standard" size="md"></clr-icon>
+              <span class="tooltip-content">README file is an exhaustive description of the Repository.</span>
+            </a>
+          </label>
+          <div><input type="checkbox"></div>
+          </div></div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <div>
+              <label for="add"> <b>Miceroservice</b>
+                <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+                  <clr-icon shape="info-standard" size="md"></clr-icon>
+                  <span class="tooltip-content">README file is an exhaustive description of the Repository.</span>
+                </a>
+              </label>
+              <div><input type="checkbox"></div>
+              </div>
+              </div>
+              <div class="clr-col-md-4 clr-col-sm-12">
+                <div>
+                  <label for="add"> <b>Portal deployment</b>
+                    <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+                      <clr-icon shape="info-standard" size="md"></clr-icon>
+                      <span class="tooltip-content">README file is an exhaustive description of the Repository.</span>
+                    </a>
+                  </label>
+                  <div><input type="checkbox"></div>
+                  </div></div>
+
+    </div>
+    <br>
+
+    <div class="center">
+      <button type="submit" class="btn btn-primary" [disabled]="!entryForm.valid">SUBMIT</button>
+    </div>
+  </form>
+</div> -->
