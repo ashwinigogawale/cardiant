@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileUploadHelper2 {
 
 //	public final String UPLOAD_DIR="D:\\Installed Software\\Eclipse Workspace\\springboot\\springboot\\src\\main\\resources\\public\\assets\\images";
-	public final String UPLOAD_DIR= new ClassPathResource("/public/assets/images/").getFile().getAbsolutePath();
+	public final String UPLOAD_DIR= "/public/assets/images/";
 
 	public FileUploadHelper2() throws IOException {
 		

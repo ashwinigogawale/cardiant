@@ -13,7 +13,7 @@ export class AppConfig {
     public dateFormat = { year: 'numeric', month: 'short', day: 'numeric' };
 
     // API Related configs
-    public apiPort: string = "30166"; //9191 to pc used and 8080/billingback to jboss
+    public apiPort: string = "9191"; //9191 to pc used and 8080/billingback to jboss
     public apiProtocol: string;
     public apiHostName: string;
     public baseApiPath: string;

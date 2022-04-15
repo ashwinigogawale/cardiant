@@ -1,9 +1,12 @@
-<h4 style="font-weight: 500;display: inline;"><b>PROJECT SETUP ENTRY FORM</b></h4>
+<h2 style="font-weight: 300;display: inline;"><b>New Project</b></h2>
 <span class="label label-light-blue" style="display: inline;margin-left: 100px;">Add Mode</span>
-
-
-
 <hr>
+<!-- <span style="display: inline; float: right;"> <button id="add" class="btn btn-primary" ><clr-icon shape="plus" ></clr-icon>Import</button></span>
+<hr>
+<b>A Project Contains all modules/repositories/miceroservices etc. Want to Copy From Another Project? Try Import A Project.</b>
+ -->
+
+
 
 
 
@@ -12,9 +15,7 @@
 
 
 
-  <div class="section">
-    <p> Project Details </p>
-  </div>
+
   <!-- entry form-->
   <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
     <div class="clr-row">
@@ -22,16 +23,60 @@
         <label for="projectName">Project Name</label>
         <input id="projectName" type="text" formControlName="projectName" placeholder="Enter Project Name"
           class="clr-input">
-
       </div>
-      <div class="clr-col-md-4 clr-col-sm-12">
-        <label for="description">Description</label>
-        <input id="description" type="text" formControlName="description" placeholder="Enter Description"
+      <!-- <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="projectName">Namespace  <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+          <clr-icon shape="info-standard" size="md"></clr-icon>
+          <span class="tooltip-content">Namesapce is used in deployment configuration.</span>
+        </a></label>
+        <input id="name" type="text"  placeholder="Enter Namespace"
           class="clr-input">
+      </div> -->
+      </div>
+
+      <div class="clr-row">
+      <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="description">Description <b>(optional)</b></label>
+      <!--  <input id="description" type="text" formControlName="description" placeholder="Enter Description"
+          class="clr-input">-->
+          <textarea name="" id="" cols="10" rows="2"  name=" remarks" formControlName="description" placeholder="Enter Description">
+          </textarea>
         <!-- <textarea rows="4" cols="50" type="text" formControlName="description"
             placeholder="Enter Your Project Description"></textarea> -->
-
       </div>
+      <!-- <div class="clr-col-md-4 clr-col-sm-12">
+        <label for="projectName">Accessibility  <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
+          <clr-icon shape="info-standard" size="md"></clr-icon>
+          <span class="tooltip-content">Public Projects are available for copy to all over internet,Private Projects are restricted.</span>
+        </a></label>
+        <div>
+          <input type="radio" id="contactChoice1"
+          name="contact" value="public" checked>
+         <label for="contactChoice1" style=" margin-right: 40px;"> <clr-icon shape="unlock" style="margin-left: 3px; margin-right: 7px;"></clr-icon>Public</label>
+
+         <input type="radio" id="contactChoice2"
+          name="contact" value="private">
+         <label for="contactChoice2"> <clr-icon shape="lock" style="margin-left: 3px; margin-right: 7px;"></clr-icon>Private</label>
+      <div>
+        <label for="add"> <b>Add a README file</b> </label>
+        <div><input type="checkbox"></div>
+      </div>
+        </div>
+      </div> -->
+      </div>
+
+      <div class="clr-row">
+        <!-- <div class="clr-col-md-4 clr-col-sm-12">
+          <label for="projectName">Tags</label>
+          <input id="tags" type="text"  placeholder="Enter Tags Name"
+            class="clr-input">
+            <div>
+              <span class="label label-purple p7" style="margin-top: .4em;">Fruit</span>
+              <span class="label label-light-blue p7" style="margin-top: .4em;">Meat</span>
+              <span class="label label-orange p7" style="margin-top: .4em;">Drink</span>
+              <span class="label label-purple p7" style="margin-top: .4em;">Vegetables</span>
+            </div>
+        </div> -->
       <div class="clr-col-md-4 clr-col-sm-12">
         <label for="technologyStack">Technology Stack</label>
         <select formControlName="technologyStack" selected="null" class="clr-dropdown">
@@ -39,12 +84,16 @@
           <option *ngFor="let ts of tech_stacks" [value]="ts">{{ ts }}
           </option>
         </select>
-
-
       </div>
-
+</div>
 
       <!-- add field here -->
+      <!-- <div style="margin-top: 40px;">
+      <h4 style="font-weight: 500;display: inline;"><b> Default Configurations</b></h4>
+</div>
+<hr>
+<b>Configurations can be easily defaulted to modules.</b> -->
+      <div class="clr-row">
       <div class="clr-col-md-4 clr-col-sm-12">
         <label for="techStackId">Select Technology</label>
         <select colspan="2" formControlName="techStackId" selected="null" class="clr-dropdown">

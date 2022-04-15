@@ -87,5 +87,8 @@ export class AllComponent implements OnInit {
   goToReadOnly(id){
 
   }
-
+  onDelete(row) {
+    this.rowSelected = row;
+     this.modaldelete=true;
+  }
 }

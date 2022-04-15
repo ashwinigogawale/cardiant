@@ -64,12 +64,12 @@ export class AddComponent implements OnInit {
         },
         (error) => {
           console.log(error);
-          const objectArray = Object.entries(error.error.fieldErrors);
-          objectArray.forEach(([k, v]) => {
-            console.log(k);
-            console.log(v);
-            //this.fieldErrors.push({ field: k, message: v });
-          });
+          // const objectArray = Object.entries(error.error.fieldErrors);
+          // objectArray.forEach(([k, v]) => {
+          //   console.log(k);
+          //   console.log(v);
+          //   //this.fieldErrors.push({ field: k, message: v });
+          // });
           //console.log(this.fieldErrors); // this will come from backend
         }
       );

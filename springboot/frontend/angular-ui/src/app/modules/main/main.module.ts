@@ -104,6 +104,7 @@ import { RbTableSetupComponent } from './rb-table-setup/rb-table-setup.component
 import { RbColumnSetupComponent } from './rb-column-setup/rb-column-setup.component';
 import { RbWhereColumnSetupComponent } from './rb-where-column-setup/rb-where-column-setup.component';
 import { RbDateParamSetupComponent } from './rb-date-param-setup/rb-date-param-setup.component';
+import { ScienceComponent } from './science/science.component';
 
 
 
@@ -170,6 +171,7 @@ import { RbDateParamSetupComponent } from './rb-date-param-setup/rb-date-param-s
       RbColumnSetupComponent,
       RbWhereColumnSetupComponent,
       RbDateParamSetupComponent,
+      ScienceComponent,
 
 
 

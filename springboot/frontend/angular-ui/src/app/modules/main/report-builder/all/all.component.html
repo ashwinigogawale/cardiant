@@ -39,16 +39,17 @@
         </ng-container></clr-dg-column >
 
     <clr-dg-row *clrDgItems="let user of rows" [clrDgItem]="user">
-      <clr-dg-cell>{{user.uiName}}</clr-dg-cell>
-      <clr-dg-cell>{{user.formType}}</clr-dg-cell>
-
+      <clr-dg-cell>{{user.report_name}}</clr-dg-cell>
+      <clr-dg-cell>{{user.description}}</clr-dg-cell>
+      <clr-dg-cell>{{user.report_tags}}</clr-dg-cell>
 
       <clr-dg-action-overflow>
 
         <!--<button class="action-item" (click)="goToEdit(user.id)">Edit <clr-icon shape="edit" class="is-error"></clr-icon></button>-->
-        <button class="action-item">Add Tablesetup <clr-icon shape="edit" class="is-error"></clr-icon></button>
-        <button class="action-item">Edit<clr-icon shape="edit" class="is-error"></clr-icon></button>
-        <button class="action-item">Delete<clr-icon shape="trash" class="is-error"></clr-icon></button>
+        <button class="action-item" (click)="goToTable(user.id)">Query Builder <clr-icon shape="edit" class="is-error"></clr-icon></button>
+        <button class="action-item" (click)="goToRunner(user.id)">Query Runnerr <clr-icon shape="edit" class="is-error"></clr-icon></button>
+        <button class="action-item" (click)="goToEdit(user.id)">Edit<clr-icon shape="edit" class="is-error"></clr-icon></button>
+        <button class="action-item" (click)="onDelete(user)">Delete<clr-icon shape="trash" class="is-error"></clr-icon></button>
 
       </clr-dg-action-overflow>
 
@@ -56,7 +57,7 @@
         <table class="table">
           <tr>
             <td class="td-title">Report Name: </td>
-            <td class="td-content">{{user.reportName}}</td>
+            <td class="td-content">{{user.report_name}}</td>
           </tr>
 
 

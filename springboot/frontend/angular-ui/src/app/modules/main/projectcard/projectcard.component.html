@@ -10,6 +10,9 @@
     <button id="add" class="btn btn-primary" (click)="goToAdd(projectsetup)">
       <clr-icon shape="plus"></clr-icon>ADD
     </button>
+    <button id="add" class="btn btn-primary" (click)="goTogrid()">
+      <clr-icon shape="plus"></clr-icon>Gridview
+    </button>
   </div>
 </div>
 
@@ -22,18 +25,14 @@
                   <button class="btn btn-primary" id="module" (click)="goToModule(app.id)">module <clr-icon shape="home"></clr-icon></button>
               </div>
               <div class="card-footer">
-                  <span class="label label-light-blue p7" style="margin-top: .4em;">projectPrefix: {{app.projectPrefix}}</span>
-                  <span class="label label-light-blue p7" style="margin-top: .4em;">technologyStack: {{app.technologyStack}}</span>
-                  <span class="label label-purple p7" style="margin-top: .4em;">techStackId: {{app.techStackId}}</span>
-                  <span class="label label-purple p7" style="margin-top: .4em;">description: {{app.description}}</span>
-                  <span class="label label-purple p7" style="margin-top: .4em;">dbname: {{app.dbName}}</span>
-                  <span class="label label-purple p7" style="margin-top: .4em;">Dbusername: {{app. dbUserName}}</span>
-                  <span class="label label-purple p7" style="margin-top: .4em;">dbpassword: {{app.dbPassword}}</span>
-                  <span class="label label-success p7" style="margin-top: .4em;">port number: {{app.portNumber}}</span>
-
-
-
-
+                  <span class="label label-light-blue p7" style="margin-top: .4em;"> {{app.projectPrefix}}</span>
+                  <span class="label label-light-blue p7" style="margin-top: .4em;"> {{app.technologyStack}}</span>
+                  <span class="label label-purple p7" style="margin-top: .4em;"> {{app.techStackId}}</span>
+                  <span class="label label-purple p7" style="margin-top: .4em;"> {{app.description}}</span>
+                  <span class="label label-purple p7" style="margin-top: .4em;"> {{app.dbName}}</span>
+                  <span class="label label-purple p7" style="margin-top: .4em;"> {{app. dbUserName}}</span>
+                  <span class="label label-purple p7" style="margin-top: .4em;"> {{app.dbPassword}}</span>
+                  <span class="label label-success p7" style="margin-top: .4em;"> {{app.portNumber}}</span>
 
                 </div>
           </a>
@@ -58,3 +57,41 @@
 </div>
 
 
+<!-- <div>
+  <div *ngIf="projectsetup; else showInfo" class=" clr-align-items-start clr-justify-content-start">
+      <div *ngFor="let app of projectsetup; let index = i" class="clr-col-auto" >
+        <div class="clr-row">
+          <div class="clr-col-lg-4 clr-col-md-6 clr-col-12">
+              <div class="card">
+                  <div class="card-header">
+                   <b> {{app.projectName}}</b>
+                  </div>
+                  <div class="card-block">
+                      <div class="card-title">
+                        {{app.description}}
+                      </div>
+                      <div class="card-text">
+                        <span class="label label-light-blue p7" style="margin-top: .4em;"> {{app.projectPrefix}}</span>
+                        <span class="label label-light-blue p7" style="margin-top: .4em;"> {{app.technologyStack}}</span>
+                        <span class="label label-purple p7" style="margin-top: .4em;"> {{app.techStackId}}</span>
+                        <span class="label label-purple p7" style="margin-top: .4em;"> {{app.dbName}}</span>
+                        <span class="label label-purple p7" style="margin-top: .4em;"> {{app. dbUserName}}</span>
+                        <span class="label label-purple p7" style="margin-top: .4em;"> {{app.dbPassword}}</span>
+                        <span class="label label-success p7" style="margin-top: .4em;"> {{app.portNumber}}</span>
+                        <div>
+                          <button id="add" class="btn btn-primary" style="margin-top: 10px;">
+                            <clr-icon shape="ellipsis-horizontal"></clr-icon>
+                          </button>
+                        </div>
+
+                      </div>
+                  </div>
+                  <div class="card-footer">
+                      <button class="btn btn-sm btn-link">Updated On: {{app.updatedAt|date}}</button>
+                      <button class="btn btn-sm btn-link"> Created On:{{app.createdAt|date}}</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+  </div> -->

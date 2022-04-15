@@ -1,11 +1,15 @@
 
-
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']"> <clr-icon shape="home"></clr-icon></a></li>
+  <li><a href="javascript://">Projects</a></li>
+</ol>
+<br>
 
 
 <div class="dg-wrapper">
   <div class="clr-row">
     <div class="clr-col-8">
-      <h3>User list </h3>
+      <h3>My Projects </h3>
     </div>
     <div class="clr-col-4" style="text-align: right;">
       <button class="btn btn-outline"  (click)="onExport()">
@@ -14,6 +18,9 @@
       <button id="add" class="btn btn-primary"  (click)="goToAdd()">
         <clr-icon shape="plus"></clr-icon>ADD
       </button>
+      <!-- <button id="add" class="btn btn-primary"  (click)="goTocard()">
+        <clr-icon shape="plus"></clr-icon>Card View
+      </button> -->
     </div>
   </div>
 
@@ -27,30 +34,30 @@
     <clr-dg-placeholder><clr-spinner [clrMedium]="true">Loading ...</clr-spinner></clr-dg-placeholder>
 
     <clr-dg-column [clrDgField]="'projectName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      ProjectName
+      Project Name
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'projectPrefix'">
       <ng-container *clrDgHideableColumn="{hidden: false}">
-        ProjectPrefix
+        Project Prefix
       </ng-container>
       </clr-dg-column >
     <clr-dg-column [clrDgField]="'technologyStack'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      TechnologyStack
+      Technology Stack
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'description'"> <ng-container *clrDgHideableColumn="{hidden: false}">
       Description
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'dbName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      DbName
+      Db Name
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'dbUserName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      DbUserName
+      Db User Name
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'dbPassword'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      DbPassword
+      Db Password
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'portNumber'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      PortNumber
+      Port Number
     </ng-container></clr-dg-column>
     <clr-dg-row *clrDgItems="let user of project" [clrDgItem]="user">
       <clr-dg-cell>{{user.projectName}}</clr-dg-cell>

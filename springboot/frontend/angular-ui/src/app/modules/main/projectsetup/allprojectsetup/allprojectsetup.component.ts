@@ -24,6 +24,7 @@ export class AllprojectsetupComponent implements OnInit {
   isLoading: boolean = false;
   project;
   projects: ProjectSetup[];
+
   constructor(private router: Router,
     private route: ActivatedRoute,
     private toastr: ToastrService,
@@ -47,10 +48,10 @@ export class AllprojectsetupComponent implements OnInit {
       moment().format('YYYYMMDD_HHmmss'))
   }
   goToAdd() {
-    this.router.navigate(["../project/add"], { relativeTo: this.route });
+    this.router.navigate(["../add"], { relativeTo: this.route });
   }
   goToEdit(id: number) {
-    this.router.navigate(["../project/edit/" + id], { relativeTo: this.route });
+    this.router.navigate(["../edit/" + id], { relativeTo: this.route });
   }
   onDelete(row) {
     this.rowSelected = row;
@@ -74,6 +75,9 @@ export class AllprojectsetupComponent implements OnInit {
   }
 
   goToModule(id: number) {
-    this.router.navigate(["../module1"], { relativeTo: this.route, queryParams: { p_id: id } });
+    this.router.navigate(["../../module1"], { relativeTo: this.route, queryParams: { p_id: id } });
+  }
+  goTocard(){
+    this.router.navigate(["../../projectcard"], { relativeTo: this.route });
   }
 }

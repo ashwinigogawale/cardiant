@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.realnet</groupId>
 	<artifactId>app</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>1.0.0</version>
 	<name>REAL IT SOLUTIONS</name>
 	<properties>
@@ -16,15 +16,11 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<!-- <version>1.5.9.RELEASE</version> -->
+
 		<version>2.2.5.RELEASE</version>
 	</parent>
-	<build>
+<!-- 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
-		<!-- For Importing project into eclipse uncomment <pluginManagement> tag. 
-			For building and running the project from command-line do not use <pluginManagement> 
-			tag else it will fail to generate main manifest -->
-		<!-- <pluginManagement> -->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -60,19 +56,9 @@
   </executions>
 </plugin>
 			
-			<!-- *** DOWNLOAD PLUGIN <plugin> <groupId>com.googlecode.maven-download-plugin</groupId> 
-				<artifactId>download-maven-plugin</artifactId> <version>1.3.0</version> <executions> 
-				<execution> <phase>validate</phase> <goals> <goal>wget</goal> </goals> <configuration> 
-				<url>https://rebilly.github.io/ReDoc/releases/latest/redoc.min.js</url> <outputFileName>redoc.min.js</outputFileName> 
-				<outputDirectory>${project.basedir}/src/main/resources/public/redoc</outputDirectory> 
-				</configuration> </execution> </executions> </plugin> -->
-
-			<!-- *** RESOURCE PLUGIN *** -->
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
-				<!-- <version>3.0.2</version> -->
 				<executions>
-					<!-- copy webui dist folder to src/resource/webui -->
 					<execution>
 						<id>copy-resources</id>
 						<phase>validate</phase>
@@ -94,14 +80,15 @@
 				</executions>
 			</plugin>
 		</plugins>
-
-		<!-- <filters> <filter>src/main/resources/application.properties</filter> 
-			</filters> <resources> <resource> <directory>src/main/resources</directory> 
-			<includes> <include>log4j.properties</include> </includes> <filtering>true</filtering> 
-			</resource> </resources> -->
-
-		<!-- </pluginManagement> -->
-
+	
+	</build>-->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
 	</build>
 
 
@@ -371,5 +358,3 @@
 	</dependency>
 	</dependencies>
 </project>
-
-

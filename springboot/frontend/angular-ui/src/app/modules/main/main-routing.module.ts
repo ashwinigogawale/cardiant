@@ -82,6 +82,9 @@ import { AllComponent } from './report-builder/all/all.component';
 import { AddComponent } from './report-builder/add/add.component';
 import { EditComponent } from './report-builder/edit/edit.component';
 import { ReporttypeComponent } from './report2/reporttype/reporttype.component';
+import { RbTableSetupComponent } from './rb-table-setup/rb-table-setup.component';
+import { ScienceComponent } from './science/science.component';
+import { ProjectcardComponent } from './projectcard/projectcard.component';
 
 
 
@@ -140,6 +143,7 @@ const routes: Routes = [
       { path: 'invoicetyperule', component: InvoiceTyperulesComponent },
       { path: 'tos', component:TOSComponent },
       {path:'project1',component:Projectsetup1Component},
+      {path: 'projectcard', component:ProjectcardComponent},
       {path:'module1',component:ModuleSetup1Component},
       { path: 'actions', component: ActionsComponent },
       { path: 'wireframe', component: Wireframe1Component },
@@ -160,8 +164,9 @@ const routes: Routes = [
    { path: 'all'   , component:  AllComponent},
    { path: 'add'   , component: AddComponent },
    { path: 'edit/:id'   , component: EditComponent },
+   { path: 'table-setup'   , component: RbTableSetupComponent},
 
-
+   { path: 'science'   , component:  ScienceComponent},
 //add_routingreport
  ]
 },

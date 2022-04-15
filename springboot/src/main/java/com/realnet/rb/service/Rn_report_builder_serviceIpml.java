@@ -34,6 +34,8 @@ import com.realnet.rb.repository.Rn_report_builder_repository;
 import com.realnet.rb.repository.Rn_tables_Repository;
 import com.realnet.users.entity.User;
 import com.realnet.users.service.UserService;
+import com.realnet.users.service1.AppUserServiceImpl;
+import com.realnet.users.entity1.AppUser;
 import com.realnet.utils.Constant;
 
 @Service
@@ -41,8 +43,8 @@ public class Rn_report_builder_serviceIpml implements Rn_report_builder_service{
 	@Autowired
 	private Rn_report_builder_repository rn_report_builder_repository;
 	
-	@Autowired(required=false)
-	private UserService userService;
+	@Autowired
+	private AppUserServiceImpl userService;
 	
 	@Autowired
 	private Rn_column_Repository columnRepo;
@@ -88,9 +90,9 @@ public class Rn_report_builder_serviceIpml implements Rn_report_builder_service{
 
 	@Override
 	public boolean saveReport(Rn_reportDTO report, int moduleId) {
-		User user = userService.getLoggedInUser();
+		AppUser user = userService.getLoggedInUser();
 		Long userId = user.getUserId();
-		Long accountId = user.getSys_account().getId();
+		//Long accountId = user.getSys_account().getId();
 
 		String report_name = report.getReport_name();
 		String desc = report.getDescription();
@@ -108,9 +110,9 @@ public class Rn_report_builder_serviceIpml implements Rn_report_builder_service{
 
 	@Override
 	public Rn_report_builder saveReport(Rn_report_builder report, int moduleId) {
-		User user = userService.getLoggedInUser();
+		AppUser user = userService.getLoggedInUser();
 		Long userId = user.getUserId();
-		Long accountId = user.getSys_account().getId();
+		//Long accountId = user.getSys_account().getId();
 
 		String report_name = report.getReport_name();
 		String desc = report.getDescription();
@@ -306,9 +308,9 @@ public class Rn_report_builder_serviceIpml implements Rn_report_builder_service{
 
 	@Override
 	public Rn_report_builder saveReportservice(Rn_report_builder report, int moduleId) {
-		User user = userService.getLoggedInUser();
+		AppUser user = userService.getLoggedInUser();
 		Long userId = user.getUserId();
-		Long accountId = user.getSys_account().getId();
+		//Long accountId = user.getSys_account().getId();
 
 		String report_name = report.getReport_name();
 		String desc = report.getDescription();
