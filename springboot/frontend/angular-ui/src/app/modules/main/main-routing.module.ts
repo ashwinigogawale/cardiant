@@ -6,9 +6,6 @@ import { AboutComponent } from './about/about.component';
 import { LayoutComponent } from './layout/layout.component';
 import { UserComponent } from './user/user.component';
 import { UniversityComponent } from './university/university.component';
-import { FormbuilderComponent } from './formbuilder/formbuilder.component';
-import { FormComponent } from './form/form.component';
-import { Form2Component } from './form2/form2.component';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OrderstatComponent } from './orderstat/orderstat.component';
@@ -23,29 +20,12 @@ import { AddMenurComponent } from './menu-register/add-menur/add-menur.component
 import { EditMenurComponent } from './menu-register/edit-menur/edit-menur.component';
 import { ReadonlyMenurComponent } from './menu-register/readonly-menur/readonly-menur.component';
 import { ProfileSettingComponent } from './profile-setting/profile-setting.component';
-import { CustomerprocessComponent } from './customerprocess/customerprocess.component';
-import { InvoicelookupComponent } from './invoicelookup/invoicelookup.component';
-import { InvoicebillComponent } from './invoicebill/invoicebill.component';
-import { InvoiceTyperulesComponent } from './invoice-typerules/invoice-typerules.component';
-import { TOSComponent } from './tos/tos.component';
-import { NcsoaddComponent } from './ncsoadd/ncsoadd.component';
-import { RegularCreditNoteComponent } from './regular-credit-note/regular-credit-note.component';
-import { RegularaddComponent } from './regularadd/regularadd.component';
-import { RegularCNApprovalComponent } from './regular-cnapproval/regular-cnapproval.component';
-import { RegularviewComponent } from './regularview/regularview.component';
-import { RegulareditComponent } from './regularedit/regularedit.component';
 import { UsermaintanceComponent } from './usermaintance/usermaintance.component';
 import { UsermaintanceaddComponent } from './usermaintanceadd/usermaintanceadd.component';
 import { UsermaintanceeditComponent } from './usermaintanceedit/usermaintanceedit.component';
 import { UsergrpmaintenanceComponent } from './usergrpmaintenance/usergrpmaintenance.component';
 import { MenuaccesscontrolComponent } from './menuaccesscontrol/menuaccesscontrol.component';
-import { NcspapprovalreadComponent } from './ncspapprovalread/ncspapprovalread.component';
-import { NcspapprovaleditComponent } from './ncspapprovaledit/ncspapprovaledit.component';
-import { OpencreditnoteComponent } from './opencreditnote/opencreditnote.component';
-import { OpencreditnoteaddComponent } from './opencreditnoteadd/opencreditnoteadd.component';
-import { NcsoeditComponent } from './ncsoedit/ncsoedit.component';
 import { LogconfigComponent } from './logconfig/logconfig.component';
-import { AuditTrailReportComponent } from './audit-trail-report/audit-trail-report.component';
 import { AuthGuard } from '../../services/auth_guard.service';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { SchedulepipelineComponent } from './schedulepipeline/schedulepipeline.component';
@@ -107,7 +87,7 @@ const routes: Routes = [
       {path: 'pipeline', component:  SchedulepipelineComponent},
       {path: 'scheduleinfo', component:  ScheduleInfoComponent},
       {path:'university',component:UniversityComponent},
-      {path:'formbuilder',component:FormbuilderComponent},
+
       {path: 'usermaintance',component:UsermaintanceComponent},
       {path: 'usermaintanceadd',component:UsermaintanceaddComponent},
       {path: 'usermaintancedit/:id',component:UsermaintanceeditComponent},
@@ -118,30 +98,14 @@ const routes: Routes = [
       {path: 'documnetmaster', component:DocumentmasterComponent},
       {path: 'documentreference', component:DocumentreferenceComponent},
       {path: 'documentstructure', component:DocumentstructureComponent},
-      {path: 'form',component:FormComponent},
-      {path: 'form2/:id',component:Form2Component},
-      {path: 'ncso' , component:NcsoaddComponent},
-      {path: 'ncsoedit/:id' , component:NcsoeditComponent},
-      {path: 'ncsoread/:id' , component:NcspapprovalreadComponent},
-      {path: 'ncsoappedit/:id' , component:NcspapprovaleditComponent},
-      {path: 'audit' , component:AuditTrailReportComponent},
+
+
+
      // {path: 'lazy' , component:LazyloadingComponent},
       {path:'log',component:LogconfigComponent},
-      {path: 'regularcreditnote', component:RegularCreditNoteComponent},
-      {path: 'opencreditnote',component:OpencreditnoteComponent},
-      {path: 'opencreditnoteadd',component:OpencreditnoteaddComponent},
-      {path: 'regularadd', component:RegularaddComponent},
-      {path: 'regularedit', component:RegulareditComponent},
-      {path: 'regularapproval', component:RegularCNApprovalComponent},
-      {path: 'regularview', component:RegularviewComponent},
      { path: 'passwordreset', component: PasswordResetComponent },
      { path: 'profile-settings', component: ProfileSettingComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'customer', component: CustomerprocessComponent },
-      { path: 'invoicelookup', component: InvoicelookupComponent },
-      { path: 'invoicebill', component: InvoicebillComponent },
-      { path: 'invoicetyperule', component: InvoiceTyperulesComponent },
-      { path: 'tos', component:TOSComponent },
       {path:'project1',component:Projectsetup1Component},
       {path: 'projectcard', component:ProjectcardComponent},
       {path:'module1',component:ModuleSetup1Component},

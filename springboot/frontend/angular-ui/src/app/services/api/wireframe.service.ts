@@ -1,17 +1,17 @@
-import { Injectable } from '@angular/core';
-import { Rn_Fb_Header } from "../../models/Rn_Fb_Header";
-import { Rn_Fb_Lines } from "../../models/Rn_Fb_Lines";
-import { WireFrame } from "../../models/WireFrame";
+import { HttpParams } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Rn_Fb_Header } from "src/app/models/Rn_Fb_Header";
+import { Rn_Fb_Lines } from "src/app/models/Rn_Fb_Lines";
+import { WireFrame } from "src/app/models/WireFrame";
 import { Observable } from "rxjs";
 import { ApiRequestService } from "./api-request.service";
-import { HttpParams } from "@angular/common/http";
+
 export interface WireFrameList {
   id: number;
   name: string;
 }
-@Injectable({
-  providedIn: 'root'
-})
+
+@Injectable()
 export class WireframeService {
   private wireframeBaseURL ='api/wireframe';
   private wireFrameDropDownURL = 'api/wireframe-list'
@@ -24,7 +24,10 @@ export class WireframeService {
   private moduleIdKey: string = "moduleId";
 
   private storage: Storage = sessionStorage;
-  constructor( private apiRequest: ApiRequestService) { }
+  constructor(
+    private apiRequest: ApiRequestService
+  ) {}
+
   public storeProjectId(projectId: number) {
     this.storage.setItem(this.projectIdKey, projectId.toString());
   }
@@ -72,9 +75,9 @@ export class WireframeService {
     return this.apiRequest.get(_http);
   }
 
-  create(fbHeader: Rn_Fb_Header): Observable<Rn_Fb_Header> {
+  create(fbHeader: Rn_Fb_Header,): Observable<Rn_Fb_Header> {
     //`${this.baseURL}`
-    let params: HttpParams = new HttpParams();
+    //let params: HttpParams = new HttpParams();
    // params = params.append("moduleId", moduleId.toString());
     //params = params.append("formType", formType);
     return this.apiRequest.post(this.wireframeBaseURL, fbHeader);
@@ -221,4 +224,6 @@ export class WireframeService {
     let _http = this.uinamechangeurl + "/" + id;
     return this.apiRequest.put(_http,data);
   }
+
+
 }

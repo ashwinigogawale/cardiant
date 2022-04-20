@@ -500,7 +500,9 @@ console.log("update with id = ", this.id);
 
       }
     );
-
+    if (this.wfline) {
+      this.toastr.success('Added successfully');
+          }
 
   }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
+import { ToastrService } from 'ngx-toastr';
 import { ActiveTechnology } from "../../../../models/ActiveTechnology";
 import { ProjectSetup } from "../../../../models/Project_setup";
 //import { ValidationError } from '../../../../models/ValidationError';
@@ -21,7 +22,8 @@ export class EditprojectsetupComponent implements OnInit {
     private route: ActivatedRoute,
     private projectSetupService: ProjectSetupService,
     private technologyStackService: TechnologyStackService,
-    private dropdownService: DropdownService) { }
+    private dropdownService: DropdownService,
+    private toastr: ToastrService,) { }
 
   ngOnInit(): void {
     this.project = new ProjectSetup();
@@ -66,7 +68,9 @@ export class EditprojectsetupComponent implements OnInit {
       },
 
     );
-
+    if (this.id) {
+      this.toastr.success('Updated successfully');
+          }
   }
 
   onSubmit() {

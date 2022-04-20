@@ -365,6 +365,9 @@ formBuilder: any;
         // this.router.navigate(["../../../../wireframe"], { relativeTo: this._route });
       }
     );
+    if (this.id) {
+      this.toastr.success('Updated successfully');
+          }
   }
   copy_value() {
     let header_gridline_name : any = [];

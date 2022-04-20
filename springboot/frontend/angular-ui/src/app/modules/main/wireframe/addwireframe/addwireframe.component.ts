@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { ToastrService } from 'ngx-toastr';
 //import { ValidationError } from '../../../../models/ValidationError';
 import { AlertService } from "../../../../services/alert.service";
 import { DropDown, DropdownService } from "../../../../services/api/dropdown.service";
@@ -39,6 +40,7 @@ export class AddwireframeComponent implements OnInit {
     private dropdownService: DropdownService,
     private wireframeService: WireframeService,
     private alertService: AlertService,
+    private toastr: ToastrService,
     private technologyStackService:TechnologyStackService) { }
 
   ngOnInit(): void {
@@ -118,6 +120,9 @@ this.entryForm.value.moduleId=this.moduleId;
           // console.log(this.fieldErrors); // this will come from backend
         }
       );
+      if (this.entryForm.value) {
+        this.toastr.success('Added successfully');
+            }
   }
 
   // copy wireframe

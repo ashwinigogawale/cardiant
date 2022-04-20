@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ModuleSetup } from '../../../../models/Module_Setup';
 //import { ValidationError } from '../../../../models/ValidationError';
 import { ModulesetupService } from '../../../../services/api/modulesetup.service';
@@ -19,6 +20,7 @@ export class EditmoduleSetupComponent implements OnInit {
   tech_stacks = [];
   constructor( private router: Router,
     private route: ActivatedRoute,
+    private toastr: ToastrService,
     private moduleSetupService: ModulesetupService) { }
 
   ngOnInit(): void {
@@ -69,7 +71,9 @@ export class EditmoduleSetupComponent implements OnInit {
 
     );
 
-
+    if (this.id) {
+      this.toastr.success('Updated successfully');
+          }
 
   }
 

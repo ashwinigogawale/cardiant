@@ -12,9 +12,8 @@ import { UserComponent } from './user/user.component';
 import { HelperModule } from '../../pipes/helpers.module';
 import { PasswordResetComponent } from './password-reset/password-reset.component';
 import { UniversityComponent } from './university/university.component';
-import { FormbuilderComponent } from './formbuilder/formbuilder.component';
-import { FormComponent } from './form/form.component';
-import { Form2Component } from './form2/form2.component';
+
+
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -29,33 +28,14 @@ import { EditMenurComponent } from './menu-register/edit-menur/edit-menur.compon
 import { AllMenurComponent } from './menu-register/all-menur/all-menur.component';
 import { ReadonlyMenurComponent } from './menu-register/readonly-menur/readonly-menur.component';
 import { ProfileSettingComponent } from './profile-setting/profile-setting.component';
-import { CustomerprocessComponent } from './customerprocess/customerprocess.component';
-import { InvoicelookupComponent } from './invoicelookup/invoicelookup.component';
-import { InvoicebillComponent } from './invoicebill/invoicebill.component';
-import { InvoiceTyperulesComponent } from './invoice-typerules/invoice-typerules.component';
-import { TOSComponent } from './tos/tos.component';
-import { NcsoaddComponent } from './ncsoadd/ncsoadd.component';
-import { RegularCreditNoteComponent } from './regular-credit-note/regular-credit-note.component';
-import { RegularaddComponent } from './regularadd/regularadd.component';
-import { RegularCNApprovalComponent } from './regular-cnapproval/regular-cnapproval.component';
-import { RegularviewComponent } from './regularview/regularview.component';
-import { RegulareditComponent } from './regularedit/regularedit.component';
 import { UsermaintanceComponent } from './usermaintance/usermaintance.component';
 import { UsermaintanceaddComponent } from './usermaintanceadd/usermaintanceadd.component';
 import { UsermaintanceeditComponent } from './usermaintanceedit/usermaintanceedit.component';
 import { UsergrpmaintenanceComponent } from './usergrpmaintenance/usergrpmaintenance.component';
 import { MenuaccesscontrolComponent } from './menuaccesscontrol/menuaccesscontrol.component';
-import { NcspapprovalreadComponent } from './ncspapprovalread/ncspapprovalread.component';
-import { NcspapprovaleditComponent } from './ncspapprovaledit/ncspapprovaledit.component';
-import { OpencreditnoteComponent } from './opencreditnote/opencreditnote.component';
-import { OpencreditnoteaddComponent } from './opencreditnoteadd/opencreditnoteadd.component';
-import { OpencreditnoteeditComponent } from './opencreditnoteedit/opencreditnoteedit.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { NcsoeditComponent } from './ncsoedit/ncsoedit.component';
 import { LogconfigComponent } from './logconfig/logconfig.component';
-import { AuditTrailReportComponent } from './audit-trail-report/audit-trail-report.component';
 import { TwodigitDirective } from './twodigit.directive';
-import { NumberCommaDirective } from './ncsoadd/number.directive';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { SchedulepipelineComponent } from './schedulepipeline/schedulepipeline.component';
 import { ScheduleInfoComponent } from './schedule-info/schedule-info.component';
@@ -117,61 +97,17 @@ import { ScienceComponent } from './science/science.component';
 @NgModule({
   declarations: [
     MainPageComponent, PageNotFoundComponent,AboutComponent, LayoutComponent, UserComponent,PasswordResetComponent,UniversityComponent,
-     FormbuilderComponent, FormComponent, Form2Component, DashboardComponent, OrderstatComponent,MenuGroupComponent, AllMenuGroupComponent,
-     EditMenuGroupComponent, ReadOnlyMenuGroupComponent, MenuRegisterComponent, AddMenurComponent, EditMenurComponent, AllMenurComponent,
-    ReadonlyMenurComponent,ProfileSettingComponent,CustomerprocessComponent,InvoicelookupComponent,InvoicebillComponent,
-    InvoiceTyperulesComponent,TOSComponent,NcsoaddComponent,RegularCreditNoteComponent, RegularaddComponent, RegularCNApprovalComponent,
-     RegularviewComponent, RegulareditComponent, UsermaintanceComponent, UsermaintanceaddComponent, UsermaintanceeditComponent, UsergrpmaintenanceComponent,
-     MenuaccesscontrolComponent, NcspapprovalreadComponent, NcspapprovaleditComponent, OpencreditnoteComponent, OpencreditnoteaddComponent, OpencreditnoteeditComponent,
-      NcsoeditComponent, LogconfigComponent, AuditTrailReportComponent, TwodigitDirective,
-      NumberCommaDirective,
-      ScheduleComponent,
-      SchedulepipelineComponent,
-      ScheduleInfoComponent,
-      SystemparametersComponent,
-      MenumaintanceComponent,
-      DocumentmasterComponent,
-      DocumentreferenceComponent,
-      DocumentstructureComponent,
-      Projectsetup1Component,
-      ProjectcardComponent,
-      ProjectsetupComponent,
-      AddprojectsetupComponent,
-      AllprojectsetupComponent,
-      EditprojectsetupComponent,
-      ModuleSetup1Component,
-      ModuleCardComponent,
-      ModuleSetupComponent,
-      AddmoduleSetupComponent,
-      AllmoduleSetupComponent,
-      EditmoduleSetupComponent,
-      WireframeComponent,
-      AllwireframeComponent,
-      AddwireframeComponent,
-      EditwireframeComponent,
-      Edit2wireframeComponent,
-      UpdateWireframeComponent,
-      WireframetypeComponent,
-      PropertiesComponent,
-      PropertyComponent,
-      UinameeditComponent,
-      ActionsComponent,
-      SuredocrComponent,
-      SurefarmComponent,
-      SuregitComponent,
-      Wireframe1Component,
-      WireframeCardComponent,
-      Report2Component,
-      ReporttypeComponent,
-      ReportBuilderComponent,
-      AddComponent,
-      AllComponent,
-      EditComponent,
-      RbTableSetupComponent,
-      RbColumnSetupComponent,
-      RbWhereColumnSetupComponent,
-      RbDateParamSetupComponent,
-      ScienceComponent,
+     DashboardComponent, OrderstatComponent,MenuGroupComponent, AllMenuGroupComponent, EditMenuGroupComponent, ReadOnlyMenuGroupComponent,
+   MenuRegisterComponent, AddMenurComponent, EditMenurComponent, AllMenurComponent, ReadonlyMenurComponent,ProfileSettingComponent,
+    UsermaintanceComponent, UsermaintanceaddComponent, UsermaintanceeditComponent, UsergrpmaintenanceComponent, MenuaccesscontrolComponent,
+    LogconfigComponent, TwodigitDirective, ScheduleComponent,SchedulepipelineComponent, ScheduleInfoComponent, SystemparametersComponent,
+   MenumaintanceComponent,DocumentmasterComponent,DocumentreferenceComponent,DocumentstructureComponent,Projectsetup1Component,ProjectcardComponent,
+  ProjectsetupComponent,AddprojectsetupComponent, AllprojectsetupComponent, EditprojectsetupComponent,ModuleSetup1Component,ModuleCardComponent,
+  ModuleSetupComponent,AddmoduleSetupComponent,AllmoduleSetupComponent,EditmoduleSetupComponent,WireframeComponent, AllwireframeComponent,
+  AddwireframeComponent,EditwireframeComponent,Edit2wireframeComponent,UpdateWireframeComponent,WireframetypeComponent,PropertiesComponent,
+  PropertyComponent,UinameeditComponent,ActionsComponent,SuredocrComponent,SurefarmComponent,SuregitComponent,Wireframe1Component,
+  WireframeCardComponent,Report2Component,ReporttypeComponent,ReportBuilderComponent,AddComponent,AllComponent,EditComponent,
+  RbTableSetupComponent,RbColumnSetupComponent,RbWhereColumnSetupComponent,RbDateParamSetupComponent,ScienceComponent,
 
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { ToastrService } from 'ngx-toastr';
 import { ActiveTechnology } from "../../../../models/ActiveTechnology";
 //import { ValidationError } from '../../../../models/ValidationError';
 import {DropDown, DropdownService } from "../../../../services/api/dropdown.service";
@@ -22,7 +23,8 @@ export class AddprojectsetupComponent implements OnInit {
     private route: ActivatedRoute,
     private projectSetupService: ProjectSetupService,
     private technologyStackService: TechnologyStackService,
-    private dropdownService: DropdownService) { }
+    private dropdownService: DropdownService,
+    private toastr: ToastrService,) { }
 
   ngOnInit(): void {
     this.getAllProjects();
@@ -84,6 +86,9 @@ export class AddprojectsetupComponent implements OnInit {
       },
 
     );
+    if (this.entryForm.value) {
+      this.toastr.success('Added successfully');
+          }
   }
 
   // need modification

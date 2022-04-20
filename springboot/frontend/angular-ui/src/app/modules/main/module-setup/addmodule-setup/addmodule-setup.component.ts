@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 //import { ValidationError} from '../../../../models/ValidationError';
 import { AlertService } from '../../../../services/alert.service';
 import { DropDown,DropdownService } from '../../../../services/api/dropdown.service';
@@ -21,7 +22,8 @@ export class AddmoduleSetupComponent implements OnInit {
     private route: ActivatedRoute,
     private moduleSetupService: ModulesetupService,
     private alertService: AlertService,
-    private dropdownService: DropdownService) { }
+    private dropdownService: DropdownService,
+    private toastr: ToastrService,) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -72,6 +74,9 @@ export class AddmoduleSetupComponent implements OnInit {
           console.log(v);
          // this.fieldError.push({ field: k, message: v });
         });
+        if (this.entryForm.value) {
+          this.toastr.success('Added successfully');
+              }
         //console.log(this.fieldError); // this will come from backend
       }
     );
