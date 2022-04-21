@@ -90,7 +90,9 @@ export class AddprojectsetupComponent implements OnInit {
       this.toastr.success('Added successfully');
           }
   }
-
+goback(){
+  this.router.navigate(["../../project/all"], { relativeTo: this.route });
+}
   // need modification
   projects: DropDown[];
   getAllProjects() {

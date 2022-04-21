@@ -65,6 +65,7 @@ import { ReporttypeComponent } from './report2/reporttype/reporttype.component';
 import { RbTableSetupComponent } from './rb-table-setup/rb-table-setup.component';
 import { ScienceComponent } from './science/science.component';
 import { ProjectcardComponent } from './projectcard/projectcard.component';
+import { ModuleCardComponent } from './module-card/module-card.component';
 
 
 
@@ -109,6 +110,7 @@ const routes: Routes = [
       {path:'project1',component:Projectsetup1Component},
       {path: 'projectcard', component:ProjectcardComponent},
       {path:'module1',component:ModuleSetup1Component},
+      {path: 'modulecard', component:ModuleCardComponent},
       { path: 'actions', component: ActionsComponent },
       { path: 'wireframe', component: Wireframe1Component },
       {

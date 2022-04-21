@@ -59,4 +59,7 @@ projectId: number;
   goToAction(id: number) {
     this.router.navigate(["../actions"], { relativeTo: this.route, queryParams: { m_id: id } });
   }
+  goTocard(){
+    this.router.navigate(["../module1"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
+  }
 }

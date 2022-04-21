@@ -1,6 +1,18 @@
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']"><clr-icon shape="home"></clr-icon></a></li>
+  <li><a href="javascript://"  [routerLink]="['/main/project1']"> <clr-icon shape="flag"></clr-icon>Projects</a></li>
+  <li><a href="javascript://"> <clr-icon  shape="objects"></clr-icon>Repositories</a></li>
+  <li><a href="javascript://"><clr-icon shape="application"></clr-icon> Components</a></li>
+</ol>
+<h5 style="display: inline;">Select A Components</h5><br>
+Select Componets To Add in your app, the count Here Show Existing Components in the project.
+<hr>
+
+<br>
+
+
 <div class="container">
-  <h3 style="text-align: center;"><b>Select Action</b></h3>
-  <br>
+
   <!-- <div class="clr-row">
     <div class="clr-col-lg-4 clr-col-12">
       <div class="card" *ngFor="let tool of tools">
@@ -30,4 +42,24 @@
       <!-- <button class="btn" style="margin-right: 14px; margin-bottom: 64px;" [routerLink]="tool.action" [queryParams]="{m_id: moduleId}">{{ tool.title |
         uppercase }} </button> -->
   </div>
+
+
+  <!-- <div *ngIf="tools;" class="clr-row clr-align-items-start clr-justify-content-start">
+    <div *ngFor="let app of tools1; let index = i" class="clr-col-auto" >
+      <div class="clr-row">
+        <div class="clr-col-lg-12 clr-col-md-6 clr-col-12">
+            <div class="card" >
+                <div class="card-block">
+                    <div class="card-title">
+
+                      <h3>{{moduleId}}</h3>
+                      <h5 class="center">{{ app.title | uppercase }}</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+  </div> -->
 </div>

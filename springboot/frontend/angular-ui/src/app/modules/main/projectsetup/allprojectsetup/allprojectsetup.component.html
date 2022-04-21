@@ -11,16 +11,19 @@
     <div class="clr-col-8">
       <h3>My Projects </h3>
     </div>
+
     <div class="clr-col-4" style="text-align: right;">
+      <button type="button" class="btn btn-icon btn-primary" aria-label="settings" (click)="goTocard()">
+        <clr-icon shape="grid-view"></clr-icon>
+      </button>
+
       <button class="btn btn-outline"  (click)="onExport()">
         <clr-icon shape="export"></clr-icon> xlsx
       </button>
       <button id="add" class="btn btn-primary"  (click)="goToAdd()">
         <clr-icon shape="plus"></clr-icon>ADD
       </button>
-      <button id="add" class="btn btn-primary"  (click)="goTocard()">
-        <clr-icon shape="grid-view"></clr-icon>
-      </button>
+
     </div>
   </div>
 
@@ -36,18 +39,15 @@
     <clr-dg-column [clrDgField]="'projectName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
       Project Name
     </ng-container></clr-dg-column>
-    <clr-dg-column [clrDgField]="'projectPrefix'">
-      <ng-container *clrDgHideableColumn="{hidden: false}">
-        Project Prefix
-      </ng-container>
-      </clr-dg-column >
+
+
     <clr-dg-column [clrDgField]="'technologyStack'"> <ng-container *clrDgHideableColumn="{hidden: false}">
       Technology Stack
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'description'"> <ng-container *clrDgHideableColumn="{hidden: false}">
       Description
     </ng-container></clr-dg-column>
-    <clr-dg-column [clrDgField]="'dbName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
+    <!-- <clr-dg-column [clrDgField]="'dbName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
       Db Name
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'dbUserName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
@@ -58,16 +58,16 @@
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'portNumber'"> <ng-container *clrDgHideableColumn="{hidden: false}">
       Port Number
-    </ng-container></clr-dg-column>
+    </ng-container></clr-dg-column> -->
     <clr-dg-row *clrDgItems="let user of project" [clrDgItem]="user">
       <clr-dg-cell>{{user.projectName}}</clr-dg-cell>
-      <clr-dg-cell>{{user.projectPrefix}}</clr-dg-cell>
+
       <clr-dg-cell>{{user.technologyStack}}</clr-dg-cell>
       <clr-dg-cell>{{user.description}}</clr-dg-cell>
-      <clr-dg-cell>{{user.dbName}}</clr-dg-cell>
+      <!-- <clr-dg-cell>{{user.dbName}}</clr-dg-cell>
       <clr-dg-cell>{{user. dbUserName}}</clr-dg-cell>
       <clr-dg-cell>{{user. dbPassword}}</clr-dg-cell>
-      <clr-dg-cell>{{user.  portNumber}}</clr-dg-cell>
+      <clr-dg-cell>{{user.  portNumber}}</clr-dg-cell> -->
 
       <clr-dg-action-overflow>
 

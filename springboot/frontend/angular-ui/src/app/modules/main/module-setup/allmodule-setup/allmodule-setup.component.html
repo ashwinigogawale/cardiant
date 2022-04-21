@@ -4,9 +4,20 @@
 <div class="dg-wrapper">
   <div class="clr-row">
     <div class="clr-col-8">
-      <h3>User list </h3>
+      <div class="btn-group" id="center">
+        <div class="checkbox btn">
+          <input type="checkbox" id="btn-demo-check-1" checked />
+          <label for="btn-demo-check-1">REPO VIEW</label>
+        </div>
+        <div class="checkbox btn">
+          <input type="checkbox" id="btn-demo-check-2"  />
+          <label for="btn-demo-check-2">PROJECT VIEW</label>
+        </div></div>
     </div>
     <div class="clr-col-4" style="text-align: right;">
+      <button type="button" class="btn btn-icon btn-primary" aria-label="settings" (click)="goTocard()">
+        <clr-icon shape="grid-view"></clr-icon>
+      </button>
       <button class="btn btn-outline"  (click)="onExport()">
         <clr-icon shape="export"></clr-icon> xlsx
       </button>
@@ -23,7 +34,7 @@
 
 
   <clr-datagrid [clrDgLoading]="loading" [(clrDgSelected)]="selected">
-    <clr-dg-placeholder>user not found!</clr-dg-placeholder>
+    <clr-dg-placeholder><clr-spinner [clrMedium]="true">Loading ...</clr-spinner></clr-dg-placeholder>
 
     <clr-dg-column [clrDgField]="'moduleName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
       Module Name
@@ -33,9 +44,7 @@
         Description
       </ng-container>
       </clr-dg-column >
-    <clr-dg-column [clrDgField]="'modulePrefix'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      Module Prefix
-    </ng-container></clr-dg-column>
+
 
     <clr-dg-column [clrDgField]="'technologyStack'"> <ng-container *clrDgHideableColumn="{hidden: false}">
       Technology Stack
@@ -45,7 +54,7 @@
     <clr-dg-row *clrDgItems="let user of modules" [clrDgItem]="user">
       <clr-dg-cell>{{user.moduleName}}</clr-dg-cell>
       <clr-dg-cell>{{user.description}}</clr-dg-cell>
-      <clr-dg-cell>{{user.modulePrefix}}</clr-dg-cell>
+
       <clr-dg-cell>{{user. technologyStack}}</clr-dg-cell>
 
 

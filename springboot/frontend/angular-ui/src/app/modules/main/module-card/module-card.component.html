@@ -1,3 +1,27 @@
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']"><clr-icon shape="home"></clr-icon></a></li>
+  <li><a href="javascript://"  [routerLink]="['/main/project1']"> <clr-icon shape="flag"></clr-icon>Projects</a></li>
+  <li><a href="javascript://"> <clr-icon  shape="objects"></clr-icon>Repositories</a></li>
+</ol>
+<br>
+
+<div class="dg-wrapper">
+  <div class="clr-row">
+    <div class="clr-col-8">
+      <h3>User list </h3>
+    </div>
+    <div class="clr-col-4" style="text-align: right;">
+      <!-- <clr-icon shape="search"></clr-icon>
+    <input placeholder="Search for Projects" type="text"  style="margin-right: 30px;"/> -->
+      <button type="button" class="btn btn-icon btn-primary" aria-label="settings" (click)="goTocard()">
+        <clr-icon shape="bars"></clr-icon>
+      </button>
+
+      <button id="add" class="btn btn-primary"  (click)="goToAdd()">
+        <clr-icon shape="plus"></clr-icon>ADD
+      </button>
+    </div>
+  </div>
 
 
 <div>
@@ -49,4 +73,67 @@
   </ng-template>
 </div>
 
+<!-- <div *ngIf="modules; else showInfo" class="clr-row clr-align-items-start clr-justify-content-start">
+  <div *ngFor="let app of modules; let index = i" class="clr-col-auto" >
+    <div class="clr-row">
+      <div class="clr-col-lg-12 clr-col-md-6 clr-col-12">
+          <div class="card" >
+            <!-- <span class="social-links">
+              <a href="#"><clr-icon shape="flag"></clr-icon> </a>
 
+          </span> -->
+           <!-- <clr-icon shape="objects"></clr-icon>
+            <span data-v-31ffaada="" class="label label-blue">
+              Star
+              <span data-v-31ffaada="" class="badge badge-blue">99+</span></span>
+              <span data-v-31ffaada="" class="label label-orange">
+                Watching
+                <span data-v-31ffaada="" class="badge badge-orange">99+</span></span>
+                <span data-v-31ffaada="" class="label label-danger">
+                  Austin (Location)
+                  <span data-v-31ffaada="" class="badge badge-danger">99+</span></span>
+                  <span style="margin-left: 20px;"><clr-icon shape="pin"></clr-icon></span>
+             <span style="float: right;"><clr-icon shape="ellipsis-vertical"></clr-icon></span>
+            <div class="dropdown-container" tabindex="-1" style="float: right;">
+              <div class="three-dots" ></div>
+              <div class="dropdown">
+                <a href="" ><div>Edit</div></a>
+                <a href=""><div>Components</div></a>
+                <a href="#"><div>ReadMe</div></a>
+                <a href="#"><div>Gallery</div></a>
+              </div>
+            </div>
+              <div class="card-header">
+               <b> {{app.projectName}}</b>
+              </div>
+              <div class="card-block">
+                  <div class="card-title">
+                    {{app.description}}
+                  </div>
+                  <div class="card-text">
+                    <span class="label label-light-blue p7" style="margin-top: .4em;">{{app.moduleName}}</span>
+                    <span class="label label-purple p7" style="margin-top: .4em;"> {{app.description}}</span>
+                    <span class="label label-light-blue p7" style="margin-top: .4em;"> {{app.technologyStack}}</span>
+
+                      <div class="progress-static labeled" style="margin-top: 10px; height: 15px;">
+                      <div class="progress-meter" data-value="50" data-displayval="50%" style="height: 15px;"></div>
+                      <span>50%</span>
+                    </div>
+                    <div>
+                      <button id="add" class="btn btn-primary" style="margin-top: 30px;">
+                        <clr-icon shape="ellipsis-horizontal"></clr-icon>
+                      </button>
+                    </div>
+
+                  </div>
+
+              </div>
+              <div class="card-footer">
+                  <button class="btn btn-sm btn-link">Updated On: {{app.updatedAt|date}}</button>
+                  <button class="btn btn-sm btn-link"> Created On:{{app.createdAt|date}}</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div> -->

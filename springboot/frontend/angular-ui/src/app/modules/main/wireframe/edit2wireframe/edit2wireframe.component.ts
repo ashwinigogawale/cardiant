@@ -494,15 +494,19 @@ console.log("update with id = ", this.id);
         this.modal = false;
         this.ngOnInit();
         this.router.navigate(["../../../../../wireframe"], { relativeTo: this.route })
+        if (data) {
+          this.toastr.success('Added successfully');
+              }
       },
       (error: any)=>{
-        console.log('Error in adding data...');
-
+        console.log('Error in adding data...',+error);
+        if(error){
+          this.toastr.error('Not added Data Getting Some Error');
+        }
       }
+
     );
-    if (this.wfline) {
-      this.toastr.success('Added successfully');
-          }
+
 
   }
 

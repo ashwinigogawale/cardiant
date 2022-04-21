@@ -1,8 +1,8 @@
-<h2 style="font-weight: 500;display: inline;"><b>New Repositiry</b></h2>
-<span class="label label-light-blue" style="display: inline;margin-left: 100px;">Add Mode</span>
-<span style="display: inline; float: right;"> <button id="add" class="btn btn-primary" ><clr-icon shape="plus" ></clr-icon>Import</button></span>
+<h4 style="font-weight: 500;display: inline;">New Repositiry</h4>
+<span class="label label-light-blue" style="display: inline;margin-left: 10px;">Add Mode</span><br>
+A Repository can be Module or a set of microservices with individual configurations.
 <hr>
-<b>A Repository can be Module or a set of microservices with individual configurations. want to copy from another Repository? Try Import a repository</b>
+
 <div class="container">
 
 
@@ -14,7 +14,7 @@
     <p> Module Details </p>
   </div> -->
   <!-- entry form-->
-  <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
+  <!-- <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
     <div class="clr-row">
       <div class="clr-col-md-4 clr-col-sm-12">
         <label for="moduleName">Module Name</label>
@@ -36,17 +36,17 @@
       </div>
     </div>
     <br>
-    <!-- <br> -->
+
     <div class="center">
       <button type="submit" class="btn btn-primary" [disabled]="!entryForm.valid">SUBMIT</button>
     </div>
-  </form>
+  </form> -->
 </div>
 
 
 
 
-<!-- <div class="container">
+<div class="container">
 
 
 
@@ -71,7 +71,7 @@
           </div>
           <div class="clr-row">
           <div class="clr-col-md-4 clr-col-sm-12">
-            <label for="description">Description <b>(optional)</b></label>
+            <label for="description">Description (optional)</label>
               <textarea name="" id="" cols="10" rows="2"  name=" remarks" formControlName="description" placeholder="Enter Description">
               </textarea>
               </div>
@@ -91,22 +91,27 @@
 </div>
 
 <div style="margin-top: 40px;">
-  <h4 style="font-weight: 500;display: inline;"><b> Default Configurations</b></h4>
+  <h4 style="display: inline;">  Configurations</h4>
 </div>
+These Configurations defaults From Projectsetup,however you can change as required.
 <hr>
-<b> These Configurations defaults From Projectsetup,however you can change as required.</b>
+
 <div class="clr-row">
-  <div class="clr-col-md-4 clr-col-sm-12">
-    <label for="techStackId">Select Technology</label>
-    <select colspan="2"  selected="null" class="clr-dropdown">
+  <div class="clr-col-md-3 clr-col-sm-12">
+    <label for="technologyStack">Technology Stack</label>
+    <select  selected="null" class="clr-dropdown">
       <option value="null">Choose Technology</option>
 
     </select>
-
+  </div>
+  <div class="clr-col-md-1 clr-col-sm-12" style="margin-top: 15px;">
+    <button  class="btn btn-icon btn-primary" >
+      <clr-icon shape="view-list"></clr-icon>
+    </button>
   </div>
   <div class="clr-col-md-4 clr-col-sm-12">
     <label for="projectPrefix">Repo Prefix</label>
-    <input type="text"  placeholder="Enter A Prefix" class="clr-input">
+    <input type="text"  placeholder="Enter A Prefix" class="clr-input" formControlName="modulePrefix">
 
   </div>
   <div class="clr-col-md-4 clr-col-sm-12">
@@ -134,15 +139,16 @@
   </div>
 </div>
 <div style="margin-top: 40px;">
-  <h4 style="font-weight: 500;display: inline;"><b> Deployment Configurations</b></h4>
+  <h4 style="display: inline;"> Deployment Configurations</h4>
 </div>
+ These Configurations defaults From Projectsetup,however you can change as required.
 <hr>
-<b> These Configurations defaults From Projectsetup,however you can change as required.</b>
+
 <div class="clr-row">
 
       <div class="clr-col-md-4 clr-col-sm-12">
         <div>
-          <label for="add"> <b>Default Repo</b>
+          <label for="add"> Default Repo
             <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
               <clr-icon shape="info-standard" size="md"></clr-icon>
               <span class="tooltip-content">README file is an exhaustive description of the Repository.</span>
@@ -152,7 +158,7 @@
           </div></div>
           <div class="clr-col-md-4 clr-col-sm-12">
             <div>
-              <label for="add"> <b>Miceroservice</b>
+              <label for="add"> Miceroservice
                 <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
                   <clr-icon shape="info-standard" size="md"></clr-icon>
                   <span class="tooltip-content">README file is an exhaustive description of the Repository.</span>
@@ -163,7 +169,7 @@
               </div>
               <div class="clr-col-md-4 clr-col-sm-12">
                 <div>
-                  <label for="add"> <b>Portal deployment</b>
+                  <label for="add"> Portal deployment
                     <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-md">
                       <clr-icon shape="info-standard" size="md"></clr-icon>
                       <span class="tooltip-content">README file is an exhaustive description of the Repository.</span>
@@ -173,10 +179,18 @@
                   </div></div>
 
     </div>
+    <div class="clr-row">
+      <div class="clr-col-md-3 clr-col-sm-12">
+        <label for="technologyStack">Parent Repo</label>
+        <select  selected="null" class="clr-dropdown">
+          <option value="null">Select A Repo</option>
+
+        </select>
+      </div></div>
     <br>
 
     <div class="center">
       <button type="submit" class="btn btn-primary" [disabled]="!entryForm.valid">SUBMIT</button>
     </div>
   </form>
-</div> -->
+</div>

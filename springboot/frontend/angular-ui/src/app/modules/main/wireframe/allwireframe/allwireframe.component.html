@@ -24,22 +24,25 @@
 
 
   <clr-datagrid [clrDgLoading]="loading" [(clrDgSelected)]="selected">
-    <clr-dg-placeholder>user not found</clr-dg-placeholder>
+    <clr-dg-placeholder><clr-spinner [clrMedium]="true">Loading ...</clr-spinner></clr-dg-placeholder>
 
     <clr-dg-column [clrDgField]="'uiName'"> <ng-container *clrDgHideableColumn="{hidden: false}">
-      Ui Name
+      Wireframe Name
     </ng-container></clr-dg-column>
     <clr-dg-column [clrDgField]="'formType'">
       <ng-container *clrDgHideableColumn="{hidden: false}">
-        Form Type
-      </ng-container>
-      </clr-dg-column >
-
-
+        Form Type</ng-container> </clr-dg-column >
+        <clr-dg-column [clrDgField]="'formType'">
+          <ng-container *clrDgHideableColumn="{hidden: false}">
+            Security Profile</ng-container> </clr-dg-column >
+            <clr-dg-column [clrDgField]="'formType'">
+              <ng-container *clrDgHideableColumn="{hidden: false}">
+                Build Status</ng-container> </clr-dg-column >
     <clr-dg-row *clrDgItems="let user of rows" [clrDgItem]="user">
       <clr-dg-cell>{{user.uiName}}</clr-dg-cell>
       <clr-dg-cell>{{user.formType}}</clr-dg-cell>
-
+      <clr-dg-cell>Default</clr-dg-cell>
+      <clr-dg-cell><input type="radio" id="cb1" class="dots"></clr-dg-cell>
 
       <clr-dg-action-overflow>
 

@@ -2,29 +2,30 @@
 
 <ol class="breadcrumb breadcrumb-arrow font-trirong">
   <li><a href="javascript://" [routerLink]="['/']"><clr-icon shape="home"></clr-icon></a></li>
-  <li><a href="javascript://"  [routerLink]="['/main/project1']">Projects</a></li>
-  <li><a href="javascript://">Module</a></li>
+  <li><a href="javascript://"  [routerLink]="['/main/project1']"> <clr-icon shape="flag"></clr-icon>Projects</a></li>
+  <li><a href="javascript://"> <clr-icon  shape="objects"></clr-icon>Repositories</a></li>
 </ol>
 <br>
 
 <clr-tabs>
   <clr-tab>
-    <button clrTabLink>Repository</button>
+    <button clrTabLink>SureBuilder</button>
     <clr-tab-content *clrIfActive>
       <br>
-      <div class="btn-group btn-link" >
+      <app-allmodule-setup></app-allmodule-setup>
+      <!-- <div class="btn-group btn-link" >
         <button class="btn btn-icon" (click)="gridViewIsActive=!gridViewIsActive">
             <clr-icon *ngIf="!gridViewIsActive" class="is-solid" shape="grid-view" size="24"></clr-icon>
             <clr-icon *ngIf="gridViewIsActive" class="is-solid" shape="view-list" size="24"></clr-icon>
         </button>
 
-      </div>
+      </div> -->
      <!-- <div style="float: right;">
         <button class="btn btn-primary"  (click)="goToAdd()"> <clr-icon shape="plus"></clr-icon>ADD</button>
 
-      </div>-->
+      </div>
       <app-module-card *ngIf="!gridViewIsActive" [apps]="apps"></app-module-card>
-      <app-allmodule-setup *ngIf="gridViewIsActive"></app-allmodule-setup>
+      <app-allmodule-setup *ngIf="gridViewIsActive"></app-allmodule-setup>-->
 
     </clr-tab-content>
   </clr-tab>

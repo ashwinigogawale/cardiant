@@ -25,6 +25,7 @@ export class ActionsComponent implements OnInit {
     this.wireframeService.storeModuleId(this.moduleId);
   }
   tools: Tools[] = [
+
     {
       title: "Create Table",
       details: "Create Table for Your Project",
@@ -67,4 +68,51 @@ export class ActionsComponent implements OnInit {
       action: "../wireframe",
     },
   ];
+
+  tools1: Tools[] = [
+    {
+
+      title: "Wireframes",
+      details: "Create Wireframe for Your Project",
+      action: "../wireframe",
+    },
+    {
+      title: "Workflow",
+      details: "Create Table for Your Project",
+      action: "../create-table",
+    },
+
+    {
+      title: "Report",
+      details: "Generate Report for Your Project",
+      action: "../reporttype",
+    },
+    {
+      title: "Web Page",
+      details: "Create API for Your Project",
+      action: "../api-build",
+    },
+
+    {
+      title: "Actions",
+      details: "Create BI for Your Project",
+      action: "../bi-build",
+    },
+    {
+      title: "Permission",
+      details: "Create Query for Your Project",
+      action: "../query-build",
+    },
+    {
+      title: "Jobs",
+      details: "Create App for Your Project",
+      action: "../app-build",
+    },
+    {
+      title: "Dashboard",
+      details: "Create Wireframe for Your Project",
+      action: "../wireframe",
+    },
+  ];
+
 }

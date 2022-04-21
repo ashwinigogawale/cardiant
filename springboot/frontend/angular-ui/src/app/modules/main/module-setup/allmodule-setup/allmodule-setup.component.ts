@@ -94,4 +94,8 @@ export class AllmoduleSetupComponent implements OnInit {
   goToAction(id: number) {
     this.router.navigate(["../actions"], { relativeTo: this.route, queryParams: { m_id: id } });
   }
+  goTocard(){
+   // this.router.navigate(["../modulecard"], { relativeTo: this.route });
+    this.router.navigate(["../modulecard"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
+  }
 }

@@ -116,11 +116,7 @@
         -->
         </clr-vertical-nav-group-children>
       </clr-vertical-nav-group>
-      <clr-vertical-nav-group routerLinkActive="active">
-        <clr-icon shape="bolt" clrVerticalNavIcon></clr-icon>
-        Credit Note
 
-      </clr-vertical-nav-group>
 
 
 
@@ -153,9 +149,35 @@
     </div>
 
     <a  clrVerticalNavLink routerLinkActive="active"  routerLink="/cns-portal/project/all">
+      <clr-icon  clrVerticalNavIcon shape="flag"></clr-icon>
+     My Projects </a>
+     <a  clrVerticalNavLink routerLinkActive="active" >
+      <clr-icon  clrVerticalNavIcon shape="flag"></clr-icon>
+     All Projects </a>
+     <a  clrVerticalNavLink routerLinkActive="active">
+      <clr-icon  clrVerticalNavIcon shape="plugin"></clr-icon>
+     Templates </a>
+     <a  clrVerticalNavLink routerLinkActive="active" >
       <clr-icon  clrVerticalNavIcon shape="objects"></clr-icon>
-      Projects </a>
+     Repositories </a>
+     <a  clrVerticalNavLink routerLinkActive="active"  >
+      <clr-icon  clrVerticalNavIcon shape="clock"></clr-icon>
+     Recently Modified </a>
+     <a  clrVerticalNavLink routerLinkActive="active" >
+      <clr-icon  clrVerticalNavIcon shape="trash"></clr-icon>
+     Recently Archieved </a><hr>
+     <a  clrVerticalNavLink routerLinkActive="active" >
+      <clr-icon  clrVerticalNavIcon shape="users"></clr-icon>
+     Shared with me </a>
+     <a  clrVerticalNavLink routerLinkActive="active" >
+      <clr-icon  clrVerticalNavIcon shape="heart"></clr-icon>
+     My Fav </a>
+     <a  clrVerticalNavLink routerLinkActive="active" >
+      <button id="add" class="btn btn-primary" style="width: 200px; position: fixed;bottom: 0; left: 0;">
+        <clr-icon shape="plus"></clr-icon>ADD A new Team
+      </button> </a>
     </clr-vertical-nav>
+
   </div>
 
 </clr-main-container>
