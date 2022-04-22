@@ -75,4 +75,10 @@ input:focus {
   display:inline-block;
   text-decoration:none;
 }
-
+#word {
+  display: inline-block;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}

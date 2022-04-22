@@ -17,6 +17,7 @@ export class AllprojectsetupComponent implements OnInit {
   selected: any[] = [];
   rowSelected :any= {};
   modaldelete=false;
+  modaladd=false;
   basic: boolean = false;
   columns: any[];
   rows: any[];
@@ -25,6 +26,27 @@ export class AllprojectsetupComponent implements OnInit {
   project;
   projects: ProjectSetup[];
 
+
+  tools1 = [
+    {
+
+      title: "Start from scratch, I have an idea",
+      action: "../add",
+    },
+    {
+      title: "My Db is ready,let import and start",
+      action: "../create-table",
+    },
+
+    {
+      title: "Start with sampleapp, checkout templates",
+      action: "../reporttype",
+    },
+   {
+      title: "copy from another public project",
+      action: "../dashboard",
+    },
+  ];
   constructor(private router: Router,
     private route: ActivatedRoute,
     private toastr: ToastrService,
@@ -48,6 +70,7 @@ export class AllprojectsetupComponent implements OnInit {
       moment().format('YYYYMMDD_HHmmss'))
   }
   goToAdd() {
+    //this.modaladd=true;
     this.router.navigate(["../add"], { relativeTo: this.route });
   }
   goToEdit(id: number) {

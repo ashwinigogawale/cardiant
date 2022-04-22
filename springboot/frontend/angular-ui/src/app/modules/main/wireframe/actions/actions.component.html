@@ -1,8 +1,8 @@
 <ol class="breadcrumb breadcrumb-arrow font-trirong">
   <li><a href="javascript://" [routerLink]="['/']"><clr-icon shape="home"></clr-icon></a></li>
-  <li><a href="javascript://"  [routerLink]="['/main/project1']"> <clr-icon shape="flag"></clr-icon>Projects</a></li>
-  <li><a href="javascript://"> <clr-icon  shape="objects"></clr-icon>Repositories</a></li>
-  <li><a href="javascript://"><clr-icon shape="application"></clr-icon> Components</a></li>
+  <li><a href="javascript://"  [routerLink]="['/main/project1']"> <clr-icon shape="flag"></clr-icon>  Projects</a></li>
+  <li><a href="javascript://"> <clr-icon  shape="objects"></clr-icon>  Repositories</a></li>
+  <li><a href="javascript://"><clr-icon shape="application"></clr-icon>  Components</a></li>
 </ol>
 <h5 style="display: inline;">Select A Components</h5><br>
 Select Componets To Add in your app, the count Here Show Existing Components in the project.
@@ -44,16 +44,17 @@ Select Componets To Add in your app, the count Here Show Existing Components in 
   </div>
 
 
-  <!-- <div *ngIf="tools;" class="clr-row clr-align-items-start clr-justify-content-start">
+  <div *ngIf="tools1;" class="clr-row clr-align-items-start clr-justify-content-start">
     <div *ngFor="let app of tools1; let index = i" class="clr-col-auto" >
       <div class="clr-row">
-        <div class="clr-col-lg-12 clr-col-md-6 clr-col-12">
-            <div class="card" >
+        <div class="clr-col-lg-12 clr-col-md-6 clr-col-12" style="width: 300px;">
+            <div class="card" [routerLink]="app.action">
                 <div class="card-block">
                     <div class="card-title">
 
-                      <h3>{{moduleId}}</h3>
-                      <h5 class="center">{{ app.title | uppercase }}</h5>
+                      <h3 style="text-align: center;">{{moduleId}}</h3>
+                      <b style="margin-left: 80px;"><clr-icon shape="image" size="64"></clr-icon></b>
+                      <h5 class="center" ><b>{{ app.title | uppercase }}</b></h5>
                     </div>
                 </div>
 
@@ -61,5 +62,5 @@ Select Componets To Add in your app, the count Here Show Existing Components in 
         </div>
     </div>
     </div>
-  </div> -->
+  </div>
 </div>

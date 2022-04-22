@@ -1,7 +1,7 @@
 <ol class="breadcrumb breadcrumb-arrow font-trirong">
   <li><a href="javascript://" [routerLink]="['/']"><clr-icon shape="home"></clr-icon></a></li>
-  <li><a href="javascript://"  [routerLink]="['/main/project1']"> <clr-icon shape="flag"></clr-icon>Projects</a></li>
-  <li><a href="javascript://"> <clr-icon  shape="objects"></clr-icon>Repositories</a></li>
+  <li><a href="javascript://"  [routerLink]="['/main/project1']"> <clr-icon shape="flag"></clr-icon> Projects</a></li>
+  <li><a href="javascript://"> <clr-icon  shape="objects"></clr-icon> Repositories</a></li>
 </ol>
 <br>
 
@@ -11,8 +11,8 @@
       <h3>User list </h3>
     </div>
     <div class="clr-col-4" style="text-align: right;">
-      <!-- <clr-icon shape="search"></clr-icon>
-    <input placeholder="Search for Projects" type="text"  style="margin-right: 30px;"/> -->
+      <clr-icon shape="search"></clr-icon>
+    <input placeholder="Search for Projects" type="text"  style="margin-right: 30px;"/>
       <button type="button" class="btn btn-icon btn-primary" aria-label="settings" (click)="goTocard()">
         <clr-icon shape="bars"></clr-icon>
       </button>
@@ -25,7 +25,7 @@
 
 
 <div>
-  <div *ngIf="modules; else showInfo" class="clr-row clr-align-items-start clr-justify-content-start">
+  <!-- <div *ngIf="modules; else showInfo" class="clr-row clr-align-items-start clr-justify-content-start">
       <div *ngFor="let app of modules; let index = i" class="clr-col-auto" >
           <a class="card clickable"  routerLinkActive="actice">
               <div class="card-block">
@@ -55,7 +55,7 @@
 
           </a>
       </div>
-  </div>
+  </div> -->
 
   <ng-template #showInfo>
       <div class="alert alert-info" role="alert">
@@ -73,28 +73,30 @@
   </ng-template>
 </div>
 
-<!-- <div *ngIf="modules; else showInfo" class="clr-row clr-align-items-start clr-justify-content-start">
+<div *ngIf="modules; else showInfo" class="clr-row clr-align-items-start clr-justify-content-start">
   <div *ngFor="let app of modules; let index = i" class="clr-col-auto" >
     <div class="clr-row">
-      <div class="clr-col-lg-12 clr-col-md-6 clr-col-12">
+      <div class="clr-col-lg-12 clr-col-md-6 clr-col-12" style="width: 550px;">
           <div class="card" >
             <!-- <span class="social-links">
-              <a href="#"><clr-icon shape="flag"></clr-icon> </a>
+              <a href="#"><clr-icon shape="objects"></clr-icon> </a>
 
           </span> -->
-           <!-- <clr-icon shape="objects"></clr-icon>
-            <span data-v-31ffaada="" class="label label-blue">
+
+          <span style="margin-top: 16px;">
+            <span data-v-31ffaada="" class="label label-blue"  style="margin-top:5px;margin-left: 3px;"><clr-icon shape="objects" size="sm"></clr-icon></span>
+            <span data-v-31ffaada="" class="label label-blue" style="margin-top:5px;">
               Star
               <span data-v-31ffaada="" class="badge badge-blue">99+</span></span>
               <span data-v-31ffaada="" class="label label-orange">
                 Watching
                 <span data-v-31ffaada="" class="badge badge-orange">99+</span></span>
                 <span data-v-31ffaada="" class="label label-danger">
-                  Austin (Location)
+                  Futuristic
                   <span data-v-31ffaada="" class="badge badge-danger">99+</span></span>
-                  <span style="margin-left: 20px;"><clr-icon shape="pin"></clr-icon></span>
-             <span style="float: right;"><clr-icon shape="ellipsis-vertical"></clr-icon></span>
-            <div class="dropdown-container" tabindex="-1" style="float: right;">
+                  <span style="margin-left: 20px;"><clr-icon shape="pin"></clr-icon></span></span>
+
+            <div class="dropdown-container" tabindex="-1" style="float: right;margin-top: 5px;">
               <div class="three-dots" ></div>
               <div class="dropdown">
                 <a href="" ><div>Edit</div></a>
@@ -103,21 +105,21 @@
                 <a href="#"><div>Gallery</div></a>
               </div>
             </div>
-              <div class="card-header">
-               <b> {{app.projectName}}</b>
+              <div class="card-header" >
+               <b id="word"> {{app.moduleName}}</b>
               </div>
               <div class="card-block">
-                  <div class="card-title">
-                    {{app.description}}
+                  <div class="card-title" id="word">
+                    <b style="font-size: 15px;">{{app.description}}</b>
                   </div>
                   <div class="card-text">
                     <span class="label label-light-blue p7" style="margin-top: .4em;">{{app.moduleName}}</span>
                     <span class="label label-purple p7" style="margin-top: .4em;"> {{app.description}}</span>
                     <span class="label label-light-blue p7" style="margin-top: .4em;"> {{app.technologyStack}}</span>
 
-                      <div class="progress-static labeled" style="margin-top: 10px; height: 15px;">
+                      <div class="progress-static labeled" style="margin-top: 10px; height: 15px;margin-left: 10px;margin-right: 40px;">
                       <div class="progress-meter" data-value="50" data-displayval="50%" style="height: 15px;"></div>
-                      <span>50%</span>
+                      <span style="margin-right: 10px;">50%</span>
                     </div>
                     <div>
                       <button id="add" class="btn btn-primary" style="margin-top: 30px;">
@@ -129,11 +131,11 @@
 
               </div>
               <div class="card-footer">
-                  <button class="btn btn-sm btn-link">Updated On: {{app.updatedAt|date}}</button>
-                  <button class="btn btn-sm btn-link"> Created On:{{app.createdAt|date}}</button>
+                  <button class="btn btn-sm btn-link"> Last Updated On: {{app.updatedAt|date}}</button>
+
               </div>
           </div>
       </div>
   </div>
   </div>
-</div> -->
+</div>

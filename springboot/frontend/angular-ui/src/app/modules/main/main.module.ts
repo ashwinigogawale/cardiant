@@ -85,6 +85,7 @@ import { RbColumnSetupComponent } from './rb-column-setup/rb-column-setup.compon
 import { RbWhereColumnSetupComponent } from './rb-where-column-setup/rb-where-column-setup.component';
 import { RbDateParamSetupComponent } from './rb-date-param-setup/rb-date-param-setup.component';
 import { ScienceComponent } from './science/science.component';
+import { ProjectviewComponent } from './module-setup/projectview/projectview.component';
 
 
 
@@ -107,7 +108,7 @@ import { ScienceComponent } from './science/science.component';
   AddwireframeComponent,EditwireframeComponent,Edit2wireframeComponent,UpdateWireframeComponent,WireframetypeComponent,PropertiesComponent,
   PropertyComponent,UinameeditComponent,ActionsComponent,SuredocrComponent,SurefarmComponent,SuregitComponent,Wireframe1Component,
   WireframeCardComponent,Report2Component,ReporttypeComponent,ReportBuilderComponent,AddComponent,AllComponent,EditComponent,
-  RbTableSetupComponent,RbColumnSetupComponent,RbWhereColumnSetupComponent,RbDateParamSetupComponent,ScienceComponent,
+  RbTableSetupComponent,RbColumnSetupComponent,RbWhereColumnSetupComponent,RbDateParamSetupComponent,ScienceComponent, ProjectviewComponent,
 
 
 

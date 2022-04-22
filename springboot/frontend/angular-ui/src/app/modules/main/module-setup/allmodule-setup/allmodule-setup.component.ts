@@ -20,6 +20,7 @@ export class AllmoduleSetupComponent implements OnInit {
   selected: any[] = [];
   rowSelected :any= {};
   modaldelete=false;
+  modaladd=false;
   module;
   basic: boolean = false;
   columns: any[];
@@ -33,6 +34,22 @@ export class AllmoduleSetupComponent implements OnInit {
   object_types = ['form', 'bi', 'report', 'api'];
   sub_object_types = ['only header', 'only line', 'header line', 'header multiline', 'wrokflow', 'setup', 'std report', 'bi report', 'rest api'];
   projectId: number;
+
+  tools1 = [
+    {
+
+      title: "Start from scratch",
+      action: "../project/modules/add",
+    },
+    {
+      title: "import from Templates",
+      action: "../create-table",
+    },
+   {
+      title: "Import from  public project",
+      action: "../dashboard",
+    },
+  ];
   constructor( private _fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
@@ -82,6 +99,7 @@ export class AllmoduleSetupComponent implements OnInit {
 
   }
   goToAdd() {
+    //this.modaladd=true;
     this.router.navigate(["../project/modules/add"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
   }
   goToEdit(id: number) {
@@ -97,5 +115,32 @@ export class AllmoduleSetupComponent implements OnInit {
   goTocard(){
    // this.router.navigate(["../modulecard"], { relativeTo: this.route });
     this.router.navigate(["../modulecard"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
+  }
+  goTproject(){
+   // this.router.navigate(["../projectview"], { relativeTo: this.route,  });
+    if (document.getElementById('Div1')) {
+
+      if (document.getElementById('Div1').style.display == 'none') {
+          document.getElementById('Div1').style.display = 'block';
+          document.getElementById('Div2').style.display = 'none';
+      }
+      else {
+          document.getElementById('Div1').style.display = 'none';
+          document.getElementById('Div2').style.display = 'block';
+      }
+  }
+  }
+  goTorepo(){
+    if (document.getElementById('Div2')) {
+
+      if (document.getElementById('Div2').style.display == 'none') {
+          document.getElementById('Div2').style.display = 'block';
+          document.getElementById('Div1').style.display = 'none';
+      }
+      else {
+          document.getElementById('Div2').style.display = 'none';
+          document.getElementById('Div1').style.display = 'block';
+      }
+  }
   }
 }

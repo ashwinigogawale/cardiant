@@ -69,12 +69,13 @@ export class ActionsComponent implements OnInit {
     },
   ];
 
-  tools1: Tools[] = [
+  tools1= [
     {
 
       title: "Wireframes",
       details: "Create Wireframe for Your Project",
       action: "../wireframe",
+      icon:"home"
     },
     {
       title: "Workflow",
@@ -111,7 +112,7 @@ export class ActionsComponent implements OnInit {
     {
       title: "Dashboard",
       details: "Create Wireframe for Your Project",
-      action: "../wireframe",
+      action: "../dashboard",
     },
   ];
 

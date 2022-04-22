@@ -66,6 +66,7 @@ import { RbTableSetupComponent } from './rb-table-setup/rb-table-setup.component
 import { ScienceComponent } from './science/science.component';
 import { ProjectcardComponent } from './projectcard/projectcard.component';
 import { ModuleCardComponent } from './module-card/module-card.component';
+import { ProjectviewComponent } from './module-setup/projectview/projectview.component';
 
 
 
@@ -171,7 +172,7 @@ const routes: Routes = [
             { path: 'all', component: AllmoduleSetupComponent },
             { path: 'add', component: AddmoduleSetupComponent },
             { path: 'edit/:id', component: EditmoduleSetupComponent },
-
+             {path: 'projectview', component: ProjectviewComponent},
             { path: 'actions', component: ActionsComponent },
 
 
