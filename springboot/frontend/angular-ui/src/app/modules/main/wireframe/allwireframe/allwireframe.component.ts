@@ -23,6 +23,7 @@ export class AllwireframeComponent implements OnInit {
   isLoading: boolean = false;
   rowSelected :any= {};
   modaldelete=false;
+  modaladd=false;
   loading = false;
   moduleId: number;
   wireFrames: Rn_Fb_Header[];
@@ -32,6 +33,22 @@ export class AllwireframeComponent implements OnInit {
   allLines: any;
   lineOfHeader: Array<any>;
   fbLine: Rn_Fb_Lines;
+
+  tools1 = [
+    {
+
+      title: "Start from scratch",
+      action: "../project/modules/wireframe/types",
+    },
+    {
+      title: "import from Templates",
+      action: "../create-table",
+    },
+   {
+      title: "Import from  public project",
+      action: "../dashboard",
+    },
+  ];
   constructor( private _fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
@@ -61,10 +78,11 @@ export class AllwireframeComponent implements OnInit {
       this.wireFrames = data.items;
       console.log('wireframes: ', this.wireFrames);
       this.rows = this.wireFrames;
-      this.temp = [...this.wireFrames];
+      //this.temp = [...this.wireFrames];
     });
   }
   goToAdd() {
+    //this.modaladd=true;
     this.router.navigate(["../project/modules/wireframe/types"], { relativeTo: this.route });
 
   }

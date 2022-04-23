@@ -22,6 +22,7 @@ export class AllmoduleSetupComponent implements OnInit {
   modaldelete=false;
   modaladd=false;
 
+
   module;
   basic: boolean = false;
   columns: any[];
@@ -125,10 +126,12 @@ export class AllmoduleSetupComponent implements OnInit {
           document.getElementById('Div1').style.display = 'block';
           document.getElementById('Div2').style.display = 'none';
 
+
       }
       else {
           document.getElementById('Div1').style.display = 'none';
           document.getElementById('Div2').style.display = 'block';
+
       }
   }
   }
@@ -139,11 +142,15 @@ export class AllmoduleSetupComponent implements OnInit {
           document.getElementById('Div2').style.display = 'block';
           document.getElementById('Div1').style.display = 'none';
 
+
+
       }
       else {
           document.getElementById('Div2').style.display = 'none';
           document.getElementById('Div1').style.display = 'block';
+
       }
   }
   }
+
 }

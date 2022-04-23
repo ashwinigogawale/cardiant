@@ -30,16 +30,16 @@ export class AllprojectsetupComponent implements OnInit {
   tools1 = [
     {
 
-      title: "Start from scratch, I have an idea",
+      title: "Start from scratch,I have an idea",
       action: "../add",
     },
     {
-      title: "My Db is ready,let import and start",
+      title: "My Db is ready, let import and start",
       action: "../create-table",
     },
 
     {
-      title: "Start with sampleapp, checkout templates",
+      title: "Start with sampleapp,check templates",
       action: "../reporttype",
     },
    {
@@ -70,8 +70,8 @@ export class AllprojectsetupComponent implements OnInit {
       moment().format('YYYYMMDD_HHmmss'))
   }
   goToAdd() {
-    //this.modaladd=true;
-    this.router.navigate(["../add"], { relativeTo: this.route });
+    this.modaladd=true;
+    //this.router.navigate(["../add"], { relativeTo: this.route });
   }
   goToEdit(id: number) {
     this.router.navigate(["../edit/" + id], { relativeTo: this.route });

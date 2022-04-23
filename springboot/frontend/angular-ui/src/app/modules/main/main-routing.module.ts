@@ -67,6 +67,7 @@ import { ScienceComponent } from './science/science.component';
 import { ProjectcardComponent } from './projectcard/projectcard.component';
 import { ModuleCardComponent } from './module-card/module-card.component';
 import { ProjectviewComponent } from './module-setup/projectview/projectview.component';
+import { ArchievedComponent } from './archieved/archieved.component';
 
 
 
@@ -114,6 +115,7 @@ const routes: Routes = [
       {path: 'modulecard', component:ModuleCardComponent},
       { path: 'actions', component: ActionsComponent },
       { path: 'wireframe', component: Wireframe1Component },
+      {path: 'Archieved', component:ArchievedComponent},
       {
         path: 'reporttype'   , component: ReporttypeComponent
       },
