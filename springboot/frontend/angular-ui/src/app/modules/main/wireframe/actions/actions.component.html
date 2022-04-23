@@ -4,7 +4,7 @@
   <li><a href="javascript://"> <clr-icon  shape="objects"></clr-icon>  Repositories</a></li>
   <li><a href="javascript://"><clr-icon shape="application"></clr-icon>  Components</a></li>
 </ol>
-<h5 style="display: inline;">Select A Components</h5><br>
+<h5 style="display: inline;"><b>Select a Component</b></h5><br>
 Select Componets To Add in your app, the count Here Show Existing Components in the project.
 <hr>
 
@@ -36,12 +36,12 @@ Select Componets To Add in your app, the count Here Show Existing Components in 
   </div> -->
 
 
-  <div class="btn-group btn-primary btn-icon" *ngFor="let tool of tools">
+  <!-- <div class="btn-group btn-primary btn-icon" *ngFor="let tool of tools">
     <button class="btn" style="margin-right: 14px; margin-bottom: 64px;" [routerLink]="tool.action">{{ tool.title |
       uppercase }} </button>
-      <!-- <button class="btn" style="margin-right: 14px; margin-bottom: 64px;" [routerLink]="tool.action" [queryParams]="{m_id: moduleId}">{{ tool.title |
-        uppercase }} </button> -->
-  </div>
+       <button class="btn" style="margin-right: 14px; margin-bottom: 64px;" [routerLink]="tool.action" [queryParams]="{m_id: moduleId}">{{ tool.title |
+        uppercase }} </button>
+  </div> -->
 
 
   <div *ngIf="tools1;" class="clr-row clr-align-items-start clr-justify-content-start">

@@ -21,6 +21,7 @@ export class AllmoduleSetupComponent implements OnInit {
   rowSelected :any= {};
   modaldelete=false;
   modaladd=false;
+
   module;
   basic: boolean = false;
   columns: any[];
@@ -123,6 +124,7 @@ export class AllmoduleSetupComponent implements OnInit {
       if (document.getElementById('Div1').style.display == 'none') {
           document.getElementById('Div1').style.display = 'block';
           document.getElementById('Div2').style.display = 'none';
+
       }
       else {
           document.getElementById('Div1').style.display = 'none';
@@ -136,6 +138,7 @@ export class AllmoduleSetupComponent implements OnInit {
       if (document.getElementById('Div2').style.display == 'none') {
           document.getElementById('Div2').style.display = 'block';
           document.getElementById('Div1').style.display = 'none';
+
       }
       else {
           document.getElementById('Div2').style.display = 'none';

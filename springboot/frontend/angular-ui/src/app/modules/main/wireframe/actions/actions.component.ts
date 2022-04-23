@@ -84,7 +84,7 @@ export class ActionsComponent implements OnInit {
     },
 
     {
-      title: "Report",
+      title: "Reports",
       details: "Generate Report for Your Project",
       action: "../reporttype",
     },
@@ -100,7 +100,7 @@ export class ActionsComponent implements OnInit {
       action: "../bi-build",
     },
     {
-      title: "Permission",
+      title: "Permissions",
       details: "Create Query for Your Project",
       action: "../query-build",
     },
@@ -110,7 +110,7 @@ export class ActionsComponent implements OnInit {
       action: "../app-build",
     },
     {
-      title: "Dashboard",
+      title: "Dashboards",
       details: "Create Wireframe for Your Project",
       action: "../dashboard",
     },
