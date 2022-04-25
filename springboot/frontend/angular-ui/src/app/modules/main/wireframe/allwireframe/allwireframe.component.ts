@@ -82,8 +82,8 @@ export class AllwireframeComponent implements OnInit {
     });
   }
   goToAdd() {
-    //this.modaladd=true;
-    this.router.navigate(["../project/modules/wireframe/types"], { relativeTo: this.route });
+    this.modaladd=true;
+    //this.router.navigate(["../project/modules/wireframe/types"], { relativeTo: this.route });
 
   }
   goToEdit(id: number,editmode: string) {

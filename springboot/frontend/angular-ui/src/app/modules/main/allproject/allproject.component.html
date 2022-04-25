@@ -1,0 +1,48 @@
+
+
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/']"><clr-icon shape="home"></clr-icon></a></li>
+  <li><a href="javascript://"  [routerLink]="['/main/project1']"> <clr-icon shape="flag"></clr-icon>  Projects</a></li>
+
+</ol>
+<br>
+
+<clr-tabs>
+  <clr-tab>
+    <button clrTabLink>My Projects</button>
+    <clr-tab-content *clrIfActive>
+      <br>
+<app-allprojectcard></app-allprojectcard>
+    </clr-tab-content>
+  </clr-tab>
+  <clr-tab>
+    <button  clrTabLink>Shared with Me</button>
+    <clr-tab-content *clrIfActive>
+      shared with me
+    </clr-tab-content>
+  </clr-tab>
+  <clr-tab>
+    <button clrTabLink>Archieved</button>
+    <clr-tab-content *clrIfActive>
+      Archieved
+    </clr-tab-content>
+  </clr-tab>
+  <clr-tab>
+    <button clrTabLink>My Fav</button>
+    <clr-tab-content *clrIfActive>
+      my fav work
+    </clr-tab-content>
+  </clr-tab>
+  <clr-tab>
+    <button clrTabLink>Explore</button>
+    <clr-tab-content *clrIfActive>
+      surepipe content
+    </clr-tab-content>
+  </clr-tab>
+
+</clr-tabs>
+
+<br>
+
+
+

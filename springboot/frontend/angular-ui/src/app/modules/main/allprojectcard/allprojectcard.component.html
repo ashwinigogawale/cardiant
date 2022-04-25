@@ -1,0 +1,70 @@
+<div *ngIf="projectsetup;" class="clr-row clr-align-items-start clr-justify-content-start">
+  <div *ngFor="let app of projectsetup; let index = i" class="clr-col-auto" >
+    <div class="clr-row">
+      <div class="clr-col-lg-12 clr-col-md-6 clr-col-12" style="width: 550px;">
+          <div class="card" >
+            <!-- <span class="social-links" style="margin-left: 10px;">
+              <a href="#"><clr-icon shape="flag"></clr-icon> </a>
+
+          </span> -->
+            <!-- <clr-icon shape="flag"></clr-icon> -->
+            <span style="margin-top: 16px;">
+              <span data-v-31ffaada="" class="label label-blue"  style="margin-top:5px;margin-left: 3px;"><clr-icon shape="flag" size="sm"></clr-icon></span>
+              <span data-v-31ffaada="" class="label label-blue" style="margin-top:5px;">
+                Star
+                <span data-v-31ffaada="" class="badge badge-blue">99+</span></span>
+                <span data-v-31ffaada="" class="label label-orange">
+                  Watching
+                  <span data-v-31ffaada="" class="badge badge-orange">99+</span></span>
+                  <span data-v-31ffaada="" class="label label-danger">
+                    Futuristic
+                    <span data-v-31ffaada="" class="badge badge-danger">99+</span></span>
+                    <span style="margin-left: 20px;"><clr-icon shape="pin"></clr-icon></span></span>
+
+            <!-- <span style="float: right;"><clr-icon shape="ellipsis-vertical"></clr-icon></span>-->
+            <div class="dropdown-container" tabindex="-1" style="float: right;margin-top: 5px;">
+              <div class="three-dots" ></div>
+              <div class="dropdown">
+                <a href="" ><div>Edit</div></a>
+                <a href=""><div>Repositories</div></a>
+                <a href="#"><div>ReadMe</div></a>
+                <a href="#"><div>Gallery</div></a>
+              </div>
+            </div>
+              <div class="card-header">
+               <b class="word" id="word"> {{app.projectName}}</b>
+              </div>
+              <div class="card-block">
+                  <div class="card-title" id="word">
+                   <b style="font-size: 15px;">{{app.description}}</b>
+                  </div>
+                  <div class="card-text">
+                    <span class="label label-light-blue p7" style="margin-top: .4em;"> {{app.projectPrefix}}</span>
+                    <span class="label label-light-blue p7" style="margin-top: .4em;"> {{app.technologyStack}}</span>
+                    <span class="label label-purple p7" style="margin-top: .4em;"> {{app.techStackId}}</span>
+                    <span class="label label-purple p7" style="margin-top: .4em;"> {{app.dbName}}</span>
+                    <span class="label label-purple p7" style="margin-top: .4em;"> {{app. dbUserName}}</span>
+                    <span class="label label-purple p7" style="margin-top: .4em;"> {{app.dbPassword}}</span>
+                    <span class="label label-success p7" style="margin-top: .4em;"> {{app.portNumber}}</span>
+                    <div class="progress-static labeled" style="margin-top: 10px; height: 15px;margin-left: 10px;margin-right: 40px;">
+                      <div class="progress-meter" data-value="80" data-displayval="80%" style="height: 15px;"></div>
+                      <span style="margin-right: 10px;">80%</span>
+                    </div>
+                    <div>
+                      <button id="add" class="btn btn-primary" style="margin-top: 30px;">
+                        <clr-icon shape="ellipsis-horizontal"></clr-icon>
+                      </button>
+                    </div>
+
+                  </div>
+
+              </div>
+              <div class="card-footer">
+                  <button class="btn btn-sm btn-link"> Last Updated On: {{app.updatedAt|date}}</button>
+
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>

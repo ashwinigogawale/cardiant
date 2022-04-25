@@ -101,8 +101,8 @@ export class AllmoduleSetupComponent implements OnInit {
 
   }
   goToAdd() {
-    //this.modaladd=true;
-    this.router.navigate(["../project/modules/add"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
+    this.modaladd=true;
+    //this.router.navigate(["../project/modules/add"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
   }
   goToEdit(id: number) {
     this.router.navigate(["../project/modules/edit/" + id], { relativeTo: this.route ,queryParams: { p_id: this.projectId }});
