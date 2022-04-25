@@ -26,54 +26,7 @@ export class OrderstatComponent implements OnInit {
     domain: ['#007cbb','#ff8e28', '#ef2e2e']
 }
   invoicedata: any[]=[];
-   productSales = [
-    {
-      "name": "ADV_RENTAL",
-      "value": 50
-    }, {
-      "name": "EMPTY_POOL",
-      "value": 73
-    }, {
-      "name": "HOUSING",
-      "value": 17
-    }, {
-      "name": "MARINE",
-      "value": 25
-    }, {
-      "name": "MISC_FTZ",
-      "value": 70
-    },{
-      "name": "NC_SERVICE_ORDER",
-      "value": 39
-    }, {
-      "name": "NEW_ZEALAND",
-      "value": 67
-    }, {
-      "name": "PORT_POLICE",
-      "value": 17
-    }, {
-      "name": "RECOVER",
-      "value": 20
-    }, {
-      "name": "REEFER",
-      "value": 10
-    },{
-      "name": "REEFER_REPAIR",
-      "value": 75
-    }, {
-      "name": "RENTAL",
-      "value": 96
-    }, {
-      "name": "SERVICE_ORDER",
-      "value": 80
-    }, {
-      "name": "SORDER",
-      "value": 25
-    }, {
-      "name": "STORAGE_EMPTY",
-      "value": 17
-    }
-  ];
+
 
   constructor(
     private router: Router,
@@ -83,7 +36,7 @@ export class OrderstatComponent implements OnInit {
 
   ngOnInit(): void {
     var me = this;
-        this.getPageData()
+       // this.getPageData()
   }
   getPageData() {
     var me = this;

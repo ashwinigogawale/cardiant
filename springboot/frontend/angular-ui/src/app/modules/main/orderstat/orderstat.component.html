@@ -1,6 +1,7 @@
 <div class="s-order-dash-pg">
-  <div class="chart-box">
-    <h4> Orders by Status </h4>
+  <div class="chart-box" id="word">
+    <h4>order by status</h4>
+    <!-- <h4 class="center"> <b>My Projects</b>  </h4> -->
     <ngx-charts-advanced-pie-chart
       style="position:relative"
       [view]="view"
@@ -10,8 +11,9 @@
     </ngx-charts-advanced-pie-chart>
   </div>
 
-  <div class="chart-box">
-    <h4> Orders By Payment Type </h4>
+  <div class="chart-box" id="word">
+    <h4>order by country</h4>
+    <!-- <h4 class="center"> <b>Shared With Me</b>  </h4> -->
     <ngx-charts-advanced-pie-chart
       style="position:relative"
       [view]="view"
@@ -21,9 +23,50 @@
     </ngx-charts-advanced-pie-chart>
   </div>
 
+  <!-- <div class="chart-box" id="word">
+    <h4 class="center"> <b>My Tasks</b>  </h4>
+    <ngx-charts-advanced-pie-chart
+      style="position:relative"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="ordersByStatusData"
+    >
+    </ngx-charts-advanced-pie-chart>
+  </div>
+  <div class="chart-box" id="word">
+    <h4 class="center"> <b>Open Issues</b>  </h4>
+    <ngx-charts-advanced-pie-chart
+      style="position:relative"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="ordersByStatusData"
+    >
+    </ngx-charts-advanced-pie-chart>
+  </div> -->
+<div class="chart-box" style="width:1300px ;">
+  <h4> order by projects</h4>
+  <!-- <h4 > <b style="margin-right: 20px;"> <u>Activities</u> </b>  Suggestion For You </h4> -->
+<!-- <div>
+  <img src="../../../../assets/images/images.png" alt="" style="height: 50px;">
+  Farhan Pushed Go Generesis/CNS-Portal
+  <span class="label label-purple p7" style="margin-top: .4em;"> <b>2 hours ago</b> </span><br>
+  2 commits 2 <b class="s">  main</b>  <br>
+ <b class="s">314d354</b>  updated on app.config.ts<br>
+  <b class="s">a2349b9</b>  updated helper.ts <hr>
+  <img src="../../../../assets/images/images.png" alt="" style="height: 50px;">
+  Farhan Pushed Go Generesis/CNS-Portal
+  <span class="label label-purple p7" style="margin-top: .4em;"> <b>Yesterday</b> </span><br>
+  2 commits 2 <b class="s">  main</b>  <br>
+ <b class="s">314d354</b>  updated on app.config.ts<br>
+  <b class="s">a2349b9</b>  updated helper.ts <hr>
+  <img src="../../../../assets/images/images.png" alt="" style="height: 50px;">
+  Farhan Pushed Go Generesis/CNS-Portal
+  <span class="label label-purple p7" style="margin-top: .4em;"> <b>3 days ago</b> </span><br>
+  2 commits 2 <b class="s">  main</b>  <br>
+ <b class="s">314d354</b>  updated on app.config.ts<br>
+  <b class="s">a2349b9</b>  updated helper.ts <hr>
+</div> -->
 
-<div class="chart-box">
-  <h4> Orders By Country </h4>
       <ngx-charts-bar-vertical
           [view]="[990, 270]"
           [barPadding]="1"
@@ -49,21 +92,6 @@ style='height:248px; width:585px;margin:16px;border-radius:2px;'
 [scrollbarV]="false"
 >
 </ngx-datatable-->
-<div class="chart-box">
-  <h4> NCSO by invoice type </h4>
-      <ngx-charts-bar-vertical
-          [view]="[990, 270]"
-          [barPadding]="1"
-          [scheme]="invoiceScheme"
-          [results]="productSales"
-          [roundDomains]="true"
-          [showGridLines]="true"
-          [xAxis]="true"
-          [yAxis]="true"
-          [legend]="false"
-          [roundEdges]="false"
-      >
-      </ngx-charts-bar-vertical>
-</div>
+
 
 </div>

@@ -20,7 +20,7 @@ import com.realnet.formdrag.services.Rn_wf_lines_3Service;
 import io.swagger.annotations.Api;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600) 
+@CrossOrigin(origins = "http://realits.ml:30165", maxAge = 3600) // cross originissues
 //@CrossOrigin("*")
 @RequestMapping(value = "/r", produces=org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
 @Api(tags = {"/Rn_wf_lines_3"})

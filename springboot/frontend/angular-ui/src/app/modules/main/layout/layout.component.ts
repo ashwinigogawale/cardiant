@@ -32,7 +32,7 @@ export class LayoutComponent implements OnInit {
     this.user_name = this.userInfoService.getUserName();
     console.log('user id: ' + this.user_name);
     //this.loadMenuByAccountId();
-    this.loadMenuByMenuGroup();
+    //this.loadMenuByMenuGroup();  loading menus backend
   }
 // side nav menu-sub_menu
 loadMenuByAccountId() {
