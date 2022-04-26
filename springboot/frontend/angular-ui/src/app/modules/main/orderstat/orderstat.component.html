@@ -42,27 +42,47 @@
     </ngx-charts-advanced-pie-chart>
   </div>
 <div class="chart-box" style="width:1200px ;">
-  <h4 > <b style="margin-right: 20px;"> <u>Activities</u> </b>  Suggestion For You </h4>
-<div>
-  <img src="../../../../assets/images/images.png" alt="" style="height: 50px;">
-  Farhan Pushed Go Generesis/CNS-Portal
-  <span class="label label-purple p7" style="margin-top: .4em;"> <b>2 hours ago</b> </span><br>
-  2 commits 2 <b class="s">  main</b>  <br>
- <b class="s">314d354</b>  updated on app.config.ts<br>
-  <b class="s">a2349b9</b>  updated helper.ts <hr>
-  <img src="../../../../assets/images/images.png" alt="" style="height: 50px;">
-  Farhan Pushed Go Generesis/CNS-Portal
-  <span class="label label-purple p7" style="margin-top: .4em;"> <b>Yesterday</b> </span><br>
-  2 commits 2 <b class="s">  main</b>  <br>
- <b class="s">314d354</b>  updated on app.config.ts<br>
-  <b class="s">a2349b9</b>  updated helper.ts <hr>
-  <img src="../../../../assets/images/images.png" alt="" style="height: 50px;">
-  Farhan Pushed Go Generesis/CNS-Portal
-  <span class="label label-purple p7" style="margin-top: .4em;"> <b>3 days ago</b> </span><br>
-  2 commits 2 <b class="s">  main</b>  <br>
- <b class="s">314d354</b>  updated on app.config.ts<br>
-  <b class="s">a2349b9</b>  updated helper.ts <hr>
-</div>
+  <clr-tabs>
+    <clr-tab>
+      <button clrTabLink>Activities</button>
+      <clr-tab-content *clrIfActive>
+        <br>
+        <div>
+          <img src="../../../../assets/images/images.png" alt="" style="height: 50px;">
+          Farhan Pushed Go Generesis/CNS-Portal
+          <span class="label label-purple p7" style="margin-top: .4em;"> <b>2 hours ago</b> </span><br>
+          2 commits 2 <b class="s">  main</b>  <br>
+         <b class="s">314d354</b>  updated on app.config.ts<br>
+          <b class="s">a2349b9</b>  updated helper.ts <hr>
+          <img src="../../../../assets/images/images.png" alt="" style="height: 50px;">
+          Farhan Pushed Go Generesis/CNS-Portal
+          <span class="label label-purple p7" style="margin-top: .4em;"> <b>Yesterday</b> </span><br>
+          2 commits 2 <b class="s">  main</b>  <br>
+         <b class="s">314d354</b>  updated on app.config.ts<br>
+          <b class="s">a2349b9</b>  updated helper.ts <hr>
+          <img src="../../../../assets/images/images.png" alt="" style="height: 50px;">
+          Farhan Pushed Go Generesis/CNS-Portal
+          <span class="label label-purple p7" style="margin-top: .4em;"> <b>3 days ago</b> </span><br>
+          2 commits 2 <b class="s">  main</b>  <br>
+         <b class="s">314d354</b>  updated on app.config.ts<br>
+          <b class="s">a2349b9</b>  updated helper.ts <hr>
+        </div>
+      </clr-tab-content>
+    </clr-tab>
+    <clr-tab>
+      <button  clrTabLink>Suggestion For You</button>
+      <clr-tab-content *clrIfActive>
+        Suggestion For You
+      </clr-tab-content>
+    </clr-tab>
+
+
+
+  </clr-tabs>
+
+
+  <!-- <h4 > <b style="margin-right: 20px;"> <u>Activities</u> </b>  Suggestion For You </h4> -->
+
 
       <!-- <ngx-charts-bar-vertical
           [view]="[990, 270]"
