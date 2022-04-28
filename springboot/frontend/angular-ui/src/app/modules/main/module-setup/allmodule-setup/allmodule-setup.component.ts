@@ -36,7 +36,8 @@ export class AllmoduleSetupComponent implements OnInit {
   object_types = ['form', 'bi', 'report', 'api'];
   sub_object_types = ['only header', 'only line', 'header line', 'header multiline', 'wrokflow', 'setup', 'std report', 'bi report', 'rest api'];
   projectId: number;
-
+  projectname:any;
+  project
   tools1 = [
     {
 
@@ -66,6 +67,7 @@ export class AllmoduleSetupComponent implements OnInit {
     this.wireframeService.removeModuleId();
     this.route.queryParams.subscribe(params => {
       this.projectId = +params['p_id'];
+
     });
 
     //this.initCopyRuleForm();
@@ -77,6 +79,8 @@ export class AllmoduleSetupComponent implements OnInit {
       this.isLoading = false;
       console.log(data);
       this.modules = data.items;
+ this.projectname=data.items[0]['projectName'];
+ console.log(this.projectname);
 
     });
   }

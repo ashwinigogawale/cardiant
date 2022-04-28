@@ -93,10 +93,14 @@ public class Rn_ModuleSetupController {
 				@RequestParam(value = "size", defaultValue = "20", required = false) Integer size,
 				@RequestParam(value = "projectId", required = true) Integer projectId) {
 			// sorted data
+			Rn_Project_Setup p = projectSetupService.getById(projectId);
 			Pageable paging = PageRequest.of(page, size, Sort.by(Constant.SORT_BY_CREATION_DATE_NATIVE_QUERY).descending());
 			Page<Rn_Module_Setup> result = moduleSetupService.getProjectModules(projectId, paging);
 			CustomResponse resp = new CustomResponse();
 			resp.setPageStats(result, true);
+			result.getContent().forEach(o->{
+				o.setProjectName(p.getProjectName());
+			});
 			resp.setItems(result.getContent());
 			return resp;
 		}

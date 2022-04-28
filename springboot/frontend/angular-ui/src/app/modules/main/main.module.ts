@@ -89,6 +89,7 @@ import { ProjectviewComponent } from './module-setup/projectview/projectview.com
 import { ArchievedComponent } from './archieved/archieved.component';
 import { AllprojectComponent } from './allproject/allproject.component';
 import { AllprojectcardComponent } from './allprojectcard/allprojectcard.component';
+import { SurebuilderComponent } from './surebuilder/surebuilder.component';
 
 
 
@@ -111,7 +112,7 @@ import { AllprojectcardComponent } from './allprojectcard/allprojectcard.compone
   AddwireframeComponent,EditwireframeComponent,Edit2wireframeComponent,UpdateWireframeComponent,WireframetypeComponent,PropertiesComponent,
   PropertyComponent,UinameeditComponent,ActionsComponent,SuredocrComponent,SurefarmComponent,SuregitComponent,Wireframe1Component,
   WireframeCardComponent,Report2Component,ReporttypeComponent,ReportBuilderComponent,AddComponent,AllComponent,EditComponent,
-  RbTableSetupComponent,RbColumnSetupComponent,RbWhereColumnSetupComponent,RbDateParamSetupComponent,ScienceComponent, ProjectviewComponent, ArchievedComponent, AllprojectComponent, AllprojectcardComponent,
+  RbTableSetupComponent,RbColumnSetupComponent,RbWhereColumnSetupComponent,RbDateParamSetupComponent,ScienceComponent, ProjectviewComponent, ArchievedComponent, AllprojectComponent, AllprojectcardComponent, SurebuilderComponent,
 
 
 

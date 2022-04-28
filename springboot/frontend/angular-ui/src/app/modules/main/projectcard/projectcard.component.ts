@@ -52,4 +52,10 @@ export class ProjectcardComponent implements OnInit {
   goTogrid(){
     this.router.navigate(["../project/all"], { relativeTo: this.route });
   }
+  gotomenu(){
+    // this.router.navigate(["../projectview"], { relativeTo: this.route,  });
+   // document.getElementById('div2').style.display = 'block';
+    if (document.getElementById('div2').style.display = 'none') {
+      document.getElementById('div2').style.display = 'block';
+  }   }
 }

@@ -97,8 +97,8 @@ export class AllprojectsetupComponent implements OnInit {
 
   }
 
-  goToModule(id: number) {
-    this.router.navigate(["../../module1"], { relativeTo: this.route, queryParams: { p_id: id } });
+  goToModule(id: number,name:any) {
+    this.router.navigate(["../../modules"], { relativeTo: this.route, queryParams: { p_id: id } });
   }
   goTocard(){
     this.router.navigate(["../../projectcard"], { relativeTo: this.route });

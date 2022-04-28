@@ -56,7 +56,8 @@ public class Rn_Module_Setup extends Rn_Who_AccId_Column {
 	@JoinColumn(name = "PROJECT_ID")
 	@JsonBackReference
 	private Rn_Project_Setup project;
-
+	@Transient
+	private String projectName;
 	// wireframe header
 //	@OneToMany(mappedBy = "module", targetEntity = Rn_Fb_Header.class, orphanRemoval = true, cascade = {
 //			CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH }, fetch = FetchType.EAGER)
@@ -178,6 +179,18 @@ public class Rn_Module_Setup extends Rn_Who_AccId_Column {
 
 	public void setProjectId(int projectId) {
 		this.projectId = projectId;
+	}
+
+
+
+	public String getProjectName() {
+		return projectName;
+	}
+
+
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
 	}
 
 	

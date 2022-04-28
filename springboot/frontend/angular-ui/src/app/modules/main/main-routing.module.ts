@@ -113,6 +113,7 @@ const routes: Routes = [
       {path:'project1',component:Projectsetup1Component},
       {path: 'projectcard', component:ProjectcardComponent},
       {path:'module1',component:ModuleSetup1Component},
+      {path: 'modules', component:AllmoduleSetupComponent},
       {path: 'modulecard', component:ModuleCardComponent},
       { path: 'actions', component: ActionsComponent },
       { path: 'wireframe', component: Wireframe1Component },

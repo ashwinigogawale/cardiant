@@ -104,10 +104,10 @@
                 <div class="dropdown-container" tabindex="-1" style="float: right;margin-top: 5px;">
                   <div class="three-dots" ></div>
                   <div class="dropdown">
-                    <a href="" ><div>Edit</div></a>
-                    <a href=""><div>Repositories</div></a>
-                    <a href="#"><div>ReadMe</div></a>
-                    <a href="#"><div>Gallery</div></a>
+                    <a href="javascript://" ><div>Edit</div></a>
+                    <a href="javascript://"><div>Repositories</div></a>
+                    <a href="javascript://"><div>ReadMe</div></a>
+                    <a href="javascript://"><div>Gallery</div></a>
                   </div>
                 </div>
                   <div class="card-header">
@@ -130,9 +130,18 @@
                           <span style="margin-right: 10px;">80%</span>
                         </div>
                         <div>
-                          <button id="add" class="btn btn-primary" style="margin-top: 30px;">
+                          <button id="add" class="btn btn-primary" style="margin-top: 30px;" (click)="gotomenu()">
                             <clr-icon shape="ellipsis-horizontal"></clr-icon>
                           </button>
+                          <span  class="action">
+                            <div class="dropdown1" id="div2" >
+                              <a href="javascript://" ><div class="me" [routerLink]="['../module1']">sureOps</div></a>
+                              <a href="javascript://"><div class="me" [routerLink]="['../module1']">sureGit</div></a>
+                              <a href="javascript://"><div class="me" [routerLink]="['../module1']">sureDokr</div></a>
+
+                            </div>
+                          </span>
+
                         </div>
 
                       </div>
