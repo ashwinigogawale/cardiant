@@ -91,25 +91,39 @@
                       <span data-v-31ffaada="" class="label label-danger">
                         Futuristic
                         <span data-v-31ffaada="" class="badge badge-danger">99+</span></span>
-                        <span style="margin-left: 20px;"><clr-icon shape="pin"></clr-icon></span></span>
-                        <!-- <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-sm">
+                        <!-- <span style="margin-left: 20px;"><clr-icon shape="pin"></clr-icon></span> -->
+                      </span>
+                        <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-sm">
                           <span style="margin-left: 20px;"><clr-icon shape="pin"></clr-icon></span>
                           <span class="tooltip-content"> Added to pin.</span>
                         </a>
                         <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-sm">
-                          <span style="margin-left: 20px;"> <clr-icon shape="heart"></clr-icon></span>
+                          <span style="margin-left: 10px;"> <clr-icon shape="heart"></clr-icon></span>
                           <span class="tooltip-content"> Add My Fav.</span>
-                        </a> -->
+                        </a>
                 <!-- <span style="float: right;"><clr-icon shape="ellipsis-vertical"></clr-icon></span>-->
                 <div class="dropdown-container" tabindex="-1" style="float: right;margin-top: 5px;">
                   <div class="three-dots" ></div>
                   <div class="dropdown">
-                    <a href="javascript://" ><div>Edit</div></a>
-                    <a href="javascript://"><div>Repositories</div></a>
+                    <a href="javascript://"  ><div (click)="goToedit(app.id)">Edit</div></a>
+                    <a href="javascript://" ><div (click)="goToModule(app.id)">Repositories</div></a>
                     <a href="javascript://"><div>ReadMe</div></a>
                     <a href="javascript://"><div>Gallery</div></a>
                   </div>
                 </div>
+
+
+                <!-- <span (click)="gotomenu()" style="float: right;">
+                    <clr-icon shape="ellipsis-vertical"></clr-icon>
+                  <span  class="action">
+                    <div class="dropdown1" id="div2" >
+                      <a href="javascript://" ><div class="me" [routerLink]="['../module1']">sureOps</div></a>
+                      <a href="javascript://"><div class="me" [routerLink]="['../module1']">sureGit</div></a>
+                      <a href="javascript://"><div class="me" [routerLink]="['../module1']">sureDokr</div></a>
+                    </div>
+                  </span>
+                </span> -->
+
                   <div class="card-header">
                    <b class="word" id="word"> {{app.projectName}}</b>
                   </div>

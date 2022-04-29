@@ -44,8 +44,6 @@
 
 <!-- -------------------------------------------------------------------------------- -->
 
-
-
 <div *ngIf="model && !report" class="padding20 white-bg">
 	<div class="spacer30"></div>
 	<div class="row">
@@ -150,19 +148,14 @@
 														<th style="border: 0.5px solid black"  *ngFor="let it of item.children;" class="tableData"
 														[dndDraggable]="it"
 														dndEffectAllowed="move"
-
 														(dndStart)="onDragStart($event)"
 														(dndCopied)="onDragged(it, item.children, 'copy')"
 														(dndLinked)="onDragged(it, item.children, 'link')"
 														(dndMoved)="onDragged(it, item.children, 'move')"
 														(dndCanceled)="onDragged(it, item.children, 'none')"
 														(dndEnd)="onDragEnd($event)"
-
-
 														>
-
-
-															<i  (click)="editProperty(it)" class="fa fa-chevron-up pull-right iconpadding"></i>
+                      <i  (click)="editProperty(it)" class="fa fa-chevron-up pull-right iconpadding"></i>
 															<i  (click)="removeField(list, it.name)" class="fa fa-trash pull-right iconpadding"></i>
 															<div class="colPadding">
 																{{it.label}}

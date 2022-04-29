@@ -228,7 +228,7 @@
 <clr-modal [(clrModalOpen)]="modaladd" [clrModalSize]="'lg'" [clrModalStaticBackdrop]="true">
 
   <div class="modal-body">
-    <div *ngIf="tools1;" class="clr-row clr-align-items-start clr-justify-content-start">
+    <!-- <div *ngIf="tools1;" class="clr-row clr-align-items-start clr-justify-content-start">
       <div *ngFor="let app of tools1; let index = i" class="clr-col-auto" >
         <div class="clr-row">
           <div class="clr-col-lg-9 clr-col-md-6 clr-col-12" style="width: 250px;height: 300px;">
@@ -243,6 +243,12 @@
               </div>
           </div>
       </div>
+      </div>
+    </div> -->
+    <div class="s-order-dash-pg">
+      <div class="chart-box" id="word1" *ngFor="let app of tools1; let index = i" [routerLink]="app.action"><br>
+        <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b>
+        <h5 class="center"> <b>{{ app.title }}</b>  </h5>
       </div>
     </div>
     <div class="modal-footer">

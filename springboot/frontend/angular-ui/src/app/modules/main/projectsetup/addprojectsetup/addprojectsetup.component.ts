@@ -40,7 +40,11 @@ export class AddprojectsetupComponent implements OnInit {
      dbName: [null],
      dbUserName: [null],
      dbPassword: [null],
-     portNumber: ['3306']
+     portNumber: ['3306'],
+     namespace: [null],
+     tags:[null],
+     category:[null],
+    accessibility:[null]
    });
 
     // copy form

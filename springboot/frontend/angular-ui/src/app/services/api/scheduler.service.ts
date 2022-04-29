@@ -6,8 +6,8 @@ import{environment} from 'src/environments/environment';
   providedIn: 'root'
 })
 export class SchedulerService {
- // baseurl='http://localhost:8085';
-  baseurl = environment.jobUrl;
+  baseurl='http://localhost:8085';
+  //baseurl = environment.jobUrl;
   constructor(private _http: HttpClient,) { }
   public getAllinfo() {
     return this._http.get(`${this.baseurl}/schedule`);

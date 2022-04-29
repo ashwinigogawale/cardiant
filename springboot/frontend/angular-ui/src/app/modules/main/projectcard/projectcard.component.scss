@@ -2,12 +2,22 @@
   position: absolute;
   right: 10px;
   background-color: white;
-  box-shadow: 0px 0px 3px 3px rgb(167, 167, 172);
+  border-width: 0.05rem;
+  border-width: var(--clr-global-borderwidth, 0.05rem);
+  border-style: solid;
+  border-color: #ccc;
+  border-color: var(--clr-datagrid-popover-border-color, #cccccc);
+  box-shadow: 0 0.05rem 0.15rem rgb(140 140 140 / 25%);
+  box-shadow: 0 0.05rem 0.15rem var(--clr-datagrid-popovers-box-shadow-color, rgba(140, 140, 140, 0.25));
+  border-radius: 0.15rem;
+  border-radius: var(--clr-global-borderradius, 0.15rem);
+  //box-shadow: 0px 0px 3px 3px rgb(167, 167, 172);
   outline: none;
   opacity: 0;
-  z-index: -1;
+  //z-index: -1;
   max-height: 0;
   transition: opacity 0.1s, z-index 0.1s,
+
 }
 
 .dropdown-container:focus {

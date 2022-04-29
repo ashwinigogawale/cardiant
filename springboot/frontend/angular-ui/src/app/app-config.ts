@@ -14,7 +14,7 @@ export class AppConfig {
 // port in enviroment
 apiURL = environment.apiport;
     // API Related configs
-    public apiPort: string = this.apiURL;// "9191"; //9191 to pc used and 8080/billingback to jboss
+    public apiPort: string ="9191"; // this.apiURL //9191 to pc used and 8080/billingback to jboss
     public apiProtocol: string;
     public apiHostName: string;
     public baseApiPath: string;

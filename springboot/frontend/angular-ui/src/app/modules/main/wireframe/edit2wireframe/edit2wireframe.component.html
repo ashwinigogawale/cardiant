@@ -49,12 +49,9 @@
   <div class="row">
     <div class="col-2" style="background-color: #d8d1d1">
       <div class="fields" *ngFor="let item of fieldModels">
-        <div
-          class="field pointer shadow-bg"
-          [dndDraggable]="item"
-          [dndEffectAllowed]="'copy'"
-          (dndEnd)="onDragEnd($event)"
-        >
+        <div class="field pointer shadow-bg" [dndDraggable]="item"
+         [dndEffectAllowed]="'copy'"
+          (dndEnd)="onDragEnd($event)">
           <i [ngClass]="item.icon" class="fa pull-left icon"></i>
           <h6 class="text">{{ item.label }}</h6>
         </div>
@@ -66,18 +63,13 @@
 				<input class="form-control" type="text" [(ngModel)]="model.description" />
 			</div>
       <ng-template #recursiveList let-list>
-        <section
-          dndDropzone
+        <section dndDropzone
           (dndDragover)="onDragover($event)"
-          (dndDrop)="onDrop($event, list)"
-          class="dndDropArea"
+          (dndDrop)="onDrop($event, list)" class="dndDropArea"
           [ngClass]="{ empty: list.length == 0 }"
           [style.backgroundColor]="model.theme.bgColor"
-          [style.color]="model.theme.textColor"
-        >
-          <div
-            class="field {{ item.size }}"
-            *ngFor="let item of list; let i = index"
+          [style.color]="model.theme.textColor">
+          <div class="field {{ item.size }}" *ngFor="let item of list; let i = index"
             [dndDraggable]="item"
             dndEffectAllowed="move"
             [dndDisableIf]="item.disable"
@@ -86,105 +78,45 @@
             (dndLinked)="onDragged(item, list, 'link')"
             (dndMoved)="onDragged(item, list, 'move')"
             (dndCanceled)="onDragged(item, list, 'none')"
-            (dndEnd)="onDragEnd($event)"
-          >
+            (dndEnd)="onDragEnd($event)">
             <div class="row form-group container-fluid">
               <!-- <div *ngIf="item.type == 'Division'" class="pull-left" style="margin-bottom: -25px; padding-right: 100px;"><i class="fa fa-ellipsis-v dndHandle" dndHandle></i></div> -->
               <div class="col-12">
-                <i
-                  (click)="editProperty(item)"
-                  class="fa fa-chevron-up pull-right iconpadding"
-                ></i>
-                <i
-                  (click)="removeField(list, item.name)"
-                  class="fa fa-trash pull-right iconpadding"
-                ></i>
+                <i (click)="editProperty(item)" class="fa fa-chevron-up pull-right iconpadding"></i>
+                <i (click)="removeField(list, item.name)" class="fa fa-trash pull-right iconpadding" ></i>
                 <div *ngIf="item.type == 'text'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label>
-                  <label *ngIf="item.required" class="text-danger">*</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="{{ item.name }}"
-                    placeholder="{{ item.placeholder }}"
-                  />
+                  <label class="labelPadding">{{ item.label }}</label> <label *ngIf="item.required" class="text-danger">*</label>
+                  <input type="text" class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}" />
                 </div>
                 <div *ngIf="item.type == 'email'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label>
-                  <label *ngIf="item.required" class="text-danger">*</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="{{ item.name }}"
-                    placeholder="{{ item.placeholder }}"
-                  />
+                  <label class="labelPadding">{{ item.label }}</label> <label *ngIf="item.required" class="text-danger">*</label>
+                  <input type="email" class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}" />
                 </div>
                 <div *ngIf="item.type == 'phone'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label>
-                  <label *ngIf="item.required" class="text-danger">*</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="{{ item.name }}"
-                    placeholder="{{ item.placeholder }}"
-                  />
+                  <label class="labelPadding">{{ item.label }}</label> <label *ngIf="item.required" class="text-danger">*</label>
+                  <input type="text" class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}" />
                 </div>
                 <div *ngIf="item.type == 'number'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label>
-                  <label *ngIf="item.required" class="text-danger">*</label>
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="{{ item.name }}"
-                    min="{{ item.min }}"
-                    max="{{ item.max }}"
-                    placeholder="{{ item.placeholder }}"
-                  />
+                  <label class="labelPadding">{{ item.label }}</label> <label *ngIf="item.required" class="text-danger">*</label>
+                  <input type="number"  class="form-control" id="{{ item.name }}" min="{{ item.min }}" max="{{ item.max }}" placeholder="{{ item.placeholder }}"/>
                 </div>
                 <div *ngIf="item.type == 'date'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label>
-                  <label *ngIf="item.required" class="text-danger">*</label>
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="{{ item.name }}"
-                    placeholder="{{ item.placeholder }}"
-                  />
+                  <label class="labelPadding">{{ item.label }}</label> <label *ngIf="item.required" class="text-danger">*</label>
+                  <input type="date" class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}" />
                 </div>
                 <div *ngIf="item.type == 'datetime-local'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label>
-                  <label *ngIf="item.required" class="text-danger">*</label>
-                  <input
-                    type="datetime-local"
-                    class="form-control"
-                    id="{{ item.name }}"
-                    placeholder="{{ item.placeholder }}"
-                  />
+                  <label class="labelPadding">{{ item.label }}</label><label *ngIf="item.required" class="text-danger">*</label>
+                  <input type="datetime-local"  class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}" />
                 </div>
                 <div *ngIf="item.type == 'textarea'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label>
-                  <label *ngIf="item.required" class="text-danger">*</label>
-                  <textarea
-                    class="form-control"
-                    id="{{ item.name }}"
-                    placeholder="{{ item.placeholder }}"
-                  >
+                  <label class="labelPadding">{{ item.label }}</label><label *ngIf="item.required" class="text-danger">*</label>
+                  <textarea class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}">
                   </textarea>
                 </div>
                 <div *ngIf="item.type == 'file'" class="colPadding">
-                  <label class="labelPadding"
-                    >{{ item.label }} (File can't be uploaded right now)</label
-                  >
-                  <label *ngIf="item.required" class="text-danger">*</label>
-                  <input
-                    type="file"
-                    class="form-control"
-                    id="{{ item.name }}"
-                    placeholder="{{ item.placeholder }}"
-                  />
-                  <small class="form-text text-danger"
-                    >(File can't be uploaded right now)</small
-                  >
+                  <label class="labelPadding">{{ item.label }} (File can't be uploaded right now)</label><label *ngIf="item.required" class="text-danger">*</label>
+                  <input type="file" class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}"/>
+                  <small class="form-text text-danger">(File can't be uploaded right now)</small>
                 </div>
                 <div *ngIf="item.type == 'paragraph'" class="colPadding">
                   <p class="form-text">{{ item.label }}</p>
@@ -198,45 +130,22 @@
 									</ng-container>
 								</div> -->
 
-                <div
-                  *ngIf="item.type == 'Grid Lines'"
-                  style="overflow: auto; border: 2px solid black"
-                  class="container-fluid"
+                <div *ngIf="item.type == 'Grid Lines'" style="overflow: auto; border: 2px solid black"class="container-fluid"
                 >
                   <h3 class="grid">{{ item.label }}</h3>
-                  <hr
-                    style="
-                      border: 1px solid #8c8b8b;
-                      margin-top: -12px;
-                      margin-bottom: -0.9px !important;
-                      overflow-x: scroll;
-                    "
-                  />
-                  <section
-                    dndDropzone
+                  <hr style="border: 1px solid #8c8b8b;margin-top: -12px; margin-bottom: -0.9px !important;overflow-x: scroll; "/>
+                  <section dndDropzone
                     (dndDragover)="onDragover($event)"
-                    (dndDrop)="onDrop($event, item.children)"
-                    class="dndDropArea container layout-padding"
+                    (dndDrop)="onDrop($event, item.children)" class="dndDropArea container layout-padding"
                     [ngClass]="{ empty: item.children.length == 0 }"
                     [style.backgroundColor]="model.theme.bgColor"
-                    [style.color]="model.theme.textColor"
-                  >
-                    <table
-                      class="table table-bordered"
-                      *ngIf="item.children.length > 0"
-                    >
+                    [style.color]="model.theme.textColor">
+
+                    <table class="table table-bordered" *ngIf="item.children.length > 0" >
                       <thead>
                         <tr>
-                          <th
-                            class="tableData"
-                            style="border: 0.5px solid black"
-                          >
-                            S NO
-                          </th>
-                          <th
-                            style="border: 0.5px solid black"
-                            *ngFor="let it of item.children"
-                            class="tableData"
+                          <th class="tableData" style="border: 0.5px solid black">S NO</th>
+                          <th style="border: 0.5px solid black" *ngFor="let it of item.children" class="tableData"
                             [dndDraggable]="it"
                             dndEffectAllowed="move"
                             (dndStart)="onDragStart($event)"
@@ -246,22 +155,15 @@
                             (dndCanceled)="onDragged(it, item.children, 'none')"
                             (dndEnd)="onDragEnd($event)"
                           >
-                            <i
-                              (click)="editProperty(it)"
-                              class="fa fa-chevron-up pull-right iconpadding"
-                            ></i>
-                            <i
-                              (click)="removeField(list, it.name)"
-                              class="fa fa-trash pull-right iconpadding"
-                            ></i>
+                            <i (click)="editProperty(it)" class="fa fa-chevron-up pull-right iconpadding" ></i>
+                            <i (click)="removeField(list, it.name)" class="fa fa-trash pull-right iconpadding"></i>
                             <div class="colPadding">
                               {{ it.label }}
                             </div>
 
                             <!-- bsf -->
 
-                            <clr-modal
-                              [(clrModalOpen)]="it.toggle"
+                            <clr-modal [(clrModalOpen)]="it.toggle"
                               [clrModalSize]="'lg'"
                               [clrModalStaticBackdrop]="true"
                             >

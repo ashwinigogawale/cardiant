@@ -13,6 +13,10 @@ export class ProjectSetup extends Audit {
     public dbUserName: string;
     public dbPassword: string;
     public portNumber: string;
+    public namespace: string;
+    public tags:string;
+    public category:string;
+    public accessibility:boolean;
     public modules: ModuleSetup[];
 
 }
