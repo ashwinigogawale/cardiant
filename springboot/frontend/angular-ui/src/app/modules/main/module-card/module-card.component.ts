@@ -62,4 +62,8 @@ projectId: number;
   goTocard(){
     this.router.navigate(["../module1"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
   }
+  goToedit(id: number) {
+    this.router.navigate(["../project/modules/edit/" + id], { relativeTo: this.route });
+  }
+
 }

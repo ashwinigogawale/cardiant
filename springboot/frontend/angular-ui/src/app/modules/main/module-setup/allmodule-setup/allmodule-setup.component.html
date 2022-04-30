@@ -246,9 +246,21 @@
       </div>
     </div> -->
     <div class="s-order-dash-pg">
-      <div class="chart-box" id="word1" *ngFor="let app of tools1; let index = i" [routerLink]="app.action"><br>
+      <!-- <div class="chart-box" id="word1" *ngFor="let app of tools1; let index = i" [routerLink]="app.action"><br>
         <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b>
         <h5 class="center"> <b>{{ app.title }}</b>  </h5>
+      </div> -->
+      <div class="chart-box" id="word1" (click)="gotoadd()"><br>
+        <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b>
+        <h5 class="center"> <b>Start from scratch</b>  </h5>
+      </div>
+      <div class="chart-box" id="word1" (click)="gotoadd()"><br>
+        <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b>
+        <h5 class="center"> <b>import from Templates</b>  </h5>
+      </div>
+      <div class="chart-box" id="word1" (click)="gotoadd()"><br>
+        <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b>
+        <h5 class="center"> <b>Import from  public project</b>  </h5>
       </div>
     </div>
     <div class="modal-footer">

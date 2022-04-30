@@ -151,25 +151,25 @@
     <a  clrVerticalNavLink routerLinkActive="active"  routerLink="/cns-portal/project/all">
       <clr-icon  clrVerticalNavIcon shape="flag"></clr-icon>
      My Projects </a>
-     <a  clrVerticalNavLink routerLinkActive="active" routerLink="/cns-portal/allproject">
+     <a  clrVerticalNavLink routerLinkActive="active" routerLink="/cns-portal/allproject" [queryParams]="{ tab: 'mypro' }">
       <clr-icon  clrVerticalNavIcon shape="flag"></clr-icon>
      All Projects </a>
-     <a  clrVerticalNavLink routerLinkActive="active" >
+     <a  clrVerticalNavLink routerLinkActive="active" routerLink="/cns-portal/allproject" [queryParams]="{ tab: 'temp' }">
       <clr-icon  clrVerticalNavIcon shape="plugin"></clr-icon>
      Templates </a>
      <a  clrVerticalNavLink routerLinkActive="active" >
       <clr-icon  clrVerticalNavIcon shape="objects"></clr-icon>
      Repositories </a>
-     <a  clrVerticalNavLink routerLinkActive="active"  >
+     <a  clrVerticalNavLink routerLinkActive="active"  routerLink="/cns-portal/allprojectcard">
       <clr-icon  clrVerticalNavIcon shape="clock"></clr-icon>
      Recently Modified </a>
-     <a  clrVerticalNavLink routerLinkActive="active" routerLink="/cns-portal/allproject">
+     <a  clrVerticalNavLink routerLinkActive="active" routerLink="/cns-portal/allprojectcard">
       <clr-icon  clrVerticalNavIcon shape="trash"></clr-icon>
      Recently Archieved </a><hr>
-     <a  clrVerticalNavLink routerLinkActive="active"  routerLink="/cns-portal/allproject">
+     <a  clrVerticalNavLink routerLinkActive="active" routerLink="/cns-portal/allprojectcard">
       <clr-icon  clrVerticalNavIcon shape="users"></clr-icon>
      Shared with me </a>
-     <a  clrVerticalNavLink routerLinkActive="active" >
+     <a  clrVerticalNavLink routerLinkActive="active" routerLink="/cns-portal/allprojectcard">
       <clr-icon  clrVerticalNavIcon shape="heart"></clr-icon>
      My Fav </a>
      <a  clrVerticalNavLink routerLinkActive="active" >

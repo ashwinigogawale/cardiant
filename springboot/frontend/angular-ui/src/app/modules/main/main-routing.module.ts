@@ -69,6 +69,7 @@ import { ModuleCardComponent } from './module-card/module-card.component';
 import { ProjectviewComponent } from './module-setup/projectview/projectview.component';
 import { ArchievedComponent } from './archieved/archieved.component';
 import { AllprojectComponent } from './allproject/allproject.component';
+import { AllprojectcardComponent } from './allprojectcard/allprojectcard.component';
 
 
 
@@ -120,6 +121,7 @@ const routes: Routes = [
       {path: 'Archieved', component:ArchievedComponent},
       {path: 'reporttype'   , component: ReporttypeComponent},
       {path: 'allproject', component: AllprojectComponent},
+      {path: 'allprojectcard', component:AllprojectcardComponent},
       {path: 'dashboard', component:DashboardComponent,
       children: [
         { path: '', redirectTo: 'order', pathMatch: 'full' },

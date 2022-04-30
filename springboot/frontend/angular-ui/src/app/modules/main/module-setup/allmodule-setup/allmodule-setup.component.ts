@@ -38,21 +38,22 @@ export class AllmoduleSetupComponent implements OnInit {
   projectId: number;
   projectname:any;
   project
-  tools1 = [
-    {
+  // tools1 = [
+  //   {
 
-      title: "Start from scratch",
-      action: "../project/modules/add",
-    },
-    {
-      title: "import from Templates",
-      action: "../create-table",
-    },
-   {
-      title: "Import from  public project",
-      action: "../dashboard",
-    },
-  ];
+  //     title: "Start from scratch",
+  //     action: "../project/modules/add",
+  //    //link: this.gotoadd()
+  //   },
+  //   {
+  //     title: "import from Templates",
+  //     action: "../create-table",
+  //   },
+  //  {
+  //     title: "Import from  public project",
+  //     action: "../dashboard",
+  //   },
+  // ];
   constructor( private _fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
@@ -107,6 +108,9 @@ export class AllmoduleSetupComponent implements OnInit {
   goToAdd() {
     this.modaladd=true;
     //this.router.navigate(["../project/modules/add"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
+  }
+  gotoadd(){
+    this.router.navigate(["../project/modules/add"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
   }
   goToEdit(id: number) {
     this.router.navigate(["../project/modules/edit/" + id], { relativeTo: this.route ,queryParams: { p_id: this.projectId }});

@@ -49,7 +49,7 @@ export class AddmoduleSetupComponent implements OnInit {
     });
   }
   onSubmit() {
-    console.log(this.entryForm.value);
+
     this.submitted = true;
     if (this.entryForm.invalid) {
       return;
@@ -60,10 +60,11 @@ export class AddmoduleSetupComponent implements OnInit {
   onCreate() {
    // this.fieldError = [];
     this.entryForm.value.projectId=this.projectId;
+    console.log(this.entryForm.value);
     this.moduleSetupService.create(this.entryForm.value).subscribe(
       (data) => {
         console.log(data);
-        this.router.navigate(["../../../module1"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
+        this.router.navigate(["../../../modules"], { relativeTo: this.route, queryParams: { p_id: this.projectId } });
         //this.router.navigate(["../all"],{ relativeTo: this.route, queryParams: { p_id: this.projectId } });
       },
       (error) => {

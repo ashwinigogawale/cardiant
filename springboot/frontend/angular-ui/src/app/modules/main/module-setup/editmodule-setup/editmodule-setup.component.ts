@@ -55,7 +55,7 @@ export class EditmoduleSetupComponent implements OnInit {
         console.log(data);
 
 
-        this.router.navigate(["../../../../module1"],{ relativeTo: this.route, queryParams: { p_id: this.projectId } });
+        this.router.navigate(["../../../../modules"],{ relativeTo: this.route, queryParams: { p_id: this.projectId } });
       },
       // (error) => {
       //   console.log(error);

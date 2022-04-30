@@ -1,6 +1,6 @@
 <ol class="breadcrumb breadcrumb-arrow font-trirong">
-  <li><a href="javascript://" [routerLink]="['/']"><clr-icon shape="home"></clr-icon></a></li>
-  <li><a href="javascript://"  [routerLink]="['/main/project1']"> <clr-icon shape="flag"></clr-icon> Projects</a></li>
+  <li><a href="javascript://" [routerLink]="['/cns-portal/dashboard/order']"><clr-icon shape="home"></clr-icon></a></li>
+  <li><a href="javascript://"  [routerLink]="['../project/all']"> <clr-icon shape="flag"></clr-icon> Projects</a></li>
   <li><a href="javascript://"> <clr-icon  shape="objects"></clr-icon> Repositories</a></li>
 </ol>
 <br>
@@ -94,22 +94,23 @@
                 <span data-v-31ffaada="" class="label label-danger">
                   Futuristic
                   <span data-v-31ffaada="" class="badge badge-danger">99+</span></span>
-                  <span style="margin-left: 20px;"><clr-icon shape="pin"></clr-icon></span></span>
-                       <!-- <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-sm">
+                  <!-- <span style="margin-left: 20px;"><clr-icon shape="pin"></clr-icon></span> -->
+                </span>
+                       <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-sm">
                           <span style="margin-left: 20px;"><clr-icon shape="pin"></clr-icon></span>
                           <span class="tooltip-content"> Added to pin.</span>
                         </a>
                         <a href="javascript:void(0)" role="tooltip" aria-haspopup="true" class="tooltip tooltip-sm">
                           <span style="margin-left: 20px;"> <clr-icon shape="heart"></clr-icon></span>
                           <span class="tooltip-content"> Add My Fav.</span>
-                        </a> -->
+                        </a>
             <div class="dropdown-container" tabindex="-1" style="float: right;margin-top: 5px;">
               <div class="three-dots" ></div>
               <div class="dropdown">
-                <a href="" ><div>Edit</div></a>
-                <a href=""><div>Components</div></a>
-                <a href="#"><div>ReadMe</div></a>
-                <a href="#"><div>Gallery</div></a>
+                <a href="javascript://" ><div class="me" (click)="goToedit(app.id)">Edit</div></a>
+                <a href="javascript://"><div class="me" (click)="goToAction(app.id)">Components</div></a>
+                <a href="javascript://"><div>ReadMe</div></a>
+                <a href="javascript://"><div>Gallery</div></a>
               </div>
             </div>
               <div class="card-header" >
@@ -134,8 +135,8 @@
                       </button>
                     </div>
 
-                  </div>
 
+              </div>
               </div>
               <div class="card-footer">
                   <button class="btn btn-sm btn-link"> Last Updated On: {{app.updatedAt|date}}</button>
