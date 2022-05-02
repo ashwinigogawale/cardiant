@@ -31,6 +31,9 @@ export class Edit2wireframeComponent implements OnInit {
   id: any;
   i1 : any;
   div_name_map = new Map();
+  visibiltyOpt = ["Everyone","Individual"];
+  textFieldStyle : boolean = false;
+
   new_model: any = [];
   div_coll = new Map();
   tr_map = new Map();
@@ -48,7 +51,7 @@ export class Edit2wireframeComponent implements OnInit {
   fieldModels:Array<field>=[
     {
       "type": "text",
-      "icon": "fa-font",
+      "icon": "bi-type",
       "label": "Text",
       "description": "Enter your name",
       "placeholder": "Enter your name",
@@ -57,12 +60,16 @@ export class Edit2wireframeComponent implements OnInit {
       "size" : 'w-100',
       "regex" : "",
       "div_name" : "",
+      "tooltipmsg":"",
+      "maxcharacters":"",
+      "visibilty":"",
+      "duplicateVal":"",
       "gridLine_name" : "",
       "handle":true
     },
     {
       "type": "email",
-      "icon": "fa-envelope",
+      "icon": "bi-envelope",
       "required": true,
       "label": "Email",
       "description": "Enter your email",
@@ -78,7 +85,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "phone",
-      "icon": "fa-phone",
+      "icon": "bi-telephone",
       "label": "Phone",
       "description": "Enter your phone",
       "placeholder": "Enter your phone",
@@ -94,7 +101,7 @@ export class Edit2wireframeComponent implements OnInit {
     {
       "type": "number",
       "label": "Number",
-      "icon": "fa-html5",
+      "icon": "bi-123",
       "description": "Age",
       "placeholder": "Enter your age",
       "className": "form-control",
@@ -107,7 +114,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "date",
-      "icon":"fa-calendar",
+      "icon":"bi-calendar4",
       "label": "Date",
       "size" : 'w-100',
       "placeholder": "Date",
@@ -117,7 +124,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "datetime-local",
-      "icon":"fa-calendar",
+      "icon":"bi-clock",
       "label": "DateTime",
       "size" : 'w-100',
       "placeholder": "Date Time",
@@ -127,7 +134,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "textarea",
-      "icon":"fa-text-width",
+      "icon":"bi-textarea-resize",
       "size" : 'w-100',
       "div_name" : "",
       "gridLine_name" : "",
@@ -135,7 +142,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "paragraph",
-      "icon": "fal fa-align-left",
+      "icon": "bi-text-left",
       "label": "Paragraph",
       "size" : 'w-100',
       "div_name" : "",
@@ -144,7 +151,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "Section",
-      "icon": "fal fa-align-left",
+      "icon": "bi-text-left",
       "label": "Section",
       "size" : 'w-100',
       "div_name" : "",
@@ -153,7 +160,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "Division",
-      "icon": "fas fa-align-center",
+      "icon": "bi-text-center",
       "label": "Division",
       "size" : 'w-100',
       "div_name" : "",
@@ -163,7 +170,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "Grid Lines",
-      "icon": "fas fa-align-center",
+      "icon": "bi-text-center",
       "label": "Grid Lines",
       "size" : 'w-100',
       "div_name" : "",
@@ -175,7 +182,7 @@ export class Edit2wireframeComponent implements OnInit {
       "type": "checkbox",
       "required": true,
       "label": "Checkbox",
-      "icon":"fa-list",
+      "icon":"bi-check2-square",
       "size" : 'w-100',
       "description": "Checkbox",
       "inline": true,
@@ -194,7 +201,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "radio",
-      "icon":"fa-list-ul",
+      "icon":"bi-ui-radios",
       "label": "Radio",
       "size" : 'w-100',
       "description": "Radio boxes",
@@ -213,7 +220,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "autocomplete",
-      "icon":"fa-bars",
+      "icon":"bi-menu-button",
       "label": "Select",
       "description": "Select",
       "placeholder": "Select",
@@ -238,7 +245,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "file",
-      "icon":"fa-file",
+      "icon":"bi-upload",
       "label": "File Upload",
       "className": "form-control",
       "size" : 'w-100',
@@ -248,7 +255,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "button",
-      "icon":"fa-paper-plane",
+      "icon":"bi-cursor",
       "subtype": "submit",
       "size" : 'w-100',
       "label": "Button",
@@ -257,7 +264,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     {
       "type": "autocomplete",
-      "icon":"fa-bars",
+      "icon":"bi-input-cursor-text",
       "label": "autocomplete",
       "description": "autocomplete",
       "placeholder": "autocomplete",
@@ -290,6 +297,7 @@ export class Edit2wireframeComponent implements OnInit {
     },
     attributes:this.modelFields
   };
+
   modal=false;
   modal2=false;
   modal3=false;
@@ -516,7 +524,7 @@ console.log("update with id = ", this.id);
   name1Changed(value, i) {
     this.div_name_map.set(i, value);
     this.model.attributes[i].div_name =value;
-    console.log(this.model.attributes)
+    console.log(this.model.attributes);
   }
   onDragStart(event:DragEvent) {
     // console.log("drag started", JSON.stringify(event, null, 2));
@@ -721,6 +729,7 @@ test(){
 editProperty(val) {
   console.log(val.toggle)
   val.toggle = true;
+  this.textFieldStyle = true;
 }
 
 openmodal(){

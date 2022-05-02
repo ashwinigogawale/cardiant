@@ -22,11 +22,98 @@
 
 
 @import"./bootstrap/bootstrap.min.css";
-
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
 
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
+
+.textFieldClass{
+    display:flex !important;
+     flex-direction: row !important;
+     justify-content: center !important;
+      align-items: center !important;
+      margin-bottom: 10px !important;
+
+}
+.textFieldSizeClass{
+    display:flex !important;
+     flex-direction: row !important;
+     justify-content: flex-start !important;
+      align-items: center !important;
+      margin-bottom: 10px !important;
+}
+.textFieldSizeClass label{
+    width: 25% !important;
+    margin-left: 2px !important;
+}
+.textFieldClass label{
+    width: 25% !important;
+    margin-right: 15px !important;
+}
+.dragdropfeild{
+    //width: 112px !important;
+    height:40px !important;
+    display: flex !important;
+    border: none !important;
+    background-color: white !important;
+    padding: 0px !important;
+    justify-content: center !important;
+    text-align: center !important;
+    margin-bottom: 5px !important;
+    //background: #ccc !important;
+    box-shadow: 0px 0px 3px 1px #bbbaba !important;
+}
+
+.dragdropfeild i{
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%,-50%) !important;
+}
+.btn-response
+{
+    background-color: #0072a3;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    text-align: center !important;
+    padding: 0;
+    width: 130px;
+    font-size: 18px;
+}
+.btn-adddata{
+    background-color: #0072a3;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    //color:white;
+    font-family: sans-serif;
+    text-align: center !important;
+    font-weight: normal;
+    padding: 0;
+    width: 130px;
+    font-size: 18px;
+}
+.btn-preview{
+    background-color: #0072a3;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    font-weight: normal;
+    text-align: center !important;
+    padding: 0;
+    width: 130px;
+    font-size: 18px;
+}
+.btn-optimize
+{
+    background-color: #0072a3;
+    margin-bottom: 20px;
+     //color:white;
+    font:normal 18px sans-serif !important;
+    text-align: center !important;
+    padding: 0;
+    width: 130px;
+}
 
 .clearfix{clear:both;}
 .pointer{cursor: pointer;}
@@ -84,7 +171,7 @@
     border: dashed #ddd 2px;
     background-color: white;
 }
-.fields {
+  .fields {
     background-color: #e4e1e1;
 }
 div{
@@ -101,7 +188,7 @@ input[type=text],[type=date],[type=email],[type=number],[type=phone],[type=datet
     // margin-bottom:0.1px !important;
     position: relative;
     color: rgb(0, 0, 0);
-    background-color: #e4e1e1;
+    background-color: rgb(255, 255, 255);
 }
 .field:hover{
     box-shadow: 1px 1px 4px #ddd;
@@ -185,7 +272,7 @@ input[type=text],[type=date],[type=email],[type=number],[type=phone],[type=datet
     margin-top: -6px !important;
 }
 input.form-control {
-    height:33px !important;
+    height:22px !important;
  }
 input[type=email] {
     margin-top: -7px;

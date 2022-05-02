@@ -1,3 +1,10 @@
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/cns-portal/dashboard/order']"> <clr-icon shape="home"></clr-icon></a></li>
+  <li><a href="javascript://"> <clr-icon shape="user"></clr-icon>  Profile Settings</a></li>
+</ol>
+<br>
+
+
 <div class="pad-16" *ngIf="userProfile">
   <h3><b>My Profile Settings</b></h3>
   <br />
@@ -18,6 +25,7 @@
 
   <section class="form-block" style="margin-top:32px">
       <form (ngSubmit)="onSubmit()">
+
 
         <!-- <input type="file" accept="image/*" (change)="onSelectFile($event.target.files)" name="picture" [(ngModel)]="userProfile.picture"> -->
           <table>
@@ -47,6 +55,103 @@
                 <td style="width:125px;">About Me </td>
                 <td>
                     <textarea colspan="2" rows="4" cols="50" name="about" [(ngModel)]="userProfile.about" style="width:180px"></textarea>
+                </td>
+            </tr>
+          </table>
+          <br>
+          <button type="submit" form-control class="btn btn-primary">UPDATE</button>
+      </form>
+  </section>
+</div>
+
+
+
+<div class="pad-16">
+  <h3><b>My Profile Settings</b></h3>
+  <hr />
+  <div >
+    <img src="../../../../assets/images/profile-icon.png" alt="Avatar" style="height:100px;width:100px;border-radius:50%;">
+  </div>
+  <ng-template #def>
+    <img src="../../../../assets/images/profile-icon.png" alt="Avatar" style="height:100px;width:100px;border-radius:50%;">
+  </ng-template>
+  <div *ngIf="message" style="color:indianred; font-weight: bold"> {{ message }}</div>
+  <input
+    style="display: none"
+    type="file" accept="image/*"
+    (change)="onSelectFile($event)"
+    #fileInput>
+    <a (click)="fileInput.click()">upload your photo</a>
+    <!-- <button type="button" class="btn btn-primary" (click)="picUpload()">Upload</button> -->
+
+  <section class="form-block" style="margin-top:32px">
+      <form (ngSubmit)="onSubmit()">
+        <!-- <div class="clr-row">
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="projectName">Your Full Name</label>
+            <input id="projectName" type="text"  placeholder="Enter Project Name"
+              class="clr-input">
+          </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="projectName">Pronouns</label>
+            <input id="projectName" type="text"  placeholder="Enter Project Name"
+              class="clr-input">
+          </div>
+          <div class="clr-col-md-4 clr-col-sm-12">
+            <label for="projectName">Role</label>
+            <input id="projectName" type="text"  placeholder="Enter Project Name"
+              class="clr-input">
+          </div>
+          </div>
+          <div class="clr-row">
+            <div class="clr-col-md-4 clr-col-sm-12">
+              <label for="projectName">Department or Team</label>
+              <input id="projectName" type="text"  placeholder="Enter Project Name"
+                class="clr-input">
+            </div>
+            <div class="clr-col-md-4 clr-col-sm-12">
+              <label for="projectName">Email</label>
+              <input id="projectName" type="text"  placeholder="Enter Project Name"
+                class="clr-input">
+            </div>
+            </div>
+            <div class="clr-row">
+            <div class="clr-col-md-4 clr-col-sm-12">
+              <label for="projectName">About Me</label>
+              <textarea  id="" cols="10" rows="2"  name=" about"  placeholder="Enter Description">
+              </textarea>
+
+
+            </div>
+            </div> -->
+        <!-- <input type="file" accept="image/*" (change)="onSelectFile($event.target.files)" name="picture" [(ngModel)]="userProfile.picture"> -->
+          <table>
+              <tr>
+                  <td>Your Full Name: </td>
+                  <td colspan="2"><input type="text" name="fullName" ></td>
+              </tr>
+              <tr>
+                  <td>Pronouns</td>
+                  <td colspan="2"><input type="text" name="pronouns"> </td>
+              </tr>
+              <tr>
+                  <td>Role:</td>
+                  <td colspan="2"><input type="text" name="role" > </td>
+              </tr>
+              <tr>
+                  <td>Department or Team</td>
+                  <td><input colspan="2" type="text" name="department"  style="width:180px" /></td>
+              </tr>
+              <tr>
+                  <td style="width:125px;">Email </td>
+                  <td>
+                      <input colspan="2" readonly type="text" name="email"  style="width:180px" />
+                  </td>
+              </tr>
+              <tr>
+                <td style="width:125px;">About Me </td>
+                <td>
+                    <textarea colspan="2" rows="4" cols="50" name="about"  style="width:180px"></textarea>
                 </td>
             </tr>
           </table>

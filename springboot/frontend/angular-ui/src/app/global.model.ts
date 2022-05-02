@@ -22,6 +22,10 @@ export class field{
   div_name?:any;
   gridLine_name?:any;
   children?: field[];
+  tooltipmsg?:any;
+  maxcharacters?:any;
+  visibilty?:any;
+  duplicateVal?:any;
 }
 export class value{
   label?:any="";

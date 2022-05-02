@@ -129,7 +129,7 @@ app.auth.tokenExpirationMsec=864000000
     # We're not using cookies because they won't work well in mobile clients.
 app.oauth2.authorizedRedirectUris=http://localhost:8081/oauth2/redirect,myandroidapp://oauth2/redirect,myiosapp://oauth2/redirect
 
-projectPath=G:/cnsbetawithcardiant/springboot
+projectPath=C:/Users/hp/git/cnsdev/springboot
 
 
 

@@ -45,7 +45,6 @@ import com.realnet.users.service.CompanyService;
 import com.realnet.users.service.UserService;
 import com.realnet.utils.UserConstant;
 import com.realnet.users.service1.AppUserServiceImpl;
-import com.realnet.users.entity1.AppUser;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;

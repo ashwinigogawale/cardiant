@@ -42,15 +42,15 @@
 
 .breadcrumb {
   font-family: 'calibri';
-  margin-top: 0px;
+  margin-top: 0px !important;
 }
 
 .breadcrumb-arrow {
   height: 36px;
-  padding: 0;
+  padding: 0 !important;
   line-height: 36px;
-  list-style: none;
-  background-color: #ebeceb
+  list-style: none !important;
+  background-color: #ebeceb !important;
 }
 .breadcrumb-arrow li:first-child a {
   border-radius: 4px 0 0 4px;

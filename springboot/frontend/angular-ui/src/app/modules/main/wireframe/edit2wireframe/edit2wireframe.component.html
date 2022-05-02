@@ -40,36 +40,75 @@
 
 <!-- -------------------------------------------------------------------------------- -->
 
-
+<ol class="breadcrumb breadcrumb-arrow font-trirong">
+  <li><a href="javascript://" [routerLink]="['/cns-portal/dashboard/order']"><clr-icon shape="home"></clr-icon></a></li>
+  <li><a href="javascript://"  [routerLink]="['/cns-portal/project/all']"> <clr-icon shape="flag"></clr-icon>  Projects</a></li>
+  <li><a href="javascript://" > <clr-icon  shape="objects"></clr-icon>  Repositories</a></li>
+  <li><a href="javascript://" ><clr-icon shape="grid-view"></clr-icon>  Components</a></li>
+  <li><a href="javascript://"><clr-icon shape="application"></clr-icon>  Wireframe</a></li>
+</ol>
 
 
 
 <div *ngIf="model && !report" class="padding20 white-bg">
   <div class="spacer30"></div>
   <div class="row">
-    <div class="col-2" style="background-color: #d8d1d1">
-      <div class="fields" *ngFor="let item of fieldModels">
-        <div class="field pointer shadow-bg" [dndDraggable]="item"
-         [dndEffectAllowed]="'copy'"
-          (dndEnd)="onDragEnd($event)">
-          <i [ngClass]="item.icon" class="fa pull-left icon"></i>
+
+    <!-- <div class="col-2" style="background-color: #d8d1d1">
+      <div class="fields  " *ngFor="let item of fieldModels; let i = index; let even = even;">
+       <div class=" row field pointer shadow-bg"  [dndDraggable]="item" [dndEffectAllowed]="'copy'" (dndEnd)="onDragEnd($event)" >
+          <i [ngClass]="item.icon" class="fa pull-left icon" title="{{item.label}}"></i>
           <h6 class="text">{{ item.label }}</h6>
         </div>
+
+      </div>
+    </div> -->
+    <div class="col-2" style="margin-top: 95px !important;" >
+      <div class="row">
+          <ng-container  *ngFor="let item of fieldModels">
+              <div class="fields col-sm-6" style="background-color: transparent !important; " *ngIf="item.type!='Section' && item.type!='Division' && item.type!='Grid Lines'" >
+              <!-- <div class="fields col-sm-6" style="background-color: transparent !important; " >  -->
+                  <div class="field dragdropfeild pointer shadow-bg" [dndDraggable]="item"  [dndEffectAllowed]="'copy'" (dndEnd)="onDragEnd($event)" >
+                    <i [ngClass]="item.icon" style="font-size: 25px" class="ba icon" title="{{item.label}}"></i>
+                    <!-- <h6 class="text">{{ item.label }}</h6> -->
+                  </div>
+                </div>
+          </ng-container>
       </div>
     </div>
+
+   <!-- <div class="col-3" style="margin-top: 55px !important;" >
+      <div class="row">
+          <ng-container  *ngFor="let item of fieldModels">
+              <div class="fields col-sm-6" style="background-color: transparent !important; " *ngIf="item.type!='Section' && item.type!='Division' && item.type!='Grid Lines'" >
+                  <div class="field dragdropfeild pointer shadow-bg" [dndDraggable]="item"  [dndEffectAllowed]="'copy'" (dndEnd)="onDragEnd($event)" >
+                    <i [ngClass]="item.icon" class="fa pull-left icon" title="{{item.label}}"></i>
+                    <h6 class="text">{{ item.label }}</h6>
+                  </div>
+                </div>
+          </ng-container>
+      </div>
+    </div> -->
+
     <div class="col-10">
       <div class="form-group" style="margin-bottom: 0px !important; padding: 30px 60px 5px 60px;">
-				<h2><input class="form-control" type="text" [(ngModel)]="model.name" style="font-size: 20px;" /></h2>
-				<input class="form-control" type="text" [(ngModel)]="model.description" />
+				<h2><input class="form-control" type="text" [(ngModel)]="model.name" style="font-size: 20px; border:0px solid; background-color: transparent !important;" /></h2>
+				<input class="form-control" type="text" [(ngModel)]="model.description"  style="border:0px solid; background-color: transparent !important;"/>
 			</div>
       <ng-template #recursiveList let-list>
-        <section dndDropzone
+        <section
+        style="min-height: 15rem !important;"
+        dndDropzone
           (dndDragover)="onDragover($event)"
-          (dndDrop)="onDrop($event, list)" class="dndDropArea"
+          (dndDrop)="onDrop($event, list)"
+          class="dndDropArea"
           [ngClass]="{ empty: list.length == 0 }"
           [style.backgroundColor]="model.theme.bgColor"
-          [style.color]="model.theme.textColor">
-          <div class="field {{ item.size }}" *ngFor="let item of list; let i = index"
+          [style.color]="model.theme.textColor"
+        >
+          <div
+            class="field {{ item.size }}"
+            *ngFor="let item of list; let i = index"
             [dndDraggable]="item"
             dndEffectAllowed="move"
             [dndDisableIf]="item.disable"
@@ -78,45 +117,105 @@
             (dndLinked)="onDragged(item, list, 'link')"
             (dndMoved)="onDragged(item, list, 'move')"
             (dndCanceled)="onDragged(item, list, 'none')"
-            (dndEnd)="onDragEnd($event)">
+            (dndEnd)="onDragEnd($event)"
+          >
             <div class="row form-group container-fluid">
               <!-- <div *ngIf="item.type == 'Division'" class="pull-left" style="margin-bottom: -25px; padding-right: 100px;"><i class="fa fa-ellipsis-v dndHandle" dndHandle></i></div> -->
               <div class="col-12">
-                <i (click)="editProperty(item)" class="fa fa-chevron-up pull-right iconpadding"></i>
-                <i (click)="removeField(list, item.name)" class="fa fa-trash pull-right iconpadding" ></i>
+                <i
+                  (click)="editProperty(item)"
+                  class="fa fa-chevron-up pull-right iconpadding"
+                ></i>
+                <i
+                  (click)="removeField(list, item.name)"
+                  class="fa fa-trash pull-right iconpadding"
+                ></i>
                 <div *ngIf="item.type == 'text'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label> <label *ngIf="item.required" class="text-danger">*</label>
-                  <input type="text" class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}" />
+                  <label class="labelPadding">{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                  />
                 </div>
                 <div *ngIf="item.type == 'email'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label> <label *ngIf="item.required" class="text-danger">*</label>
-                  <input type="email" class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}" />
+                  <label class="labelPadding">{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                  />
                 </div>
                 <div *ngIf="item.type == 'phone'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label> <label *ngIf="item.required" class="text-danger">*</label>
-                  <input type="text" class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}" />
+                  <label class="labelPadding">{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                  />
                 </div>
                 <div *ngIf="item.type == 'number'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label> <label *ngIf="item.required" class="text-danger">*</label>
-                  <input type="number"  class="form-control" id="{{ item.name }}" min="{{ item.min }}" max="{{ item.max }}" placeholder="{{ item.placeholder }}"/>
+                  <label class="labelPadding">{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    min="{{ item.min }}"
+                    max="{{ item.max }}"
+                    placeholder="{{ item.placeholder }}"
+                  />
                 </div>
                 <div *ngIf="item.type == 'date'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label> <label *ngIf="item.required" class="text-danger">*</label>
-                  <input type="date" class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}" />
+                  <label class="labelPadding">{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                  />
                 </div>
                 <div *ngIf="item.type == 'datetime-local'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label><label *ngIf="item.required" class="text-danger">*</label>
-                  <input type="datetime-local"  class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}" />
+                  <label class="labelPadding">{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="datetime-local"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                  />
                 </div>
                 <div *ngIf="item.type == 'textarea'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }}</label><label *ngIf="item.required" class="text-danger">*</label>
-                  <textarea class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}">
+                  <label class="labelPadding">{{ item.label }}</label>
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <textarea
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                  >
                   </textarea>
                 </div>
                 <div *ngIf="item.type == 'file'" class="colPadding">
-                  <label class="labelPadding">{{ item.label }} (File can't be uploaded right now)</label><label *ngIf="item.required" class="text-danger">*</label>
-                  <input type="file" class="form-control" id="{{ item.name }}" placeholder="{{ item.placeholder }}"/>
-                  <small class="form-text text-danger">(File can't be uploaded right now)</small>
+                  <label class="labelPadding"
+                    >{{ item.label }} (File can't be uploaded right now)</label
+                  >
+                  <label *ngIf="item.required" class="text-danger">*</label>
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="{{ item.name }}"
+                    placeholder="{{ item.placeholder }}"
+                  />
+                  <small class="form-text text-danger"
+                    >(File can't be uploaded right now)</small
+                  >
                 </div>
                 <div *ngIf="item.type == 'paragraph'" class="colPadding">
                   <p class="form-text">{{ item.label }}</p>
@@ -130,22 +229,45 @@
 									</ng-container>
 								</div> -->
 
-                <div *ngIf="item.type == 'Grid Lines'" style="overflow: auto; border: 2px solid black"class="container-fluid"
+                <div
+                  *ngIf="item.type == 'Grid Lines'"
+                  style="overflow: auto; border: 2px solid black"
+                  class="container-fluid"
                 >
                   <h3 class="grid">{{ item.label }}</h3>
-                  <hr style="border: 1px solid #8c8b8b;margin-top: -12px; margin-bottom: -0.9px !important;overflow-x: scroll; "/>
-                  <section dndDropzone
+                  <hr
+                    style="
+                      border: 1px solid #8c8b8b;
+                      margin-top: -12px;
+                      margin-bottom: -0.9px !important;
+                      overflow-x: scroll;
+                    "
+                  />
+                  <section
+                    dndDropzone
                     (dndDragover)="onDragover($event)"
-                    (dndDrop)="onDrop($event, item.children)" class="dndDropArea container layout-padding"
+                    (dndDrop)="onDrop($event, item.children)"
+                    class="dndDropArea container layout-padding"
                     [ngClass]="{ empty: item.children.length == 0 }"
                     [style.backgroundColor]="model.theme.bgColor"
-                    [style.color]="model.theme.textColor">
-
-                    <table class="table table-bordered" *ngIf="item.children.length > 0" >
+                    [style.color]="model.theme.textColor"
+                  >
+                    <table
+                      class="table table-bordered"
+                      *ngIf="item.children.length > 0"
+                    >
                       <thead>
                         <tr>
-                          <th class="tableData" style="border: 0.5px solid black">S NO</th>
-                          <th style="border: 0.5px solid black" *ngFor="let it of item.children" class="tableData"
+                          <th
+                            class="tableData"
+                            style="border: 0.5px solid black"
+                          >
+                            S NO
+                          </th>
+                          <th
+                            style="border: 0.5px solid black"
+                            *ngFor="let it of item.children"
+                            class="tableData"
                             [dndDraggable]="it"
                             dndEffectAllowed="move"
                             (dndStart)="onDragStart($event)"
@@ -155,15 +277,22 @@
                             (dndCanceled)="onDragged(it, item.children, 'none')"
                             (dndEnd)="onDragEnd($event)"
                           >
-                            <i (click)="editProperty(it)" class="fa fa-chevron-up pull-right iconpadding" ></i>
-                            <i (click)="removeField(list, it.name)" class="fa fa-trash pull-right iconpadding"></i>
+                            <i
+                              (click)="editProperty(it)"
+                              class="fa fa-chevron-up pull-right iconpadding"
+                            ></i>
+                            <i
+                              (click)="removeField(list, it.name)"
+                              class="fa fa-trash pull-right iconpadding"
+                            ></i>
                             <div class="colPadding">
                               {{ it.label }}
                             </div>
 
                             <!-- bsf -->
 
-                            <clr-modal [(clrModalOpen)]="it.toggle"
+                            <clr-modal
+                              [(clrModalOpen)]="it.toggle"
                               [clrModalSize]="'lg'"
                               [clrModalStaticBackdrop]="true"
                             >
@@ -311,6 +440,7 @@
                                       "
                                     />
                                   </div>
+
                                   <div class="form-group">
                                     <label class="labelPadding">Name</label>
                                     <input
@@ -319,6 +449,7 @@
                                       [(ngModel)]="it.name"
                                     />
                                   </div>
+
                                   <div class="form-group">
                                     <label class="labelPadding"
                                       >Placeholder</label
@@ -329,6 +460,17 @@
                                       [(ngModel)]="it.placeholder"
                                     />
                                   </div>
+                                  <div class="form-group">
+                                    <label class="labelPadding"
+                                      >Placeholder1</label
+                                    >
+                                    <input
+                                      class="form-control"
+                                      type="text"
+                                      [(ngModel)]="it.placeholder"
+                                    />
+                                  </div>
+
                                   <div class="form-group">
                                     <label class="labelPadding">Regex</label>
                                     <input
@@ -584,7 +726,7 @@
                     ></i>
 
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline" *ngIf="!(item.type == 'text')">
                       <input
                         class="form-check-input"
                         type="radio"
@@ -597,7 +739,7 @@
                         >1/1</label
                       >
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline" *ngIf="!(item.type == 'text')">
                       <input
                         class="form-check-input"
                         type="radio"
@@ -610,7 +752,7 @@
                         >1/2</label
                       >
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline" *ngIf="!(item.type == 'text')">
                       <input
                         class="form-check-input"
                         type="radio"
@@ -623,7 +765,7 @@
                         >1/3</label
                       >
                     </div>
-                    <div class="form-check form-check-inline">
+                    <div class="form-check form-check-inline"  *ngIf="!(item.type == 'text')">
                       <input
                         class="form-check-input"
                         type="radio"
@@ -637,21 +779,96 @@
                       >
                     </div>
                     <span class="pull-right ucfirst">{{ item.type }}</span>
-                    <select
-                      class="form-select"
-                      aria-label="size 3 select example"
-                      *ngIf="!(item.type == 'Division')"
-                    >
+
+
+                    <!--  DIsplay size only if Text Feild -->
+                    <div *ngIf="(item.type == 'text')" [ngClass]="item.type=='text' ? 'textFieldSizeClass' : ''">
+                        <label class="labelPadding">Size</label>
+                        <div>
+                        <div class="form-check form-check-inline" >
+                          <input class="form-check-input" type="radio" [attr.name]="'inlineRadioOptions-' + i" [attr.id]="'inlineRadio1-' + i" [attr.value]="'1a-' + i" (change)="handleChange(i, $event.target.value, item)"/>
+                          <label class="form-check-label" for="inlineRadio1">1/1</label>
+                        </div>
+                        <div class="form-check form-check-inline" >
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            [attr.name]="'inlineRadioOptions-' + i"
+                            [attr.id]="'inlineRadio2-' + i"
+                            [attr.value]="'1b-' + i"
+                            (change)="handleChange(i, $event.target.value, item)"
+                          />
+                          <label class="form-check-label" for="inlineRadio1"
+                            >1/2</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline" >
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            [attr.name]="'inlineRadioOptions-' + i"
+                            [attr.id]="'inlineRadio3-' + i"
+                            [attr.value]="'1c-' + i"
+                            (change)="handleChange(i, $event.target.value, item)"
+                          />
+                          <label class="form-check-label" for="inlineRadio2"
+                            >1/3</label
+                          >
+                        </div>
+                        <div class="form-check form-check-inline" >
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            [attr.name]="'inlineRadioOptions-' + i"
+                            [attr.id]="'inlineRadio4-' + i"
+                            [attr.value]="'1d-' + i"
+                            (change)="handleChange(i, $event.target.value, item)"
+                          />
+                          <label class="form-check-label" for="inlineRadio3"
+                            >1/4</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <!--  Div end of size  -->
+
+                    <select class="form-select" aria-label="size 3 select example" *ngIf="!(item.type == 'Division') && !(item.type == 'text')" >
                       <option selected>Division Choose</option>
-                      <option
-                        *ngFor="let recp of div_name_map | keyvalue"
-                        value="recp.key"
-                      >
+                      <option *ngFor="let recp of div_name_map | keyvalue" value="recp.key">
                         {{ recp.value }}
                       </option>
                     </select>
+
+                    <div class="form-group" *ngIf="(item.type == 'text')" [ngClass]="item.type=='text' ? 'textFieldClass' : ''">
+                      <label class="labelPadding"> Division</label>
+                      <select
+                        class="form-select form-control"
+                        aria-label="size 3 select example"
+                      >
+                        <option selected>Division Choose</option>
+                        <option
+                          *ngFor="let recp of div_name_map | keyvalue"
+                          value="recp.key"
+                        >
+                          {{ recp.value }}
+                        </option>
+                      </select>
                   </div>
-                  <div class="form-group" *ngIf="!(item.type == 'Division')">
+                  </div>
+                  <div *ngIf="(item.type == 'text')" [ngClass]="item.type=='text' ? 'textFieldSizeClass' : ''">
+                    <label class="labelPadding">No Duplicate Values</label>
+                    <i
+                      *ngIf="item.duplicateVal"
+                      (click)="item.duplicateVal = false"
+                      class="fa fa-toggle-on red"
+                    ></i>
+                    <i
+                      *ngIf="!item.duplicateVal"
+                      (click)="item.duplicateVal = true"
+                      class="fa fa-toggle-off"
+                    ></i>
+                  </div>
+                  <div class="form-group" *ngIf="!(item.type == 'Division')" [ngClass]="item.type=='text' ? 'textFieldClass' : ''" >
                     <label class="labelPadding">Label</label>
                     <input
                       class="form-control"
@@ -659,32 +876,25 @@
                       [(ngModel)]="item.label"
                     />
                   </div>
-                  <div class="form-group" *ngIf="item.type == 'Division'">
+                  <div class="form-group" *ngIf="item.type == 'Division'" >
                     <label class="labelPadding">Label</label>
-                    <input
-                      class="form-control"
-                      type="text"
-                      [(ngModel)]="item.label"
-                      (change)="name1Changed($event.target.value, i)"
-                    />
+                    <input class="form-control" type="text" [(ngModel)]="item.label" (change)="name1Changed($event.target.value, i)"/>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" [ngClass]="item.type=='text' ? 'textFieldClass' : ''">
                     <label class="labelPadding">Name</label>
-                    <input
-                      class="form-control"
-                      type="text"
-                      [(ngModel)]="item.name"
-                    />
+                    <input class="form-control" type="text" [(ngModel)]="item.name" />
                   </div>
-                  <div class="form-group">
+                  <div class="form-group" [ngClass]="item.type=='text' ? 'textFieldClass' : ''">
                     <label class="labelPadding">Placeholder</label>
-                    <input
-                      class="form-control"
-                      type="text"
-                      [(ngModel)]="item.placeholder"
-                    />
+                    <input class="form-control" type="text" [(ngModel)]="item.placeholder"/>
                   </div>
-                  <div class="form-group">
+                  <div *ngIf="item.type == 'text'">
+                    <div class="form-group" [ngClass]="item.type=='text' ? 'textFieldClass' : ''">
+                        <label class="labelPadding"> Tooltip Message</label>
+                        <input type="textarea"  class="form-control" [(ngModel)]="item.tooltipmsg">
+                    </div>
+                  </div>
+                  <div class="form-group" [ngClass]="item.type=='text' ? 'textFieldClass' : ''">
                     <label class="labelPadding">Regex</label>
                     <input
                       class="form-control"
@@ -692,7 +902,22 @@
                       [(ngModel)]="item.regex"
                     />
                   </div>
-                  <div *ngIf="item.regex" class="form-group">
+                  <div class="form-group" *ngIf="item.type == 'text'" [ngClass]="item.type=='text' ? 'textFieldClass' : ''">
+                        <label class="labelPadding"> Max Characters</label>
+                        <input type="text" class="form-control" maxLength="255" [(ngModel)]="item.maxcharacters">
+                  </div>
+
+                  <div class="form-group" *ngIf="item.type == 'text'" [ngClass]="item.type=='text' ? 'textFieldClass' : ''">
+                      <label class="labelPadding">Visibilty</label>
+                      <select class="form-select form-control" [(ngModel)]="item.visibilty" *ngIf="(item.type == 'text')" >
+                        <option *ngFor="let opt of visibiltyOpt" selected>
+                          {{opt}}
+                        </option>
+
+                      </select>
+                  </div>
+
+                  <div *ngIf="item.regex" class="form-group" [ngClass]="item.type=='text' ? 'textFieldClass' : ''">
                     <label class="labelPadding">Error text</label>
                     <input
                       class="form-control"
@@ -714,21 +939,11 @@
                     <div class="col-6">
                       <div class="form-group">
                         <label class="labelPadding">Max</label>
-                        <input
-                          class="form-control"
-                          type="text"
-                          [(ngModel)]="item.max"
-                        />
+                        <input class="form-control" type="text" [(ngModel)]="item.max"/>
                       </div>
                     </div>
                   </div>
-                  <div
-                    *ngIf="
-                      item.type == 'radio' ||
-                      item.type == 'checkbox' ||
-                      item.type == 'autocomplete'
-                    "
-                  >
+                  <div *ngIf=" item.type == 'radio' || item.type == 'checkbox' || item.type == 'autocomplete' ">
                     <div class="row">
                       <div class="col-5">
                         <div class="form-group">
@@ -746,17 +961,10 @@
                         </div>
                       </div>
                     </div>
-                    <div
-                      *ngFor="let i of item.values; let valueIndex = index"
-                      class="row"
-                    >
+                    <div *ngFor="let i of item.values; let valueIndex = index" class="row">
                       <div class="col-5">
                         <div class="form-group">
-                          <input
-                            class="form-control"
-                            type="text"
-                            [(ngModel)]="i.label"
-                          />
+                          <input class="form-control" type="text" [(ngModel)]="i.label"/>
                         </div>
                       </div>
                       <div class="col-5">
@@ -769,41 +977,25 @@
                         </div>
                       </div>
                       <div class="col-2">
-                        <div class="form-group">
-                          <label
-                            class="labelPadding"
-                            (click)="item.values.splice(valueIndex, 1)"
-                            >remove</label
-                          >
+                         <div class="form-group">
+                          <label class="labelPadding" (click)="item.values.splice(valueIndex, 1)">remove</label>
                         </div>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-5">
                         <div class="form-group">
-                          <input
-                            class="form-control"
-                            type="text"
-                            [(ngModel)]="value.label"
-                          />
+                          <input class="form-control" type="text" [(ngModel)]="value.label"/>
                         </div>
                       </div>
                       <div class="col-5">
                         <div class="form-group">
-                          <input
-                            class="form-control"
-                            type="text"
-                            [(ngModel)]="value.value"
-                          />
+                          <input class="form-control" type="text" [(ngModel)]="value.value"/>
                         </div>
                       </div>
                       <div class="col-2">
                         <div class="form-group">
-                          <label
-                            class="labelPadding"
-                            (click)="addValue(item.values)"
-                            >Add</label
-                          >
+                          <label class="labelPadding" (click)="addValue(item.values)" >Add</label>
                         </div>
                       </div>
                     </div>
@@ -814,22 +1006,30 @@
           </div>
           <div class="dndPlaceholder" dndPlaceholderRef></div>
         </section>
-        <div class="save-btn-div" dir="rtl">
-          <button
-            type="submit"
-            class="btn btn-outline text"
-            (click)="addModal()"
-          >
+
+        <div class="row">
+          <ng-container  *ngFor="let item of fieldModels" >
+              <div class="fields" style="background-color: transparent !important; margin-left: 20px; justify-content: center; " *ngIf="item.type=='Section' || item.type=='Division' || item.type=='Grid Lines'" >
+              <!-- <div class="fields col-sm-6" style="background-color: transparent !important; " >  -->
+                  <div class="field  pointer shadow-bg" style="background-color: transparent !important; margin: auto !important; " [dndDraggable]="item"  [dndEffectAllowed]="'copy'" (dndEnd)="onDragEnd($event)" >
+                    <!-- <i [ngClass]="item.icon" class="fa pull-left icon" title="{{item.label}}"></i> -->
+                    <h6 class="text" style="font: 1.0em sans-serif !important;">Add {{ item.label }}</h6>
+                  </div>
+                </div>
+          </ng-container>
+        </div>
+
+
+      <!--  <div class="save-btn-div" dir="rtl">
+          <button type="submit" class="btn btn-outline " style="background-color: #0072a3;margin-left: 15px; margin-bottom: 20px; color:white; font-family: sans-serif; font-weight: normal; font-size: 18px; text-align: center !important; padding: 0;
+          width: 130px; " (click)="addModal()" >
             <b>Add Data</b>
           </button>
-          <button
-            type="submit"
-            class="btn btn-outline text"
-            (click)="optimize()"
-          >
-            <b>Optimize</b>
+          <button type="submit" class="btn btn-outline text" style="background-color: #0072a3; margin-bottom: 20px; color:white; font:normal 18px sans-serif !important; text-align: center !important; padding: 0;
+          width: 130px; " (click)="optimize()">
+            <b>Optimize </b>
           </button>
-        </div>
+        </div> -->
       </ng-template>
       <div
         class="layout-padding"
@@ -874,29 +1074,31 @@
   </div>
 </div>
 <!-- <pre *ngIf="model">{{model|json}}</pre> -->
-<div class="row">
-  <div class="col-12">
-    <div class="btn-cont">
-      <button
-        (click)="openmodal()"
-        class="btn btn-primary pull-left"
-        style="background-color: #0072a3; margin-bottom: 20px"
-      >
-        Response
-      </button>
-    </div>
-  </div>
-  <div class="col-12">
-    <div class="btn-cont">
-      <button
-        (click)="openPreview()"
-        class="btn btn-primary pull-left"
-        style="background-color: #0072a3; margin-bottom: 20px"
-      >
-        Preview
-      </button>
-    </div>
-  </div>
+
+<div class="row" >
+      <div class="col-4">
+        <div class="btn-cont btn-res-pre">
+          <button
+            (click)="openmodal()"
+            class="btn btn-primary pull-left btn-response"
+          >
+            Response
+          </button>
+        </div>
+        <div class="btn-cont btn-res-pre ">
+          <button (click)="openPreview()" class="btn btn-primary pull-left btn-preview">
+            Preview
+          </button>
+        </div>
+      </div>
+      <div class=" col-8" dir="rtl">
+        <button type="submit" class="btn btn-primary btn-adddata " (click)="addModal()" >
+          <b>Add Data</b>
+        </button>
+        <button type="submit" class="btn btn-primary btn-optimize" (click)="optimize()">
+          <b>Optimize </b>
+        </button>
+      </div>
 </div>
 <clr-modal
   [(clrModalOpen)]="modal"
