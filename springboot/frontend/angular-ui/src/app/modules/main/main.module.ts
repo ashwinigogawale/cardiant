@@ -90,6 +90,7 @@ import { ArchievedComponent } from './archieved/archieved.component';
 import { AllprojectComponent } from './allproject/allproject.component';
 import { AllprojectcardComponent } from './allprojectcard/allprojectcard.component';
 import { SurebuilderComponent } from './surebuilder/surebuilder.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -126,6 +127,7 @@ import { SurebuilderComponent } from './surebuilder/surebuilder.component';
     MainRoutingModule,
     DragDropModule,
     DndModule,
+    HttpClientModule,
 // Thirdparty Module
 NgxDatatableModule,
 NgxChartsModule,

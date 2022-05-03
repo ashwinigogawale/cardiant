@@ -1,4 +1,21 @@
-<div *ngIf="projectsetup;" class="clr-row clr-align-items-start clr-justify-content-start">
+<ng-template #showInfo>
+  <div class="alert alert-info" role="alert">
+      <div class="alert-items">
+          <div class="alert-item static">
+              <div class="alert-icon-wrapper">
+                  <clr-icon class="alert-icon" shape="info-circle"></clr-icon>
+              </div>
+              <span class="alert-text">
+                   project apps could be found. Loading..
+                  <clr-spinner [clrMedium]="true">Loading ...</clr-spinner>
+              </span>
+          </div>
+      </div>
+  </div>
+</ng-template>
+
+
+<div *ngIf="projectsetup; else showInfo" class="clr-row clr-align-items-start clr-justify-content-start">
   <div *ngFor="let app of projectsetup; let index = i" class="clr-col-auto" >
     <div class="clr-row">
       <div class="clr-col-lg-12 clr-col-md-6 clr-col-12" style="width: 550px;">

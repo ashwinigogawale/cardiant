@@ -3,6 +3,8 @@ import { ProjectSetup } from "../../models/Project_setup";
 import { Observable } from "rxjs";
 import { ApiRequestService } from "./api-request.service";
 import { HttpParams } from "@angular/common/http";
+import { HttpClient} from '@angular/common/http';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -10,8 +12,11 @@ export class ProjectSetupService {
   private baseURL = "api/project-setup";
   //private copyProjectURL = 'api/project-list';
   private copyProjectURL = 'api/project-copy';
-
-  constructor(private apiRequest: ApiRequestService) { }
+  data: any;
+  obj:any;
+  constructor(private apiRequest: ApiRequestService,
+    private http: HttpClient) { this.getAll().subscribe(data => {console.log(data)}, error => console.log(error));
+     }
   getAll(page?: number, size?: number): Observable<any> {
     //Create Request URL params
     let params: HttpParams = new HttpParams();
@@ -20,7 +25,19 @@ export class ProjectSetupService {
     //const _http = this.baseURL + '/all';
     return this.apiRequest.get(this.baseURL, params);
   }
+getalljson(){
 
+  return this.http.get('../assets/data/data.json').pipe
+      (map(data => {
+        this.data = data;
+        console.log(data);
+      }, err => {
+        if (err) {
+          return err.json();
+        }
+      }));
+  return this.apiRequest.get(this.baseURL);
+}
   getById(id: number): Observable<ProjectSetup> {
     const _http = this.baseURL + "/" + id;
     return this.apiRequest.get(_http);

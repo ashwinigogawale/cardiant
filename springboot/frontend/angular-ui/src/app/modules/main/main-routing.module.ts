@@ -122,6 +122,9 @@ const routes: Routes = [
       {path: 'reporttype'   , component: ReporttypeComponent},
       {path: 'allproject', component: AllprojectComponent},
       {path: 'allprojectcard', component:AllprojectcardComponent},
+      {path: 'allprojectcard1', component:AllprojectcardComponent},
+      {path: 'allprojectcard2', component:AllprojectcardComponent},
+      {path: 'allprojectcard3', component:AllprojectcardComponent},
       {path: 'dashboard', component:DashboardComponent,
       children: [
         { path: '', redirectTo: 'order', pathMatch: 'full' },
