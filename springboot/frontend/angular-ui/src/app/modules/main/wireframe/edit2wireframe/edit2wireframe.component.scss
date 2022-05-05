@@ -23,11 +23,14 @@
 
 @import"./bootstrap/bootstrap.min.css";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
-
+//@import '~@cds/core/global.min.css'; // clarity global styles
 
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 
+//.basicIconList>div:nth-child(2) {
+  //   margin-left: 0px !important; }
+//.clr-treenode-content:first-child { padding-left: 0px;}
 .textFieldClass{
     display:flex !important;
      flex-direction: row !important;
@@ -51,8 +54,14 @@
     width: 25% !important;
     margin-right: 15px !important;
 }
+.basicIconList{
+    height:32px !important;
+    background-color: white !important;
+    padding: 0px !important;
+    box-shadow: 0px 0px 3px 1px #bbbaba !important;
+}
 .dragdropfeild{
-    //width: 112px !important;
+    width: 60px !important;
     height:40px !important;
     display: flex !important;
     border: none !important;
@@ -60,7 +69,7 @@
     padding: 0px !important;
     justify-content: center !important;
     text-align: center !important;
-    margin-bottom: 5px !important;
+    margin-bottom: 3px !important;
     //background: #ccc !important;
     box-shadow: 0px 0px 3px 1px #bbbaba !important;
 }
@@ -272,7 +281,7 @@ input[type=text],[type=date],[type=email],[type=number],[type=phone],[type=datet
     margin-top: -6px !important;
 }
 input.form-control {
-    height:22px !important;
+    height:32px !important;
  }
 input[type=email] {
     margin-top: -7px;

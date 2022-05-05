@@ -26,6 +26,34 @@ export class field{
   maxcharacters?:any;
   visibilty?:any;
   duplicateVal?:any;
+  encryptData?:any;
+  personalHealthInfo?:any;
+  descriptionText?:any;
+  heightpx?:any;
+  showDescription?:boolean;
+  personalInfo?:boolean;
+  readOnly?:any;
+  sessionVar?:any;
+  allowedDays?:any;
+  allowedHrsFrom?:any;
+  allowedHrsTo?:any;
+  showSeconds?:boolean;
+  datePicker?:any;
+  alphabeticalOrdering?:boolean;
+  fieldLayout?:any;
+  otherChoice?:boolean;
+  dynamicList?:any;
+  iconType?:any;
+  target?:any;
+  defaultCamera?:any;
+  imgoption?:Array<value>;
+  maxDuration?:any;
+  maxNo?:number;
+  decimalPlaces?:number;
+  currencyType?:any;
+  formatNo?:any;
+  expanded?:boolean;
+  files?:Array<any>;
 }
 export class value{
   label?:any="";
@@ -124,4 +152,5 @@ export interface IProperty {
   type_id?:any;
   post_type?:any;
   developer_id?:any;
+
 }
