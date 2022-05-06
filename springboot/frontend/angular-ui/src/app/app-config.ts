@@ -12,7 +12,7 @@ export class AppConfig {
     public currencyFormat = { style: "currency", currency: "USD" };
     public dateFormat = { year: 'numeric', month: 'short', day: 'numeric' };
 // port in enviroment
-apiURL = environment.apiport;
+apiURL = environment.backport;
     // API Related configs
     public apiPort: string ="9191"; // this.apiURL //9191 to pc used and 8080/billingback to jboss
     public apiProtocol: string;

@@ -70,6 +70,7 @@ import { ProjectviewComponent } from './module-setup/projectview/projectview.com
 import { ArchievedComponent } from './archieved/archieved.component';
 import { AllprojectComponent } from './allproject/allproject.component';
 import { AllprojectcardComponent } from './allprojectcard/allprojectcard.component';
+import { SureboardComponent } from './sureboard/sureboard.component';
 
 
 
@@ -119,6 +120,7 @@ const routes: Routes = [
       { path: 'actions', component: ActionsComponent },
       { path: 'wireframe', component: Wireframe1Component },
       {path: 'Archieved', component:ArchievedComponent},
+      {path: 'sureboard', component:SureboardComponent},
       {path: 'reporttype'   , component: ReporttypeComponent},
       {path: 'allproject', component: AllprojectComponent},
       {path: 'allprojectcard', component:AllprojectcardComponent},

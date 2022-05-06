@@ -53,43 +53,24 @@
 <div *ngIf="model && !report" class="padding20 white-bg">
   <div class="spacer30"></div>
   <div class="row">
-
-    <!-- <div class="col-2" style="background-color: #d8d1d1">
-      <div class="fields  " *ngFor="let item of fieldModels; let i = index; let even = even;">
-       <div class=" row field pointer shadow-bg"  [dndDraggable]="item" [dndEffectAllowed]="'copy'" (dndEnd)="onDragEnd($event)" >
-          <i [ngClass]="item.icon" class="fa pull-left icon" title="{{item.label}}"></i>
-          <h6 class="text">{{ item.label }}</h6>
-        </div>
-
-      </div>
-    </div> -->
-    <div class="col-2" style="margin-top: 60px !important;" >
-      <clr-tree>
-        <!-- <clr-tree-node [clrExpanded]="true" class="basicIconList" >
-          Basic
-          <clr-tree-node  class="basicInnode">
-            <div class="clr-row" style="margin-left: -58px;">
-              <ng-container  *ngFor="let item of fieldModels">
-                  <div class="fields clr-col-sm-6" style="background-color: transparent !important; " *ngIf="item.type!='Section' && item.type!='Division' && item.type!='Grid Lines'" >
-                      <div class="field dragdropfeild pointer shadow-bg" [dndDraggable]="item"  [dndEffectAllowed]="'copy'" (dndEnd)="onDragEnd($event)" >
-                        <i [ngClass]="item.icon" style="font-size: 25px" class="ba icon" title="{{item.label}}"></i>
-                      </div>
-                    </div>
-              </ng-container>
-          </div>
-          </clr-tree-node>
-        </clr-tree-node> -->
-
+    <div class="col-2" >
+      <clr-tree  >
         <clr-tree-node *ngFor="let directory of fieldModels" [(clrExpanded)]="directory.expanded">
             {{directory.name}}
-            <clr-tree-node *ngFor="let item of directory.files">
-              <div class="fields clr-col-sm-6" style="background-color: transparent !important; " *ngIf="item.type!='Section' && item.type!='Division' && item.type!='Grid Lines'" >
-                <div class="field dragdropfeild pointer shadow-bg" [dndDraggable]="item"  [dndEffectAllowed]="'copy'" (dndEnd)="onDragEnd($event)" >
-                  <i [ngClass]="item.icon" style="font-size: 25px" class="ba icon" title="{{item.label}}"></i>
+
+            <clr-tree-node >
+              <div class="clr-row" style="margin-left: -40px !important;" >
+                <ng-container  *ngFor="let item of directory.files">
+                <div class="fields clr-col-sm-6" style="background-color: transparent !important; " *ngIf="item.type!='Section' && item.type!='Division' && item.type!='Grid Lines'" >
+                  <div class="field dragdropfeild pointer shadow-bg" [dndDraggable]="item"  [dndEffectAllowed]="'copy'" (dndEnd)="onDragEnd($event)" >
+                    <i [ngClass]="item.icon" style="font-size: 25px" class="ba icon" title="{{item.label}}"></i>
+                  </div>
                 </div>
-              </div>
+              </ng-container>
+            </div>
             </clr-tree-node>
-      </clr-tree-node>
+
+        </clr-tree-node>
       </clr-tree>
     </div>
 
@@ -108,7 +89,7 @@
   </div> -->
 
     <div class="col-10">
-      <div class="form-group" style="margin-bottom: 0px !important; padding: 30px 60px 5px 60px;">
+      <div class="form-group" style="margin-bottom: 0px !important; padding: 30px 60px 5px 0px;">
 				<h2><input class="form-control" type="text" [(ngModel)]="model.name" style="font-size: 20px; border:0px solid; background-color: transparent !important;" /></h2>
 				<input class="form-control" type="text" [(ngModel)]="model.description"  style="border:0px solid; background-color: transparent !important;"/>
 			</div>
@@ -1115,8 +1096,9 @@
           <div class="dndPlaceholder" dndPlaceholderRef></div>
         </section>
 
-        <div class="row">
-          <ng-container  *ngFor="let item of fieldModels" >
+
+          <div class="row" *ngFor="let directory of fieldModels">
+          <ng-container  *ngFor="let item of directory.files" >
               <div class="fields" style="background-color: transparent !important; margin-left: 20px; justify-content: center; " *ngIf="item.type=='Section' || item.type=='Division' || item.type=='Grid Lines'" >
                   <div class="field  pointer shadow-bg" style="background-color: transparent !important; margin: auto !important; " [dndDraggable]="item"  [dndEffectAllowed]="'copy'" (dndEnd)="onDragEnd($event)" >
                     <!-- <i [ngClass]="item.icon" class="fa pull-left icon" title="{{item.label}}"></i> -->
@@ -1125,6 +1107,7 @@
                 </div>
           </ng-container>
         </div>
+
 
 
       <!--  <div class="save-btn-div" dir="rtl">
@@ -1183,7 +1166,7 @@
 <!-- <pre *ngIf="model">{{model|json}}</pre> -->
 
 <div class="row" >
-      <div class="col-4" style="position: absolute;bottom: 0px;">
+      <div class="col-4" style="position: absolute;bottom: 10px;">
         <div class="btn-cont btn-res-pre">
           <button
             (click)="openmodal()"
@@ -1198,7 +1181,7 @@
           </button>
         </div>
       </div>
-      <div class=" col-8" dir="rtl" style="position: absolute;bottom: 0px;">
+      <div class=" col-8" dir="rtl" style="position: absolute;bottom: 10px; right: 10px;">
         <button type="submit" class="btn btn-primary btn-adddata " (click)="addModal()" >
           <b>Add Data</b>
         </button>

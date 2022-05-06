@@ -139,24 +139,42 @@
                         <span class="label label-purple p7" style="margin-top: .4em;"> {{app. dbUserName}}</span>
                         <span class="label label-purple p7" style="margin-top: .4em;"> {{app.dbPassword}}</span>
                         <span class="label label-success p7" style="margin-top: .4em;"> {{app.portNumber}}</span>
+
+
                         <div class="progress-static labeled" style="margin-top: 10px; height: 15px;margin-left: 10px;margin-right: 40px;">
                           <div class="progress-meter" data-value="80" data-displayval="80%" style="height: 15px;"></div>
                           <span style="margin-right: 10px;">80%</span>
                         </div>
+
                         <div>
+
                           <button id="add" class="btn btn-primary" style="margin-top: 30px;" (click)="gotomenu()">
                             <clr-icon shape="ellipsis-horizontal"></clr-icon>
                           </button>
                           <span  class="action">
-                            <div class="dropdown1" id="div2" >
+                            <div class="dropdown2" id="div2" >
                               <a href="javascript://" ><div class="me" [routerLink]="['../module1']">sureOps</div></a>
                               <a href="javascript://"><div class="me" [routerLink]="['../module1']">sureGit</div></a>
                               <a href="javascript://"><div class="me" [routerLink]="['../module1']">sureDokr</div></a>
-
                             </div>
                           </span>
-
                         </div>
+
+
+                        <!-- <div style="margin-top: 30px;text-align: center;width: 100px;">
+
+                          <div class="dropdown-container" tabindex="-1"  >
+                            <button class="btn btn-primary" id="one" >
+                              <div class="dots">...</div>
+                             </button>
+                            <div class="hdots" > </div>
+                             <div class="dropdown1">
+                               <a href="javascript://"  ><div class="me" [routerLink]="['../module1']">sureOps</div></a>
+                               <a href="javascript://" ><div class="me" [routerLink]="['../module1']">sureGit</div></a>
+                               <a href="javascript://"><div class="me">sureDokr</div></a>
+                             </div>
+                           </div>
+                        </div> -->
 
                       </div>
 
@@ -170,3 +188,5 @@
       </div>
       </div>
   </div>
+
+

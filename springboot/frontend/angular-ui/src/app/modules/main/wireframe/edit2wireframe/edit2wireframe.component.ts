@@ -97,7 +97,6 @@ export class Edit2wireframeComponent implements OnInit {
             ]
             },
             {
-              "iconType":"advanced",
               "type": "email",
               "icon": "bi-envelope",
               "required": true,
@@ -112,7 +111,13 @@ export class Edit2wireframeComponent implements OnInit {
               "div_name" : "",
               "gridLine_name" : "",
               "handle":true,
+              "tooltipmsg":"",
+              "maxcharacters":"",
+              "visibilty":"",
+              "duplicateVal":"",
               "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
               "values": [
                 {
                   "label": "QR Code",
@@ -125,7 +130,6 @@ export class Edit2wireframeComponent implements OnInit {
               ]
             },
             {
-              "iconType":"basic",
               "type": "phone",
               "icon": "bi-telephone",
               "label": "Phone",
@@ -139,8 +143,15 @@ export class Edit2wireframeComponent implements OnInit {
               "div_name" : "",
               "gridLine_name" : "",
               "handle":true,
+              "tooltipmsg":"",
+              "maxcharacters":"",
+              "visibilty":"",
+              "duplicateVal":"",
               "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
               "personalInfo":false,
+              "showDescription":false,
               "values": [
                 {
                   "label": "QR Code",
@@ -153,7 +164,6 @@ export class Edit2wireframeComponent implements OnInit {
               ]
             },
             {
-              "iconType":"basic",
               "type": "number",
               "label": "Number",
               "icon": "bi-123",
@@ -478,12 +488,12 @@ export class Edit2wireframeComponent implements OnInit {
               "handle":true,
               "values": [
                 {
-                  "label": "Option 1",
-                  "value": "option-1"
+                  "label": "QR Code",
+                  "value": "qr-code"
                 },
                 {
-                  "label": "Option 2",
-                  "value": "option-2"
+                  "label": "Bar Code",
+                  "value": "bar-code"
                 }
               ]
             },

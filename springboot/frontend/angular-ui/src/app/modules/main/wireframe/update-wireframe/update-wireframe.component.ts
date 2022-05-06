@@ -26,6 +26,21 @@ export class UpdateWireframeComponent implements OnInit, AfterViewInit {
   div_coll = new Map();
   tr_map = new Map();
   sub_div : any = [];
+
+  visibiltyOpt = ["Everyone","Individual"];
+  sessionVarOpt = ["session","session1"];
+  allowedDaysOpt = [1,2,3,4];
+  allowedHrsToOpt = [1,2,3,4];
+  allowedHrsFromOpt = [1,2,3,4];
+  datePickerOpt = ["Default","Default1"];
+  textFieldStyle : boolean = false;
+  fieldLayoutOpt = ["Single Column","Double Column"];
+  dynamicListOpt = ["list1","list2","list3"];
+  defaultCameraOpt = ["Primary","Secondary"];
+  targetOpt = ["New Window","New Tab"];
+  currencyTypeOpt = ["USD","Doller","Rupee"];
+  formatNoOpt = ["1,234,567.89","1,23,577.87"];
+
   handleChange(i, val,modalAttributes) {
     if(val == '1a-'+i)
       modalAttributes.size = 'w-100';
@@ -38,238 +53,769 @@ export class UpdateWireframeComponent implements OnInit, AfterViewInit {
   }
   fieldModels:Array<field>=[
     {
-      "type": "text",
-      "icon": "fa-font",
-      "label": "Text",
-      "description": "Enter your name",
-      "placeholder": "Enter your name",
-      "className": "form-control",
-      "subtype": "text",
-      "size" : 'w-100',
-      "regex" : "",
-      "div_name" : "",
-      "gridLine_name" : "",
-      "handle":true
+      name: "Basic",
+      expanded: true,
+      files: [
+            {
+            "type": "text",
+            "icon": "bi-type",
+            "label": "Text",
+            "description": "Enter your name",
+            "placeholder": "Enter your name",
+            "className": "form-control",
+            "subtype": "text",
+            "size" : 'w-100',
+            "regex" : "",
+            "div_name" : "",
+            "tooltipmsg":"",
+            "maxcharacters":"",
+            "visibilty":"",
+            "duplicateVal":"",
+            "encryptData":"",
+            "personalHealthInfo":false,
+            "descriptionText":"",
+            "gridLine_name" : "",
+            "handle":true,
+            "values": [
+              {
+                "label": "QR Code",
+                "value": "qr-code"
+              },
+              {
+                "label": "Bar Code",
+                "value": "bar-code"
+              }
+            ]
+            },
+            {
+              "type": "email",
+              "icon": "bi-envelope",
+              "required": true,
+              "label": "Email",
+              "description": "Enter your email",
+              "placeholder": "Enter your email",
+              "className": "form-control",
+              "subtype": "text",
+              "size" : 'w-100',
+              "regex" : "^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9_.-]+)\.([a-zA-Z]{2,5})$",
+              "errorText": "Please enter a valid email",
+              "div_name" : "",
+              "gridLine_name" : "",
+              "handle":true,
+              "tooltipmsg":"",
+              "maxcharacters":"",
+              "visibilty":"",
+              "duplicateVal":"",
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ]
+            },
+            {
+              "type": "phone",
+              "icon": "bi-telephone",
+              "label": "Phone",
+              "description": "Enter your phone",
+              "placeholder": "Enter your phone",
+              "className": "form-control",
+              "subtype": "text",
+              "size" : 'w-100',
+              "regex" : "^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$",
+              "errorText": "Please enter a valid phone number",
+              "div_name" : "",
+              "gridLine_name" : "",
+              "handle":true,
+              "tooltipmsg":"",
+              "maxcharacters":"",
+              "visibilty":"",
+              "duplicateVal":"",
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "personalInfo":false,
+              "showDescription":false,
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ]
+            },
+            {
+              "type": "number",
+              "label": "Number",
+              "icon": "bi-123",
+              "description": "Age",
+              "placeholder": "Enter your age",
+              "className": "form-control",
+              "value": "20",
+              "size" : 'w-100',
+              "min": 12,
+              "div_name" : "",
+              "gridLine_name" : "",
+              "max": 90,
+              "duplicateVal":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ]
+            },
+            {
+              "iconType":"basic",
+              "type": "date",
+              "icon":"bi-calendar4",
+              "label": "Date",
+              "size" : 'w-100',
+              "placeholder": "Date",
+              "div_name" : "",
+              "gridLine_name" : "",
+              "className": "form-control",
+              "readOnly":false,
+              "sessionVar":"",
+              "allowedDays":"",
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ]
+            },
+            {
+              "type": "datetime-local",
+              "icon":"bi-clock",
+              "label": "DateTime",
+              "size" : 'w-100',
+              "placeholder": "Date Time",
+              "div_name" : "",
+              "gridLine_name" : "",
+              "className": "form-control",
+              "allowedHrsFrom":"",
+              "allowedHrsTo":"",
+              "showSeconds":false,
+              "datePicker":"",
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ]
+            },
+            {
+              "type": "textarea",
+              "icon":"bi-textarea-resize",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "label": "Textarea",
+              "encryptData":false,
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "heightpx":"100",
+              "showDescription":false,
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "icon": "bi-text-left",
+              "label": "Paragraph",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "placeholder": "Type your text to display here only"
+            },
+            {
+              "type": "Section",
+              "icon": "bi-text-left",
+              "label": "Section",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "placeholder": "Section Name"
+            },
+            {
+              "type": "Division",
+              "icon": "bi-text-center",
+              "label": "Division",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "placeholder": "Division Name",
+              children : []
+            },
+            {
+              "type": "Grid Lines",
+              "icon": "bi-text-center",
+              "label": "Grid Lines",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "placeholder": "Grid Lines Name",
+              children : []
+            },
+            {
+              "type": "checkbox",
+              "required": true,
+              "label": "Checkbox",
+              "icon":"bi-check2-square",
+              "size" : 'w-100',
+              "description": "Checkbox",
+              "inline": true,
+              "div_name" : "",
+              "gridLine_name" : "",
+              "alphabeticalOrdering":false,
+              "values": [
+                {
+                  "label": "Option 1",
+                  "value": "option-1"
+                },
+                {
+                  "label": "Option 2",
+                  "value": "option-2"
+                }
+              ]
+            },
+            {
+              "type": "radio",
+              "icon":"bi-ui-radios",
+              "label": "Radio",
+              "size" : 'w-100',
+              "description": "Radio boxes",
+              "div_name" : "",
+              "gridLine_name" : "",
+              "fieldLayout":"",
+              "alphabeticalOrdering":false,
+              "otherChoice":false,
+              "personalHealthInfo":false,
+              "values": [
+                {
+                  "label": "Option 1",
+                  "value": "option-1"
+                },
+                {
+                  "label": "Option 2",
+                  "value": "option-2"
+                }
+              ]
+            },
+            {
+              "type": "autocomplete",
+              "icon":"bi-menu-button",
+              "label": "Select",
+              "description": "Select",
+              "placeholder": "Select",
+              "size" : 'w-100',
+              "className": "form-control",
+              "div_name" : "",
+              "gridLine_name" : "",
+              "readOnly" : false,
+              "duplicateVal":"",
+              "sessionVar":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "dynamicList":"",
+              "alphabeticalOrdering":false,
+              "otherChoice":false,
+              "imgoption": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ],
+              "values": [
+                {
+                  "label": "Option 1",
+                  "value": "option-1"
+                },
+                {
+                  "label": "Option 2",
+                  "value": "option-2"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "icon":"bi-upload",
+              "label": "File Upload",
+              "className": "form-control",
+              "size" : 'w-100',
+              "subtype": "file",
+              "div_name" : "",
+              "gridLine_name" : "",
+              "duplicateVal":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "values": [
+                {
+                  "label": "Local machine",
+                  "value": "local-machine"
+                },
+                {
+                  "label": "sureDrive",
+                  "value": "sure-drive"
+                },
+                {
+                  "label": "Google Drive",
+                  "value": "google-drive"
+                }
+              ]
+            },
+            {
+              "type": "button",
+              "icon":"bi-cursor",
+              "subtype": "submit",
+              "size" : 'w-100',
+              "label": "Button",
+              "div_name" : "",
+              "gridLine_name" : "",
+            },
+            {
+              "type": "autocomplete",
+              "icon":"bi-input-cursor-text",
+              "label": "autocomplete",
+              "description": "autocomplete",
+              "placeholder": "autocomplete",
+              "className": "form-control",
+              "div_name" : "",
+              "gridLine_name" : "",
+              "readOnly" : false,
+              "duplicateVal":"",
+              "sessionVar":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "dynamicList":"",
+              "alphabeticalOrdering":false,
+              "otherChoice":false,
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ]
+            },
+          ]
     },
     {
-      "type": "email",
-      "icon": "fa-envelope",
-      "required": true,
-      "label": "Email",
-      "description": "Enter your email",
-      "placeholder": "Enter your email",
-      "className": "form-control",
-      "subtype": "text",
-      "size" : 'w-100',
-      "regex" : "^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9_.-]+)\.([a-zA-Z]{2,5})$",
-      "errorText": "Please enter a valid email",
-      "div_name" : "",
-      "gridLine_name" : "",
-      "handle":true
-    },
-    {
-      "type": "phone",
-      "icon": "fa-phone",
-      "label": "Phone",
-      "description": "Enter your phone",
-      "placeholder": "Enter your phone",
-      "className": "form-control",
-      "subtype": "text",
-      "size" : 'w-100',
-      "regex" : "^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$",
-      "errorText": "Please enter a valid phone number",
-      "div_name" : "",
-      "gridLine_name" : "",
-      "handle":true
-    },
-    {
-      "type": "number",
-      "label": "Number",
-      "icon": "fa-html5",
-      "description": "Age",
-      "placeholder": "Enter your age",
-      "className": "form-control",
-      "value": "20",
-      "size" : 'w-100',
-      "min": 12,
-      "div_name" : "",
-      "gridLine_name" : "",
-      "max": 90
-    },
-    {
-      "type": "date",
-      "icon":"fa-calendar",
-      "label": "Date",
-      "size" : 'w-100',
-      "placeholder": "Date",
-      "div_name" : "",
-      "gridLine_name" : "",
-      "className": "form-control"
-    },
-    {
-      "type": "datetime-local",
-      "icon":"fa-calendar",
-      "label": "DateTime",
-      "size" : 'w-100',
-      "placeholder": "Date Time",
-      "div_name" : "",
-      "gridLine_name" : "",
-      "className": "form-control"
-    },
-    {
-      "type": "textarea",
-      "icon":"fa-text-width",
-      "size" : 'w-100',
-      "div_name" : "",
-      "gridLine_name" : "",
-      "label": "Textarea"
-    },
-    {
-      "type": "paragraph",
-      "icon": "fal fa-align-left",
-      "label": "Paragraph",
-      "size" : 'w-100',
-      "div_name" : "",
-      "gridLine_name" : "",
-      "placeholder": "Type your text to display here only"
-    },
-    {
-      "type": "Section",
-      "icon": "fal fa-align-left",
-      "label": "Section",
-      "size" : 'w-100',
-      "div_name" : "",
-      "gridLine_name" : "",
-      "placeholder": "Section Name"
-    },
-    {
-      "type": "Division",
-      "icon": "fas fa-align-center",
-      "label": "Division",
-      "size" : 'w-100',
-      "div_name" : "",
-      "gridLine_name" : "",
-      "placeholder": "Division Name",
-       children : []
-    },
-    {
-      "type": "Grid Lines",
-      "icon": "fas fa-align-center",
-      "label": "Grid Lines",
-      "size" : 'w-100',
-      "div_name" : "",
-      "gridLine_name" : "",
-      "placeholder": "Grid Lines Name",
-      children : []
-    },
-    {
-      "type": "checkbox",
-      "required": true,
-      "label": "Checkbox",
-      "icon":"fa-list",
-      "size" : 'w-100',
-      "description": "Checkbox",
-      "inline": true,
-      "div_name" : "",
-      "gridLine_name" : "",
-      "values": [
-        {
-          "label": "Option 1",
-          "value": "option-1"
-        },
-        {
-          "label": "Option 2",
-          "value": "option-2"
-        }
-      ]
-    },
-    {
-      "type": "radio",
-      "icon":"fa-list-ul",
-      "label": "Radio",
-      "size" : 'w-100',
-      "description": "Radio boxes",
-      "div_name" : "",
-      "gridLine_name" : "",
-      "values": [
-        {
-          "label": "Option 1",
-          "value": "option-1"
-        },
-        {
-          "label": "Option 2",
-          "value": "option-2"
-        }
-      ]
-    },
-    {
-      "type": "autocomplete",
-      "icon":"fa-bars",
-      "label": "Select",
-      "description": "Select",
-      "placeholder": "Select",
-      "size" : 'w-100',
-      "className": "form-control",
-      "div_name" : "",
-      "gridLine_name" : "",
-      "values": [
-        {
-          "label": "Option 1",
-          "value": "option-1"
-        },
-        {
-          "label": "Option 2",
-          "value": "option-2"
-        },
-        {
-          "label": "Option 3",
-          "value": "option-3"
-        }
-      ]
-    },
-    {
-      "type": "file",
-      "icon":"fa-file",
-      "label": "File Upload",
-      "className": "form-control",
-      "size" : 'w-100',
-      "subtype": "file",
-      "div_name" : "",
-      "gridLine_name" : "",
-    },
-    {
-      "type": "button",
-      "icon":"fa-paper-plane",
-      "subtype": "submit",
-      "size" : 'w-100',
-      "label": "Button",
-      "div_name" : "",
-      "gridLine_name" : "",
-    },
-    {
-      "type": "autocomplete",
-      "icon":"fa-bars",
-      "label": "autocomplete",
-      "description": "autocomplete",
-      "placeholder": "autocomplete",
-      "className": "form-control",
-      "div_name" : "",
-      "gridLine_name" : "",
-      "values": [
-        {
-          "label": "autocomplete 1",
-          "value": "autocomplete-1"
-        },
-        {
-          "label": "autocomplete 2",
-          "value": "autocomplete-2"
-        },
-        {
-          "label": "autocomplete 3",
-          "value": "autocomplete-3"
-        }
-      ]
-    },
+      name: "Advanced",
+      expanded: false,
+      files: [
+            {
+              "type": "multiselect",
+              "icon": "bi-list-check",
+              "label": "Multiselect",
+              "description": "Enter your name",
+              "placeholder": "Enter your name",
+              "className": "form-control",
+              "size" : 'w-100',
+              "regex" : "",
+              "div_name" : "",
+              "sessionVar":"",
+              "tooltipmsg":"",
+              "maxcharacters":"",
+              "visibilty":"",
+              "duplicateVal":"",
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "dynamicList":"",
+              "alphabeticalOrdering":false,
+              "otherChoice":false,
+              "gridLine_name" : "",
+              "handle":true,
+              "imgoption": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ],
+              "values": [
+                {
+                  "label": "Option 1",
+                  "value": "option-1"
+                },
+                {
+                  "label": "Option 2",
+                  "value": "option-2"
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "icon":"bi-image",
+              "label": "Image",
+              "className": "form-control",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "duplicateVal":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "target":"",
+              "defaultCamera":"",
+              "values": [
+                {
+                  "label": "browse/gallery",
+                  "value": "browse-gallery"
+                },
+                {
+                  "label": "sureDrive",
+                  "value": "sure-drive"
+                },
+                {
+                  "label": "Google Drive",
+                  "value": "google-drive"
+                },
+                {
+                  "label": "Device Camera",
+                  "value": "device-camera"
+                },
+                {
+                  "label": "Link",
+                  "value": "link"
+                }
+              ],
+              "imgoption":[
+                {
+                  "label": "Title",
+                  "value": "title"
+                },
+                {
+                  "label": "Url",
+                  "value": "url"
+                }
+              ]
+            },
+            {
+              "type": "audio",
+              "icon":"bi-file-music",
+              "label": "Audio",
+              "className": "form-control",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "duplicateVal":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "target":"",
+              "maxDuration":"",
+              "values": [
+                {
+                  "label": "browse/gallery",
+                  "value": "browse-gallery"
+                },
+                {
+                  "label": "sureDrive",
+                  "value": "sure-drive"
+                },
+                {
+                  "label": "Google Drive",
+                  "value": "google-drive"
+                },
+                {
+                  "label": "Device Camera",
+                  "value": "device-camera"
+                },
+                {
+                  "label": "Link",
+                  "value": "link"
+                }
+              ]
+            },
+            {
+              "type": "video",
+              "icon":"bi-camera-video",
+              "label": "Audio",
+              "className": "form-control",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "duplicateVal":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "target":"",
+              "maxDuration":"",
+              "values": [
+                {
+                  "label": "browse/gallery",
+                  "value": "browse-gallery"
+                },
+                {
+                  "label": "sureDrive",
+                  "value": "sure-drive"
+                },
+                {
+                  "label": "Google Drive",
+                  "value": "google-drive"
+                },
+                {
+                  "label": "Device Camera",
+                  "value": "device-camera"
+                },
+                {
+                  "label": "Link",
+                  "value": "link"
+                }
+              ]
+            },
+            {
+              "type": "signature",
+              "icon":"bi-check-lg",
+              "label": "Signature",
+              "className": "form-control",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "duplicateVal":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "heightpx":"100",
+              "values": [
+                {
+                  "label": "browse/gallery",
+                  "value": "browse-gallery"
+                },
+                {
+                  "label": "sureDrive",
+                  "value": "sure-drive"
+                },
+                {
+                  "label": "Google Drive",
+                  "value": "google-drive"
+                },
+                {
+                  "label": "Device Camera",
+                  "value": "device-camera"
+                },
+                {
+                  "label": "Link",
+                  "value": "link"
+                }
+              ]
+            },
+            {
+              "type": "url",
+              "icon":"bi-globe",
+              "required": true,
+              "label": "URL",
+              "className": "form-control",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "duplicateVal":"",
+              "tooltipmsg":"",
+              "maxcharacters":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "target":"",
+              "defaultCamera":"",
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ],
+              "imgoption":[
+                {
+                  "label": "Link Name",
+                  "value": "link-name"
+                },
+                {
+                  "label": "Title",
+                  "value": "title"
+                }
+              ]
+            },
+            {
+              "type": "percent",
+              "icon":"bi-percent",
+              "required": false,
+              "label": "Percent",
+              "className": "form-control",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "duplicateVal":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "maxNo":10,
+              "decimalPlaces":2,
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ]
+            },
+            {
+              "type": "decimal",
+              "icon":"bi-123",
+              "required": false,
+              "label": "Decimal",
+              "className": "form-control",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "duplicateVal":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "maxNo":10,
+              "decimalPlaces":2,
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ]
+            },
+            {
+              "type": "currency",
+              "icon":"bi-currency-dollar",
+              "required": false,
+              "label": "Currency",
+              "className": "form-control",
+              "size" : 'w-100',
+              "div_name" : "",
+              "gridLine_name" : "",
+              "duplicateVal":"",
+              "tooltipmsg":"",
+              "visibilty":"",
+              "personalInfo":false,
+              "encryptData":"",
+              "personalHealthInfo":false,
+              "descriptionText":"",
+              "showDescription":false,
+              "maxNo":10,
+              "decimalPlaces":2,
+              "currencyType":"",
+              "formatNo":"",
+              "values": [
+                {
+                  "label": "QR Code",
+                  "value": "qr-code"
+                },
+                {
+                  "label": "Bar Code",
+                  "value": "bar-code"
+                }
+              ]
+            },
+          ]
+       }
   ];
   modelFields:Array<field>=[];
   model:any = {
