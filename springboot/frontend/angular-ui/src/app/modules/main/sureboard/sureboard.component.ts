@@ -116,28 +116,28 @@ export class SureboardComponent implements OnInit {
     private httpClient: HttpClient) {this.finalcol = new Array<any>(); }
 
   ngOnInit(): void {
-    // this._col.getColumnsOfBoard(107).subscribe(
-    //   (data: any)=>{
-    //     this.cols = data;
+    this._col.getColumnsOfBoard(107).subscribe(
+      (data: any)=>{
+        this.cols = data;
 
-    //     this.cols.forEach((c: any)=>{
-    //       c['cdata'] = '';
-    //       this._card.getCardsOfColumn(c.cId).subscribe(
-    //         (datacard: any)=>{
-    //           c['cdata'] = datacard;
-    //         },
-    //         (err: any)=>{
-    //           console.log('error: '+err);
-    //         }
-    //       );
-    //     });
-    //     // console.log(this.cols);
-    //   },
-    //   (error: any)=>{
-    //     console.log('Error in loading data : ' + error);
+        this.cols.forEach((c: any)=>{
+          c['cdata'] = '';
+          this._card.getCardsOfColumn(c.cId).subscribe(
+            (datacard: any)=>{
+              c['cdata'] = datacard;
+            },
+            (err: any)=>{
+              console.log('error: '+err);
+            }
+          );
+        });
+        // console.log(this.cols);
+      },
+      (error: any)=>{
+        console.log('Error in loading data : ' + error);
 
-    //   }
-    // );
+      }
+    );
 
     this._board.getOneBoard(107).subscribe(
       (data: any)=>{

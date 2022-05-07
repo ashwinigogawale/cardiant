@@ -71,6 +71,7 @@ import { ArchievedComponent } from './archieved/archieved.component';
 import { AllprojectComponent } from './allproject/allproject.component';
 import { AllprojectcardComponent } from './allprojectcard/allprojectcard.component';
 import { SureboardComponent } from './sureboard/sureboard.component';
+import { MyworkspaceComponent } from './myworkspace/myworkspace.component';
 
 
 
@@ -121,6 +122,7 @@ const routes: Routes = [
       { path: 'wireframe', component: Wireframe1Component },
       {path: 'Archieved', component:ArchievedComponent},
       {path: 'sureboard', component:SureboardComponent},
+      {path: 'myworkspace', component:MyworkspaceComponent},
       {path: 'reporttype'   , component: ReporttypeComponent},
       {path: 'allproject', component: AllprojectComponent},
       {path: 'allprojectcard', component:AllprojectcardComponent},
