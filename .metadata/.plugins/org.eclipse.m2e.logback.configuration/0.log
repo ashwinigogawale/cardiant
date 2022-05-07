@@ -643,3 +643,4 @@
 2022-05-06 12:41:36,649 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 130 resources
 2022-05-06 12:41:37,076 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-05-06 12:41:37,076 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory G:\cnsbetawithcardiant\springboot\src\test\resources
+2022-05-07 10:02:54,985 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
