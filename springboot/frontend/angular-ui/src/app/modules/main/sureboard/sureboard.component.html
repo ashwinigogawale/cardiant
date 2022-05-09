@@ -1,15 +1,17 @@
 <div class="root">
   <div class="board" *ngIf="!flag && !flag2 && !flag3">
     <div>
-      <div class="clr-col-12" style="text-align: right;">
-        <button id="add" class="btn btn-primary"  (click)="isModalVisible = true">
-                <clr-icon shape="plus"></clr-icon>ADD
-              </button>
-
-              <button id="add" class="btn btn-primary" (click)="open = true">
-                <clr-icon shape="plus"></clr-icon>create issues
-              </button>
-            </div>
+        <div class="clr-col-12" style="text-align: left;">
+          <button id="add" class="btn topbutton" (click)="open = true">
+            <clr-icon shape="plus" style="fill:whitesmoke !important;"></clr-icon> Task
+          </button>
+          <button id="add" class="btn topbutton"  (click)="isModalVisible = true">
+            <clr-icon shape="plus" style="fill:white !important;"></clr-icon> Stage
+          </button>
+          <button id="add" class="btn topbutton" >
+            <clr-icon shape="plus" style="fill:white !important;"></clr-icon> Board
+          </button>
+        </div>
 
       <clr-modal [(clrModalOpen)]="isModalVisible"  [clrModalStaticBackdrop]="true">
 
@@ -29,68 +31,129 @@
           </form>
         </div>
       </clr-modal>
-
     </div>
-    <div class="board-wrapper">
-      <div class="board-columns" cdkDropListGroup>
-        <div class="board-column" *ngFor="let col of cols">
-          <div class="clr-row">
-            <div class="clr-col-7">
-              <div class="column-title" dir="ltr">
-                {{ col.cName }}
-                <span (click)="oncEdit(col.cId)" class="title">
-                  <clr-icon shape="pencil"></clr-icon>
-                </span>
-              </div>
-            </div>
-            <div class="clr-col-3">
-              <div>
-                <!-- <button class="btn" size="16" (click)="addCard(col.cId)">Add</button> -->
-                <div>
-                  <button (click)="addCard(col.cId)" class="btn btn-primary">
-                    <clr-icon shape="plus"></clr-icon>Add
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="tasks-container" cdkDropList [cdkDropListData]="col.cdata" (cdkDropListDropped)="drop($event)">
-            <div class="task" cdkDrag *ngFor="let item of col.cdata"
-              style="border-left: red;border-style: solid;border-top: none;border-right: none;">
-              <!-- (dblclick)="dblclk(item.id)" -->
-              <div (click)="onEdit(item.id)">
 
-                <div class="chat-area">
-                  <div class="income-msg">
-                    <img class="avatar" src="assets/download.png" alt="">
-                    <span class="msg" style="margin: 10px; font-size: 14px;"> {{ item.title }} </span>
-                    <div class="dropdown-container" tabindex="-1" style="padding-left: 70px;">
-                      <div class="three-dots"></div>
-                      <div class="dropdown">
-                        <a href="">
-                          <div>Add</div>
-                        </a>
-                        <a href="">
-                          <div>download</div>
-                        </a>
-                        <a href="#">
-                          <div>delete</div>
-                        </a>
-                      </div>
-                    </div>
+    <div>
+    <!-- Filter COlumns -->
+      <div class="sectionFliter">
+          <div class="serchedBy" style="margin-bottom: 5px;">
+            <div>
+              <span style="font-weight:bold;">Search By</span>
+            </div>
+            <ul style="list-style-type: none; margin-left: 10px;">
+              <li><clr-icon shape="star"></clr-icon>&nbsp;Everything</li>
+              <li><clr-icon shape="star"></clr-icon>&nbsp;Owned by me</li>
+              <li><clr-icon shape="star"></clr-icon>&nbsp;Requested by me</li>
+              <li><clr-icon shape="star"></clr-icon>&nbsp;Updated in last week</li>
+              <li><clr-icon shape="circle"></clr-icon>Work in progress</li>
+            </ul>
+          </div>
+          <div class="filters" style="font-weight:bold;margin-bottom: 5px;">
+              <span>Filters</span>
+              <clr-tree>
+                <clr-tree-node *ngFor="let directory of filterDirectory" [(clrExpanded)]="directory.expanded">
+                  {{directory.name}}
+                  <clr-tree-node *ngFor="let file of directory.files">
+                      <div> {{file.name}} </div>
+                  </clr-tree-node>
+                </clr-tree-node>
+              </clr-tree>
+          </div>
+
+          <div class="teamCol" style="font-weight:bold; margin-bottom: 5px;">
+            <!-- <span>Teams</span> -->
+            <clr-tree>
+              <clr-tree-node *ngFor="let directory of teamDirectory" [(clrExpanded)]="directory.expanded" style="margin-left: -13px;">
+                {{directory.name}}
+                <clr-tree-node *ngFor="let file of directory.files">
+                    <div> {{file.name}} </div>
+                </clr-tree-node>
+              </clr-tree-node>
+            </clr-tree>
+          </div>
+
+          <div class="repositoriesCol" style="font-weight:bold; margin-bottom: 5px;">
+            <!-- <span>Repositories</span> -->
+            <clr-tree>
+              <clr-tree-node *ngFor="let directory of repositoriesDirectory" [(clrExpanded)]="directory.expanded" style="margin-left: -13px;">
+                {{directory.name}}
+                <clr-tree-node *ngFor="let file of directory.files">
+                    <div> {{file.name}} </div>
+                </clr-tree-node>
+              </clr-tree-node>
+            </clr-tree>
+        </div>
+      </div>
+
+      <div class="board-wrapper">
+        <div class="board-columns" cdkDropListGroup>
+          <div class="board-column" *ngFor="let col of cols">
+            <div class="clr-row" style="margin-right: 0px!important;">
+              <div class="clr-col-10">
+                <div class="column-title" dir="ltr">
+                  {{ col.cName }}
+                  <span (click)="oncEdit(col.cId)" class="title">
+                    <clr-icon shape="pencil"></clr-icon>
+                  </span>
+                  <span class="label label-light-blue p7" style="float: right;margin-top: 0px; margin-right: -20px;">153</span>
+                </div>
+
+              </div>
+              <!-- <div class="clr-col-3">
+                <div>
+                  <button class="btn" size="16" (click)="addCard(col.cId)">Add</button>
+                  <div>
+                    <button (click)="addCard(col.cId)" class="btn btn-primary">
+                      <clr-icon shape="plus"></clr-icon>Add
+                    </button>
                   </div>
                 </div>
-                <div class="card-footer">
-                  <span class="label label-light-blue p7" style="margin-top: .4em; display: inline;">{{ item.id
-                    }}</span>
-                  <span class="label label-purple p7" style="margin-top: .4em; display: inline;">{{ item.date }}</span>
+              </div> -->
+            </div>
+
+            <div style="border: 4px solid #70f3cf !important;margin-bottom: 15px; padding-left: 0px !important; padding-right: 0px !important;">
+            </div>
+
+            <div class="tasks-container" cdkDropList [cdkDropListData]="col.cdata" (cdkDropListDropped)="drop($event)">
+              <div class="task" cdkDrag *ngFor="let item of col.cdata"
+                style="border-left: red;border-style: solid;border-top: none;border-right: none;">
+                <!-- (dblclick)="dblclk(item.id)" -->
+                <div (click)="onEdit(item.id)">
+
+                  <!-- <div class="chat-area"> -->
+                    <div><!-- removed class="income-msg"-->
+                      <div><span style="margin: 10px; font-size: 12px;">Epic name</span></div>
+                      <div><span class="msg" style="margin: 10px; font-size: 18px;font-weight: bold;"> {{ item.title }} </span></div>
+                      <div><span class="label label-light-gray p7" style="margin-top: .4em; margin-left: 10px; display: inline;">week 3 2020</span></div>
+                      <!-- <div class="dropdown-container" tabindex="-1" style="padding-left: 164px;">
+                        <div class="three-dots"></div>
+                        <div class="dropdown">
+                          <a href="">
+                            <div>Add</div>
+                          </a>
+                          <a href="">
+                            <div>download</div>
+                          </a>
+                          <a href="#">
+                            <div>delete</div>
+                          </a>
+                        </div>
+                      </div> -->
+                    </div>
+                  <!-- </div> -->
+                  <div class="card-footer" style="padding:4px !important; ">
+                    <span class="label label-light-blue p7" style="margin-top: .4em; display: inline;">{{ item.id
+                      }}</span>
+                    <span class="label label-purple p7" style="margin-top: .4em; display: inline;">{{ item.date }}</span>
+                    <img class="avatar" src="assets/download.png" alt="" style="float: right;margin-left: 20px;">
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+  </div>
   </div>
 </div>
 

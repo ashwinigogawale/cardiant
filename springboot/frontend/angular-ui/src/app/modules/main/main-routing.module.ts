@@ -72,6 +72,11 @@ import { AllprojectComponent } from './allproject/allproject.component';
 import { AllprojectcardComponent } from './allprojectcard/allprojectcard.component';
 import { SureboardComponent } from './sureboard/sureboard.component';
 import { MyworkspaceComponent } from './myworkspace/myworkspace.component';
+import { GitfolderComponent } from './gitfolder/gitfolder.component';
+import { Gitfolder1Component } from './gitfolder1/gitfolder1.component';
+import { GitfileComponent } from './gitfile/gitfile.component';
+import { Gitfile1Component } from './gitfile1/gitfile1.component';
+import { Gitfolder2Component } from './gitfolder2/gitfolder2.component';
 
 
 
@@ -105,9 +110,11 @@ const routes: Routes = [
       {path: 'documnetmaster', component:DocumentmasterComponent},
       {path: 'documentreference', component:DocumentreferenceComponent},
       {path: 'documentstructure', component:DocumentstructureComponent},
-
-
-
+      {path:'gitfolder',component:GitfolderComponent},
+      {path:'gitfolder1',component:Gitfolder1Component},
+      {path:'gitfolder2',component:Gitfolder2Component},
+      {path:'gitfile',component:GitfileComponent},
+      {path:'gitfile1',component:Gitfile1Component},
      // {path: 'lazy' , component:LazyloadingComponent},
       {path:'log',component:LogconfigComponent},
      { path: 'passwordreset', component: PasswordResetComponent },

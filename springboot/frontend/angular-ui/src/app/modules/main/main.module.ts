@@ -95,6 +95,10 @@ import { SureboardComponent } from './sureboard/sureboard.component';
 import { MyworkspaceComponent } from './myworkspace/myworkspace.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { GitfolderComponent } from './gitfolder/gitfolder.component';
+import { Gitfolder1Component } from './gitfolder1/gitfolder1.component';
+import { GitfileComponent } from './gitfile/gitfile.component';
+import { Gitfile1Component } from './gitfile1/gitfile1.component';
+import { Gitfolder2Component } from './gitfolder2/gitfolder2.component';
 
 
 
@@ -117,7 +121,7 @@ import { GitfolderComponent } from './gitfolder/gitfolder.component';
   AddwireframeComponent,EditwireframeComponent,Edit2wireframeComponent,UpdateWireframeComponent,WireframetypeComponent,PropertiesComponent,
   PropertyComponent,UinameeditComponent,ActionsComponent,SuredocrComponent,SurefarmComponent,SuregitComponent,Wireframe1Component,
   WireframeCardComponent,Report2Component,ReporttypeComponent,ReportBuilderComponent,AddComponent,AllComponent,EditComponent,
-  RbTableSetupComponent,RbColumnSetupComponent,RbWhereColumnSetupComponent,RbDateParamSetupComponent,ScienceComponent, ProjectviewComponent, ArchievedComponent, AllprojectComponent, AllprojectcardComponent, SurebuilderComponent, SureboardComponent, MyworkspaceComponent, UserRegistrationComponent, GitfolderComponent,
+  RbTableSetupComponent,RbColumnSetupComponent,RbWhereColumnSetupComponent,RbDateParamSetupComponent,ScienceComponent, ProjectviewComponent, ArchievedComponent, AllprojectComponent, AllprojectcardComponent, SurebuilderComponent, SureboardComponent, MyworkspaceComponent, UserRegistrationComponent, GitfolderComponent, Gitfolder1Component, GitfileComponent, Gitfile1Component, Gitfolder2Component,
 
 
 

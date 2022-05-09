@@ -110,6 +110,75 @@ export class SureboardComponent implements OnInit {
   message: string;
   imageName: any;
 
+  filterDirectory: any[] = [
+    {
+        name: " Quick Filters",
+        expanded: false,
+        files: [
+            {
+                //icon: "calendar",
+                name: "Calendar",
+            },
+            {
+                name: "Charts",
+               // active: false
+            },
+            {
+                name: "Dashboard",
+               // active: false
+            },
+            {
+                name: "Maps",
+                //active: false
+            },
+        ]
+    },
+  ];
+  teamDirectory: any[] = [
+    {
+        name: "Teams",
+        expanded: false,
+        files: [
+            {
+                //icon: "calendar",
+                name: "team1",
+            },
+            {
+                name: "team2",
+               // active: false
+            },
+            {
+                name: "team3",
+               // active: false
+            },
+            {
+                name: "team3",
+                //active: false
+            },
+        ]
+    },
+  ];
+  repositoriesDirectory: any[] = [
+    {
+        name: "Repositories",
+        expanded: true,
+        files: [
+            {
+                //icon: "calendar",
+                name: "Backend",
+            },
+            {
+                name: "Frontend",
+               // active: false
+            },
+            {
+                name: "Mobile",
+               // active: false
+            },
+        ]
+    },
+  ];
+
   constructor(private _col: ColumnServiceService,
     private _card: CardServiceService,
     private _board: BoardServiceService,
@@ -131,7 +200,7 @@ export class SureboardComponent implements OnInit {
             }
           );
         });
-        // console.log(this.cols);
+        console.log(this.cols);
       },
       (error: any)=>{
         console.log('Error in loading data : ' + error);

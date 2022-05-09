@@ -1,32 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import {SuregitService} from '../../../services/api/suregit.service';
-import {Suregit} from '../../../models/suregit';
-import { Surestar } from '../../../models/surestar';
-import { Surename } from '../../../models/surename';
+import {SuregitService} from 'src/app/services/api/suregit.service';
+import{GitfolderService} from 'src/app/services/api/gitfolder.service';
+import {Suregit} from 'src/app/models/suregit';
+import { Surestar } from 'src/app/models/surestar';
+import { Surename } from 'src/app/models/surename';
 import { ActivatedRoute, Router } from '@angular/router';
-import { anyOrAllPropertiesPass } from '@cds/core/internal';
-import { HttpClient } from '@angular/common/http';
 @Component({
-  selector: 'app-suregit',
-  templateUrl: './suregit.component.html',
-  styleUrls: ['./suregit.component.scss']
+  selector: 'app-gitfolder1',
+  templateUrl: './gitfolder1.component.html',
+  styleUrls: ['./gitfolder1.component.scss']
 })
-export class SuregitComponent implements OnInit {
+export class Gitfolder1Component implements OnInit {
   showme:boolean=false;
   suregit:Suregit[];
   surestar:Surestar;
   sure:Surename;
   name:any="";
   gitid:any="";
-  temprouterlink="";
     msg: any;
+  id: any;
+  tempid:any;
   constructor(private suregitservice:SuregitService,
-    private router: Router,
+    private gitservice:GitfolderService,
     private route: ActivatedRoute,
-    private http:HttpClient) { }
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.suregitservice.getAll().subscribe((data) => {
+    let id= this.route.snapshot.queryParams.id
+        this.gitservice.getAll(id).subscribe((data) => {
       this.suregit = data.tree;
       console.log(data.tree);
 
@@ -38,7 +39,6 @@ this.suregitservice.getstar().subscribe((data) => {
   console.log(this.surestar);
 
 });
-//sha
 //name
 
 this.sure= new Surename();
@@ -53,30 +53,16 @@ this.msg=data[0]["commit"]["message"];
   toggle(){
     this.showme=!this.showme;
   }
-
-
-  getbyid(id){
-    this.router.navigate(["../gitfolder"], { relativeTo: this.route });
-
-  }
   onclick(user:Suregit){
     // console.log(user);
     // this.temprouterlink = "/main/gitfolder/"+user.sha;
     // console.log(this.temprouterlink);
-    this.router.navigate(["../gitfolder"], { relativeTo: this.route ,queryParams:{id:user.sha}});
+    this.router.navigate(["../gitfolder2"], { relativeTo: this.route ,queryParams:{id:user.sha}});
   }
   onclick1(user:Suregit){
     // console.log(user);
     // this.temprouterlink = "/main/gitfolder/"+user.sha;
     // console.log(this.temprouterlink);
-    this.router.navigate(["../gitfile"], { relativeTo: this.route ,queryParams:{id:user.sha}});
+    this.router.navigate(["../gitfile1"], { relativeTo: this.route ,queryParams:{id:user.sha}});
   }
-  copyInputMessage(inputElement){
-    inputElement.select();
-    document.execCommand('copy');
-    inputElement.setSelectionRange(0, 0);
-
-  }
-
-
 }

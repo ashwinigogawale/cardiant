@@ -138,8 +138,8 @@
           <a clrVerticalNavLink  routerLinkActive="active">
           Goal
           </a>
-          <a clrVerticalNavLink  routerLinkActive="active">
-            WBS Tasks
+          <a clrVerticalNavLink  routerLink="./sureboard" routerLinkActive="active">
+            WBS Task Board
           </a>
 
         </clr-vertical-nav-group-children>
@@ -181,10 +181,6 @@
      <a  clrVerticalNavLink routerLinkActive="active" routerLink="/cns-portal/allproject" [queryParams]="{ tab: 'mypro' }">
       <clr-icon  clrVerticalNavIcon shape="flag"></clr-icon>
      All Projects </a>
-
-     <a  clrVerticalNavLink routerLinkActive="active" routerLink="./sureboard">
-      <clr-icon  clrVerticalNavIcon shape="view-columns"></clr-icon>
-     SureBoard </a>
      <a  clrVerticalNavLink routerLinkActive="active" routerLink="/cns-portal/allproject" [queryParams]="{ tab: 'temp' }">
       <clr-icon  clrVerticalNavIcon shape="plugin"></clr-icon>
      Templates </a>

@@ -57,12 +57,12 @@ this.msg=data[0]["commit"]["message"];
     // console.log(user);
     // this.temprouterlink = "/main/gitfolder/"+user.sha;
     // console.log(this.temprouterlink);
-    this.router.navigate(["/main/gitfolder1"], { relativeTo: this.route ,queryParams:{id:user.sha}});
+    this.router.navigate(["../gitfolder1"], { relativeTo: this.route ,queryParams:{id:user.sha}});
   }
   onclick1(user:Suregit){
     // console.log(user);
     // this.temprouterlink = "/main/gitfolder/"+user.sha;
     // console.log(this.temprouterlink);
-    this.router.navigate(["/main/gitfile1"], { relativeTo: this.route ,queryParams:{id:user.sha}});
+    this.router.navigate(["../gitfile1"], { relativeTo: this.route ,queryParams:{id:user.sha}});
   }
 }
