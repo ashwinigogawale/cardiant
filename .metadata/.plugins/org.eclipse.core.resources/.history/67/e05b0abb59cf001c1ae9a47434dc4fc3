@@ -35,7 +35,7 @@ import com.realnet.formio.Services.CardService;
 import com.realnet.formio.entity.Card;
 import com.realnet.formio.entity.CardImage;
 import com.realnet.formio.entity.Column;
-//import com.realnet.formio.helper.FileUploadHelper;
+import com.realnet.formio.helper.FileUploadHelper;
 import com.realnet.formio.repository.ImageRepository;
 
 import io.swagger.annotations.Api;
