@@ -50,8 +50,8 @@ public class CardController {
 	@Autowired
 	ImageRepository imageRepository;
 	
-//	@Autowired
-//	private FileUploadHelper fileUploadHelper;
+	@Autowired
+	private FileUploadHelper fileUploadHelper;
 	
 	@Autowired
 	private CardService cardService;
@@ -132,11 +132,11 @@ public class CardController {
 			}
 			
 			// image upload
-//			boolean f = this.fileUploadHelper.uploadFile(image);
-//			if(f) {
-////				return ResponseEntity.ok("Image uploaded successfully..");
-//				return ResponseEntity.ok(ServletUriComponentsBuilder.fromCurrentContextPath().path("/images/").path(image.getOriginalFilename()).toUriString());
-//			}
+			boolean f = this.fileUploadHelper.uploadFile(image);
+			if(f) {
+//				return ResponseEntity.ok("Image uploaded successfully..");
+				return ResponseEntity.ok(ServletUriComponentsBuilder.fromCurrentContextPath().path("/images/").path(image.getOriginalFilename()).toUriString());
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
