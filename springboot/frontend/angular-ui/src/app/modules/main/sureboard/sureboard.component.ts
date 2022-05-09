@@ -116,7 +116,7 @@ export class SureboardComponent implements OnInit {
     private httpClient: HttpClient) {this.finalcol = new Array<any>(); }
 
   ngOnInit(): void {
-    this._col.getById(107).subscribe(
+    this._col.getColumnsOfBoard(107).subscribe(
       (data: any)=>{
         this.cols = data;
 
@@ -139,7 +139,7 @@ export class SureboardComponent implements OnInit {
       }
     );
 
-    this._board.getById(107).subscribe(
+    this._board.getOneBoard(107).subscribe(
       (data: any)=>{
         this.board = data;
         console.log(this.board);

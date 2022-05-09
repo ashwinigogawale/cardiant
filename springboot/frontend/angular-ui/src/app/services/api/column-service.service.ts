@@ -42,8 +42,5 @@ createurl="cols/board"
   public getColumnsOfBoard(bid: any){
     return this._http.get(`${baseUrl}/cols/board/${bid}`);
   }
-  getById(id: number): Observable<any> {
-    const _http = this.createurl + "/" + id;
-    return this.apiRequest.get(_http);
-  }
+
 }
