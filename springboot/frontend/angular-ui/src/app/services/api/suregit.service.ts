@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SuregitService {
-  private baseURL = "http://localhost:3000/repos/admin123/project/git/trees/618cea2f2022773c451ce4135698c62a2bdb3a70";
-  private starurl ="http://localhost:3000/repos/admin123/project";
-  private nameurl="http://localhost:3000/repos/admin123/project/commits"
+  private baseURL ="http://realits.ml:30167/api/v1/repos/admin123/project/git/trees/618cea2f2022773c451ce4135698c62a2bdb3a70"; //"http://localhost:3000/repos/admin123/project/git/trees/618cea2f2022773c451ce4135698c62a2bdb3a70";
+  private starurl ="http://realits.ml:30167/api/v1/repos/admin123/project";//"http://localhost:3000/repos/admin123/project";
+  private nameurl="http://realits.ml:30167/api/v1/repos/admin123/project/commits";//"http://localhost:3000/repos/admin123/project/commits"
   constructor(private http:HttpClient,) { }
   getAll(): Observable<any> {
     //Create Request URL params

@@ -29,7 +29,6 @@
 </div>
 
 </div>
-
 <div class="branch">
 <div class="btn-group special">
 <clr-button-group class="btn-primary">
@@ -41,19 +40,7 @@
 
 </clr-button-group>
 </div>
-<div class="btn-group btn-primary">
-  <button class="btn"> New Pull Request</button>
-</div>
-<div class="download">
-<div class="btn-group btn-primary" id="download">
-  <button class="btn"> HTTP</button>
-  <input type="text" value="http://realits.ml:30167/admin123/project.git" class="text" #userinput readonly>
-  <button class="btn" id="text" (click)="copyInputMessage(userinput)" data-original="Copy" data-success="Link has been copied"><clr-icon shape="copy"></clr-icon></button>
 
-  <button class="btn" > <clr-icon shape="download"></clr-icon></button>
-</div>
-
-</div>
 </div>
 
 
@@ -71,8 +58,7 @@
         <span style="padding-left: 5px;">    <a href="/ganeshris"><strong>{{name.name}}</strong></a></span>
 <span style="padding-left: 10px;">
         <button >{{gitid.substring(0,12)}}</button>
-      </span>
-      </th>
+      </span></th>
       <th class="left" style="color: #4183C4;">This is initial commit by  <button class="basic compact mini ui icon button commit-button" (click)="toggle()"><clr-icon shape="ellipsis-horizontal"></clr-icon></button>
         <div *ngIf="showme">
           {{msg}}
@@ -85,18 +71,16 @@
 
     <tr *ngFor="let user of suregit" (click) = "onclick(user)" >
       <td class="left" *ngIf="user.type === 'tree'" style="color: #4183C4;"><clr-icon shape="folder"></clr-icon>
-         <a  >
-        {{user.path}}
-       </a>
-    </td>
+        <a >
+        {{user.path}}</a></td>
         <td class="left" *ngIf="user.type === 'tree'" style="color: #4183C4;">This is initial commit by Ganesh</td>
         <td class="right" *ngIf="user.type === 'tree'">
           18 hours Ago
         </td>
     </tr>
-    <tr *ngFor="let user of suregit" (click) = "onclick1(user)">
+    <tr *ngFor="let user of suregit"  (click) = "onclick1(user)">
       <td class="left" *ngIf="user.type === 'blob'"><clr-icon shape="file"></clr-icon>
-        <a  style="color: #4183C4;">
+        <a style="color: #4183C4;">
         {{user.path}}</a></td>
       <td class="left" *ngIf="user.type === 'blob'" style="color: #4183C4;">This is initial commit by Ganesh</td>
       <td class="right" *ngIf="user.type === 'blob'">
@@ -106,64 +90,7 @@
   </tbody>
 </table>
 
-<table class="table" id="read">
 
-  <thead>
-    <tr>
-      <th class="left"> <clr-icon shape="file"></clr-icon>README.md</th>
-
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="left"><h1> <clr-icon shape="link"></clr-icon>AstonVillaApp</h1></td>
-
-    </tr>
-    <tr>
-      <td class="left"><p>This project was generated with Angular CLI version 7.1.4.</p>
-      <h2> <clr-icon shape="link"></clr-icon>Development server</h2>
-      </td>
-
-    </tr>
-    <tr>
-      <td class="left"><p>Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.</p>
-      <h2> <clr-icon shape="link"></clr-icon>Code scaffolding</h2>
-      </td>
-
-    </tr>
-    <tr>
-      <td class="left"><p>Run ng generate component component-name to generate a new component. You can also use ng generate directive|pipe|service|class|guard|interface|enum|module.</p>
-      <h2> <clr-icon shape="link"></clr-icon>Build</h2>
-      </td>
-
-    </tr>
-    <tr>
-      <td class="left"><p>Run ng build to build the project. The build artifacts will be stored in the dist/ directory. Use the --prod flag for a production build.</p>
-      <h2> <clr-icon shape="link"></clr-icon>Running unit tests</h2>
-      </td>
-
-    </tr>
-    <tr>
-      <td class="left"><p>Run ng test to execute the unit tests via Karma.</p>
-      <h2> <clr-icon shape="link"></clr-icon>Running end-to-end tests</h2>
-      </td>
-
-    </tr>
-
-    <tr>
-      <td class="left"><p>Run ng e2e to execute the end-to-end tests via Protractor.</p>
-      <h2> <clr-icon shape="link"></clr-icon>Further help</h2>
-      </td>
-
-    </tr>
-    <tr>
-      <td class="left"><p>To get more help on the Angular CLI use ng help or go check out the Angular CLI README.</p>
-
-      </td>
-
-    </tr>
-  </tbody>
-</table>
 
     </clr-tab-content>
   </clr-tab>

@@ -94,6 +94,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SureboardComponent } from './sureboard/sureboard.component';
 import { MyworkspaceComponent } from './myworkspace/myworkspace.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { GitfolderComponent } from './gitfolder/gitfolder.component';
 
 
 
@@ -116,7 +117,7 @@ import { UserRegistrationComponent } from './user-registration/user-registration
   AddwireframeComponent,EditwireframeComponent,Edit2wireframeComponent,UpdateWireframeComponent,WireframetypeComponent,PropertiesComponent,
   PropertyComponent,UinameeditComponent,ActionsComponent,SuredocrComponent,SurefarmComponent,SuregitComponent,Wireframe1Component,
   WireframeCardComponent,Report2Component,ReporttypeComponent,ReportBuilderComponent,AddComponent,AllComponent,EditComponent,
-  RbTableSetupComponent,RbColumnSetupComponent,RbWhereColumnSetupComponent,RbDateParamSetupComponent,ScienceComponent, ProjectviewComponent, ArchievedComponent, AllprojectComponent, AllprojectcardComponent, SurebuilderComponent, SureboardComponent, MyworkspaceComponent, UserRegistrationComponent,
+  RbTableSetupComponent,RbColumnSetupComponent,RbWhereColumnSetupComponent,RbDateParamSetupComponent,ScienceComponent, ProjectviewComponent, ArchievedComponent, AllprojectComponent, AllprojectcardComponent, SurebuilderComponent, SureboardComponent, MyworkspaceComponent, UserRegistrationComponent, GitfolderComponent,
 
 
 
