@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import baseUrl from './helper';
+import { Observable } from "rxjs";
+import { ApiRequestService } from "./api-request.service";
 @Injectable({
   providedIn: 'root'
 })
 export class ColumnServiceService {
 
-  constructor(private _http: HttpClient) { }
+createurl="cols/board"
+
+  constructor(private _http: HttpClient,
+    private apiRequest: ApiRequestService,) { }
   // create column
   public createcolumn(column: any){
     return this._http.post(`${baseUrl}/cols/create`, column);
   }
+
 
   // update column
   public updatecolumn(column: any){
@@ -35,5 +41,9 @@ export class ColumnServiceService {
   // get columns of perticular board
   public getColumnsOfBoard(bid: any){
     return this._http.get(`${baseUrl}/cols/board/${bid}`);
+  }
+  getById(id: number): Observable<any> {
+    const _http = this.createurl + "/" + id;
+    return this.apiRequest.get(_http);
   }
 }
