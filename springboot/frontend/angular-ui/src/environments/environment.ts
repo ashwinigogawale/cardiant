@@ -9,5 +9,5 @@ export const environment = {
   // changeble url // port
   backport:'9191', // port
   backendUrl:'http://localhost:9191',
-  jobUrl:'http://localhost:3000', // http://realits.ml:30168/    jobprourl
+  jobUrl:'http://localhost:8085', // http://realits.ml:30168/    jobprourl
 };

@@ -21,20 +21,20 @@ res.json(error)
   })
 
 })
-app.get(':jobendpoint([\\/\\w\\.-]*)',function(req,res){
+// app.get(':jobendpoint([\\/\\w\\.-]*)',function(req,res){
 
-  let jobendpoint ='http://realits.ml:30168/' + req.params.jobendpoint
-  //let endpoint = 'http://3.109.1.20:10086'+ req.params.endpoint
+//   let jobendpoint ='http://realits.ml:30168/' + req.params.jobendpoint
 
 
-   axios.get(jobendpoint).then(response=>{
 
- res.json(response.data)
-   }).catch(error=>{
- res.json(error)
-   })
+//    axios.get(jobendpoint).then(response=>{
 
- })
+//  res.json(response.data)
+//    }).catch(error=>{
+//  res.json(error)
+//    })
+
+//  })
 
 app.listen(3000)
 console.log('Node server running on port 3000');

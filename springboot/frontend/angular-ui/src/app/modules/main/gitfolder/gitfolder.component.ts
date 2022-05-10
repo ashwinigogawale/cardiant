@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {SuregitService} from 'src/app/services/api/suregit.service';
-import{GitfolderService} from 'src/app/services/api/gitfolder.service';
 import {Suregit} from 'src/app/models/suregit';
 import { Surestar } from 'src/app/models/surestar';
 import { Surename } from 'src/app/models/surename';
@@ -21,13 +20,12 @@ export class GitfolderComponent implements OnInit {
   id: any;
   tempid:any;
   constructor(private suregitservice:SuregitService,
-    private gitservice:GitfolderService,
     private router: Router,
     private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
     let id= this.route.snapshot.queryParams.id
-        this.gitservice.getAll(id).subscribe((data) => {
+        this.suregitservice.getAllfolder(id).subscribe((data) => {
       this.suregit = data.tree;
       console.log(data.tree);
 

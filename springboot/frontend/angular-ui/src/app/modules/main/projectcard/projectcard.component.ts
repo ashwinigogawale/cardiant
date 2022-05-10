@@ -52,6 +52,9 @@ export class ProjectcardComponent implements OnInit {
   goToModule(id: number,name:any) {
     this.router.navigate(["../modules"], { relativeTo: this.route, queryParams: { p_id: id } });
   }
+  goTosureops(id:number){
+    this.router.navigate(["../module1"], { relativeTo: this.route, queryParams: { p_id: id } });
+  }
   // goToModule(id: number) {
   //   this.router.navigate(["../module1"], { relativeTo: this.route, queryParams: { p_id: id } });
   // }

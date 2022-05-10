@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import{GitfileService} from 'src/app/services/api/gitfile.service';
 import {Suregit} from 'src/app/models/suregit';
 import { Surestar } from 'src/app/models/surestar';
 import { Surename } from 'src/app/models/surename';
@@ -20,7 +19,7 @@ export class Gitfile1Component implements OnInit {
   name:any="";
   gitid:any="";
     msg: any;
-  constructor(private gitfileservice:GitfileService,
+  constructor(
     private suregitservice:SuregitService,
     private http:HttpClient,
     private route: ActivatedRoute) { }
@@ -28,7 +27,7 @@ export class Gitfile1Component implements OnInit {
   ngOnInit(): void {
     let id= this.route.snapshot.queryParams.id
     this.suregit = new Gitfile();
-    this.gitfileservice.getAll(id).subscribe((data) => {
+    this.suregitservice.getAllfile(id).subscribe((data) => {
       this.suregit = data;
       console.log(this.suregit);
 
