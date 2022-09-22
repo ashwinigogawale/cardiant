@@ -24,6 +24,8 @@ public interface Rn_ModuleSetup_Repository extends JpaRepository<Rn_Module_Setup
 	@Query(value = "SELECT * FROM rn_module_setup WHERE PROJECT_ID=:projectId", nativeQuery = true)
 	List<Rn_Module_Setup> findProjectModulesForDropDown(@Param("projectId") Integer projectId);
 	
+	//add
+    List<Rn_Module_Setup> findByCreatedBy(Long created_by); 
 	
 	//NOT WORKING
 //	@Query(value = "SELECT ID, MODULE_NAME FROM RN_MODULE_SETUP", nativeQuery = true)

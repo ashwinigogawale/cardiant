@@ -51,6 +51,7 @@ public class AppUser implements Serializable{
 	private Date createdate;
 	private String updateby;
 	private Date updatedate;
+	private Long accountId;
 	@ManyToOne
 	@JoinColumn(name = "usr_grp")
 	private AppUserRole usrGrp;

@@ -115,5 +115,12 @@ public class Rn_ModuleSetup_ServiceImpl implements Rn_ModuleSetup_Service {
 		}
 		return dtos;
 	}
+	@Override
+    public List<Rn_Module_Setup> getAllByUserId(Long created_by) {
+        // TODO Auto-generated method stub
+        List<Rn_Module_Setup> bcf_extractor = moduleSetupRepository.findByCreatedBy(created_by);
+        //.orElseThrow(() -> new ResourceNotFoundException(Constant.NOT_FOUND_EXCEPTION + " :" + created_by));
+        return bcf_extractor;
+    }
 
 }

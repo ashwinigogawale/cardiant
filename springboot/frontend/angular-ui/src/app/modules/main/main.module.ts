@@ -139,7 +139,8 @@ import { Gitfolder2Component } from './gitfolder2/gitfolder2.component';
 // Thirdparty Module
 NgxDatatableModule,
 NgxChartsModule,
-Ng2SearchPipeModule
+Ng2SearchPipeModule,
+
   ]
 })
 export class MainModule { }

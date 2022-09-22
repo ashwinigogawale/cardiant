@@ -21,6 +21,6 @@ public interface Rn_ModuleSetup_Service {
 	
 	List<DropDownDTO> getModulesForDropDown();
 	List<DropDownDTO> getProjectModulesForDropDown(int projectId);
-	
+	 List<Rn_Module_Setup> getAllByUserId(Long created_by);
 
 }

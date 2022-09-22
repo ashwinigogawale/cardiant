@@ -352,4 +352,12 @@ public class Rn_ModuleSetupController {
 		successPojo.setSuccess(success);
 		return new ResponseEntity<SuccessPojo>(successPojo, HttpStatus.CREATED);
 	}
+	// GET ALL REPO BY userId
+    @ApiOperation(value = "Get A repo by userId", response = Rn_Module_Setup.class)
+    @GetMapping("/getAllMyRepos/{id}")
+    public ResponseEntity<?> getMyReposAll(@PathVariable(value = "id") Long created_by) {
+       
+     List<Rn_Module_Setup> module = moduleSetupService.getAllByUserId(created_by);         
+     return new ResponseEntity <List<Rn_Module_Setup>>(module, HttpStatus.OK);
+ }
 }

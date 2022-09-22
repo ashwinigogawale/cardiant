@@ -14,7 +14,7 @@ private fileURL = "http://localhost:3000/repos/admin123/project/git/blobs/";
   // private starurl ="http://realits.ml:30167/api/v1/repos/admin123/project";
   // private nameurl="http://realits.ml:30167/api/v1/repos/admin123/project/commits";
   // private folderURL= "http://realits.ml:30167/api/v1/repos/admin123/project/git/trees/";
-  //private fileURL = "http://realits.ml:30167/api/v1/repos/admin123/projehttp://realits.ml:30167/api/v1ct/git/blobs/";
+  //private fileURL = "http://realits.ml:30167/api/v1/repos/admin123/project/git/blobs/";
   constructor(private http:HttpClient,) { }
   getAll(): Observable<any> {
     //Create Request URL params

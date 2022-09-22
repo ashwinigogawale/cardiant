@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "route": "/project1",
+      "address": "http://realits.ml:30167/api/v1"
+    },
+    {
+      "route": "/project2",
+      "address": "http://realits.ml:30168/"
+    }
+  ]
+}
